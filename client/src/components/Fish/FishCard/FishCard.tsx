@@ -117,8 +117,8 @@ const fishDataHeb = {
 };
 
 // const fishData = fishDataRus;
-// const fishData = fishDataEng;
-const fishData = fishDataHeb;
+const fishData = fishDataEng;
+// const fishData = fishDataHeb;
 
 export default function FishCard(_props: IFishCard) {
  
