@@ -9,8 +9,8 @@ const validationOptions = {
 };
 
 const imageSchema = Joi.object({
-  src: Joi.string().optional(),
-  alt: Joi.string().optional().default(''),
+  src: Joi.string().required(),
+  alt: Joi.string().required(),
 });
 
 const fishSchema = Joi.object({

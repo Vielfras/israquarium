@@ -13,8 +13,8 @@ const addressSchema = new mongoose.Schema({
 });
 
 const imageSchema = new mongoose.Schema({
-  url: String,
-  alt: String,
+  src: { type: String, required: true },
+  alt: { type: String, required: true },
 });
 
 const nameSchema = new mongoose.Schema({
