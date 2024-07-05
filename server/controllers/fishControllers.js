@@ -6,6 +6,15 @@ const Err = require("../utils/errorHandling");
 const Auth = require("../utils/authorisation");
 
 
+const getRandomFish = async (req, res) => {
+  try {
+    
+  } catch (err) {
+    return res.status(400).json({ success: false, message: err.message, });
+  }
+};
+
+
 const getFishById = async (req, res) => {
   try {
     
@@ -18,4 +27,6 @@ const getFishById = async (req, res) => {
 
 
 module.exports = {
+  getRandomFish,
+  getFishById,
 };

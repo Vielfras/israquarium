@@ -19,6 +19,8 @@ const { users } = require('./data/user_data');
 const { fish } = require('./data/fish_data');
 
 const User = require('./models/User');
+const Fish = require('./models/Fish');
+
 const Benchmark = require('./utils/benchmarking');
 
 
@@ -34,7 +36,7 @@ const seedUsers = async () => {
 };
 
 const clearDatabase = async () => {
-  await Card.deleteMany();
+  await Fish.deleteMany();
   await User.deleteMany();
 };
 

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 const fish = [
     {
@@ -23,9 +22,10 @@ const fish = [
         distribution: 'Lower Amazon basin and Tocantins River (Tocantins), Brazil.',
         fishSize: 'up to 100 cm (SL)',
         tankVolume: 'from 500 liters',
-        temp: '23 - 30°C',
-        ph: '6.0-8.0',
-        dGH: '5-15',
+        maxTemp: 30, 
+        minTemp: 23, 
+        ph: 7.0,     
+        dGH: 10,     
         additionalRequirements: 'N/A',
         aquariumSetup: 'Shelters from driftwood, rocks, etc. are necessary.',
         intraspeciesCompatibility: 'Expressed aggression towards individuals of its own species from a young age.',

@@ -1,8 +1,8 @@
 // fishRoutes.js
 
 const router = require('express').Router();
-const { mustLogin, allowedRoles, ROLES } = require('../controllers/authControllers');
-const { getFishById } = require('../controllers/fishControllers');
+// const { mustLogin, allowedRoles, ROLES } = require('../controllers/authControllers');
+const { getRandomFish, getFishById } = require('../controllers/fishControllers');
 
 /*
 ============================================
@@ -13,6 +13,7 @@ const { getFishById } = require('../controllers/fishControllers');
 //  SPECIFIC
 
 //  UNspecific
-router.get('/:id', getFishById)
+router.get('/', getRandomFish);
+router.get('/:id', getFishById);
 
 module.exports = router;

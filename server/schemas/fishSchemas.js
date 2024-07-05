@@ -1,40 +1,96 @@
-const mongoose = require('mongoose');
+// fishSchemas.js
 
-const FishSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  images: [
-    {
-      src: { type: String, required: true },
-      alt: { type: String, required: true },
-    },
-  ],
-  subclass: { type: String, required: true },
-  order: { type: String, required: true },
-  family: { type: String, required: true },
-  subfamily: { type: String, required: true },
-  tribe: { type: String, required: true },
-  latinName: { type: String, required: true },
-  firstDescription: { type: String, required: true },
-  synonyms: { type: String, required: true },
-  etymology: { type: String, required: true },
-  distribution: { type: String, required: true },
-  fishSize: { type: String, required: true },
-  tankVolume: { type: String, required: true },
-  temp: { type: String, required: true },
-  ph: { type: String, required: true },
-  dGH: { type: String, required: true },
-  additionalRequirements: { type: String, required: true },
-  aquariumSetup: { type: String, required: true },
-  intraspeciesCompatibility: { type: String, required: true },
-  interspeciesCompatibility: { type: String, required: true },
-  feeding: { type: String, required: true },
-  sexualDimorphism: { type: String, required: true },
-  breeding: { type: String, required: true },
-  additionalInformation: { type: String, required: true },
-  sources: { type: String, required: true },
-  directProfileLink: { type: String, required: true },
+const Joi = require('joi');
+
+
+const validationOptions = {
+  stripUnknown: true,
+  abortEarly: false,
+};
+
+const imageSchema = Joi.object({
+  src: Joi.string().optional(),
+  alt: Joi.string().optional().default(''),
 });
 
-const Fish = mongoose.model('Fish', FishSchema);
+const fishSchema = Joi.object({
+  name: Joi.string().required(),
+  latinName: Joi.string().required(),
+  synonyms: Joi.string().optional(),
+  etymology: Joi.string().optional(),
+  firstDescription: Joi.string().optional(),
+  
+  images: Joi.array().items(imageSchema).optional(),
+  
+  subclass: Joi.string().required(),
+  order: Joi.string().required(),
+  family: Joi.string().required(),
+  subfamily: Joi.string().required(),
+  tribe: Joi.string().required(),
+  distribution: Joi.string().optional(),
+  fishSize: Joi.string().required(),
+  tankVolume: Joi.string().optional(),
+  
+  maxTemp: Joi.number().optional(),
+  minTemp: Joi.number().optional(),
+  
+  ph: Joi.number().optional(),
+  dGH: Joi.number().optional(),
+  
+  additionalRequirements: Joi.string().optional(),
+  aquariumSetup: Joi.string().optional(),
+  intraspeciesCompatibility: Joi.string().optional(),
+  interspeciesCompatibility: Joi.string().optional(),
+  feeding: Joi.string().optional(),
+  sexualDimorphism: Joi.string().optional(),
+  breeding: Joi.string().optional(),
+  additionalInformation: Joi.string().optional(),
+  sources: Joi.string().optional(),
+  directProfileLink: Joi.string().optional(),
+}).options(validationOptions);
 
-module.exports = Fish;
+const updateFishSchema = Joi.object({
+  name: Joi.string().optional(),
+  latinName: Joi.string().optional(),
+  synonyms: Joi.string().optional(),
+  etymology: Joi.string().optional(),
+  firstDescription: Joi.string().optional(),
+  
+  images: Joi.array().items(imageSchema).optional(),
+  
+  subclass: Joi.string().optional(),
+  order: Joi.string().optional(),
+  family: Joi.string().optional(),
+  subfamily: Joi.string().optional(),
+  tribe: Joi.string().optional(),
+  distribution: Joi.string().optional(),
+  fishSize: Joi.string().optional(),
+  tankVolume: Joi.string().optional(),
+  
+  maxTemp: Joi.number().optional(),
+  minTemp: Joi.number().optional(),
+  
+  ph: Joi.number().optional(),
+  dGH: Joi.number().optional(),
+  
+  additionalRequirements: Joi.string().optional(),
+  aquariumSetup: Joi.string().optional(),
+  intraspeciesCompatibility: Joi.string().optional(),
+  interspeciesCompatibility: Joi.string().optional(),
+  feeding: Joi.string().optional(),
+  sexualDimorphism: Joi.string().optional(),
+  breeding: Joi.string().optional(),
+  additionalInformation: Joi.string().optional(),
+  sources: Joi.string().optional(),
+  directProfileLink: Joi.string().optional(),
+}).options(validationOptions).min(1).messages({
+  'object.min': "The request's body must include at least one valid key",
+});
+
+const schemas = {
+  createFish: fishSchema,
+  updateFish: updateFishSchema,
+};
+
+
+module.exports = schemas;
