@@ -45,8 +45,9 @@ app.use(express.static('public'));
 
 
 // --------------=====================  ROUTES  =====================--------------
-app.use('/api/fish', require('./routes/fishRoutes'));
 app.use('/api/users', require('./routes/usersRoutes'));
+app.use('/api/fish', require('./routes/fishRoutes'));
+app.use('/api/fishIndex', require('./routes/fishIndexRoutes'));
 
 
 // --------------=====================  RUN SERVER  =====================--------------
