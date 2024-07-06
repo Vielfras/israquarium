@@ -21,6 +21,12 @@ const fishIndex = [
         hebrew: "אפיסטוגרמה",
         english: "Apistogramma",
         russian: "Апистограмма",
+        image: {
+            src: 'Apistogramma.jpg',
+            alt: 'Apistogramma',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -28,6 +34,12 @@ const fishIndex = [
         hebrew: "ברבוסים",
         english: "Barbs",
         russian: "Барбусы",
+        image: {
+            src: 'Barbs.jpg',
+            alt: 'Barbs',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -35,6 +47,12 @@ const fishIndex = [
         hebrew: "דגי קשת",
         english: "Rainbowfish",
         russian: "Радужные рыбы",
+        image: {
+            src: 'Rainbowfish.jpg',
+            alt: 'Rainbowfish',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -42,6 +60,12 @@ const fishIndex = [
         hebrew: "אפרונונים",
         english: "Nannostomus",
         russian: "Нанностомус",
+        image: {
+            src: 'Nannostomus.jpg',
+            alt: 'Nannostomus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -49,13 +73,24 @@ const fishIndex = [
         hebrew: "בוטיות",
         english: "Botia",
         russian: "Боции",
+        image: {
+            src: 'Botia.jpg',
+            alt: 'Botia',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
         _id: new mongoose.Types.ObjectId(),
         hebrew: "דגי קרב",
         english: "Betta",
-        russian: "Бетта",
+        russian: "Бетта",   image: {
+            src: 'Betta.jpg',
+            alt: 'Betta',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -63,6 +98,12 @@ const fishIndex = [
         hebrew: "גרזנים",
         english: "Gasteropelecus",
         russian: "Гастропелекус",
+        image: {
+            src: 'Gasteropelecus.jpg',
+            alt: 'Gasteropelecus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -70,6 +111,12 @@ const fishIndex = [
         hebrew: "למפרולוגוסים",
         english: "Lamprologus",
         russian: "Лампрологусы",
+        image: {
+            src: 'Lamprologus.jpg',
+            alt: 'Lamprologus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -77,13 +124,24 @@ const fishIndex = [
         hebrew: "פיקוקים",
         english: "Aulonocara",
         russian: "Аулонокара",
+        image: {
+            src: 'Aulonocara.jpg',
+            alt: 'Aulonocara',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
         _id: new mongoose.Types.ObjectId(),
         hebrew: "ג'ולידוכרומיס",
         english: "Julidochromis",
-        russian: "Жюлидохромис",
+        russian: "Жюлидохромис",   image: {
+            src: 'Julidochromis.jpg',
+            alt: 'Julidochromis',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -91,6 +149,12 @@ const fishIndex = [
         hebrew: "אוטוסינקלוס",
         english: "Otocinclus",
         russian: "Отоцинклюс",
+        image: {
+            src: 'Otocinclus.jpg',
+            alt: 'Otocinclus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -98,6 +162,12 @@ const fishIndex = [
         hebrew: "טרופיאוס",
         english: "Tropheus",
         russian: "Трофеус",
+        image: {
+            src: 'Tropheus.jpg',
+            alt: 'Tropheus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     },
     {
@@ -105,6 +175,12 @@ const fishIndex = [
         hebrew: "דיקרוסיס",
         english: "Dicrossus",
         russian: "Дикроссус",
+        image: {
+            src: 'Dicrossus.jpg',
+            alt: 'Dicrossus',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
         fishes: []
     }
 ];
