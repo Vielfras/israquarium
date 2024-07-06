@@ -8,7 +8,13 @@ const fishIndex = [
         hebrew: "קורידורוסים",
         english: "Corydoras",
         russian: "Коридорасы",
-        fishes: [] 
+        image: {
+            src: 'Corydoras.jpg',
+            alt: 'Corydoras',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
+        fishes: []
     },
     {
         _id: new mongoose.Types.ObjectId(),
@@ -26,14 +32,14 @@ const fishIndex = [
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        hebrew: "דגי קשקשת",
+        hebrew: "דגי קשת",
         english: "Rainbowfish",
         russian: "Радужные рыбы",
         fishes: []
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        hebrew: "אפרו נוניס",
+        hebrew: "אפרונונים",
         english: "Nannostomus",
         russian: "Нанностомус",
         fishes: []
@@ -47,14 +53,14 @@ const fishIndex = [
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        hebrew: "בטה",
+        hebrew: "דגי קרב",
         english: "Betta",
         russian: "Бетта",
         fishes: []
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        hebrew: "גסטרופלקוס",
+        hebrew: "גרזנים",
         english: "Gasteropelecus",
         russian: "Гастропелекус",
         fishes: []
@@ -68,7 +74,7 @@ const fishIndex = [
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        hebrew: "אולונקרה",
+        hebrew: "פיקוקים",
         english: "Aulonocara",
         russian: "Аулонокара",
         fishes: []
