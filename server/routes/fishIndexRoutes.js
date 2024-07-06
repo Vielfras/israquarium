@@ -2,7 +2,8 @@
 
 const router = require('express').Router();
 const { mustLogin, allowedRoles } = require('../controllers/authControllers');
-const { getFishIndexes, getFishIndexImage } = require('../controllers/fishIndexController');
+    
+const { getFishIndexes, getIndexById, getFishIndexImage } = require('../controllers/fishIndexController');
 
 /*
 ============================================
@@ -11,7 +12,7 @@ const { getFishIndexes, getFishIndexImage } = require('../controllers/fishIndexC
 */
 
 router.get('/', getFishIndexes);
-// router.get('/:id', getIndexById);
+router.get('/:id', getIndexById);
 router.get('/image/:id/:imageName', getFishIndexImage);
 
 // router.post('/', mustLogin, allowedRoles(["admin"]), createFishIndex);
