@@ -74,28 +74,6 @@ const getFishImage = async (req, res) => {
   }
 };
 
-const updateAFish = async (req, res) => {
-  try {
-    const { error, value } = schemas.updateFish.validate(req.body);
-    if (error) {
-      return res.status(400).json(Err.multipleErrToString(error));
-    }
-
-    const { id } = req.params;
-    const updatedFish = await Fish.findByIdAndUpdate(id, value, { new: true });
-    if (updatedFish) {
-      return res.status(200).json({ success: true, data: updatedFish });
-    }
-
-    return res.status(404).json({
-      success: false,
-      message: `Fish id '${id}' not found.`
-    });
-  } catch (err) {
-    return res.status(400).json({ success: false, message: err.message });
-  }
-};
-
 const createFish = async (req, res) => {
   try {
     const { error, value } = schemas.createFish.validate(req.body);
@@ -129,11 +107,36 @@ const deleteFish = async (req, res) => {
   }
 };
 
+const updateAFish = async (req, res) => {
+  try {
+    // TODO - Remove fields that aren't allowed to be updated, like _id, __v, createdAt, updatedAt, etc... 
+    const { error, value } = schemas.updateFish.validate(req.body);
+    if (error) {
+      return res.status(400).json(Err.multipleErrToString(error));
+    }
+
+    const { id } = req.params;
+    const updatedFish = await Fish.findByIdAndUpdate(id, value, { new: true });
+    if (updatedFish) {
+      return res.status(200).json({ success: true, data: updatedFish });
+    }
+
+    return res.status(404).json({
+      success: false,
+      message: `Fish id '${id}' not found.`
+    });
+  } catch (err) {
+    return res.status(400).json({ success: false, message: err.message });
+  }
+};
+
+
+
 module.exports = {
   getRandomFish,
   getFishById,
   getFishImage,
-  updateAFish,
   createFish,
   deleteFish,
+  updateAFish,
 };
