@@ -74,15 +74,41 @@ const getFishImage = async (req, res) => {
   }
 };
 
+// const createFish = async (req, res) => {
+//   try {
+//     const { error, value } = schemas.createFish.validate(req.body);
+//     if (error) {
+//       return res.status(400).json(Err.multipleErrToString(error));
+//     }
+
+//     const newFish = new Fish(value);
+//     await newFish.save();
+
+//     return res.status(201).json({ success: true, data: newFish });
+//   } catch (err) {
+//     return res.status(400).json({ success: false, message: err.message });
+//   }
+// };
+
 const createFish = async (req, res) => {
   try {
+    const { indexId } = req.body;
+    const fishIndex = await FishIndex.findById(indexId);
+    if (!fishIndex) {
+      return res.status(404).json({ success: false, message: `Fish index with id '${indexId}' not found.` });
+    }
+
     const { error, value } = schemas.createFish.validate(req.body);
     if (error) {
-      return res.status(400).json(Err.multipleErrToString(error));
+      return res.status(400).json({ success: false, message: error.details.map(d => d.message).join(', ') });
     }
 
     const newFish = new Fish(value);
     await newFish.save();
+
+    // Add the new fish to the specified index
+    fishIndex.fishes.push(newFish._id);
+    await fishIndex.save();
 
     return res.status(201).json({ success: true, data: newFish });
   } catch (err) {

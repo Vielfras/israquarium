@@ -6,7 +6,9 @@ const { imageSchema } = require('./common');
 
 const fishSchema = new mongoose.Schema(
   {
-    name: { type: String, unique: true },
+    // TODO - This need to be unique with no care for Lower/Upper case. A
+    //        ex. canthicus adonis == Acanthicus Adonis
+    name: { type: String, required: true, unique: true },
     latinName: { type: String },
     synonyms: { type: String },
     etymology: { type: String },

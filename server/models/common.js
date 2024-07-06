@@ -15,7 +15,10 @@ const addressSchema = new mongoose.Schema({
 const imageSchema = new mongoose.Schema({
   src: { type: String, required: true },
   alt: { type: String, required: true },
+  creatorName: { type: String },
+  originalSource: { type: String }
 });
+
 
 const nameSchema = new mongoose.Schema({
   first: String,

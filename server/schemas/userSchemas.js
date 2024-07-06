@@ -11,6 +11,7 @@ const validationOptions = {
   abortEarly: false,
 };
 
+// TODO - Change image validation to use imageSchema
 
 const userSchema = Joi.object().keys({
   name: Joi.object().keys({

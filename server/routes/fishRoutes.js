@@ -14,9 +14,14 @@ router.get('/', getRandomFish);
 router.get('/:id', getFishById);
 router.get('/image/:id/:imageName', getFishImage);
 
-router.post('/', mustLogin, allowedRoles(["admin"]), createFish);
-router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAFish);
-router.delete('/:id', mustLogin, allowedRoles(["admin"]), deleteFish);
+// router.post('/', mustLogin, allowedRoles(["admin"]), createFish);
+// router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAFish);
+// router.delete('/:id', mustLogin, allowedRoles(["admin"]), deleteFish);
+
+// TOOD - Remove after automated tests are written
+router.post('/', createFish);
+router.put('/:id', updateAFish);
+router.delete('/:id', deleteFish);
 
 
 module.exports = router;

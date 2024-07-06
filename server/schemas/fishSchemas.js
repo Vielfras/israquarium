@@ -2,16 +2,12 @@
 
 const Joi = require('joi');
 
+const {imageSchema } = require('./commonSchemas')
 
 const validationOptions = {
   stripUnknown: true,
   abortEarly: false,
 };
-
-const imageSchema = Joi.object({
-  src: Joi.string().required(),
-  alt: Joi.string().required(),
-});
 
 const fishSchema = Joi.object({
   name: Joi.string().required(),
