@@ -32,11 +32,11 @@ const fishIndex = [
     {
         _id: new mongoose.Types.ObjectId(),
         hebrew: "ברבוסים",
-        english: "Barbs",
+        english: "Barbus",
         russian: "Барбусы",
         image: {
-            src: 'Barbs.jpg',
-            alt: 'Barbs',
+            src: 'Barbus.jpg',
+            alt: 'Barbus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
         },
