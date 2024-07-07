@@ -3,6 +3,9 @@
 export interface IFishImage {
   src: string;
   alt: string;
+  creatorName: string;
+  originalSource: string;
+  _id: string;
 }
 
 export interface IFish {
@@ -34,4 +37,14 @@ export interface IFish {
   breeding: string;
   additionalInformation: string;
   sources: string;
+}
+
+export interface IFishIndex {
+  _id: string;
+  hebrew: string;
+  english: string;
+  russian: string;
+  image: IFishImage;
+  fishes: IFish[];
+  __v: number;
 }
