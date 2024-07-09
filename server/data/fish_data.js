@@ -55,6 +55,8 @@ const fish = [
         breeding: 'Breeding in captivity is possible.',
         additionalInformation: 'Albino specimens of this species are known.',
         sources: 'FishBase, PlanetCatfish',
+
+        fishIndices: [new mongoose.Types.ObjectId('668acc05985732c151744bf4')]
     }
 ];
 

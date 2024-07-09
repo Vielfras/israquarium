@@ -4,7 +4,20 @@ const mongoose = require('mongoose');
 
 const fishIndex = [
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf4'),
+        hebrew: "שרייניים",
+        english: "Loricariidae",
+        russian: "лорика́риевые",
+        image: {
+            src: 'Loricariidae.jpg',
+            alt: 'Loricariidae',
+            creatorName: 'John Doe',
+            originalSource: 'http://example.com/image1',
+        },
+        fishes: [new mongoose.Types.ObjectId('60d5ec49f1b2f9a7d1234561')]
+    },
+    {
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf5'),
         hebrew: "קורידורוסים",
         english: "Corydoras",
         russian: "Коридорасы",
@@ -17,7 +30,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf6'),
         hebrew: "אפיסטוגרמה",
         english: "Apistogramma",
         russian: "Апистограмма",
@@ -30,7 +43,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf7'),
         hebrew: "ברבוסים",
         english: "Barbus",
         russian: "Барбусы",
@@ -43,7 +56,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf8'),
         hebrew: "דגי קשת",
         english: "Rainbowfish",
         russian: "Радужные рыбы",
@@ -56,7 +69,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bf9'),
         hebrew: "אפרונונים",
         english: "Nannostomus",
         russian: "Нанностомус",
@@ -69,7 +82,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bfa'),
         hebrew: "בוטיות",
         english: "Botia",
         russian: "Боции",
@@ -82,7 +95,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bfb'),
         hebrew: "דגי קרב",
         english: "Betta",
         russian: "Бетта",   image: {
@@ -94,7 +107,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bfc'),
         hebrew: "גרזנים",
         english: "Gasteropelecus",
         russian: "Гастропелекус",
@@ -107,7 +120,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bfd'),
         hebrew: "למפרולוגוסים",
         english: "Lamprologus",
         russian: "Лампрологусы",
@@ -120,7 +133,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bfe'),
         hebrew: "פיקוקים",
         english: "Aulonocara",
         russian: "Аулонокара",
@@ -133,7 +146,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744bff'),
         hebrew: "ג'ולידוכרומיס",
         english: "Julidochromis",
         russian: "Жюлидохромис",   image: {
@@ -145,7 +158,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744c00'),
         hebrew: "אוטוסינקלוס",
         english: "Otocinclus",
         russian: "Отоцинклюс",
@@ -158,7 +171,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744c01'),
         hebrew: "טרופיאוס",
         english: "Tropheus",
         russian: "Трофеус",
@@ -171,7 +184,7 @@ const fishIndex = [
         fishes: []
     },
     {
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId('668acc05985732c151744c02'),
         hebrew: "דיקרוסיס",
         english: "Dicrossus",
         russian: "Дикроссус",

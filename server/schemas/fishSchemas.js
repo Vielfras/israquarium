@@ -10,7 +10,7 @@ const validationOptions = {
 };
 
 const fishSchema = Joi.object({
-  name: Joi.string().required(),
+  name: Joi.string().lowercase().required(),
   latinName: Joi.string().required(),
   synonyms: Joi.string().optional(),
   etymology: Joi.string().optional(),
@@ -43,6 +43,7 @@ const fishSchema = Joi.object({
   additionalInformation: Joi.string().optional(),
   sources: Joi.string().optional(),
   directProfileLink: Joi.string().optional(),
+  fishIndices: Joi.array().items(Joi.string().hex().length(24)).min(1).required(),
 }).options(validationOptions);
 
 const updateFishSchema = Joi.object({
@@ -79,6 +80,7 @@ const updateFishSchema = Joi.object({
   additionalInformation: Joi.string().optional(),
   sources: Joi.string().optional(),
   directProfileLink: Joi.string().optional(),
+  fishIndices: Joi.array().items(Joi.string().hex().length(24)).min(1).optional(),
 }).options(validationOptions).min(1).messages({
   'object.min': "The request's body must include at least one valid key",
 });

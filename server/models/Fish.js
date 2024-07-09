@@ -43,6 +43,8 @@ const fishSchema = new mongoose.Schema(
 
     additionalInformation: { type: String },
     sources: { type: String },
+
+    fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }]
   }, {
   timestamps: true,
 });

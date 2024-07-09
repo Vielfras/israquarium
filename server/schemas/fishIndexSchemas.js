@@ -9,7 +9,6 @@ const fishIndexSchema = Joi.object({
     english: Joi.string().required(),
     russian: Joi.string().required(),
     image: imageSchema.optional(),
-    fishes: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)),
 });
 
 
