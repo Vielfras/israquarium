@@ -8,31 +8,34 @@ interface IFishCard {
 }
 
 export default function FishCard({ fishData }: IFishCard) {
+  const language = 'he';
+  const langData = fishData.languages[language];
+
   const details = [
-    { label: 'Subclass', value: fishData.subclass },
-    { label: 'Order', value: fishData.order },
-    { label: 'Family', value: fishData.family },
-    { label: 'Subfamily', value: fishData.subfamily },
+    { label: 'Subclass', value: langData.subclass },
+    { label: 'Order', value: langData.order },
+    { label: 'Family', value: langData.family },
+    { label: 'Subfamily', value: langData.subfamily },
     { label: 'Tribe', value: fishData.tribe },
     { label: 'Latin Name', value: fishData.latinName },
     { label: 'First Description', value: fishData.firstDescription },
-    { label: 'Synonyms', value: fishData.synonyms },
-    { label: 'Etymology', value: fishData.etymology },
-    { label: 'Distribution', value: fishData.distribution },
+    { label: 'Synonyms', value: langData.synonyms },
+    { label: 'Etymology', value: langData.etymology },
+    { label: 'Distribution', value: langData.distribution },
     { label: 'Fish Size', value: fishData.fishSize },
     { label: 'Tank Volume', value: fishData.tankVolume },
     { label: 'Max Temp', value: `${fishData.maxTemp}°C` },
     { label: 'Min Temp', value: `${fishData.minTemp}°C` },
     { label: 'PH', value: fishData.ph.toString() },
     { label: 'dGH', value: fishData.dGH.toString() },
-    { label: 'Additional Requirements', value: fishData.additionalRequirements },
-    { label: 'Aquarium Setup', value: fishData.aquariumSetup },
-    { label: 'Intraspecies Compatibility', value: fishData.intraspeciesCompatibility },
-    { label: 'Interspecies Compatibility', value: fishData.interspeciesCompatibility },
-    { label: 'Feeding', value: fishData.feeding },
-    { label: 'Sexual Dimorphism', value: fishData.sexualDimorphism },
-    { label: 'Breeding', value: fishData.breeding },
-    { label: 'Additional Information', value: fishData.additionalInformation },
+    { label: 'Additional Requirements', value: langData.additionalRequirements },
+    { label: 'Aquarium Setup', value: langData.aquariumSetup },
+    { label: 'Intraspecies Compatibility', value: langData.intraspeciesCompatibility },
+    { label: 'Interspecies Compatibility', value: langData.interspeciesCompatibility },
+    { label: 'Feeding', value: langData.feeding },
+    { label: 'Sexual Dimorphism', value: langData.sexualDimorphism },
+    { label: 'Breeding', value: langData.breeding },
+    { label: 'Additional Information', value: langData.additionalInformation },
     { label: 'Sources', value: fishData.sources },
   ];
 

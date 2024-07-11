@@ -8,26 +8,14 @@ export interface IFishImage {
   _id: string;
 }
 
-export interface IFish {
-  _id: string;
-  name: string;
-  latinName: string;
-  synonyms: string;
-  etymology: string;
-  firstDescription: string;
-  images: IFishImage[];
+export interface ILanguage {
   subclass: string;
   order: string;
   family: string;
   subfamily: string;
-  tribe: string;
+  synonyms: string;
+  etymology: string;
   distribution: string;
-  fishSize: string;
-  tankVolume: string;
-  maxTemp: number;
-  minTemp: number;
-  ph: number;
-  dGH: number;
   additionalRequirements: string;
   aquariumSetup: string;
   intraspeciesCompatibility: string;
@@ -36,7 +24,27 @@ export interface IFish {
   sexualDimorphism: string;
   breeding: string;
   additionalInformation: string;
+}
+
+export interface IFish {
+  _id: string;
+  name: string;
+  latinName: string;
+  firstDescription: string;
   sources: string;
+  tankVolume: string;
+  fishSize: string;
+  images: IFishImage[];
+  tribe: string;
+  maxTemp: number;
+  minTemp: number;
+  ph: number;
+  dGH: number;
+  languages: {
+    en: ILanguage;
+    he: ILanguage;
+    ru: ILanguage;
+  };
 }
 
 export interface IFishIndex {

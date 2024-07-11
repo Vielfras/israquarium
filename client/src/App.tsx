@@ -53,6 +53,7 @@ function App() {
         }
 
         const data = await response.json();
+        console.log(data.data);
         setFishData(data.data);
         setLoading(false);
       } catch (err) {

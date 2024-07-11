@@ -3,53 +3,47 @@
 const mongoose = require('mongoose');
 const { imageSchema } = require('./common');
 
+const languageSchema = new mongoose.Schema({
+  subclass: String,
+  order: String,
+  family: String,
+  subfamily: String,
+  synonyms: String,
+  etymology: String,
+  distribution: String,
+  additionalRequirements: String,
+  aquariumSetup: String,
+  intraspeciesCompatibility: String,
+  interspeciesCompatibility: String,
+  feeding: String,
+  sexualDimorphism: String,
+  breeding: String,
+  additionalInformation: String,
+});
 
-const fishSchema = new mongoose.Schema(
-  {
-    // TODO - This need to be unique with no care for Lower/Upper case. A
-    //        ex. canthicus adonis == Acanthicus Adonis
-    name: { type: String, required: true, unique: true },
-    latinName: { type: String },
-    synonyms: { type: String },
-    etymology: { type: String },
-    firstDescription: { type: String },
-
-    images: [imageSchema],
-
-    subclass: { type: String },
-    order: { type: String },
-    family: { type: String },
-    subfamily: { type: String },
-    tribe: { type: String },
-
-    distribution: { type: String },
-
-    fishSize: { type: String },
-    tankVolume: { type: String },
-
-    maxTemp: { type: Number },
-    minTemp: { type: Number },
-
-    ph: { type: Number },
-    dGH: { type: Number },
-
-    additionalRequirements: { type: String },
-    aquariumSetup: { type: String },
-    intraspeciesCompatibility: { type: String },
-    interspeciesCompatibility: { type: String },
-    feeding: { type: String },
-    sexualDimorphism: { type: String },
-    breeding: { type: String },
-
-    additionalInformation: { type: String },
-    sources: { type: String },
-
-    fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }]
-  }, {
+const fishSchema = new mongoose.Schema({
+  name: { type: String, required: true, unique: true },
+  latinName: { type: String },
+  images: [imageSchema],
+  tribe: { type: String },
+  firstDescription: { type: String },
+  sources: { type: String },
+  tankVolume: { type: String },
+  fishSize: { type: String },
+  maxTemp: { type: Number },
+  minTemp: { type: Number },
+  ph: { type: Number },
+  dGH: { type: Number },
+  languages: {
+    en: languageSchema,
+    he: languageSchema,
+    ru: languageSchema,
+  },
+  fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }]
+}, {
   timestamps: true,
 });
 
 const Fish = mongoose.model('Fish', fishSchema);
-
 
 module.exports = Fish;

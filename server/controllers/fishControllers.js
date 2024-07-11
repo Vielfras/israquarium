@@ -28,13 +28,27 @@ const getRandomFish = async (req, res) => {
 const getFishById = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(req.query);
+    const { lang } = req.query;
 
-    const fish = await Fish.findById(id);
+    const allowedLanguages = ['en', 'he', 'ru'];
+    if (!allowedLanguages.includes(lang)) {
+      return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
+    }
+
+    const projection = { 'languages': {} };
+    allowedLanguages.forEach(language => {
+      if (language !== lang) {
+        projection[`languages.${language}`] = 0;
+      }
+    });
+
+    const fish = await Fish.findById(id, projection);
     if (fish) {
       return res.status(200).json({ success: true, data: fish });
     }
 
-    return res.status(404).json({ success: false, message: `Fish id '${id}' not found.`, });
+    return res.status(404).json({ success: false, message: `Fish id '${id}' not found.` });
   } catch (err) {
     return res.status(400).json({ success: false, message: err.message });
   }

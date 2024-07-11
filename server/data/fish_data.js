@@ -1,51 +1,54 @@
 const mongoose = require('mongoose');
 
 const fish = [
-    {
-        _id: new mongoose.Types.ObjectId('60d5ec49f1b2f9a7d1234561'),
-        name: 'Acanthicus adonis',
-        images: [
-            { 
-                src: 'Acanthicus_adonis.jpg', 
-                alt: 'Acanthicus adonis 1',
-                creatorName: 'John Doe',
-                originalSource: 'http://example.com/image1',
-            },
-            { 
-                src: 'Acanthicus_adonis1.jpg', 
-                alt: 'Acanthicus adonis 2',
-                creatorName: 'Jane Doe',
-                originalSource: 'http://example.com/image2',
-            },
-            { 
-                src: 'Acanthicus_adonis2.jpg', 
-                alt: 'Acanthicus adonis 3',
-                creatorName: 'John Doe',
-                originalSource: 'http://example.com/image3',
-            },
-            { 
-                src: 'Acanthicus_adonis4.jpg', 
-                alt: 'Acanthicus adonis 4',
-                creatorName: 'John Doe',
-                originalSource: 'http://example.com/image4',
-            },
-        ],
+  {
+    _id: new mongoose.Types.ObjectId('60d5ec49f1b2f9a7d1234561'),
+    name: 'Acanthicus adonis',
+    images: [
+      { 
+        src: 'Acanthicus_adonis.jpg', 
+        alt: 'Acanthicus adonis 1',
+        creatorName: 'John Doe',
+        originalSource: 'http://example.com/image1',
+      },
+      { 
+        src: 'Acanthicus_adonis1.jpg', 
+        alt: 'Acanthicus adonis 2',
+        creatorName: 'Jane Doe',
+        originalSource: 'http://example.com/image2',
+      },
+      { 
+        src: 'Acanthicus_adonis2.jpg', 
+        alt: 'Acanthicus adonis 3',
+        creatorName: 'John Doe',
+        originalSource: 'http://example.com/image3',
+      },
+      { 
+        src: 'Acanthicus_adonis4.jpg', 
+        alt: 'Acanthicus adonis 4',
+        creatorName: 'John Doe',
+        originalSource: 'http://example.com/image4',
+      },
+    ],
+    tribe: 'Ancistrini',
+    latinName: 'Acanthicus adonis Isbrucker & Nijssen, 1988',
+    firstDescription: 'Isbrucker, I. J. H. and Nijssen, H.',
+    sources: 'FishBase, PlanetCatfish',
+    tankVolume: '> 500 liters',
+    fishSize: '< 100 cm (SL)',
+    maxTemp: 30,
+    minTemp: 23,
+    ph: 7.0,
+    dGH: 10,
+    languages: {
+      en: {
         subclass: 'Ray-finned (Actinopterygii)',
         order: 'Catfish-like (Siluriformes)',
         family: 'Armored Catfish (Loricariidae)',
         subfamily: 'Hypostomines (Hypostominae)',
-        tribe: 'Ancistrini',
-        latinName: 'Acanthicus adonis Isbrucker & Nijssen, 1988',
-        firstDescription: 'Isbrucker, I. J. H. and Nijssen, H.',
         synonyms: 'Acanthicus adonis, Polka Dot Lyre Tail Pleco',
         etymology: 'Acanthicus: akantha (Greek): thorn, adonis (Greek): beautiful',
         distribution: 'Lower Amazon basin and Tocantins River (Tocantins), Brazil.',
-        fishSize: 'up to 100 cm (SL)',
-        tankVolume: 'from 500 liters',
-        maxTemp: 30, 
-        minTemp: 23, 
-        ph: 7.0,     
-        dGH: 10,     
         additionalRequirements: 'N/A',
         aquariumSetup: 'Shelters from driftwood, rocks, etc. are necessary.',
         intraspeciesCompatibility: 'Expressed aggression towards individuals of its own species from a young age.',
@@ -54,10 +57,44 @@ const fish = [
         sexualDimorphism: 'Both males and females of this species have well-developed odontodes all over the body, but males have them more developed.',
         breeding: 'Breeding in captivity is possible.',
         additionalInformation: 'Albino specimens of this species are known.',
-        sources: 'FishBase, PlanetCatfish',
-
-        fishIndices: [new mongoose.Types.ObjectId('668acc05985732c151744bf4')]
-    }
+      },
+      he: {
+        subclass: 'סנפיר-קרניים (Actinopterygii)',
+        order: 'דמויי שפמנונים (Siluriformes)',
+        family: 'שפמנוני שריון (Loricariidae)',
+        subfamily: 'היפוסטומיים (Hypostominae)',
+        synonyms: 'אנטיקוס אדוניס, פולקה דוט לירה טאל פלקו',
+        etymology: 'אנטיקוס: אקנתה (יוונית): קוץ, אדוניס (יוונית): יפה',
+        distribution: 'אזור אגן האמזונס התחתון ונהר טוקנטינס (טוקנטינס), ברזיל.',
+        additionalRequirements: 'לא זמין',
+        aquariumSetup: 'נדרשים מקלטים מעץ סחף, סלעים וכו.',
+        intraspeciesCompatibility: 'תוקפנות מובהקת כלפי פרטים ממין משלו מגיל צעיר.',
+        interspeciesCompatibility: 'תוקפני כלפי פלקואים גדולים אחרים.',
+        feeding: 'אוכל כל. אוכל תולעים קפואות, בשר שרימפס, רכיכות, דגים, מזון יבש, ירקות.',
+        sexualDimorphism: 'לזכרים ולנקבות של מין זה יש אודונטודות מפותחות היטב בכל הגוף, אך לזכרים הן מפותחות יותר.',
+        breeding: 'אפשרות רבייה בשבי קיימת.',
+        additionalInformation: 'ידוע על דגימות אלבינו של מין זה.',
+      },
+      ru: {
+        subclass: 'Лучеперые (Actinopterygii)',
+        order: 'Сомообразные (Siluriformes)',
+        family: 'Кольчужные, или Лорикариевые сомы (Loricariidae)',
+        subfamily: 'Гипостомины (Hypostominae)',
+        synonyms: 'Акантикус адонис, Плёко Лира Полка Точка',
+        etymology: 'Акантикус: аканта (греч): шип, адонис (греч): красивый',
+        distribution: 'Нижний бассейн Амазонки и река Токантинс (Токантинс), Бразилия.',
+        additionalRequirements: 'н/д',
+        aquariumSetup: 'Необходимы укрытия из коряг, камней и т.д.',
+        intraspeciesCompatibility: 'Проявляет агрессию по отношению к представителям своего вида с раннего возраста.',
+        interspeciesCompatibility: 'Агрессивен по отношению к другим крупным плекосам.',
+        feeding: 'Всеяден. Ест замороженных червей, мясо креветок, моллюсков, рыбу, сухой корм, овощи.',
+        sexualDimorphism: 'У самцов и самок этого вида хорошо развиты одонтоды по всему телу, но у самцов они развиты лучше.',
+        breeding: 'Разведение в неволе возможно.',
+        additionalInformation: 'Известны альбиносы этого вида.',
+      },
+    },
+    fishIndices: [new mongoose.Types.ObjectId('668acc05985732c151744bf4')]
+  }
 ];
 
 module.exports = { fish };
