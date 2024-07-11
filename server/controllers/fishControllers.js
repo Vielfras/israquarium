@@ -28,15 +28,14 @@ const getRandomFish = async (req, res) => {
 const getFishById = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req.query);
-    const { lang } = req.query;
+    const { lang } = req.body;
 
     const allowedLanguages = ['en', 'he', 'ru'];
     if (!allowedLanguages.includes(lang)) {
       return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
     }
 
-    const projection = { 'languages': {} };
+    const projection = {};
     allowedLanguages.forEach(language => {
       if (language !== lang) {
         projection[`languages.${language}`] = 0;
