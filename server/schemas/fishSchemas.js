@@ -28,8 +28,8 @@ const languageSchema = Joi.object({
   additionalInformation: Joi.string().optional(),
 });
 
+// TODO - Make everything but the name and fishIndices optional?
 const fishSchema = Joi.object({
-  _id: Joi.string().pattern(/^[0-9a-fA-F]{24}$/).required(),
   name: Joi.string().required(),
   latinName: Joi.string().required(),
   images: Joi.array().items(imageSchema).required(),
