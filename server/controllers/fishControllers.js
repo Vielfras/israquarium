@@ -111,7 +111,7 @@ const createFish = async (req, res) => {
       return res.status(404).json({ success: false, message: `Fish index with id '${indexId}' not found.` });
     }
 
-    const { error, value } = schemas.createFish.validate(req.body);
+    const { error, value } = schemas.fishSchema.validate(req.body);
     if (error) {
       return res.status(400).json({ success: false, message: error.details.map(d => d.message).join(', ') });
     }
@@ -149,7 +149,7 @@ const deleteFish = async (req, res) => {
 const updateAFish = async (req, res) => {
   try {
     // TODO - Remove fields that aren't allowed to be updated, like _id, __v, createdAt, updatedAt, etc... 
-    const { error, value } = schemas.updateFish.validate(req.body);
+    const { error, value } = schemas.updateFishSchema.validate(req.body);
     if (error) {
       return res.status(400).json(Err.multipleErrToString(error));
     }
