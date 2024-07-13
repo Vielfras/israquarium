@@ -18,4 +18,6 @@ const fishIndexSchema = Joi.object({
 }).options(validationOptions);
 
 
-module.exports = { fishIndexSchema, };
+module.exports = { 
+    fishIndexSchema, 
+};

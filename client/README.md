@@ -1,7 +1,35 @@
 # Israquarium
 
 
+
+## Version 0.2.0
+- [ ] NavBar
+- [ ] SearchBar
+- [ ] Footer
+- [ ] Contexts / Hooks
+    - [ ] Dark / Light Mode
+    - [ ] Langeuge 
+        - [ ] Ltr / Rtl
+        - [ ] Eng / Russian / Heb
+- [ ] Pages Scaffolding:
+    - [ ] About
+    - [ ] Landing 
+    - [ ] Registration
+    - [ ] Login
+    - [ ] Admin 
+    - [ ] User
+    - [ ] Logout
+    - [ ] Articles
+    - [ ] Shops 
+    - [ ] Plants
+    - [ ] Fish Indecies
+    - [ ] Shop Card
+    - [ ] Fish Card
+    - [ ] Edit Fish 
+    - [ ] Edit Shop
+    - [ ] MyTropicalFish
+
 ## Version 0.1.0
-- [ ] Add Tailwind
-- [ ] Create a Fish Display Component
-- [ ] Fetch data to display from server.
+- [X] Add Tailwind
+- [X] Create a Fish Display Component
+- [X] Fetch data to display from server.
