@@ -137,6 +137,8 @@ const deleteFish = async (req, res) => {
       return res.status(200).json({ success: true, message: `Fish id '${id}' deleted successfully.` });
     }
 
+    // TODO - removed the fish id from its fishIndex
+    
     return res.status(404).json({
       success: false,
       message: `Fish id '${id}' not found.`

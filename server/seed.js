@@ -17,9 +17,11 @@ const chalk = require('chalk');
 const connectDB = require('./config/db');
 const { users } = require('./data/user_data');
 const { fish } = require('./data/fish_data');
+const { plants } = require('./data/plant_data');
 const { fishIndex } = require('./data/fish_index_data');
 
 const User = require('./models/User');
+const Plant = require('./models/Plant');
 const Fish = require('./models/Fish');
 const FishIndex = require('./models/FishIndex');
 
@@ -36,6 +38,11 @@ const seedFishIndex = async () => {
   console.log(chalk.blue(`\t- Inserted ${insertedFishIndex.length} indexes.`));
 };
 
+const seedPlants = async () => {
+  const insertedPlants = await Plant.insertMany(plants);
+  console.log(chalk.blue(`\t- Inserted ${insertedPlants.length} plants.`));
+};
+
 const seedUsers = async () => {
   const insertedUsers = await User.insertMany(users);
   console.log(chalk.blue(`\t- Inserted ${insertedUsers.length} users.`));
@@ -44,6 +51,7 @@ const seedUsers = async () => {
 const clearDatabase = async () => {
   await FishIndex.deleteMany();
   await Fish.deleteMany();
+  await Plant.deleteMany();
   await User.deleteMany();
 };
 
@@ -53,6 +61,7 @@ const seedAll = async () => {
     await Benchmark(clearDatabase, chalk.bold.yellow('\nClearing the database:'), "Reset");
     await Benchmark(seedFishIndex, chalk.bold.yellow('\nSeeding Fish Index:'));
     await Benchmark(seedFish, chalk.bold.yellow('\nSeeding Fish:'));
+    await Benchmark(seedPlants, chalk.bold.yellow('\nSeeding Plants:'));
     await Benchmark(seedUsers, chalk.bold.yellow('\nSeeding Users:'));
 
     console.log(chalk.bold.underline.green('\nSeeding completed successfully\n'));
