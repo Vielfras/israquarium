@@ -87,22 +87,6 @@ const getPlantImage = async (req, res) => {
   }
 };
 
-// const createPlant = async (req, res) => {
-//   try {
-//     const { error, value } = schemas.createPlant.validate(req.body);
-//     if (error) {
-//       return res.status(400).json(Err.multipleErrToString(error));
-//     }
-
-//     const newPlant = new Plant(value);
-//     await newPlant.save();
-
-//     return res.status(201).json({ success: true, data: newPlant });
-//   } catch (err) {
-//     return res.status(400).json({ success: false, message: err.message });
-//   }
-// };
-
 const createPlant = async (req, res) => {
   try {
     const { error, value } = schemas.plantSchema.validate(req.body);
