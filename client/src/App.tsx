@@ -1,28 +1,31 @@
-import './App.css';
+// App.tsx
+
 import { useEffect, useState } from 'react';
+import './App.css';
 import FishCard from './components/Fish/FishCard/FishCard';
+import PlantCard from './components/Plant/PlantCard/PlantCard';
 import { DirectionProvider, useDirection } from './context/ReadingDirectionContext';
 import { IFish, IFishIndex } from './interfaces/IFish';
+import { IPlant } from './interfaces/IPlant';
 import FishIndex from './components/Fish/FishIndex/FishIndex';
 
 function DirectionToggle() {
   const { toggleDirection } = useDirection();
   return (
-    <button
-      onClick={toggleDirection}
-      className="px-4 py-2 bg-blue-500 text-white rounded"
-    >
+    <button onClick={toggleDirection} className="px-4 py-2 bg-blue-500 text-white rounded">
       Toggle Direction
     </button>
   );
 }
 
-const apiFishCall: string = 'http://127.0.0.1:3000/api/fish';
-const apiFishIndexCall: string = 'http://127.0.0.1:3000/api/fishIndex';
+const apiFishCall = 'http://127.0.0.1:3000/api/fish';
+const apiFishIndexCall = 'http://127.0.0.1:3000/api/fishIndex';
+const apiPlantCall = 'http://127.0.0.1:3000/api/plant';
 
 function App() {
   const [fishData, setFishData] = useState<IFish | null>(null);
   const [fishIndexData, setFishIndexData] = useState<IFishIndex[] | null>(null);
+  const [plantData, setPlantData] = useState<IPlant | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -31,9 +34,8 @@ function App() {
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
-          throw new Error('Failed to fetch fish data');
+          throw new Error('Failed to fetch fish index data');
         }
-
         const data = await response.json();
         setFishIndexData(data.data);
         setLoading(false);
@@ -44,17 +46,30 @@ function App() {
       }
     };
 
-
     const fetchFishData = async () => {
       try {
         const response = await fetch(apiFishCall);
         if (!response.ok) {
           throw new Error('Failed to fetch fish data');
         }
-
         const data = await response.json();
-        console.log(data.data);
         setFishData(data.data);
+        setLoading(false);
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+        setError(errorMessage);
+        setLoading(false);
+      }
+    };
+
+    const fetchPlantData = async () => {
+      try {
+        const response = await fetch(apiPlantCall);
+        if (!response.ok) {
+          throw new Error('Failed to fetch plant data');
+        }
+        const data = await response.json();
+        setPlantData(data.data);
         setLoading(false);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
@@ -65,6 +80,7 @@ function App() {
 
     fetchFishIndexData();
     fetchFishData();
+    fetchPlantData();
   }, []);
 
   if (loading) {
@@ -76,17 +92,22 @@ function App() {
   }
 
   const calculateLastRowColSpan = (totalItems: number, itemsPerRow: number) => {
-    const lastRowItemsCount = totalItems % itemsPerRow ;
+    const lastRowItemsCount = totalItems % itemsPerRow;
     return lastRowItemsCount === 0 ? itemsPerRow : lastRowItemsCount;
   };
 
   const fishIndexLength = fishIndexData ? fishIndexData.length : 0;
 
-
   return (
     <DirectionProvider>
+
+
       <div className="min-h-screen bg-blue-200 flex flex-col items-center justify-center p-6">
-        <div className="grid  place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
+        <br></br>
+        <DirectionToggle />
+        <br></br>
+
+        <div className="grid place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
           {fishIndexData && fishIndexData.map((fishIndex, index) => {
             const itemsPerRow = window.innerWidth >= 640 ? 4 : 1;
             const lastRowColSpan = calculateLastRowColSpan(fishIndexLength, itemsPerRow);
@@ -100,8 +121,12 @@ function App() {
             );
           })}
         </div>
-        <DirectionToggle />
+
+        <br></br>
+
         {fishData && <FishCard fishData={fishData} />}
+        <br></br>
+        {plantData && <PlantCard plantData={plantData} />}
       </div>
     </DirectionProvider>
   );
