@@ -15,7 +15,7 @@ const chalk = require('chalk');
 
 // Mine
 const connectDB = require('./config/db');
-const { logToFile, setupDevelopmentLogging } = require('./controllers/loggingController');
+const { logToFile, setupDevelopmentLogging } = require('./controllers/loggingControllers');
 const {isValidIP, isValidPort} = require('./utils/environmentValidation');
 
 

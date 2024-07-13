@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const schemas = require("../schemas//fishIndexSchemas");
+const schemas = require("../schemas/fishIndexSchemas");
 // const User = require("../models/User");
 const FishIndex = require("../models/FishIndex");
 const Err = require("../utils/errorHandling");

@@ -2,7 +2,7 @@
 
 const router = require('express').Router();
 const { mustLogin, allowedRoles } = require('../controllers/authControllers');
-const { } = require('../controllers/plantControllers');
+const { getRandomPlant, getPlantById, getPlantImage, updateAPlant, createPlant, deletePlant } = require('../controllers/plantControllers');
 
 /*
 ============================================

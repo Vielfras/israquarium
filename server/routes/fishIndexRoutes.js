@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const { mustLogin, allowedRoles } = require('../controllers/authControllers');
     
-const { getFishIndexes, getIndexById, getFishIndexImage } = require('../controllers/fishIndexController');
+const { getFishIndexes, getIndexById, getFishIndexImage } = require('../controllers/fishIndexControllers');
 
 /*
 ============================================
