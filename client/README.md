@@ -2,6 +2,13 @@
 
 
 
+
+### Bridge:
+- [ ] Refactor Fish Cards component back into FishCard.
+    - The gial is to simplify the code for now to see exactly what is required.
+
+
+
 ## Version 0.2.0
 - [ ] NavBar
 - [ ] SearchBar
