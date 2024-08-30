@@ -5,6 +5,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 import './i18n'; 
+import i18next from 'i18next';
 
 import FishCard from './components/Fish/FishCard/FishCard';
 import PlantCard from './components/Plant/PlantCard/PlantCard';
@@ -21,6 +22,11 @@ function DirectionToggle() {
     </button>
   );
 }
+
+const changeLanguage = (lng: string) => {
+  i18next.changeLanguage(lng);
+};
+
 
 const apiFishCall = 'http://127.0.0.1:3000/api/fish';
 const apiFishIndexCall = 'http://127.0.0.1:3000/api/fishIndex';
@@ -110,6 +116,11 @@ function App() {
         <br></br>
         <DirectionToggle />
         <br></br>
+        <div className="flex flex-row gap-2 pb-3">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('he')}>Hebrew</button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('ru')}>Russian</button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('en')}>English</button>
+        </div>
 
         <div className="grid place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
           {fishIndexData && fishIndexData.map((fishIndex, index) => {
