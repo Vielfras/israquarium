@@ -1,0 +1,598 @@
+[
+    {
+        "name": "Corydoras acrensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras acutus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras adolfoi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras aeneus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras agassizii",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras albolineatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras amandajanea",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras amapaensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ambiacus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras amphibelus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras apiaka",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras approuaguensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras araguaiaensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras arcuatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras areio",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras armatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras atropersonatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras aurofrenatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras axelrodi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras baderi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras bicolor",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras bifasciatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras bilineatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras blochi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras bondi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras breei",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras brevirostris",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras burgessi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras carlae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras caudimaculatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras cervinus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras cochui",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras concolor",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras condiscipulus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras copei",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras coppenamensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras coriatae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras crimmeni",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras cruziensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras crypticus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras davidsandsi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras delphax",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras difluviatilis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras diphyes",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras duplicareus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ehrhardti",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras elegans",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ellisae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ephippifer",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras eques",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras evelynae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras filamentosus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras flaveolus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras fowleri",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras garbei",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras geoffroy",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras geryi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras gladysae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras gomezi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras gossei",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras gracilis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras griseus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras gryphus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras guapore",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras guianensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras habrosus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras haraldschultzi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras hastatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras heteromorphus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras imitator",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras incolicana",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras isbrueckeri",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras julii",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras kanei",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras lamberti",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras latus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras leopardus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras leucomelas",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras longipinnis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras loretoensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras loxozonus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras maculifer",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras mamore",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras melanistius",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras melanotaenia",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras melini",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras metae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras micracanthus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras multimaculatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras nanus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras napoensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras narcissus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras nattererii",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras negro",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras nijsseni",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras noelkempffi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras oiapoquensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ornatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras orphnopterus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras osteocarus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras ourastigma",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras oxyrhynchus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras paleatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras panda",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras pantanalensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras paragua",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras parallelus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras pastazensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras paucerna",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras petracinii",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras pinheiroi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras polystictus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras potaroensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras pulcher",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras punctatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras pygmaeus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras rabauti",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras reticulatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras reynoldsi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras robineae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras robustus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sanchesi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras saramaccensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sarareensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras schwartzi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras semiaquilus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras septentrionalis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras serratus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras seussi",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras similis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras simulatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sipaliwini",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sodalis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras solox",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras spectabilis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras steindachneri",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras stenocephalus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sterbai",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras surinamensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras sychri",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras treitlii",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras trilineatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras tukano",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras undulatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras virginiae",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras vittatus",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras weitzmani",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras xinguensis",
+        "family": "Corydoras"
+    },
+    {
+        "name": "Corydoras zygatus",
+        "family": "Corydoras"
+    }
+]

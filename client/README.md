@@ -5,7 +5,7 @@
 
 ### Bridge:
 - [ ] Refactor Fish Cards component back into FishCard.
-    - The gial is to simplify the code for now to see exactly what is required.
+    - The goal is to simplify the code for now to see exactly what is required.
 
 
 
