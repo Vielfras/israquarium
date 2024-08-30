@@ -4,9 +4,6 @@
 
 
 ### Bridge:
-- [ ] Refactor Fish Cards component back into FishCard.
-    - The goal is to simplify the code for now to see exactly what is required.
-
 
 
 ## Version 0.2.0
@@ -40,4 +37,4 @@
 - [X] Add Tailwind
 - [X] Create a Fish Display Component
 - [X] Fetch data to display from server.
-- [ ] Add INext Localisation
+- [X] Add INext Localisation

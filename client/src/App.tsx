@@ -1,32 +1,18 @@
-// App.tsx
-
 import './App.css';
-
 import { useEffect, useState } from 'react';
-
-import './i18n'; 
+import './i18n';
 import i18next from 'i18next';
 
 import FishCard from './components/Fish/FishCard/FishCard';
 import PlantCard from './components/Plant/PlantCard/PlantCard';
-import { DirectionProvider, useDirection } from './context/ReadingDirectionContext';
+import { DirectionProvider } from './context/ReadingDirectionContext';
 import { IFish, IFishIndex } from './interfaces/IFish';
 import { IPlant } from './interfaces/IPlant';
 import FishIndex from './components/Fish/FishIndex/FishIndex';
 
-function DirectionToggle() {
-  const { toggleDirection } = useDirection();
-  return (
-    <button onClick={toggleDirection} className="px-4 py-2 bg-blue-500 text-white rounded">
-      Toggle Direction
-    </button>
-  );
-}
-
 const changeLanguage = (lng: string) => {
   i18next.changeLanguage(lng);
 };
-
 
 const apiFishCall = 'http://127.0.0.1:3000/api/fish';
 const apiFishIndexCall = 'http://127.0.0.1:3000/api/fishIndex';
@@ -110,12 +96,7 @@ function App() {
 
   return (
     <DirectionProvider>
-
-
       <div className="min-h-screen bg-blue-200 flex flex-col items-center justify-center p-6">
-        <br></br>
-        <DirectionToggle />
-        <br></br>
         <div className="flex flex-row gap-2 pb-3">
           <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('he')}>Hebrew</button>
           <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('ru')}>Russian</button>
@@ -140,7 +121,9 @@ function App() {
         <br></br>
 
         {fishData && <FishCard fishData={fishData} />}
+
         <br></br>
+
         {plantData && <PlantCard plantData={plantData} />}
       </div>
     </DirectionProvider>

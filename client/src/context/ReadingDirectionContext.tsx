@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import i18next from 'i18next';
 
 interface DirectionContextProps {
   direction: 'ltr' | 'rtl';
@@ -17,6 +18,24 @@ export const useDirection = () => {
 
 export const DirectionProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [direction, setDirection] = useState<'ltr' | 'rtl'>('ltr');
+
+  useEffect(() => {
+    const handleLanguageChange = (lng: string) => {
+      if (lng === 'he') {
+        setDirection('rtl');
+      } else {
+        setDirection('ltr');
+      }
+    };
+
+    handleLanguageChange(i18next.language);
+
+    i18next.on('languageChanged', handleLanguageChange);
+
+    return () => {
+      i18next.off('languageChanged', handleLanguageChange);
+    };
+  }, []);
 
   const toggleDirection = () => {
     setDirection((prevDirection) => (prevDirection === 'ltr' ? 'rtl' : 'ltr'));
