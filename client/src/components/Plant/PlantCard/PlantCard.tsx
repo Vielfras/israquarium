@@ -1,34 +1,37 @@
-// PlantCard.tsx
-
 import "./PlantCard.css";
 import { IPlant } from "../../../interfaces/IPlant";
+import { useTranslation } from 'react-i18next';
 
 interface IPlantCard {
   plantData: IPlant;
 }
 
+type LanguageCode = 'en' | 'he' | 'ru';
+
 export default function PlantCard({ plantData }: IPlantCard) {
-  const language = 'en'; 
-  const langData = plantData.languages[language];
+  const { t, i18n } = useTranslation(); 
+
+  const language: LanguageCode = i18n.language as LanguageCode;
+  const langData = plantData.languages[language]; 
 
   const details = [
-    { label: 'Family', value: langData.family },
-    { label: 'Synonyms', value: langData.synonyms },
-    { label: 'Etymology', value: langData.etymology },
-    { label: 'Distribution', value: langData.distribution },
-    { label: 'Notes', value: langData.notes },
-    { label: 'Propagation', value: langData.propagation },
-    { label: 'Latin Name', value: plantData.latinName },
-    { label: 'First Description', value: plantData.firstDescription },
-    { label: 'Height', value: plantData.height },
-    { label: 'Width', value: plantData.width },
-    { label: 'Temperature', value: plantData.temperature },
-    { label: 'PH', value: plantData.ph },
-    { label: 'Hardness', value: plantData.hardness },
-    { label: 'Light', value: plantData.light },
-    { label: 'Growth Rate', value: plantData.growthRate },
-    { label: 'Placement', value: plantData.placement },
-    { label: 'Sources', value: plantData.sources },
+    { label: t('PlantCard.family'), value: langData.family },
+    { label: t('PlantCard.synonyms'), value: langData.synonyms },
+    { label: t('PlantCard.etymology'), value: langData.etymology },
+    { label: t('PlantCard.distribution'), value: langData.distribution },
+    { label: t('PlantCard.notes'), value: langData.notes },
+    { label: t('PlantCard.propagation'), value: langData.propagation },
+    { label: t('PlantCard.latinName'), value: plantData.latinName },
+    { label: t('PlantCard.firstDescription'), value: plantData.firstDescription },
+    { label: t('PlantCard.height'), value: plantData.height },
+    { label: t('PlantCard.width'), value: plantData.width },
+    { label: t('PlantCard.temperature'), value: plantData.temperature },
+    { label: t('PlantCard.ph'), value: plantData.ph },
+    { label: t('PlantCard.hardness'), value: plantData.hardness },
+    { label: t('PlantCard.light'), value: plantData.light },
+    { label: t('PlantCard.growthRate'), value: plantData.growthRate },
+    { label: t('PlantCard.placement'), value: plantData.placement },
+    { label: t('PlantCard.sources'), value: plantData.sources },
   ];
 
   return (

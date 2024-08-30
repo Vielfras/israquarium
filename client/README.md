@@ -40,3 +40,4 @@
 - [X] Add Tailwind
 - [X] Create a Fish Display Component
 - [X] Fetch data to display from server.
+- [ ] Add INext Localisation

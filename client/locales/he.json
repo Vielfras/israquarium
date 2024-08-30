@@ -1,0 +1,22 @@
+{
+    "PlantCard": {
+      "family": "משפחה",
+      "synonyms": "שמות נרדפים",
+      "etymology": "אטימולוגיה",
+      "distribution": "תפוצה",
+      "notes": "הערות",
+      "propagation": "ריבוי",
+      "latinName": "שם לטיני",
+      "firstDescription": "תיאור ראשון",
+      "height": "גובה",
+      "width": "רוחב",
+      "temperature": "טמפרטורה",
+      "ph": "חומציות",
+      "hardness": "קשיות",
+      "light": "אור",
+      "growthRate": "קצב גידול",
+      "placement": "מיקום",
+      "sources": "מקורות"
+    }
+  }
+  

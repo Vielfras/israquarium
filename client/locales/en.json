@@ -1,0 +1,22 @@
+{
+    "PlantCard": {
+      "family": "Family",
+      "synonyms": "Synonyms",
+      "etymology": "Etymology",
+      "distribution": "Distribution",
+      "notes": "Notes",
+      "propagation": "Propagation",
+      "latinName": "Latin Name",
+      "firstDescription": "First Description",
+      "height": "Height",
+      "width": "Width",
+      "temperature": "Temperature",
+      "ph": "PH",
+      "hardness": "Hardness",
+      "light": "Light",
+      "growthRate": "Growth Rate",
+      "placement": "Placement",
+      "sources": "Sources"
+    }
+  }
+  

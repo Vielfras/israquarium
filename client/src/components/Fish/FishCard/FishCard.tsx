@@ -8,7 +8,7 @@ interface IFishCard {
 }
 
 export default function FishCard({ fishData }: IFishCard) {
-  const language = 'he';
+  const language = 'ru';
   const langData = fishData.languages[language];
 
   const details = [

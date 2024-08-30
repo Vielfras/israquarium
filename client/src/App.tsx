@@ -1,7 +1,11 @@
 // App.tsx
 
-import { useEffect, useState } from 'react';
 import './App.css';
+
+import { useEffect, useState } from 'react';
+
+import './i18n'; 
+
 import FishCard from './components/Fish/FishCard/FishCard';
 import PlantCard from './components/Plant/PlantCard/PlantCard';
 import { DirectionProvider, useDirection } from './context/ReadingDirectionContext';

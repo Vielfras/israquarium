@@ -1,0 +1,22 @@
+{
+    "PlantCard": {
+      "family": "Семейство",
+      "synonyms": "Синонимы",
+      "etymology": "Этимология",
+      "distribution": "Распределение",
+      "notes": "Заметки",
+      "propagation": "Размножение",
+      "latinName": "Латинское название",
+      "firstDescription": "Первое описание",
+      "height": "Высота",
+      "width": "Ширина",
+      "temperature": "Температура",
+      "ph": "PH",
+      "hardness": "Жесткость",
+      "light": "Свет",
+      "growthRate": "Темп роста",
+      "placement": "Расположение",
+      "sources": "Источники"
+    }
+  }
+  
