@@ -1,6 +1,9 @@
 // ServerTest.tsx
 
 import i18next from 'i18next';
+
+import { apiBase } from '../../config'
+
 import { useEffect, useState } from 'react';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
 import { IPlant } from '../../interfaces/IPlant';
@@ -13,9 +16,9 @@ const changeLanguage = (lng: string) => {
   i18next.changeLanguage(lng);
 };
 
-const apiFishCall = 'http://127.0.0.1:3000/api/fish';
-const apiFishIndexCall = 'http://127.0.0.1:3000/api/fishIndex';
-const apiPlantCall = 'http://127.0.0.1:3000/api/plant';
+const apiFishCall = `${apiBase}/api/fish`;
+const apiFishIndexCall = `${apiBase}/api/fishIndex`;
+const apiPlantCall = `${apiBase}/api/plant`;
 
 export default function ServerTest() {
   const [fishData, setFishData] = useState<IFish | null>(null);

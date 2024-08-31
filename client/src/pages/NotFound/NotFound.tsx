@@ -1,0 +1,10 @@
+import './NotFound.scss'
+
+export default function NotFound() {
+  return (
+    <div className='NotFound Page'>
+      <h1>404</h1>
+      <p>Sorry, We could not find the page you were looking for.</p>
+    </div>
+  )
+}
