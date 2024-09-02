@@ -1,18 +1,19 @@
 import { useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
-import i18next from 'i18next';
 import { US, RU, IL } from 'country-flag-icons/react/3x2';
+import { FiChevronDown } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 export default function LanguegePicker() {
+    const { i18n } = useTranslation();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [selectedFlag, setSelectedFlag] = useState(<US title="United States" className="w-5 h-4" />);
+    const [selectedFlag, setSelectedFlag] = useState(<US className="w-5 h-5" />);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
     const changeLanguage = (lng: string, flag: JSX.Element) => {
-        i18next.changeLanguage(lng);
+        i18n.changeLanguage(lng);
         setSelectedFlag(flag);
         setIsDropdownOpen(false);
     };
@@ -22,7 +23,7 @@ export default function LanguegePicker() {
             <button
                 type="button"
                 onClick={toggleDropdown}
-                className="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
             >
                 {selectedFlag}
                 <FiChevronDown className="ml-2" />
@@ -33,43 +34,40 @@ export default function LanguegePicker() {
                 >
                     <ul className="py-2 font-medium" role="none">
                         <li>
-                            <a
-                                href="#"
-                                onClick={() => changeLanguage('en', <US title="United States" className="w-5 h-4" />)}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                            <button
+                                onClick={() => changeLanguage('en', <US className="h-3.5 w-3.5 me-2" />)}
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
                                 <div className="inline-flex items-center">
-                                    <US title="United States" className="w-5 h-4 me-2" />
-                                    English (US)
+                                    <US className="h-3.5 w-3.5 me-2" />
+                                    {i18n.t('Language.en')}
                                 </div>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                onClick={() => changeLanguage('ru', <RU title="Russia" className="w-5 h-4" />)}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                            <button
+                                onClick={() => changeLanguage('ru', <RU className="h-3.5 w-3.5 me-2" />)}
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
                                 <div className="inline-flex items-center">
-                                    <RU title="Russia" className="w-5 h-4 me-2" />
-                                    Russian
+                                    <RU className="h-3.5 w-3.5 me-2" />
+                                    {i18n.t('Language.ru')}
                                 </div>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                onClick={() => changeLanguage('he', <IL title="Israel" className="w-5 h-4" />)}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                            <button
+                                onClick={() => changeLanguage('he', <IL className="h-3.5 w-3.5 me-2" />)}
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
                                 <div className="inline-flex items-center">
-                                    <IL title="Israel" className="w-5 h-4 me-2" />
-                                    Hebrew
+                                    <IL className="h-3.5 w-3.5 me-2" />
+                                    {i18n.t('Language.he')}
                                 </div>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>

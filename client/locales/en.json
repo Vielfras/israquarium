@@ -1,4 +1,9 @@
 {
+  "Language": {
+    "en": "English (US)",
+    "ru": "Russian",
+    "he": "Hebrew"
+  },
   "FishCard": {
     "subclass": "Subclass",
     "order": "Order",
