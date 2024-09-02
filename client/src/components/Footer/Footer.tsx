@@ -1,7 +1,4 @@
 import './Footer.scss'
-import { BiSolidCircle } from 'react-icons/bi'
-import { FaFacebook, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
-
 
 export default function Footer() {
 
@@ -32,7 +29,5 @@ export default function Footer() {
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" className="hover:underline">Israquarium</a>. All Rights Reserved.</span>
       </div>
     </footer>
-
-
-  )
+  );
 }
