@@ -10,6 +10,7 @@ import Header from '../../components/Header/Header'
 // pages
 import NotFound from '../../pages/NotFound/NotFound'
 import Home from '../../pages/Home/Home'
+import NavBar from '../../components/Header/NavBar/NavBar'
 // import About from '../../pages/About/About'
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -28,9 +29,9 @@ import Home from '../../pages/Home/Home'
 export default function Default() {
   return (
     <div className='Default'>
-      <p>Hello world</p>
+      {/* <Header/> */}
+      <NavBar/>
 
-      <Header/>
 
       <Routes>
         <Route path='/' element={<Home/>}/>
