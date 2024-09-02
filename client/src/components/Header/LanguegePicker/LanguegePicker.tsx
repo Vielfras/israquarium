@@ -6,26 +6,37 @@ import { useTranslation } from 'react-i18next';
 export default function LanguegePicker() {
     const { i18n } = useTranslation();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [selectedFlag, setSelectedFlag] = useState(<US className="w-5 h-5" />);
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-    const toggleDropdown = () => {
+    const ToggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
-    const changeLanguage = (lng: string, flag: JSX.Element) => {
+    const ChangeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
-        setSelectedFlag(flag);
+        setSelectedLanguage(lng);
         setIsDropdownOpen(false);
+    };
+
+    const RenderFlag = (language: string) => {
+        switch (language) {
+            case 'ru':
+                return <RU className="w-5 h-5" />;
+            case 'he':
+                return <IL className="w-5 h-5" />;
+            default:
+                return <US className="w-5 h-5" />;
+        }
     };
 
     return (
         <div className="relative">
             <button
                 type="button"
-                onClick={toggleDropdown}
+                onClick={ToggleDropdown}
                 className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
             >
-                {selectedFlag}
+                {RenderFlag(selectedLanguage)}
                 <FiChevronDown className="ml-2" />
             </button>
             {isDropdownOpen && (
@@ -35,7 +46,7 @@ export default function LanguegePicker() {
                     <ul className="py-2 font-medium" role="none">
                         <li>
                             <button
-                                onClick={() => changeLanguage('en', <US className="h-3.5 w-3.5 me-2" />)}
+                                onClick={() => ChangeLanguage('en')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
@@ -47,7 +58,7 @@ export default function LanguegePicker() {
                         </li>
                         <li>
                             <button
-                                onClick={() => changeLanguage('ru', <RU className="h-3.5 w-3.5 me-2" />)}
+                                onClick={() => ChangeLanguage('ru')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
@@ -59,7 +70,7 @@ export default function LanguegePicker() {
                         </li>
                         <li>
                             <button
-                                onClick={() => changeLanguage('he', <IL className="h-3.5 w-3.5 me-2" />)}
+                                onClick={() => ChangeLanguage('he')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
