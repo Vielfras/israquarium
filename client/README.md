@@ -6,15 +6,15 @@
 ### Bridge:
 
 
-## Version 0.2.0
-- [ ] NavBar
+## Version 0.2.0 - Visuals
+- [X] NavBar
 - [ ] SearchBar
-- [ ] Footer
+- [X] Footer
 - [ ] Contexts / Hooks
     - [ ] Dark / Light Mode
-    - [ ] Langeuge 
-        - [ ] Ltr / Rtl
-        - [ ] Eng / Russian / Heb
+    - [X] Langeuge 
+        - [X] Ltr / Rtl
+        - [X] Eng / Russian / Heb
 - [ ] Pages Scaffolding:
     - [ ] About
     - [ ] Landing 
@@ -32,6 +32,14 @@
     - [ ] Edit Fish 
     - [ ] Edit Shop
     - [ ] MyTropicalFish
+
+
+### Version 0.3.0 - Functionality
+
+### Version 0.4.0 - Polish
+- [ ] Pressing outside of dropdown menus should close the dropdown menu.
+
+--- 
 
 ## Version 0.1.0
 - [X] Add Tailwind

@@ -3,6 +3,7 @@ import './NavBar.scss';
 import LanguegePicker from '../LanguegePicker/LanguegePicker';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
+import UserMenu from '../UserMenu/UserMenu';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function NavBar() {
                     </span>
                 </a>
                 <div className="flex items-center md:hidden">
-                    <LanguegePicker />
+                    <UserMenu />
                     <button
                         onClick={toggleMenu}
                         className="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -52,11 +53,15 @@ export default function NavBar() {
                         <li>
                             <a href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                         </li>
+                        <li className="block md:hidden">
+                            <LanguegePicker />
+                        </li>
                     </ul>
                 </div>
                 {/* Language picker moved to the end on larger screens */}
                 <div className="hidden md:flex md:order-2 space-x-1">
                     <LanguegePicker />
+                    <UserMenu />
                 </div>
             </div>
         </nav>
