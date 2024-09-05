@@ -40,7 +40,7 @@ export default function FishCard({ fishData }: IFishCard) {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto bg-blue-50 p-6 rounded-lg shadow-lg">
+    <div className="max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-center text-blue-900 mb-4">{fishData.name}</h1>
       
       {/* Image Section */}
@@ -59,17 +59,15 @@ export default function FishCard({ fishData }: IFishCard) {
       </div>
       
       {/* Details Table Section */}
-      <table className="w-full mt-6 table-auto border-collapse border border-blue-300 rounded-lg shadow-md bg-white">
+      <table className="w-full mt-6 table-auto border-collapse">
         <thead>
           <tr className="bg-blue-200 text-blue-900">
-            <th className="px-4 py-2">{t('FishCard.label')}</th>
-            <th className="px-4 py-2">{t('FishCard.value')}</th>
           </tr>
         </thead>
         <tbody>
           {details.map((detail, index) => (
-            <tr key={index} className={`${index % 2 === 0 ? 'bg-blue-50' : 'bg-blue-100'} border-t border-blue-300`}>
-              <td className="px-4 py-2 font-semibold text-blue-900 border-r border-blue-300">{detail.label}</td>
+            <tr key={index} className={`${index % 2 !== 0 ? 'bg-blue-50' : 'bg-blue-100'}`}>
+              <td className="px-4 py-2 font-semibold text-blue-900 ">{detail.label}</td>
               <td className="px-4 py-2 text-stone-800">{detail.value}</td>
             </tr>
           ))}

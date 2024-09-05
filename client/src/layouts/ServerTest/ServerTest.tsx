@@ -98,7 +98,7 @@ export default function ServerTest() {
 
   return (
     <DirectionProvider>
-      <div className="min-h-screen bg-blue-200 flex flex-col items-center justify-center p-6">
+      <div className="min-h-screen bg-blue-200 dark:bg-cyan-950 flex flex-col items-center justify-center p-6">
         <div className="flex flex-row gap-2 pb-3">
           <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('he')}>Hebrew</button>
           <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => changeLanguage('ru')}>Russian</button>

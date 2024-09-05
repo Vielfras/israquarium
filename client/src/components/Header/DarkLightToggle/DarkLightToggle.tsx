@@ -24,7 +24,7 @@ export default function DarkLightToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-gray-200  dark:hover:text-gray-800 focus:outline-none"
+      className="p-2 rounded-full text-gray-800 dark:text-neutral-200 hover:text-neutral-200 hover:bg-gray-900 dark:hover:bg-gray-200  dark:hover:text-gray-800 focus:outline-none"
     >
       {isDarkMode ? (
         // Moon icon for dark mode
