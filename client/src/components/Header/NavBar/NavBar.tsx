@@ -4,6 +4,7 @@ import LanguegePicker from '../LanguegePicker/LanguegePicker';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
 import UserMenu from '../UserMenu/UserMenu';
+import DarkLightToggle from '../DarkLightToggle/DarkLightToggle';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +23,8 @@ export default function NavBar() {
                     </span>
                 </a>
                 <div className="flex items-center md:hidden">
+                    <DarkLightToggle />
+
                     <UserMenu />
                     <button
                         onClick={toggleMenu}
@@ -60,6 +63,7 @@ export default function NavBar() {
                 </div>
                 {/* Language picker moved to the end on larger screens */}
                 <div className="hidden md:flex md:order-2 space-x-1">
+                    <DarkLightToggle />
                     <LanguegePicker />
                     <UserMenu />
                 </div>
