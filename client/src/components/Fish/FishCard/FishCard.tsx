@@ -7,7 +7,7 @@ interface IFishCard {
 }
 
 export default function FishCard({ fishData }: IFishCard) {
-  const { t, i18n } = useTranslation(); 
+  const { t, i18n } = useTranslation();
 
   const langData = fishData.languages[i18n.language as keyof typeof fishData.languages];
 
@@ -42,22 +42,22 @@ export default function FishCard({ fishData }: IFishCard) {
   return (
     <div className="max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-center text-blue-900 mb-4">{fishData.name}</h1>
-      
+
       {/* Image Section */}
       <div className="grid grid-cols-2 gap-4">
         {fishData.images.map((image, index) => (
           <div key={index} className="flex justify-center">
             <a href={`http://127.0.0.1:3000/api/fish/image/${fishData._id}/${image.src}`} target="_blank" rel="noopener noreferrer">
-              <img 
-                src={`http://127.0.0.1:3000/api/fish/image/${fishData._id}/${image.src}`} 
-                alt={image.alt} 
-                className="w-full h-48 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105" 
+              <img
+                src={`http://127.0.0.1:3000/api/fish/image/${fishData._id}/${image.src}`}
+                alt={image.alt}
+                className="w-full h-48 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
               />
             </a>
           </div>
         ))}
       </div>
-      
+
       {/* Details Table Section */}
       <table className="w-full mt-6 table-auto border-collapse">
         <thead>
@@ -67,8 +67,8 @@ export default function FishCard({ fishData }: IFishCard) {
         <tbody>
           {details.map((detail, index) => (
             <tr key={index} className={`${index % 2 !== 0 ? 'bg-blue-50' : 'bg-blue-100'}`}>
-              <td className="px-4 py-2 font-semibold text-blue-900 ">{detail.label}</td>
-              <td className="px-4 py-2 text-stone-800">{detail.value}</td>
+              <td className="px-3  pr-0 py-2 font-semibold text-blue-900 ">{detail.label}</td>
+              <td className="px-2 pl-0 text-stone-800">{detail.value}</td>
             </tr>
           ))}
         </tbody>
