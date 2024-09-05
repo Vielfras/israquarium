@@ -39,6 +39,8 @@ export default function DarkLightToggle() {
     if (localStorage.getItem('theme') !== currentTheme) {
       localStorage.setItem('theme', currentTheme);
       rootElement.classList.toggle('dark', isDarkMode);
+      rootElement.classList.toggle('light', !isDarkMode);
+
     }
   }, [isDarkMode]);
 
