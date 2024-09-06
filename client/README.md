@@ -46,10 +46,13 @@
     - [ ] Fish
     - [ ] Plant
     - [ ] Shop
+- [ ] Improve the error shown when content from server is loading or inaccecible:
+    - Currently its a simple text "Error: Failed to fetch" with no CSS
 
 
 ### Version 0.4.0 - Polish
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
+
 
 --- 
 
