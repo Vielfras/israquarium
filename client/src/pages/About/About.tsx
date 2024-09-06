@@ -1,7 +1,8 @@
-import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import './About.scss';
 
 import { useTranslation } from 'react-i18next';
+import { DirectionProvider } from '../../context/ReadingDirectionContext';
+
 
 export default function About() {
   const { t } = useTranslation();
