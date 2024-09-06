@@ -72,7 +72,7 @@ export default function Fish() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-full text-center">
+    <div className="flex flex-col items-center">
 
       <div className="grid place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
         {fishIndexData && fishIndexData.map((fishIndex, index) => {
