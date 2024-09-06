@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-
+- Add all page folders and set up NotFound page
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
@@ -17,7 +17,7 @@
         - [X] Eng / Russian / Heb
 - [ ] Pages Scaffolding:
     - [ ] About
-    - [ ] Landing 
+    - [ ] Home 
     - [ ] Registration
     - [ ] Login
     - [ ] Admin 
@@ -25,7 +25,6 @@
     - [ ] Logout
     - [ ] Articles
     - [ ] Shops 
-    - [ ] Plants
     - [ ] Fish Indecies
     - [ ] Shop Card
     - [X] Fish Card
@@ -36,6 +35,7 @@
 
 
 ### Version 0.3.0 - Functionality
+- [ ] Directional Support
 - [ ] Authorization 
     - [ ] Login
     - [ ] Registration

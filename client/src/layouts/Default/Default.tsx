@@ -10,7 +10,6 @@ import Header from '../../components/Header/Header'
 // pages
 import NotFound from '../../pages/NotFound/NotFound'
 import Home from '../../pages/Home/Home'
-import NavBar from '../../components/Header/NavBar/NavBar'
 // import About from '../../pages/About/About'
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -28,14 +27,13 @@ import NavBar from '../../components/Header/NavBar/NavBar'
 
 export default function Default() {
   return (
-    <div className='Default'>
-      {/* <Header/> */}
-      <NavBar/>
+    <div className="flex flex-col min-h-screen">
+      <Header />
 
-
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        {/* 
+      <main className="flex-grow">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/* 
         <Route path='/free' element={<Free/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/search' element={<SearchResults/>}/>
@@ -51,11 +49,12 @@ export default function Default() {
         <Route path='/card-details/:cardId' element={<CardDetails/>}/>
         <Route path='/edit-card/:cardId' element={<EditCard/>}/>
         */}
-        <Route path='*' element={<NotFound/>}/> 
-      </Routes>
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </main>
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }

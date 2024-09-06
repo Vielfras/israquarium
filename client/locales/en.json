@@ -4,6 +4,15 @@
     "ru": "Russian",
     "he": "Hebrew"
   },
+  "NavBar": {
+    "openMenu": "Open main menu",
+    "home": "Home",
+    "fish": "Fish",
+    "plants": "Plants",
+    "shops": "Shops",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
   "FishCard": {
     "subclass": "Subclass",
     "order": "Order",

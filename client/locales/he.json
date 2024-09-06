@@ -4,6 +4,15 @@
     "ru": "רוסית",
     "he": "עברית"
   },
+  "NavBar": {
+    "openMenu": "פתח תפריט ראשי",
+    "home": "בית",
+    "fish": "דגים",
+    "plants": "צמחים",
+    "shops": "חנויות",
+    "articles": "מאמרים",
+    "contact": "צור קשר"
+  },
   "FishCard": {
     "subclass": "תת-מחלקה",
     "order": "סדר",
