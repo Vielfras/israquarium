@@ -33,6 +33,9 @@
     - [ ] Edit Shop
     - [ ] MyTropicalFish
 
+### Issues
+- [ ] 1st time change from light to dark theme doesn't work
+- [ ] Theme should start with browser/system default/preference
 
 ### Version 0.3.0 - Functionality
 - [ ] Directional Support

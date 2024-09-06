@@ -11,7 +11,14 @@
     "plants": "צמחים",
     "shops": "חנויות",
     "articles": "מאמרים",
-    "contact": "צור קשר"
+    "about": "עלינו"
+  },
+  "Footer": {
+    "about": "עלינו",
+    "privacyPolicy": "מדיניות פרטיות",
+    "licensing": "רישוי",
+    "contactUs": "צור קשר",
+    "rightsReserved": "כל הזכויות שמורות."
   },
   "FishCard": {
     "subclass": "תת-מחלקה",

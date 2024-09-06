@@ -11,7 +11,14 @@
     "plants": "Растения",
     "shops": "Магазины",
     "articles": "Статьи",
-    "contact": "Контакты"
+    "about" : ""
+  },
+  "Footer": {
+    "about": "О нас",
+    "privacyPolicy": "Политика конфиденциальности",
+    "licensing": "Лицензирование",
+    "contactUs": "Связаться с нами",
+    "rightsReserved": "Все права сохранены."
   },
   "FishCard": {
     "subclass": "Подкласс",

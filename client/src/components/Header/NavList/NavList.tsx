@@ -43,9 +43,9 @@ export default function NavList() {
                 </Link>
             </li>
             <li>
-                <Link to="/contact"
+                <Link to="/about"
                     className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${isActive('/contact') ? 'text-blue-700 dark:text-blue-500 font-bold' : 'text-gray-900 dark:text-white'}`}>
-                    {t('NavBar.contact')}
+                    {t('NavBar.about')}
                 </Link>
             </li>
             <li className="block md:hidden">

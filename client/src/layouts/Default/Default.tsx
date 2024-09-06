@@ -10,7 +10,15 @@ import Header from '../../components/Header/Header'
 // pages
 import NotFound from '../../pages/NotFound/NotFound'
 import Home from '../../pages/Home/Home'
-// import About from '../../pages/About/About'
+import Plants from '../../pages/Plants/Plants'
+import Fish from '../../pages/Fish/Fish'
+import Shops from '../../pages/Shops/Shops'
+import Articles from '../../pages/Articles/Articles'
+import About from '../../pages/About/About'
+import ContactUs from '../../pages/ContactUs/ContactUs'
+import PrivacyPolicy from '../../pages/PrivacyPolicy/PrivacyPolicy'
+import Licensing from '../../pages/Licensing/Licensing'
+
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
 // import Business from '../../pages/Business/Business'
@@ -33,15 +41,15 @@ export default function Default() {
       <main className="flex-grow">
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/fish' element={<Fish />} />
+          <Route path='/plants' element={<Plants />} />
+          <Route path='/shops' element={<Shops />} />
+          <Route path='/articles' element={<Articles />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contactUs' element={<ContactUs />} />
+          <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
+          <Route path='/licensing' element={<Licensing />} />
           {/* 
-        <Route path='/free' element={<Free/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/search' element={<SearchResults/>}/>
-        <Route path='/user' element={<User/>}/>
-        <Route path='/business' element={<Business/>}/>
-        <Route path='/admin' element={<Admin/>}/>
-        <Route path='/signin' element={<SignIn/>}/>
-        <Route path='/signup' element={<SignUp/>}/>
         <Route path='/profile' element={<UserProfile/>}/>
         <Route path='/mycards' element={<MyOwnCards/>}/>
         <Route path='/liked-cards' element={<LikedCards/>}/>
