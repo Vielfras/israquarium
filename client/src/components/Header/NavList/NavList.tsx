@@ -44,7 +44,7 @@ export default function NavList() {
             </li>
             <li>
                 <Link to="/about"
-                    className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${isActive('/contact') ? 'text-blue-700 dark:text-blue-500 font-bold' : 'text-gray-900 dark:text-white'}`}>
+                    className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${isActive('/about') ? 'text-blue-700 dark:text-blue-500 font-bold' : 'text-gray-900 dark:text-white'}`}>
                     {t('NavBar.about')}
                 </Link>
             </li>
