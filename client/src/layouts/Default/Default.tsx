@@ -38,7 +38,7 @@ export default function Default() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow bg-blue-200 dark:bg-cyan-950 p-6">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/fish' element={<Fish />} />

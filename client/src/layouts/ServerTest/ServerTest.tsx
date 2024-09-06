@@ -109,10 +109,8 @@ export default function ServerTest() {
             const itemsPerRow = window.innerWidth >= 640 ? 4 : 1;
             const lastRowColSpan = calculateLastRowColSpan(fishIndexLength, itemsPerRow);
             return (
-              <div
-              key={fishIndex._id}
-              className={`${index >= fishIndexLength - lastRowColSpan ? `col-span-${lastRowColSpan}` : ""}`}
-              >
+              <div key={fishIndex._id}
+              className={`${index >= fishIndexLength - lastRowColSpan ? `col-span-${lastRowColSpan}` : ""}`}>
                 <FishIndex fishIndex={fishIndex} />
               </div>
             );
