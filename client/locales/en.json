@@ -65,6 +65,12 @@
     "growthRate": "Growth Rate",
     "placement": "Placement",
     "sources": "Sources"
+  },
+  "AboutPage": {
+    "title": "About Israquarium",
+    "description1": "Israquarium is your go-to resource for fresh water fish and plants.",
+    "description2": "We provide detailed information about a wide variety of species to help enthusiasts and aquarium owners maintain healthy ecosystems.",
+    "description3": "Available in Hebrew, English, and Russian, we strive to make our content accessible to a global audience."
   }
 
 
