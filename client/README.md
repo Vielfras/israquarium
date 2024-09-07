@@ -19,7 +19,7 @@
     - [ ] About
     - [ ] Home 
     - [ ] Registration
-    - [ ] Login
+    - [X] Login
     - [ ] Admin 
     - [ ] User
     - [ ] Logout

@@ -21,7 +21,7 @@ export default function NavBar() {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
                 <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-                    <span className="hidden md:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    <span className="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                         Israquarium
                     </span>
                 </a>
