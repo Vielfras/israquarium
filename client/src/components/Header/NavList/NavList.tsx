@@ -1,10 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useDirection } from '../../../context/ReadingDirectionContext';
 import { useTranslation } from 'react-i18next';
 import LanguegePicker from '../LanguegePicker/LanguegePicker';
 
 export default function NavList() {
-    const { direction } = useDirection();
     const location = useLocation();
     const { t } = useTranslation();
 

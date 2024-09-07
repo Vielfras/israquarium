@@ -52,7 +52,7 @@
 
 ### Version 0.4.0 - Polish
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
-
+- [ ] Add a toast for many actions.
 
 --- 
 
