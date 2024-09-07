@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-- Add prep for localisation in all pages
+
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar

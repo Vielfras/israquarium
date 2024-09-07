@@ -1,5 +1,6 @@
-import ServerTest from '../../layouts/ServerTest/ServerTest'
 import './Home.scss'
+import ServerTest from '../../layouts/ServerTest/ServerTest'
+
 
 export default function Home() {
 

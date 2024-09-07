@@ -9,8 +9,8 @@ This project involves developing a web application with both client-side and ser
 
 
 ### General Requirements
-- [ ] **Use React** for building the client-side application.
-- [ ] Ensure the site is responsive and adapts to various screen sizes.
+- [X] **Use React** for building the client-side application.
+- [X] Ensure the site is responsive and adapts to various screen sizes.
 - [ ] Clean and well-organized code: remove `console.log` statements and other commented-out code snippets.
 - [ ] Adhere to coding conventions and ensure your code is readable and maintainable.
 - [ ] Design is a crucial aspect: maintain a clean and attractive design that works across different devices.
@@ -31,8 +31,8 @@ This project involves developing a web application with both client-side and ser
    - [ ] Allow fish shops to add their business cards, including contact details and a brief description.
 
 4. **Navigation**
-   - [ ] Implement a dynamic navigation menu common to all pages.
-   - [ ] Include a footer with logo, copyright, contact methods, and social media links.
+   - [X] Implement a dynamic navigation menu common to all pages.
+   - [X] Include a footer with logo, copyright, contact methods, and social media links.
 
 5. **Accessibility and SEO**
    - [ ] Include `alt` attributes for all images.
@@ -62,35 +62,35 @@ This project involves developing a web application with both client-side and ser
 ## Back End Requirements
 
 ### General Requirements
-- [ ] **Use Node.js** with Express for the server-side.
-- [ ] **Use MongoDB** as the database.
-- [ ] Clean and well-organized code: ensure code readability and maintainability.
+- [X] **Use Node.js** with Express for the server-side.
+- [X] **Use MongoDB** as the database.
+- [] Clean and well-organized code: ensure code readability and maintainability.
 - [ ] Include meaningful comments and documentation.
 
 ### Specific Requirements
 1. **Setup**
-   - [ ] Include `nodemon` in `devDependencies` and set up a `package.json` file with a `main` entry point.
+   - [X] Include `nodemon` in `devDependencies` and set up a `package.json` file with a `main` entry point.
    - [ ] Ensure proper folder structure with separate modules for routes, models, and controllers.
 
 2. **API Development**
-   - [ ] Develop a RESTful API for handling CRUD operations.
-   - [ ] Use the Express library to handle HTTP requests.
+   - [X] Develop a RESTful API for handling CRUD operations.
+   - [X] Use the Express library to handle HTTP requests.
 
 3. **Authentication and Authorization**
-   - [ ] Implement authentication to verify user identity.
+   - [X] Implement authentication to verify user identity.
    - [ ] Ensure that only admin users can add, edit, or delete content.
 
 4. **Database Management**
-   - [ ] Store application data in MongoDB.
-   - [ ] Include validation logic using libraries like `joi` and `mongoose` to ensure data integrity.
+   - [X] Store application data in MongoDB.
+   - [X] Include validation logic using libraries like `joi` and `mongoose` to ensure data integrity.
 
 5. **Logging and Error Handling**
-   - [ ] Use a logging library like `morgan` to log HTTP requests and errors.
-   - [ ] Implement proper error handling to catch and respond to client and server-side errors.
+   - [X] Use a logging library like `morgan` to log HTTP requests and errors.
+   - [X] Implement proper error handling to catch and respond to client and server-side errors.
 
 6. **Security**
-   - [ ] Use JWT tokens for secure user authentication.
-   - [ ] Store sensitive information securely and never include sensitive data in JWT tokens.
+   - [X] Use JWT tokens for secure user authentication.
+   - [X] Store sensitive information securely and never include sensitive data in JWT tokens.
 
 ### Optional (Bonus) Features
 - [ ] Develop a custom logging mechanism if needed.
@@ -100,9 +100,9 @@ This project involves developing a web application with both client-side and ser
 ---
 
 ## Project Submission
-- [ ] Upload the project to a Git repository and share the link.
+- [X] Upload the project to a Git repository and share the link.
 - [ ] Include a `README.md` file explaining the project, its features, and setup instructions.
-- [ ] Ensure that the project is free from any sensitive files like `node_modules` or configuration files containing secrets.
+- [X] Ensure that the project is free from any sensitive files like `node_modules` or configuration files containing secrets.
 
 ---
 
