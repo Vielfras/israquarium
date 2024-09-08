@@ -82,42 +82,42 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsBusy(true);
-  
+
     if (!auth) {
       setIsBusy(false);
       return;
     }
-  
+
     if (!firstName || !lastName || !email || !password || !passwordVerification || password !== passwordVerification) {
       toasts?.addToast('⚠️', 'Error Signing-Up', 'Please fill out all required fields.', 'danger');
       setIsBusy(false);
       return;
     }
-  
+
     const userData = {
       name: {
-        first: firstName,  
-        middle: middleName || "", 
-        last: lastName,   
+        first: firstName,
+        middle: middleName || "",
+        last: lastName,
       },
-      phone: phone || "",   
-      email: email,         
-      password: password,   
+      phone: phone || "",
+      email: email,
+      password: password,
       image: {
         url: 'https://lorempokemon.fakerapi.it/pokemon',
         alt: 'You wrote that this is NOT required 😉',
       },
       address: {
-        country: country || "",  
-        city: city || "",        
-        street: street || "",    
+        country: country || "",
+        city: city || "",
+        street: street || "",
         houseNumber: houseNumber ? Number(houseNumber) : 0,
-        zip: zipCode ? Number(zipCode) : 0,   
+        zip: zipCode ? Number(zipCode) : 0,
       },
-      isBusiness, 
+      isBusiness,
     };
-  
-   
+
+
     const { error } = await auth.signUp(userData);
     if (error) {
       toasts?.addToast('⚠️', 'Error Signing-Up', error, 'danger');
@@ -125,14 +125,14 @@ export default function SignUp() {
       toasts?.addToast('👍🏼', 'Successfully Signed-Up', 'Please sign in with your credentials.', 'success');
       navigate('/signin');
     }
-  
+
     setIsBusy(false);
   };
-  
+
 
   return (
     <div className="SignUp Page flex justify-center items-center">
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg">
+      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
         <h3 className="text-3xl font-bold mb-6 text-center">Sign-Up Page</h3>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -214,17 +214,16 @@ export default function SignUp() {
               isValid={passwordIsValid}
             />
             <div className="col-span-1">
-              <label className="block text-sm font-medium mb-1">Password Verification</label>
-              <input
+              <FormField
+                controlId="formGridPasswordVerification"
+                label="Password Verification"
                 type="password"
                 placeholder="Verify Password"
-                className={`form-input w-full ${passwordVerificationIsValid ? '' : 'border-red-500'}`}
                 value={passwordVerification || ''}
                 onChange={handlePasswordVerificationChange}
+                validationMessage="Passwords must match."
+                isValid={passwordVerificationIsValid}
               />
-              {!passwordVerificationIsValid && (
-                <p className="text-red-500 text-sm mt-1">Passwords must match.</p>
-              )}
             </div>
           </div>
 
