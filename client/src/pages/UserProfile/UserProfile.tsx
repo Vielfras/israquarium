@@ -50,11 +50,11 @@ export default function UserProfile() {
                 {t('UserProfile.signInRequired')}
               </p>
               <p className="text-xl mt-8 mb-2">
-                <Link to="/signin" className="text-blue-600 dark:text-blue-400 hover:underline">
+                <Link to="/signIn" className="text-blue-600 dark:text-blue-400 hover:underline">
                   {t('UserProfile.signIn')}
                 </Link>
                 {' '} / {' '}
-                <Link to="/signup" className="text-blue-600 dark:text-blue-400 hover:underline">
+                <Link to="/signUp" className="text-blue-600 dark:text-blue-400 hover:underline">
                   {t('UserProfile.signUp')}
                 </Link>
               </p>
