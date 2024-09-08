@@ -46,7 +46,7 @@ export default function SignIn() {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-md bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-        <h3 className="text-center text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">{t('SignInPage.title')}</h3>
+        <h3 className="text-center text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{t('SignInPage.title')}</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <FormField controlId="formBasicEmail"
             label="" type="email" placeholder={t('SignInPage.enterEmail')} 
