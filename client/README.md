@@ -42,6 +42,7 @@
 - [ ] Authorization 
     - [ ] Login
     - [ ] Registration
+    - [ ] User Profile when logged in
 - [ ] Edit Data:
     - [ ] Fish
     - [ ] Plant

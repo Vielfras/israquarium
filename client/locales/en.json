@@ -72,8 +72,18 @@
     "description2": "We provide detailed information about a wide variety of species to help enthusiasts and aquarium owners maintain healthy ecosystems.",
     "description3": "Available in Hebrew, English, and Russian, we strive to make our content accessible to a global audience."
   },
+  "UserProfile": {
+    "title": "User Profile",
+    "email": "Email",
+    "name": "Name",
+    "phone": "Phone",
+    "signOut": "Sign Out",
+    "signInRequired": "You have to be signed-in as a User, Business, or Admin to view this page!",
+    "signIn": "Sign-in",
+    "signUp": "Sign-up"
+  },
   "SignInPage": {
-    "title" : "Sign In", 
+    "title": "Sign In",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
     "errorSigningIn": "Error Signing-In: ",
