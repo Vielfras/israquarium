@@ -5,6 +5,7 @@ import { ToastsContext } from '../../context/ToastsContext';
 import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
+import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function SignUp() {
   const { t } = useTranslation(); // i18next hook for translations
@@ -105,6 +106,8 @@ export default function SignUp() {
     <div className="SignUp Page flex justify-center items-center">
       <div className="bg-white dark:bg-gray-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('SignUpPage.signUpPageTitle')}</h3>
+
+        <DirectionProvider>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <FormField
@@ -176,7 +179,7 @@ export default function SignUp() {
           <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
           {/* Address */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FormField
               controlId="formGridCountry"
               label={t('SignUpPage.countryLabel')}
@@ -255,6 +258,7 @@ export default function SignUp() {
             </button>
           </div>
         </form>
+        </DirectionProvider>
       </div>
     </div>
   );

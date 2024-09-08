@@ -90,7 +90,7 @@
     "submit": "Войти",
     "welcome": "Успешный вход! Добро пожаловать "
   },
-  "SignUpPage" : {
+    "SignUpPage": {
       "signUpPageTitle": "Страница регистрации",
       "firstNameLabel": "Имя",
       "firstNamePlaceholder": "Имя",
@@ -107,10 +107,15 @@
       "passwordVerificationLabel": "Подтверждение пароля",
       "passwordVerificationPlaceholder": "Повторите пароль",
       "countryLabel": "Страна",
+      "countryPlaceholder": "Страна",
       "cityLabel": "Город",
+      "cityPlaceholder": "Город",
       "streetLabel": "Улица",
+      "streetPlaceholder": "Улица",
       "houseNumberLabel": "Номер дома",
+      "houseNumberPlaceholder": "Номер дома",
       "zipCodeLabel": "Почтовый индекс",
+      "zipCodePlaceholder": "Почтовый индекс",
       "businessSignupLabel": "Зарегистрироваться как бизнес?",
       "yesLabel": "Да",
       "submitButton": "Зарегистрироваться",
@@ -118,5 +123,5 @@
       "signUpErrorMessage": "Пожалуйста, заполните все обязательные поля.",
       "signUpSuccessTitle": "Успешная регистрация",
       "signUpSuccessMessage": "Пожалуйста, войдите с вашими учетными данными."
-  }
+    }
 }
