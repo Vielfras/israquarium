@@ -20,6 +20,7 @@ import PrivacyPolicy from '../../pages/PrivacyPolicy/PrivacyPolicy'
 import Licensing from '../../pages/Licensing/Licensing'
 import SignIn from '../../pages/SignIn/SignIn'
 import UserProfile from '../../pages/UserProfile/UserProfile'
+import SignUp from '../../pages/SignUp/SignUp'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -52,9 +53,9 @@ export default function Default() {
           <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
           <Route path='/licensing' element={<Licensing />} />
           <Route path='/signIn' element={<SignIn/>}/>
+          <Route path='/signUp' element={<SignUp/>}/>
           <Route path='/userProfile' element={<UserProfile/>}/>
           {/* 
-        <Route path='/liked-cards' element={<LikedCards/>}/>
         <Route path='/create-card' element={<CreateCard/>}/>
         <Route path='/card-details/:cardId' element={<CardDetails/>}/>
         <Route path='/edit-card/:cardId' element={<EditCard/>}/>
