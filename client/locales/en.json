@@ -89,5 +89,34 @@
     "errorSigningIn": "Error Signing-In: ",
     "submit": "Sign In",
     "welcome": "Successfully Signed-In! Welcome "
-  }
+  },
+  "SignUpPage" : {
+      "signUpPageTitle": "Sign-Up Page",
+      "firstNameLabel": "First Name",
+      "firstNamePlaceholder": "First",
+      "middleNameLabel": "Middle Name (Optional)",
+      "middleNamePlaceholder": "Middle",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Last",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "Phone number",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email Address",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Password",
+      "passwordVerificationLabel": "Password Verification",
+      "passwordVerificationPlaceholder": "Verify Password",
+      "countryLabel": "Country",
+      "cityLabel": "City",
+      "streetLabel": "Street",
+      "houseNumberLabel": "House Number",
+      "zipCodeLabel": "Zip Code",
+      "businessSignupLabel": "Sign Up as a Business?",
+      "yesLabel": "Yes",
+      "submitButton": "Sign Up",
+      "signUpErrorTitle": "Error Signing-Up",
+      "signUpErrorMessage": "Please fill out all required fields.",
+      "signUpSuccessTitle": "Successfully Signed-Up",
+      "signUpSuccessMessage": "Please sign in with your credentials."
+    }
 }
