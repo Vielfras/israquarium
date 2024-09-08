@@ -32,7 +32,7 @@ export default function FormField(formData: IFormField) {
     <div className="w-full mb-4" id={formData.controlId}>
       <DirectionProvider>
 
-      <label htmlFor={formData.controlId} className="block text-sm font-medium text-gray-700">
+      <label htmlFor={formData.controlId} className="block text-sm font-medium text-gray-900 dark:text-gray-50">
         {formData.label}
       </label>
       <input type={formData.type} placeholder={formData.placeholder}
