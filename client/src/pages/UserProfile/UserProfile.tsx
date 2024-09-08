@@ -18,7 +18,6 @@ export default function UserProfile() {
         </h3>
 
         <DirectionProvider>
-
           {auth?.userDetails ? (
             <>
               <div className="py-4">
@@ -32,19 +31,15 @@ export default function UserProfile() {
                   <b>{t('UserProfile.phone')}:</b> {auth.userDetails.phone}
                 </div>
                 <div className="flex justify-center mb-6">
-                  <img
-                    className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
+                  <img className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
                     src={auth.userDetails.image.url}
-                    alt={auth.userDetails.image.alt}
-                  />
+                    alt={auth.userDetails.image.alt}/>
                 </div>
               </div>
               <div className="">
-                <button
-                  type="button"
+                <button type="button"
                   className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500"
-                  onClick={() => auth.signOut()}
-                >
+                  onClick={() => auth.signOut()}>
                   {t('UserProfile.signOut')}
                 </button>
               </div>
