@@ -37,7 +37,7 @@ export default function FormField(formData: IFormField) {
       </label>
       <input type={formData.type} placeholder={formData.placeholder}
         value={formData.value} onChange={handleValidation}
-        className={`mt-1 block w-full px-3 py-2 border 
+        className={`mt-1 block w-full px-3 py-2 border text-gray-900
           ${isValid ? "border-gray-300" : "border-red-500"} 
           rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
           />  
