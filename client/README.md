@@ -25,9 +25,9 @@
     - [ ] User
     - [ ] Logout
     - [ ] Articles
-    - [ ] Shops 
+    - [X] Shops 
     - [ ] Fish Indecies
-    - [ ] Shop Card
+    - [X] Business Card
     - [X] Fish Card
     - [X] Plant Card
     - [X] Create Fish
@@ -36,10 +36,14 @@
     - [ ] Edit Fish 
     - [ ] Edit Shop
     - [ ] MyTropicalFish
+    - [ ] Error Page
+    - [ ] Page Not found
 
 ### Issues
 - [ ] 1st time change from light to dark theme doesn't work
 - [ ] Theme should start with browser/system default/preference
+- [ ] Pressing logo takes to flowbite instead of to Home page
+- [ ] Incorrect form field validation causes the size of the parent container to increase suddenly
 
 ### Version 0.3.0 - Functionality
 - [ ] Directional Support
