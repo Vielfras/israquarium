@@ -4,7 +4,8 @@
 
 
 ### Bridge:
-- Add ltr/rtl directionality to SignIn and SignUp pages
+- Add a scaffolding for the rest of the missing pages
+
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar

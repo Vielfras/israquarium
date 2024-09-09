@@ -43,7 +43,6 @@ export default function ToastsProvider({ children }: ToastsProviderProps) {
     };
     setToasts([...toasts, newToast]);
 
-    // Automatically remove the toast after 4 seconds
     setTimeout(() => {
       setToasts((currentToasts) =>
         currentToasts.filter((toast) => toast.id !== newToast.id)
@@ -55,7 +54,6 @@ export default function ToastsProvider({ children }: ToastsProviderProps) {
     <ToastsContext.Provider value={{ addToast }}>
       {children}
 
-      {/* Toast Container */}
       <div className="fixed top-5 right-5 z-50 flex flex-col gap-3">
         {toasts.map((toast) => (
           <div
