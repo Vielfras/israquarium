@@ -83,87 +83,53 @@ export default function SignUp() {
         <DirectionProvider>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridFirstName"
-                label={t('SignUpPage.firstNameLabel')}
-                type="text"
-                placeholder={t('SignUpPage.firstNamePlaceholder')}
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                regex={nameRegex}
-                validationMessage={t('SignUpPage.SignUpFieldsErrors.firstName')}
+              <FormField controlId="formGridFirstName" type="text"
+                label={t('SignUpPage.firstNameLabel')} placeholder={t('SignUpPage.firstNamePlaceholder')}
+                value={firstName} regex={nameRegex} onChange={(e) => setFirstName(e.target.value)}
                 isValid={nameRegex.test(firstName)}
+                validationMessage={t('SignUpPage.SignUpFieldsErrors.firstName')}
               />
-              <FormField
-                controlId="formGridMiddleName"
-                label={t('SignUpPage.middleNameLabel')}
-                type="text"
-                placeholder={t('SignUpPage.middleNamePlaceholder')}
-                value={middleName}
-                onChange={(e) => setMiddleName(e.target.value)}
-                regex={nameRegex}
+              <FormField controlId="formGridMiddleName" type="text"
+                label={t('SignUpPage.middleNameLabel')} placeholder={t('SignUpPage.middleNamePlaceholder')}
+                value={middleName} onChange={(e) => setMiddleName(e.target.value)}
+                regex={nameRegex} isValid={middleName === '' || nameRegex.test(middleName)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.lastName')}
-                isValid={middleName === '' || nameRegex.test(middleName)}
               />
-              <FormField
-                controlId="formGridLastName"
-                label={t('SignUpPage.lastNameLabel')}
-                type="text"
-                placeholder={t('SignUpPage.lastNamePlaceholder')}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                regex={nameRegex}
+              <FormField controlId="formGridLastName" type="text"
+                label={t('SignUpPage.lastNameLabel')} placeholder={t('SignUpPage.lastNamePlaceholder')}
+                value={lastName} onChange={(e) => setLastName(e.target.value)}
+                regex={nameRegex} isValid={nameRegex.test(lastName)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.lastName')}
-                isValid={nameRegex.test(lastName)}
               />
             </div>
 
             {/* Phone & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridPhone"
-                label={t('SignUpPage.phoneLabel')}
-                type="text"
-                placeholder={t('SignUpPage.phonePlaceholder')}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                regex={phoneRegex}
+              <FormField controlId="formGridPhone" type="text"
+                label={t('SignUpPage.phoneLabel')} placeholder={t('SignUpPage.phonePlaceholder')}
+                value={phone} onChange={(e) => setPhone(e.target.value)}
+                regex={phoneRegex} isValid={phoneRegex.test(phone)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.phone')}
-                isValid={phoneRegex.test(phone)}
               />
-              <FormField
-                controlId="formGridEmail"
-                label={t('SignUpPage.emailLabel')}
-                type="email"
-                placeholder={t('SignUpPage.emailPlaceholder')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                regex={emailRegex}
+              <FormField controlId="formGridEmail" type="email"
+                label={t('SignUpPage.emailLabel')} placeholder={t('SignUpPage.emailPlaceholder')}
+                value={email} onChange={(e) => setEmail(e.target.value)}
+                regex={emailRegex} isValid={emailRegex.test(email)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.email')}
-                isValid={emailRegex.test(email)}
               />
             </div>
 
             {/* Password */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridPassword"
-                label={t('SignUpPage.passwordLabel')}
-                type="password"
-                placeholder={t('SignUpPage.passwordPlaceholder')}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                regex={passwordRegex}
+              <FormField controlId="formGridPassword" type="password"
+                label={t('SignUpPage.passwordLabel')} placeholder={t('SignUpPage.passwordPlaceholder')}
+                value={password} onChange={(e) => setPassword(e.target.value)}
+                regex={passwordRegex} isValid={passwordRegex.test(password)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.password')}
-                isValid={passwordRegex.test(password)}
               />
-              <FormField
-                controlId="formGridPasswordVerification"
-                label={t('SignUpPage.passwordVerificationLabel')}
-                type="password"
-                placeholder={t('SignUpPage.passwordVerificationPlaceholder')}
-                value={passwordVerification}
-                onChange={(e) => setPasswordVerification(e.target.value)}
+              <FormField controlId="formGridPasswordVerification" type="password"
+                label={t('SignUpPage.passwordVerificationLabel')} placeholder={t('SignUpPage.passwordVerificationPlaceholder')}
+                value={passwordVerification} onChange={(e) => setPasswordVerification(e.target.value)}
                 validationMessage={t('SignUpPage.SignUpFieldsErrors.passwordVerification')}
                 isValid={passwordVerification === password}
               />
@@ -173,49 +139,28 @@ export default function SignUp() {
 
             {/* Address */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridCountry"
-                label={t('SignUpPage.countryLabel')}
-                type="text"
-                placeholder={t('SignUpPage.countryPlaceholder')}
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
+              <FormField controlId="formGridCountry" type="text"
+                label={t('SignUpPage.countryLabel')} placeholder={t('SignUpPage.countryPlaceholder')}
+                value={country} onChange={(e) => setCountry(e.target.value)}
               />
-              <FormField
-                controlId="formGridCity"
-                label={t('SignUpPage.cityLabel')}
-                type="text"
-                placeholder={t('SignUpPage.cityPlaceholder')}
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
+              <FormField controlId="formGridCity" type="text"
+                label={t('SignUpPage.cityLabel')} placeholder={t('SignUpPage.cityPlaceholder')}
+                value={city} onChange={(e) => setCity(e.target.value)}
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridStreet"
-                label={t('SignUpPage.streetLabel')}
-                type="text"
-                placeholder={t('SignUpPage.streetPlaceholder')}
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
+              <FormField controlId="formGridStreet" type="text"
+                label={t('SignUpPage.streetLabel')} placeholder={t('SignUpPage.streetPlaceholder')}
+                value={street} onChange={(e) => setStreet(e.target.value)}
               />
-              <FormField
-                controlId="formGridHouseNumber"
-                label={t('SignUpPage.houseNumberLabel')}
-                type="text"
-                placeholder={t('SignUpPage.houseNumberPlaceholder')}
-                value={houseNumber}
-                onChange={(e) => setHouseNumber(e.target.value)}
+              <FormField controlId="formGridHouseNumber" type="text"
+                label={t('SignUpPage.houseNumberLabel')} placeholder={t('SignUpPage.houseNumberPlaceholder')}
+                value={houseNumber} onChange={(e) => setHouseNumber(e.target.value)}
               />
-              <FormField
-                controlId="formGridZipCode"
-                label={t('SignUpPage.zipCodeLabel')}
-                type="text"
-                placeholder={t('SignUpPage.zipCodePlaceholder')}
-                value={zipCode}
-                onChange={(e) => setZipCode(e.target.value)}
-              />
+              <FormField controlId="formGridZipCode" type="text"
+                label={t('SignUpPage.zipCodeLabel')} placeholder={t('SignUpPage.zipCodePlaceholder')}
+                value={zipCode} onChange={(e) => setZipCode(e.target.value)}/>
             </div>
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
@@ -225,12 +170,7 @@ export default function SignUp() {
               <label className="block text-lg font-medium mb-3">{t('SignUpPage.businessSignupLabel')}</label>
               <div className="flex justify-center">
                 <label className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    className="form-checkbox"
-                    checked={isBusiness}
-                    onChange={(e) => setIsBusiness(e.target.checked)}
-                  />
+                  <input type="checkbox" className="form-checkbox" checked={isBusiness} onChange={(e) => setIsBusiness(e.target.checked)}/>
                   <span className="ml-2">{t('SignUpPage.yesLabel')}</span>
                 </label>
               </div>
@@ -239,31 +179,12 @@ export default function SignUp() {
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
             <div className="text-center">
-              <button
-                type="submit"
-                className={`bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${isBusy ? 'opacity-50' : ''}`}
-                disabled={isBusy}
-              >
+              <button type="submit" className={`bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${isBusy ? 'opacity-50' : ''}`}
+                disabled={isBusy}>
                 {isBusy ? (
-                  <svg
-                    className="animate-spin h-5 w-5 mx-auto text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z"
-                    ></path>
+                  <svg className="animate-spin h-5 w-5 mx-auto text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" ></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z"></path>
                   </svg>
                 ) : (
                   t('SignUpPage.submitButton')
