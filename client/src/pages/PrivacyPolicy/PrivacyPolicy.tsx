@@ -1,3 +1,5 @@
+import { DirectionProvider } from "../../context/ReadingDirectionContext"
+
 export default function PrivacyPolicy() {
   return (
     <div className="flex justify-center items-center py-4">
@@ -6,6 +8,7 @@ export default function PrivacyPolicy() {
           Privacy Policy
         </h1>
 
+        <DirectionProvider>
         <div className="space-y-12">
           <section>
             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
@@ -113,6 +116,8 @@ export default function PrivacyPolicy() {
             </p>
           </section>
         </div>
+        </DirectionProvider>
+
       </div>
     </div>
   );
