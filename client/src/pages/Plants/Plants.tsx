@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { apiBase } from '../../config';
 import PlantCard from '../../components/Plant/PlantCard/PlantCard';
 import { IPlant } from '../../interfaces/IPlant';
+import { Link } from 'react-router-dom';
 
 
 const apiPlantCall = `${apiBase}/api/plant`;
@@ -44,7 +45,11 @@ export default function Plants() {
   }
 
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
+      <div className="flex flex-row gap-2 pb-3">
+        <Link to={'/create-plant'} className="px-4 py-2 bg-blue-500 text-white rounded">Create Plant</Link>
+      </div>
+
       <DirectionProvider>
         {plantData && <PlantCard plantData={plantData} />}
       </DirectionProvider>

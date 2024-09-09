@@ -42,21 +42,21 @@ export default function UserMenu() {
                             </button>
                         </li>
                         <li>
-                            <Link to="/userProfile" onClick={closeDropdown}
+                            <Link to="/user-profile" onClick={closeDropdown}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem">
                                 My Profile
                             </Link>
                         </li>
                         <li>
-                            <Link to="/signUp" onClick={closeDropdown}
+                            <Link to="/sign-up" onClick={closeDropdown}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem">
                                 Register
                             </Link>
                         </li>
                         <li>
-                            <Link to="/signIn" onClick={closeDropdown}
+                            <Link to="/sign-in" onClick={closeDropdown}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem">
                                 Sign In

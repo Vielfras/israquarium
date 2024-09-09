@@ -24,7 +24,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/privacyPolicy"
+              <Link to="/privacy-policy"
                 className="hover:underline me-4 md:me-6">
                 {t('Footer.privacyPolicy')}
               </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/contactUs"
+              <Link to="/contact-us"
                 className="hover:underline">
                 {t('Footer.contactUs')}
               </Link>

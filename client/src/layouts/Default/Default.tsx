@@ -21,6 +21,7 @@ import Licensing from '../../pages/Licensing/Licensing'
 import SignIn from '../../pages/SignIn/SignIn'
 import UserProfile from '../../pages/UserProfile/UserProfile'
 import SignUp from '../../pages/SignUp/SignUp'
+import CreatePlant from '../../pages/CreatePlant/CreatePlant'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -49,14 +50,14 @@ export default function Default() {
           <Route path='/shops' element={<Shops />} />
           <Route path='/articles' element={<Articles />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contactUs' element={<ContactUs />} />
-          <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
+          <Route path='/contact-us' element={<ContactUs />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/licensing' element={<Licensing />} />
-          <Route path='/signIn' element={<SignIn/>}/>
-          <Route path='/signUp' element={<SignUp/>}/>
-          <Route path='/userProfile' element={<UserProfile/>}/>
+          <Route path='/sign-in' element={<SignIn/>}/>
+          <Route path='/sign-up' element={<SignUp/>}/>
+          <Route path='/user-profile' element={<UserProfile/>}/>
+          <Route path='/create-plant' element={<CreatePlant/>}/>
           {/* 
-        <Route path='/create-card' element={<CreateCard/>}/>
         <Route path='/card-details/:cardId' element={<CardDetails/>}/>
         <Route path='/edit-card/:cardId' element={<EditCard/>}/>
         */}

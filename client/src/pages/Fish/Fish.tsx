@@ -6,6 +6,7 @@ import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import FishCard from '../../components/Fish/FishCard/FishCard';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
 import FishIndex from '../../components/Fish/FishIndex/FishIndex';
+import { Link } from 'react-router-dom';
 
 const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
@@ -73,6 +74,9 @@ export default function Fish() {
 
   return (
     <div className="flex flex-col items-center">
+      <div className="flex flex-row gap-2 pb-3">
+        <Link to={'/create-fish'} className="px-4 py-2 bg-blue-500 text-white rounded">Create Fish</Link>
+      </div>
 
       <div className="grid place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
         {fishIndexData && fishIndexData.map((fishIndex, index) => {

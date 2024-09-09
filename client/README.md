@@ -56,6 +56,8 @@
 
 
 ### Version 0.4.0 - Polish
+- [ ] Remove all empty scss files
+- [ ] Refactor IFishImage and IPlantImage to be a single IImage interface
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
 - [ ] Add a toast for many actions.
 
