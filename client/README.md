@@ -30,6 +30,9 @@
     - [ ] Shop Card
     - [X] Fish Card
     - [X] Plant Card
+    - [ ] Create Fish
+    - [ ] Create Plant
+    - [ ] Create shop
     - [ ] Edit Fish 
     - [ ] Edit Shop
     - [ ] MyTropicalFish

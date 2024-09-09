@@ -122,6 +122,15 @@
     "signUpErrorTitle": "Error Signing-Up",
     "signUpErrorMessage": "Please fill out all required fields.",
     "signUpSuccessTitle": "Successfully Signed-Up",
-    "signUpSuccessMessage": "Please sign in with your credentials."
+    "signUpSuccessMessage": "Please sign in with your credentials.",
+    "SignUpFieldsErrors": {
+      "firstName": "First name must be at least 2 letters.",
+      "middleName": "Middle name must be at least 2 letters.",
+      "lastName": "Last name must be at least 2 letters.",
+      "phone": "Please enter a valid phone number.",
+      "email": "Please enter a valid email address.",
+      "password": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, 1 number, and 1 special character.",
+      "passwordVerification": "Passwords do not match."
+    }
   }
 }
