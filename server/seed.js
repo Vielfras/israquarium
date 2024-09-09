@@ -19,11 +19,13 @@ const { users } = require('./data/user_data');
 const { fish } = require('./data/fish_data');
 const { plants } = require('./data/plant_data');
 const { fishIndex } = require('./data/fish_index_data');
+const { businessCards } = require('./data/business_card_data');
 
 const User = require('./models/User');
 const Plant = require('./models/Plant');
 const Fish = require('./models/Fish');
 const FishIndex = require('./models/FishIndex');
+const BusinessCard = require('./models/BusinessCard');
 
 const Benchmark = require('./utils/benchmarking');
 
@@ -48,11 +50,18 @@ const seedUsers = async () => {
   console.log(chalk.blue(`\t- Inserted ${insertedUsers.length} users.`));
 };
 
+const seedBusinessCards = async () => {
+  const insertedCards = await BusinessCard.insertMany(businessCards);
+  console.log(chalk.blue(`\t- Inserted ${insertedCards.length} business cards.`));
+};
+
+
 const clearDatabase = async () => {
   await FishIndex.deleteMany();
   await Fish.deleteMany();
   await Plant.deleteMany();
   await User.deleteMany();
+  await BusinessCard.deleteMany();
 };
 
 
@@ -63,6 +72,7 @@ const seedAll = async () => {
     await Benchmark(seedFish, chalk.bold.yellow('\nSeeding Fish:'));
     await Benchmark(seedPlants, chalk.bold.yellow('\nSeeding Plants:'));
     await Benchmark(seedUsers, chalk.bold.yellow('\nSeeding Users:'));
+    await Benchmark(seedBusinessCards, chalk.bold.yellow('\nSeeding Business Cards:'));
 
     console.log(chalk.bold.underline.green('\nSeeding completed successfully\n'));
   } catch (e) {

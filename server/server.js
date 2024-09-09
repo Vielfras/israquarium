@@ -49,6 +49,7 @@ app.use('/api/users', require('./routes/usersRoutes'));
 app.use('/api/fish', require('./routes/fishRoutes'));
 app.use('/api/fishIndex', require('./routes/fishIndexRoutes'));
 app.use('/api/plant', require('./routes/plantRoutes'));
+app.use('/api/businessCard', require('./routes/businessCardRoutes'));
 
 
 // --------------=====================  RUN SERVER  =====================--------------
