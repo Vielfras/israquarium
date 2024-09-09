@@ -17,9 +17,9 @@
         - [X] Ltr / Rtl
         - [X] Eng / Russian / Heb
 - [ ] Pages Scaffolding:
-    - [ ] About
+    - [X] About
     - [ ] Home 
-    - [ ] Registration
+    - [X] Registration
     - [X] Login
     - [ ] Admin 
     - [ ] User
@@ -30,8 +30,8 @@
     - [ ] Shop Card
     - [X] Fish Card
     - [X] Plant Card
-    - [ ] Create Fish
-    - [ ] Create Plant
+    - [X] Create Fish
+    - [X] Create Plant
     - [ ] Create shop
     - [ ] Edit Fish 
     - [ ] Edit Shop
