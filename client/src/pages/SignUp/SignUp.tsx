@@ -160,7 +160,7 @@ export default function SignUp() {
               />
               <FormField controlId="formGridZipCode" type="text"
                 label={t('SignUpPage.zipCodeLabel')} placeholder={t('SignUpPage.zipCodePlaceholder')}
-                value={zipCode} onChange={(e) => setZipCode(e.target.value)}/>
+                value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
             </div>
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
@@ -170,7 +170,7 @@ export default function SignUp() {
               <label className="block text-lg font-medium mb-3">{t('SignUpPage.businessSignupLabel')}</label>
               <div className="flex justify-center">
                 <label className="inline-flex items-center">
-                  <input type="checkbox" className="form-checkbox" checked={isBusiness} onChange={(e) => setIsBusiness(e.target.checked)}/>
+                  <input type="checkbox" className="form-checkbox" checked={isBusiness} onChange={(e) => setIsBusiness(e.target.checked)} />
                   <span className="ml-2">{t('SignUpPage.yesLabel')}</span>
                 </label>
               </div>
