@@ -255,5 +255,12 @@
     "successMessage": "הדג הוגש בהצלחה!",
     "errorTitle": "שגיאה",
     "errorMessage": "אירעה שגיאה בהגשת הדג."
+  },
+  "ShopsPage" : {
+    "shopsTitle": "חנויות",
+    "errorFetchingCards": "שגיאה בקבלת כרטיסים 😞",
+    "loadingCardsMessage": "טוען כרטיסים, אנא המתן...",
+    "noCardsAvailable": "אין כרטיסים זמינים כרגע.",
+    "totalCards": "סה\"כ {{count}} כרטיסים"
   }
 }

@@ -255,5 +255,12 @@
     "successMessage": "Fish submitted successfully!",
     "errorTitle": "Error",
     "errorMessage": "There was an error submitting the fish."
+  },
+  "ShopsPage" : {
+    "shopsTitle": "Shops",
+    "errorFetchingCards": "Error getting cards 😞",
+    "loadingCardsMessage": "Loading cards, please wait...",
+    "noCardsAvailable": "No cards available at the moment.",
+    "totalCards": "Total {{count}} card(s)"
   }
 }

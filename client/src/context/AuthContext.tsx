@@ -1,6 +1,6 @@
 import { IUserDetails, IUserSignup } from "../interfaces/IUser"
 import { createContext, useEffect, useState } from "react"
-import { doSignIn, doSignUp, fetchUserDetails, removeToken } from "../services/UserService"
+import { doSignIn, doSignUp, fetchUserDetails, removeToken } from "../services/UserServices"
 
 interface AuthContextType {
   userDetails:IUserDetails|undefined
