@@ -22,6 +22,7 @@ import SignIn from '../../pages/SignIn/SignIn'
 import UserProfile from '../../pages/UserProfile/UserProfile'
 import SignUp from '../../pages/SignUp/SignUp'
 import CreatePlant from '../../pages/CreatePlant/CreatePlant'
+import CreateFish from '../../pages/CreateFish/CreateFish'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -57,8 +58,8 @@ export default function Default() {
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/user-profile' element={<UserProfile/>}/>
           <Route path='/create-plant' element={<CreatePlant/>}/>
+          <Route path='/create-fish' element={<CreateFish/>}/>
           {/* 
-        <Route path='/card-details/:cardId' element={<CardDetails/>}/>
         <Route path='/edit-card/:cardId' element={<EditCard/>}/>
         */}
           <Route path='*' element={<NotFound />} />

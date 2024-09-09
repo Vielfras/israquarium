@@ -116,7 +116,6 @@ export default function CreatePlant() {
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FormField
                 controlId="formGridFamily"
