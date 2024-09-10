@@ -18,7 +18,7 @@ export default function NavList() {
             </li>
             <li>
                 <Link to="/fish-index"
-                    className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${isActive('/fish') ? 'text-blue-700 dark:text-blue-500 font-bold' : 'text-gray-900 dark:text-white'}`}>
+                    className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${isActive('/fish-index') ? 'text-blue-700 dark:text-blue-500 font-bold' : 'text-gray-900 dark:text-white'}`}>
                     {t('NavBar.fish')}
                 </Link>
             </li>
