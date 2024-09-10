@@ -1,10 +1,4 @@
-import './Header.scss'
-import { FaCircleUser } from "react-icons/fa6";
-import { BiSolidCircle } from "react-icons/bi";
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import SearchBar from './SearchBar/SearchBar';
 import AuthContext from '../../context/AuthContext';
 import NavBar from './NavBar/NavBar';
 

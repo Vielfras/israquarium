@@ -15,7 +15,6 @@ export const doSignIn = async (email: string, password: string): Promise<{ error
       return { error: data.message || 'Login failed' };
     }
 
-    console.log("Server response:", data);
     await saveToken(data.token);
 
     // Fetch user details after logging in using the token
@@ -24,7 +23,7 @@ export const doSignIn = async (email: string, password: string): Promise<{ error
       return { error };
     }
 
-    return { error: null, result: result?.data };  // Access the 'data' field
+    return { error: null, result: result };  // Access the 'data' field
   }
   catch (err) {
     const errMessage = (err as Error).message;
@@ -87,10 +86,9 @@ export const fetchUserDetails = async (): Promise<{ error: string | null, result
       return { error: `Error fetching the user's details (${response.statusText})` };
     }
 
-    const data = await response.json();
-    console.log("Fetched user details:", data);
+    const result = await response.json();
 
-    return { error: null, result: data };  // No need to change structure here, the caller will handle it
+    return { error: null, result: result.data };
   } catch (err) {
     const errMessage = (err as Error).message;
     return { error: `Error fetching the user's details (${errMessage})` };

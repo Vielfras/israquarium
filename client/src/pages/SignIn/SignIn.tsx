@@ -28,16 +28,15 @@ export default function SignIn() {
     if (signInResponse?.error) {
       alert(`Error Signing-In: ${signInResponse.error}`);
     } else {
-      setSignInSuccess(true); // Mark sign-in as successful
+      setSignInSuccess(true); 
     }
 
     setIsBusy(false);
   };
 
-  // Redirect to the user profile page when sign-in is successful and userDetails are updated
   useEffect(() => {
     if (signInSuccess && auth?.userDetails) {
-      navigate('/user-profile'); // Redirect after user details are set
+      navigate('/user-profile'); 
     }
   }, [signInSuccess, auth?.userDetails, navigate]);
 

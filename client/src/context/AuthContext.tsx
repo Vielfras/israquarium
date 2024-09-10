@@ -16,14 +16,11 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     const loadUserDetails = async () => {
-      console.log("Fetching user details...");
       const { error, result } = await fetchUserDetails();
       if (error) {
-        console.log("Error fetching user details:", error);
         setUserDetails(undefined);
       } else {
-        console.log("User details fetched successfully:", result);
-        setUserDetails(result?.data);  // Ensure we set the correct data part
+        setUserDetails(result); 
       }
     };
     loadUserDetails();
@@ -34,14 +31,13 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     const { error, result } = await doSignIn(email, password);
 
     if (error) {
-      console.log("Sign-in error:", error);
+      console.error("Sign-in error:", error);
       await signOut(); // Clear token if error occurs
       return { error };
     }
 
-    if (result && result._id) {  // Ensure result contains the user details
-      console.log("Sign-in successful. User details:", result);
-      setUserDetails(result);  // Set the user details correctly
+    if (result && result._id) {  
+      setUserDetails(result);  
       return { error: null };
     }
 
@@ -55,6 +51,8 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       return { error };
     }
 
+    // TODO - Should I log in immidiatly after succesful sign-up?
+    
     return { error: null };
   };
 
