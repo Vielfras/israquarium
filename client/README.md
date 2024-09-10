@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-- Admin autentication
+- Admin page
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
@@ -21,34 +21,40 @@
     - [X] Registration
     - [X] Login
     - [ ] Admin 
-    - [ ] User
-    - [ ] Logout
-    - [ ] Articles
+    - [X] User
+    - [X] Logout
     - [X] Shops 
-    - [ ] Fish Indecies
+    - [X] Fish Indecies
     - [X] Business Card
     - [X] Fish Card
     - [X] Plant Card
     - [X] Create Fish
     - [X] Create Plant
-    - [ ] Create shop
+    - [X] Create shop
     - [ ] Edit Fish 
+    - [ ] Edit Plant
     - [ ] Edit Shop
-    - [ ] MyTropicalFish
+    - [X] Publications
     - [ ] Error Page
     - [ ] Page Not found
 
 ### Issues
-- [ ] 1st time change from light to dark theme doesn't work
-- [ ] Theme should start with browser/system default/preference
 - [ ] Incorrect form field validation causes the size of the parent container to increase suddenly
+- [ ] Replace the login alert with a toast.
 
 ### Version 0.3.0 - Functionality
-- [ ] Directional Support
 - [ ] Authorization 
-    - [ ] Login
+    - [X] Login/Logout
     - [ ] Registration
     - [ ] User Profile when logged in
+- [ ] Dispaly Data:
+    - [ ] Fish
+    - [ ] Plant
+    - [ ] Shop
+- [ ] Create Data:
+    - [ ] Fish
+    - [ ] Plant
+    - [ ] Shop
 - [ ] Edit Data:
     - [ ] Fish
     - [ ] Plant
@@ -56,8 +62,12 @@
 - [ ] Improve the error shown when content from server is loading or inaccecible:
     - Currently its a simple text "Error: Failed to fetch" with no CSS
 
+### Version 0.4.0 - Responsivity and Accessibility
+- [ ] Directional Support
+- [ ] Finalise localisation
+- [ ] Add Accessibility
 
-### Version 0.4.0 - Polish
+### Version 0.5.0 - Polish
 - [ ] Add a "Back to XXXX" button for the fish, plants and shops.
 - [ ] Add button at top of card to allow adding it to "My Aquarium"
 - [ ] Remove all empty scss files
