@@ -5,6 +5,7 @@
 
 ### Bridge:
 - Add a scaffolding for the rest of the missing pages
+- Add an edit plant/fish button to plant/fish cards at the top.
 
 
 ## Version 0.2.0 - Visuals
@@ -59,6 +60,7 @@
 
 
 ### Version 0.4.0 - Polish
+- [ ] Add button at top of card to allow adding it to "My Aquarium"
 - [ ] Remove all empty scss files
 - [ ] Refactor IFishImage and IPlantImage to be a single IImage interface
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
