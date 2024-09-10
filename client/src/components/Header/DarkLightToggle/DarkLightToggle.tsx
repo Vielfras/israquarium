@@ -1,6 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
 
-
 const MoonIcon = (
   <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
@@ -21,11 +20,15 @@ const SunIcon = (
   </svg>
 );
 
-
 export default function DarkLightToggle() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     const storedTheme = localStorage.getItem('theme');
-    return storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    if (storedTheme) {
+      return storedTheme === 'dark';
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
   const toggleTheme = useCallback(() => {
@@ -36,20 +39,22 @@ export default function DarkLightToggle() {
     const rootElement = document.documentElement;
     const currentTheme = isDarkMode ? 'dark' : 'light';
 
-    if (localStorage.getItem('theme') !== currentTheme) {
-      localStorage.setItem('theme', currentTheme);
-      rootElement.classList.toggle('dark', isDarkMode);
-      rootElement.classList.toggle('light', !isDarkMode);
-
+    if (isDarkMode) {
+      rootElement.classList.add('dark');
+      rootElement.classList.remove('light');
+    } else {
+      rootElement.classList.add('light');
+      rootElement.classList.remove('dark');
     }
+
+    localStorage.setItem('theme', currentTheme);
   }, [isDarkMode]);
 
   return (
-    <button
-      onClick={toggleTheme}
+    <button onClick={toggleTheme}
       className="p-2 rounded-full text-gray-800 dark:text-neutral-200 hover:text-neutral-200 hover:bg-gray-900 dark:hover:bg-gray-200 dark:hover:text-gray-800 focus:outline-none"
     >
-      {isDarkMode ? MoonIcon : SunIcon}
+      {isDarkMode ? SunIcon : MoonIcon}
     </button>
   );
 }
