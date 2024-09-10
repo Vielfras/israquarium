@@ -4,13 +4,13 @@
     "ru": "רוסית",
     "he": "עברית"
   },
-  "NavBar": {
+  "NavList": {
     "openMenu": "פתח תפריט ראשי",
     "home": "בית",
     "fish": "דגים",
     "plants": "צמחים",
     "shops": "חנויות",
-    "articles": "מאמרים",
+    "publications": "פרסומים",
     "about": "עלינו"
   },
   "Footer": {

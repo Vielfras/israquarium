@@ -4,13 +4,13 @@
     "ru": "Russian",
     "he": "Hebrew"
   },
-  "NavBar": {
+  "NavList": {
     "openMenu": "Open main menu",
     "home": "Home",
     "fish": "Fish",
     "plants": "Plants",
     "shops": "Shops",
-    "articles": "Articles",
+    "publications": "Publications",
     "about": "About"
   },
   "Footer": {

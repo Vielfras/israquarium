@@ -4,13 +4,13 @@
     "ru": "Русский",
     "he": "Иврит"
   },
-  "NavBar": {
+  "NavList": {
     "openMenu": "Открыть главное меню",
     "home": "Главная",
     "fish": "Рыбы",
     "plants": "Растения",
     "shops": "Магазины",
-    "articles": "Статьи",
+    "publications": "Публикации",
     "about": "О нас"
   },
   "Footer": {

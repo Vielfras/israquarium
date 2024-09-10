@@ -13,7 +13,6 @@ import Home from '../../pages/Home/Home'
 import Plants from '../../pages/Plants/Plants'
 import FishIndexes from '../../pages/FishIndexes/FishIndexes'
 import Shops from '../../pages/Shops/Shops'
-import Articles from '../../pages/Articles/Articles'
 import About from '../../pages/About/About'
 import ContactUs from '../../pages/ContactUs/ContactUs'
 import PrivacyPolicy from '../../pages/PrivacyPolicy/PrivacyPolicy'
@@ -22,6 +21,7 @@ import UserProfile from '../../pages/UserProfile/UserProfile'
 import SignUp from '../../pages/SignUp/SignUp'
 import CreatePlant from '../../pages/CreatePlant/CreatePlant'
 import CreateFish from '../../pages/CreateFish/CreateFish'
+import Publications from '../../pages/Publications/Publications'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -51,7 +51,7 @@ export default function Default() {
 
           <Route path='/plants' element={<Plants />} />
           <Route path='/shops' element={<Shops />} />
-          <Route path='/articles' element={<Articles />} />
+          <Route path='/publications' element={<Publications />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />

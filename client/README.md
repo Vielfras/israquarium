@@ -60,6 +60,7 @@
 
 
 ### Version 0.4.0 - Polish
+- [ ] Add a "Back to XXXX" button for the fish, plants and shops.
 - [ ] Add button at top of card to allow adding it to "My Aquarium"
 - [ ] Remove all empty scss files
 - [ ] Refactor IFishImage and IPlantImage to be a single IImage interface
