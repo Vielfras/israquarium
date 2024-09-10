@@ -4,9 +4,7 @@
 
 
 ### Bridge:
-- Add a scaffolding for the rest of the missing pages
-- Add an edit plant/fish button to plant/fish cards at the top.
-
+- Admin autentication
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar

@@ -1,7 +1,5 @@
-import { jwtDecode } from 'jwt-decode'
-import { IUserDetails, IUserSigninJwtPayload, IUserSignup } from '../interfaces/IUser'
-import { apiBase } from '../config'
-
+import { IUserDetails, IUserSignup } from '../interfaces/IUser';
+import { apiBase } from '../config';
 
 export const doSignIn = async (email: string, password: string): Promise<{ error: string | null, result?: IUserDetails | undefined }> => {
   try {
@@ -9,28 +7,30 @@ export const doSignIn = async (email: string, password: string): Promise<{ error
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
-    })
+    });
 
-    const data = await response.text()
+    const data = await response.json();
 
     if (!response.ok) {
-      return { error: data }
+      return { error: data.message || 'Login failed' };
     }
 
-    await saveToken(data)
+    console.log("Server response:", data);
+    await saveToken(data.token);
 
+    // Fetch user details after logging in using the token
     const { error, result } = await fetchUserDetails();
     if (error) {
-      return { error }
+      return { error };
     }
 
-    return { error: null, result }
+    return { error: null, result: result?.data };  // Access the 'data' field
   }
   catch (err) {
-    const errMessage = (err as Error).message
-    return { error: errMessage }
+    const errMessage = (err as Error).message;
+    return { error: errMessage };
   }
-}
+};
 
 
 export const doSignUp = async (userData: IUserSignup): Promise<{ error: string | undefined }> => {
@@ -39,73 +39,60 @@ export const doSignUp = async (userData: IUserSignup): Promise<{ error: string |
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData)
-    })
+    });
 
-    const data = await response.json()
+    const data = await response.json();
 
     if (!response.ok) {
-      return { error: data }
+      return { error: data.message };
     }
 
-    return { error: undefined }
+    return { error: undefined };
   }
   catch (err) {
-    const errMessage = (err as Error).message
-    return { error: errMessage }
+    const errMessage = (err as Error).message;
+    return { error: errMessage };
   }
-}
-
+};
 
 const saveToken = async (token: string): Promise<void> => {
-  localStorage.setItem('userToken', token)
-}
-
+  localStorage.setItem('israquariumAuthToken', token);
+};
 
 export const removeToken = async (): Promise<void> => {
-  localStorage.removeItem('userToken')
-}
-
+  localStorage.removeItem('israquariumAuthToken');
+};
 
 export const getToken = async (): Promise<string | null> => {
-  const token = localStorage.getItem('userToken')
-  if (token) {
-    return token
-  } else {
-    return null
-  }
-}
-
-
-const decodeToken = async (token: string): Promise<IUserSigninJwtPayload> => {
-  return jwtDecode<IUserSigninJwtPayload>(token)
-}
-
+  const token = localStorage.getItem('israquariumAuthToken');
+  return token ? token : null;
+};
 
 export const fetchUserDetails = async (): Promise<{ error: string | null, result?: IUserDetails | undefined }> => {
-  const token = await getToken()
+  const token = await getToken();
   if (!token) {
-    return { error: `Can't read token from local storage` }
+    return { error: `Can't read token from local storage` };
   }
 
-  const { _id } = await decodeToken(token)
   try {
-    const response = await fetch(`${apiBase}/api/users/${_id}`, {
+    const response = await fetch(`${apiBase}/api/users/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'x-auth-token': token
       }
-    })
+    });
 
     if (!response.ok) {
-      return { error: `Error fetching the user's details (${response.statusText})` }
+      return { error: `Error fetching the user's details (${response.statusText})` };
     }
 
-    const userDetails: IUserDetails = await response.json()
+    const data = await response.json();
+    console.log("Fetched user details:", data);
 
-    return { error: null, result: userDetails }
+    return { error: null, result: data };  // No need to change structure here, the caller will handle it
   } catch (err) {
-    const errMessage = (err as Error).message
-    return { error: `Error fetching the user's details (${errMessage})` }
+    const errMessage = (err as Error).message;
+    return { error: `Error fetching the user's details (${errMessage})` };
   }
-}
+};

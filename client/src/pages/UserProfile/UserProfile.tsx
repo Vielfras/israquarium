@@ -1,14 +1,18 @@
-import './UserProfile.css';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
-
 export default function UserProfile() {
   const { t } = useTranslation();
   const auth = useContext(AuthContext);
+
+  const handleSignOut = async () => {
+    if (auth) {
+      await auth.signOut(); 
+    }
+  };
 
   return (
     <div className="UserProfile Page flex justify-center">
@@ -20,32 +24,41 @@ export default function UserProfile() {
         <DirectionProvider>
           {auth?.userDetails ? (
             <>
+              {/* Display user details if logged in */}
               <div className="py-4">
                 <div className="mb-4 text-lg">
                   <b>{t('UserProfile.email')}:</b> {auth.userDetails.email}
                 </div>
                 <div className="mb-4 text-lg">
-                  <b>{t('UserProfile.name')}:</b> {auth.userDetails.name.first} {auth.userDetails.name.middle} {auth.userDetails.name.last}
+                  <b>{t('UserProfile.name')}:</b> 
+                  {`${auth.userDetails.name.first} ${auth.userDetails.name.middle} ${auth.userDetails.name.last}`}
                 </div>
                 <div className="mb-4 text-lg">
                   <b>{t('UserProfile.phone')}:</b> {auth.userDetails.phone}
                 </div>
                 <div className="flex justify-center mb-6">
-                  <img className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
+                  <img
+                    className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
                     src={auth.userDetails.image.url}
-                    alt={auth.userDetails.image.alt}/>
+                    alt={auth.userDetails.image.alt}
+                  />
                 </div>
               </div>
-              <div className="">
-                <button type="button"
+
+              {/* Sign out button */}
+              <div>
+                <button
+                  type="button"
                   className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500"
-                  onClick={() => auth.signOut()}>
+                  onClick={handleSignOut}
+                >
                   {t('UserProfile.signOut')}
                 </button>
               </div>
             </>
           ) : (
             <>
+              {/* Display this if the user is not logged in */}
               <p className="text-lg">
                 {t('UserProfile.signInRequired')}
               </p>

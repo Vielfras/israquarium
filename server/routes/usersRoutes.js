@@ -1,7 +1,7 @@
 //userRoutes.js
 
 const router = require('express').Router();
-const { getAllUsers, getUserById, /*searchInUsers,*/ /*createNewUser,*/ deleteUser, updateUser, updateUserBusinessStatus } = require('../controllers/usersControllers');
+const { getAllUsers, getUserById, getUserDetails, /*searchInUsers,*/ /*createNewUser,*/ deleteUser, updateUser, updateUserBusinessStatus } = require('../controllers/usersControllers');
 const { login, register, mustLogin, allowedRoles, ROLES } = require('../controllers/authControllers');
 
 /*
@@ -14,6 +14,7 @@ const { login, register, mustLogin, allowedRoles, ROLES } = require('../controll
 router.get('/', mustLogin, allowedRoles([ROLES.ADMIN]), getAllUsers);
 router.post('/', register);
 router.post('/login', login);
+router.get('/me', mustLogin, getUserDetails);
 
 // UNspecific
 router.get('/:id', mustLogin, getUserById);

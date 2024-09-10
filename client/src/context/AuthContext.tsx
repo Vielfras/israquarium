@@ -1,66 +1,71 @@
-import { IUserDetails, IUserSignup } from "../interfaces/IUser"
-import { createContext, useEffect, useState } from "react"
-import { doSignIn, doSignUp, fetchUserDetails, removeToken } from "../services/UserServices"
+import { IUserDetails, IUserSignup } from "../interfaces/IUser";
+import { createContext, useEffect, useState } from "react";
+import { doSignIn, doSignUp, fetchUserDetails, removeToken } from "../services/UserServices";
 
 interface AuthContextType {
-  userDetails:IUserDetails|undefined
-  signIn: (email:string, password:string) => Promise<{error:string|null}>
-  signUp: ({}:IUserSignup) => Promise<{error:string|undefined}>
-  signOut: () => Promise<void>
+  userDetails: IUserDetails | undefined;
+  signIn: (email: string, password: string) => Promise<{ error: string | null }>;
+  signUp: (userData: IUserSignup) => Promise<{ error: string | null }>;
+  signOut: () => Promise<void>;
 }
 
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthContext = createContext<AuthContextType|undefined>(undefined);
+export default function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [userDetails, setUserDetails] = useState<IUserDetails | undefined>(undefined);
 
-
-export default function AuthProvider({children}:{children:React.ReactNode}) {
-  const [userDetails,setUserDetails] = useState<IUserDetails|undefined>(undefined)
-
-  useEffect(()=>{
+  useEffect(() => {
     const loadUserDetails = async () => {
-      const { error, result } = await fetchUserDetails()
-      if (error) setUserDetails(undefined)
-      setUserDetails(result)
-    }
+      console.log("Fetching user details...");
+      const { error, result } = await fetchUserDetails();
+      if (error) {
+        console.log("Error fetching user details:", error);
+        setUserDetails(undefined);
+      } else {
+        console.log("User details fetched successfully:", result);
+        setUserDetails(result?.data);  // Ensure we set the correct data part
+      }
+    };
     loadUserDetails();
-  },[])
-  
-  const signIn = async (email:string, password:string):Promise<{error:string|null}> => {
-    const { error,result } = await doSignIn(email,password)
+  }, []);
 
-    if (error) { 
-      signOut()
-      return { error }
+  const signIn = async (email: string, password: string): Promise<{ error: string | null }> => {
+    console.log("Signing in with email:", email);
+    const { error, result } = await doSignIn(email, password);
+
+    if (error) {
+      console.log("Sign-in error:", error);
+      await signOut(); // Clear token if error occurs
+      return { error };
     }
 
-    if (result) {
-      setUserDetails(result)     // TODO: return result be make sure state is changed before returning a value
-      return { error:null }
+    if (result && result._id) {  // Ensure result contains the user details
+      console.log("Sign-in successful. User details:", result);
+      setUserDetails(result);  // Set the user details correctly
+      return { error: null };
     }
 
-    return { error:null }
-  }
+    return { error: "Error fetching user details after sign-in" };
+  };
 
+  const signUp = async (userData: IUserSignup): Promise<{ error: string | null }> => {
+    const { error, result } = await doSignUp(userData);
 
-  const signUp = async (userData:IUserSignup):Promise<{error:string|undefined}> => {
-    const { error } = await doSignUp(userData)
-
-    if (error) { 
-      signOut()
-      return { error }
+    if (error) {
+      return { error };
     }
 
-    return { error:undefined }
-  }
+    return { error: null };
+  };
 
   const signOut = async () => {
-    await removeToken()    
-    setUserDetails(undefined)
-  }
+    await removeToken();
+    setUserDetails(undefined);
+  };
 
   return (
     <AuthContext.Provider value={{ userDetails, signIn, signOut, signUp }}>
       {children}
     </AuthContext.Provider>
-  )
+  );
 }

@@ -37,7 +37,7 @@ interface IName {
 }
 
 interface IImage {
-  url: string
+  src: string
   alt: string
 }
 

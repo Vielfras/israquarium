@@ -1,7 +1,5 @@
-import './SignIn.scss';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
@@ -11,6 +9,7 @@ export default function SignIn() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isBusy, setIsBusy] = useState<boolean>(false);
+  const [signInSuccess, setSignInSuccess] = useState<boolean>(false);
 
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,19 +28,18 @@ export default function SignIn() {
     if (signInResponse?.error) {
       alert(`Error Signing-In: ${signInResponse.error}`);
     } else {
-      alert(`Successfully Signed-In! Welcome ${auth.userDetails?.name}!`);
-
-      const redirectTo = auth.userDetails?.isAdmin
-        ? '/admin'
-        : auth.userDetails?.isBusiness
-          ? '/business'
-          : '/user';
-
-      navigate(redirectTo);
+      setSignInSuccess(true); // Mark sign-in as successful
     }
 
     setIsBusy(false);
   };
+
+  // Redirect to the user profile page when sign-in is successful and userDetails are updated
+  useEffect(() => {
+    if (signInSuccess && auth?.userDetails) {
+      navigate('/user-profile'); // Redirect after user details are set
+    }
+  }, [signInSuccess, auth?.userDetails, navigate]);
 
   return (
     <div className="flex items-center justify-center">
@@ -49,16 +47,14 @@ export default function SignIn() {
         <h3 className="text-center text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{t('SignInPage.title')}</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <FormField controlId="formBasicEmail"
-            label="" type="email" placeholder={t('SignInPage.enterEmail')} 
+            label="" type="email" placeholder={t('SignInPage.enterEmail')}
             value={email} onChange={(e) => setEmail(e.target.value)}
           />
           <FormField controlId="formBasicPassword"
-            label="" type="password" placeholder={t('SignInPage.enterPassword')} 
+            label="" type="password" placeholder={t('SignInPage.enterPassword')}
             value={password} onChange={(e) => setPassword(e.target.value)}
           />
 
-          <br></br>
-          
           <button type="submit" disabled={isBusy}
             className="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50">
             {isBusy ? (

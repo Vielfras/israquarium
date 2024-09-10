@@ -35,53 +35,6 @@ export default function Header() {
     <div className='Header'>
     
       <NavBar />
-      {/* ---- Search ---------------------------------------------------------------------------------------------------------------------------------------- */}
-      {/* <SearchBar /> */}
-
-      {/* ---- Nav Links ------------------------------------------------------------------------------------------------------------------------------------- */}
-      {/* <div className="navbar-collapse collapse" id="menu"> */}
-      {/* <ul className="navbar-nav ms-auto" style={{ listStyle: 'none' }}> */}
-
-      {/* ---- Pages ------------------------------------------------------------------------------------------------------------------------------------- */}
-      {/* <li className="nav-item mx-2">
-            <Link to={'/'} className='nav-link'>Home</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link to={'/about'} className='nav-link'>About</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link to={'/free'} className='nav-link'>Free</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link to={'/user'} className='nav-link'>User</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link to={'/business'} className='nav-link'>Biz</Link>
-          </li>
-          <li className="nav-item mx-2">
-          </li> */}
-
-      {/* {
-            (auth?.userDetails?.isAdmin) &&
-            <li className="nav-item mx-2">
-              <Link to={'/admin'} className='nav-link'>Admin</Link>
-            </li>
-          } */}
-
-      {/* ---- User Profile ------------------------------------------------------------------------------------------------------------------------------ */}
-      {/* <li className="nav-item mx-3">
-            <Link to='/profile' className="nav-link">
-              {
-                (auth?.userDetails) ?
-                  <img className='profile-icon' style={{ width: '24px', height: '24px', objectFit: 'contain', borderRadius: '90px' }} src={auth.userDetails.image.url} alt={auth.userDetails.image.alt} />
-                  :
-                  <FaCircleUser className='profile-icon' style={{ filter: 'drop-shadow(2px 2px 2px rgb(0 0 0 / 0.5))' }} size={24} />
-              }
-            </Link>
-          </li> */}
-
-      {/* </ul> */}
-      {/* </div> */}
 
     </div>
 

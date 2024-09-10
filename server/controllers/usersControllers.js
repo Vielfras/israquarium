@@ -18,6 +18,26 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getUserDetails = async (req, res) => {
+  try {
+    console.log(req.user);
+    const userId = req.user.id; 
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    // TODO - Change this to work the same as the rest of the API, with success and data
+    res.status(200).json({
+      success: true,
+      data: user,
+    }); 
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Error fetching user details' });
+  }
+};
+
 const getUserById = async (req, res) => {
   const { id } = req.params;
   
@@ -127,6 +147,7 @@ const updateUserBusinessStatus = async (req, res) => {
 
 module.exports = {
   getAllUsers,
+  getUserDetails,
   getUserById,
   deleteUser,
   updateUser,
