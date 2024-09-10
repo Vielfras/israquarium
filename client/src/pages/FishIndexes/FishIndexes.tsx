@@ -1,4 +1,3 @@
-import './Fish.scss';
 import { useEffect, useState } from 'react';
 import { apiBase } from '../../config';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
@@ -12,7 +11,7 @@ import Spinner from '../../components/Misc/Spinner/Spinner';
 const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
 
-export default function Fish() {
+export default function FishIndexes() {
   const [fishData, setFishData] = useState<IFish | null>(null);
   const [fishIndexData, setFishIndexData] = useState<IFishIndex[] | null>(null);
   const [loading, setLoading] = useState(true);

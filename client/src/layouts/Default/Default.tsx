@@ -11,7 +11,7 @@ import Header from '../../components/Header/Header'
 import NotFound from '../../pages/NotFound/NotFound'
 import Home from '../../pages/Home/Home'
 import Plants from '../../pages/Plants/Plants'
-import Fish from '../../pages/Fish/Fish'
+import FishIndexes from '../../pages/FishIndexes/FishIndexes'
 import Shops from '../../pages/Shops/Shops'
 import Articles from '../../pages/Articles/Articles'
 import About from '../../pages/About/About'
@@ -45,7 +45,7 @@ export default function Default() {
       <main className="flex-grow bg-blue-200 dark:bg-cyan-950 p-6">
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/fish' element={<Fish />} />
+          <Route path='/fish-index' element={<FishIndexes />} />
           <Route path='/plants' element={<Plants />} />
           <Route path='/shops' element={<Shops />} />
           <Route path='/articles' element={<Articles />} />
