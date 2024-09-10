@@ -17,7 +17,6 @@ import Articles from '../../pages/Articles/Articles'
 import About from '../../pages/About/About'
 import ContactUs from '../../pages/ContactUs/ContactUs'
 import PrivacyPolicy from '../../pages/PrivacyPolicy/PrivacyPolicy'
-import Licensing from '../../pages/Licensing/Licensing'
 import SignIn from '../../pages/SignIn/SignIn'
 import UserProfile from '../../pages/UserProfile/UserProfile'
 import SignUp from '../../pages/SignUp/SignUp'
@@ -53,7 +52,6 @@ export default function Default() {
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-          <Route path='/licensing' element={<Licensing />} />
           <Route path='/sign-in' element={<SignIn/>}/>
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/user-profile' element={<UserProfile/>}/>
