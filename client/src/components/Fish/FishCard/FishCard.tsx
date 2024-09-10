@@ -1,4 +1,3 @@
-import "./FishCard.css";
 import { IFish } from "../../../interfaces/IFish";
 import { useTranslation } from 'react-i18next';
 

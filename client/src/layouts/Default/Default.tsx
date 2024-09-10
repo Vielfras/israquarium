@@ -45,7 +45,10 @@ export default function Default() {
       <main className="flex-grow bg-blue-200 dark:bg-cyan-950 p-6">
         <Routes>
           <Route path='/' element={<Home />} />
+
           <Route path='/fish-index' element={<FishIndexes />} />
+          <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />
+
           <Route path='/plants' element={<Plants />} />
           <Route path='/shops' element={<Shops />} />
           <Route path='/articles' element={<Articles />} />

@@ -2,22 +2,32 @@ import { useEffect, useState } from 'react';
 import { apiBase } from '../../config';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import FishCard from '../../components/Fish/FishCard/FishCard';
+import MiniFishCard from '../../components/Fish/MiniFishCard/MiniFishCard';
+import FishIndex from '../../components/Fish/FishIndex/FishIndex'; 
 import { IFish, IFishIndex } from '../../interfaces/IFish';
-import FishIndex from '../../components/Fish/FishIndex/FishIndex';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 
 const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
 
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''); 
+
 export default function FishIndexes() {
-  const [fishData, setFishData] = useState<IFish | null>(null);
+  const { fishIndexName } = useParams<{ fishIndexName?: string }>(); 
   const [fishIndexData, setFishIndexData] = useState<IFishIndex[] | null>(null);
+  const [fishData, setFishData] = useState<IFish[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { t } = useTranslation();
+  const [selectedIndex, setSelectedIndex] = useState<IFishIndex | null>(null); 
+  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
+  const [expandedFishId, setExpandedFishId] = useState<string | null>(null); 
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const currentLang = i18n.language as 'en' | 'he' | 'ru'; 
 
+  
   useEffect(() => {
     const fetchFishIndexData = async () => {
       try {
@@ -35,32 +45,53 @@ export default function FishIndexes() {
       }
     };
 
-    const fetchFishData = async () => {
-      try {
-        const response = await fetch(apiFishCall);
-        if (!response.ok) {
-          throw new Error(t('FishPage.errorFetchingData'));
-        }
-        const data = await response.json();
-        setFishData(data.data);
-      } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
-        setError(errorMessage);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchFishIndexData();
-    fetchFishData();
-  }, []);
+  }, [t]);
 
-  const calculateLastRowColSpan = (totalItems: number, itemsPerRow: number) => {
-    const lastRowItemsCount = totalItems % itemsPerRow;
-    return lastRowItemsCount === 0 ? itemsPerRow : lastRowItemsCount;
+  
+  useEffect(() => {
+    if (fishIndexData && fishIndexName) {
+      const index = fishIndexData.find(
+        (i) =>
+          i.english.toLowerCase() === fishIndexName.toLowerCase() ||
+          i.hebrew.toLowerCase() === fishIndexName.toLowerCase() ||
+          i.russian.toLowerCase() === fishIndexName.toLowerCase()
+      );
+      if (index) {
+        handleIndexClick(index);
+      }
+    }
+  }, [fishIndexData, fishIndexName]);
+
+  const handleIndexClick = async (index: IFishIndex) => {
+    setSelectedIndex(index);
+    setSelectedLetter(null); 
+    setExpandedFishId(null); 
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${apiFishCall}?index=${index._id}`);
+      if (!response.ok) {
+        throw new Error(t('FishPage.errorFetchingData'));
+      }
+      const data = await response.json();
+      setFishData(data.data);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const fishIndexLength = fishIndexData ? fishIndexData.length : 0;
+  const handleLetterClick = (letter: string) => {
+    setSelectedLetter(letter);
+    setExpandedFishId(null); 
+  };
+
+  const handleFishCardClick = (fishId: string) => {
+    setExpandedFishId(fishId === expandedFishId ? null : fishId); 
+  };
 
   return (
     <div className="flex flex-col items-center">
@@ -73,30 +104,63 @@ export default function FishIndexes() {
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
 
       {error && (
-        <div className="text-red-500">Error fetching fish data.<br />Error: {error}</div>
+        <div className="text-red-500">{t('FishPage.errorFetchingIndex')}<br />Error: {error}</div>
       )}
 
-      {!loading && !error && (
-        <>
-          <div className="grid place-items-center grid-cols-2 sm:grid-cols-4 gap-2">
-            {fishIndexData && fishIndexData.map((fishIndex, index) => {
-              const itemsPerRow = window.innerWidth >= 640 ? 4 : 1;
-              const lastRowColSpan = calculateLastRowColSpan(fishIndexLength, itemsPerRow);
-              return (
-                <div key={fishIndex._id}
-                  className={`${index >= fishIndexLength - lastRowColSpan ? `col-span-${lastRowColSpan}` : ''}`}>
-                  <FishIndex fishIndex={fishIndex} />
-                </div>
-              );
-            })}
-          </div>
+      {!loading && !error && fishIndexData && (
+        <div className={`w-full ${selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4'}`}>
+          {fishIndexData.map((index) => (
+            <button
+              key={index._id}
+              onClick={() => {
+                setSelectedIndex(index); 
+                const indexName = currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian;
+                navigate(`/fish-index/${encodeURIComponent(indexName)}`); 
+              }}
+              className={`px-4 py-2 rounded-lg ${selectedIndex && selectedIndex._id === index._id ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
+                }`}
+            >
+              <FishIndex fishIndex={index} />
+              <div className="text-center mt-2">
+                {currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian}
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
 
-          <br />
+      {/* Alphabet Row */}
+      {selectedIndex && (
+        <div className="flex justify-center gap-2 overflow-x-auto w-full pb-4">
+          {alphabet.map((letter) => (
+            <button
+              key={letter}
+              onClick={() => handleLetterClick(letter)}
+              className={`px-3 py-1 rounded-lg ${selectedLetter === letter ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-800'
+                }`}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
+      )}
 
-          <DirectionProvider>
-            {fishData && <FishCard fishData={fishData} />}
-          </DirectionProvider>
-        </>
+      {/* Mini Fish Cards */}
+      {selectedLetter && fishData && (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+          {fishData
+            .filter(fish => fish.name.startsWith(selectedLetter)) 
+            .map(fish => (
+              <div key={fish._id}>
+                <MiniFishCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
+                {expandedFishId === fish._id && (
+                  <DirectionProvider>
+                    <FishCard fishData={fish} />
+                  </DirectionProvider>
+                )}
+              </div>
+            ))}
+        </div>
       )}
     </div>
   );
