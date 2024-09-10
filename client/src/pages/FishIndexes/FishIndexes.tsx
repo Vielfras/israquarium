@@ -117,7 +117,7 @@ export default function FishIndexes() {
                 const indexName = currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian;
                 navigate(`/fish-index/${encodeURIComponent(indexName)}`); 
               }}
-              className={`px-4 py-2 rounded-lg ${selectedIndex && selectedIndex._id === index._id ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
+              className={`px-4 py-2 rounded-lg font-bold ${selectedIndex && selectedIndex._id === index._id ? 'text-white' : ' text-gray-800 dark:text-white'
                 }`}
             >
               <FishIndex fishIndex={index} />
