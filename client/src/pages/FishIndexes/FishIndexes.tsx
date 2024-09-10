@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiBase } from '../../config';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import FishCard from '../../components/Fish/FishCard/FishCard';
-import MiniFishCard from '../../components/Fish/MiniFishCard/MiniFishCard';
+import FishMiniCard from '../../components/Fish/FishMiniCard/FishMiniCard';
 import FishIndex from '../../components/Fish/FishIndex/FishIndex'; 
 import { IFish, IFishIndex } from '../../interfaces/IFish';
 import { Link, useParams, useNavigate } from 'react-router-dom';
@@ -152,7 +152,7 @@ export default function FishIndexes() {
             .filter(fish => fish.name.startsWith(selectedLetter)) 
             .map(fish => (
               <div key={fish._id}>
-                <MiniFishCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
+                <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
                 {expandedFishId === fish._id && (
                   <DirectionProvider>
                     <FishCard fishData={fish} />
