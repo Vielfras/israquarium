@@ -51,6 +51,55 @@ const plants = [
         propagation: 'Обрезка и пересадка. Обрезать около 10 см.'
       }
     },
+  },
+  {
+    _id: new mongoose.Types.ObjectId('669250722a39a728cb8ae20e'),
+    name: 'Bacopa caroliniana',
+    images: [
+      { 
+        src: 'Bacopa_caroliniana.jpg', 
+        alt: 'Bacopa caroliniana 1',
+        creatorName: 'Unknown',
+        originalSource: 'http://www.israquarium.co.il', 
+      }
+    ],
+    latinName: 'Bacopa caroliniana Walter (1788)',
+    firstDescription: 'Walter, 1788',
+    sources: 'Israquarium',
+    height: '20 - 60 cm',
+    width: '5 - 12 cm',
+    temperature: '20 - 26°C',
+    ph: '6.4 - 7.5',
+    hardness: '2 - 10 dGH',
+    light: 'Strong to very strong',
+    growthRate: 'Moderate',
+    placement: 'Foreground to midground',
+    languages: {
+      en: {
+        family: 'Scrophulariaceae',
+        synonyms: 'Obolaria caroliniana Walter, Monniera amplexicaulis Michaux, Bacopa amplexicaulis (Michaux) Wettstein',
+        etymology: 'Bacopa: name used by the people of Guyana, caroliniana: from Carolina',
+        distribution: 'Southern and Central United States',
+        notes: 'Relatively easy to grow, but requires strong light. Under strong light, leaves develop a reddish hue. Prefers soft water.',
+        propagation: 'Trimming and replanting. Cut about 10 cm.'
+      },
+      he: {
+        family: 'לועניתיים',
+        synonyms: 'אובולאריה קרוליניאנה וולטר, מונירה אמפלקסיקוליס מישו, בקופה אמפלקסיקוליס (מישו) וטשטיין',
+        etymology: 'בקופה: כך קוראים לצמח תושבי גאיאנה, קרוליניאנה: מקרולינה',
+        distribution: 'דרום ומרכז ארצות הברית',
+        notes: '.צמח קל יחסית לגידול, אך דורש אור חזק. באור חזק מופיעים עלים בגוון צבע אדום. אוהב מים רכים',
+        propagation: 'גיזום ושתילה מחדש. מספיק לחתוך כ-10 ס"מ.'
+      },
+      ru: {
+        family: 'Норичниковые',
+        synonyms: 'Оболария каролиниана Уолтер, Моньера амплексикаулис Мишо, Бакопа амплексикаулис (Мишо) Веттштейн',
+        etymology: 'Bacopa: название растения в Гайане, caroliniana: из Каролины',
+        distribution: 'Юг и центральная часть Соединённых Штатов',
+        notes: 'Относительно легко выращивать, но требует сильного освещения. При ярком свете листья приобретают красноватый оттенок. Предпочитает мягкую воду.',
+        propagation: 'Обрезка и пересадка. Достаточно обрезать около 10 см.'
+      }
+    }
   }
 ];
 

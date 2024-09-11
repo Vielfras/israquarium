@@ -7,8 +7,8 @@ interface AlphabetRowProps {
 
 const alphabetMap = {
   en: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
-  he: 'אבגדהוזחטיכלמנסעפצקרשת'.split(''),
-  ru: 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ'.split(''),
+  // he: 'אבגדהוזחטיכלמנסעפצקרשת'.split(''),
+  // ru: 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ'.split(''),
 };
 
 export default function AlphabetRow({ selectedLetter, onLetterClick }: AlphabetRowProps) {

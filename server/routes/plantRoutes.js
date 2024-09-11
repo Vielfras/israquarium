@@ -2,7 +2,7 @@
 
 const router = require('express').Router();
 const { mustLogin, allowedRoles } = require('../controllers/authControllers');
-const { getRandomPlant, getPlantById, getPlantImage, updateAPlant, createPlant, deletePlant } = require('../controllers/plantControllers');
+const { getPlantsByLetter, getRandomPlant, getPlantById, getPlantImage, updateAPlant, createPlant, deletePlant } = require('../controllers/plantControllers');
 
 /*
 ============================================
@@ -10,9 +10,11 @@ const { getRandomPlant, getPlantById, getPlantImage, updateAPlant, createPlant, 
 ============================================
 */
 
-router.get('/', getRandomPlant);
+
+router.get('/', getPlantsByLetter);
 router.get('/:id', getPlantById);
 router.get('/image/:id/:imageName', getPlantImage);
+router.get('/random', getRandomPlant);
 
 // router.post('/', mustLogin, allowedRoles(["admin"]), createPlant);
 // router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAPlant);

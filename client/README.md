@@ -17,7 +17,7 @@
         - [X] Eng / Russian / Heb
 - [ ] Pages Scaffolding:
     - [X] About
-    - [ ] Home 
+    - [X] Home 
     - [X] Registration
     - [X] Login
     - [ ] Admin 
@@ -48,11 +48,13 @@
     - [ ] Registration
     - [ ] User Profile when logged in
 - [ ] Services.ts
-    - [ ] FishService.ts
-    - [ ] PlantServices.ts
+    - [X] FishService.ts
+    - [X] PlantServices.ts
+    - [X] BusinessCardServices.ts
 - [ ] Dispaly Data:
+    - [X] FishIndices
     - [ ] Fish
-    - [ ] Plant
+    - [X] Plant
     - [ ] Shop
 - [ ] Create Data:
     - [ ] Fish

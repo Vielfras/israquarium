@@ -9,6 +9,37 @@ const Plant = require("../models/Plant");
 const Err = require("../utils/errorHandling");
 
 
+const getPlantsByLetter = async (req, res) => {
+  try {
+    const { letter } = req.query;
+
+    if (!letter || letter.length !== 1) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide a valid single letter."
+      });
+    }
+
+    const plants = await Plant.find({
+      name: { $regex: `^${letter}`, $options: 'i' } // 'i' for case-insensitive search
+    });
+
+    if (plants.length > 0) {
+      return res.status(200).json({
+        success: true,
+        data: plants
+      });
+    }
+
+    return res.status(404).json({
+      success: false,
+      message: `No plants found starting with the letter '${letter}'.`
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
+  }
+};
+
 const getRandomPlant = async (req, res) => {
   try {
     const count = await Plant.countDocuments();
@@ -146,6 +177,7 @@ const updateAPlant = async (req, res) => {
 
 
 module.exports = {
+  getPlantsByLetter,
   getRandomPlant,
   getPlantById,
   getPlantImage,
