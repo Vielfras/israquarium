@@ -1,4 +1,4 @@
-import "./PlantCard.css";
+import { apiBase } from "../../../config";
 import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 
@@ -39,7 +39,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
       <h1 className="text-3xl font-bold text-center text-green-900 mb-4">{plantData.name}</h1>
       <div className="">
         {plantData.images.map((image, index) => (
-          <img key={index} src={`http://127.0.0.1:3000/api/plant/image/${plantData._id}/${image.src}`} alt={image.alt} className="w-full rounded" />
+          <img key={index} src={`${apiBase}/api/plant/image/${plantData._id}/${image.src}`} alt={image.alt} className="w-full rounded" />
         ))}
       </div>
       

@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-- Admin page
+- Check SignUp page
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
