@@ -37,6 +37,7 @@
     - [X] Publications
     - [ ] Error Page
     - [ ] Page Not found
+    - [X] Favorite Icon
 
 ### Issues
 - [ ] Incorrect form field validation causes the size of the parent container to increase suddenly
@@ -47,6 +48,10 @@
     - [X] Login/Logout
     - [ ] Registration
     - [ ] User Profile when logged in
+- [ ] Toggle likes:
+    - [ ] Plants
+    - [ ] Fish
+    - [ ] Shops
 - [ ] Services.ts
     - [X] FishService.ts
     - [X] PlantServices.ts

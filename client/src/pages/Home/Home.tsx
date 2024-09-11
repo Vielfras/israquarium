@@ -30,7 +30,7 @@ export default function HomePage() {
     <div className="flex justify-center items-center">
 
       <DirectionProvider>
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-6xl w-full">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-5xl w-full">
         <h1 className="text-5xl font-extrabold text-center text-blue-600 dark:text-blue-400 mb-8">
           {t('HomePage.welcomeTitle')}
         </h1>

@@ -16,8 +16,8 @@ export default function PlantCard({ plantData }: IPlantCard) {
   const language: LanguageCode = i18n.language as LanguageCode;
   const langData = plantData.languages[language];
 
-  const [menuOpen, setMenuOpen] = useState(false); // State for the kebab menu
-  const [isFavorited, setIsFavorited] = useState(false); // Manage favorite state in parent
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -67,10 +67,8 @@ export default function PlantCard({ plantData }: IPlantCard) {
     <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
       {/* Plant Name, Heart Icon, and Kebab Menu */}
       <div className="flex justify-between items-center mb-4">
-        {/* Heart Icon */}
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 
-        {/* Plant Name */}
         <h1 className="text-3xl font-bold text-center text-green-900 mx-auto">
           {plantData.name}
         </h1>
@@ -84,7 +82,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
             </svg>
           </button>
-
 
           {/* Kebab Menu */}
           {menuOpen && (
