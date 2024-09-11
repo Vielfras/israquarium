@@ -3,16 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
+import UserCard from '../../components/User/UserCard/UserCard';
 
 export default function UserProfile() {
   const { t } = useTranslation();
   const auth = useContext(AuthContext);
-
-  const handleSignOut = async () => {
-    if (auth) {
-      await auth.signOut(); 
-    }
-  };
 
   return (
     <div className="UserProfile Page flex justify-center">
@@ -23,50 +18,16 @@ export default function UserProfile() {
 
         <DirectionProvider>
           {auth?.userDetails ? (
-            <>
-              {/* Display user details if logged in */}
-              <div className="py-4">
-                <div className="mb-4 text-lg">
-                  <b>{t('UserProfile.email')}:</b> {auth.userDetails.email}
-                </div>
-                <div className="mb-4 text-lg">
-                  <b>{t('UserProfile.name')}:</b> 
-                  {`${auth.userDetails.name.first} ${auth.userDetails.name.middle} ${auth.userDetails.name.last}`}
-                </div>
-                <div className="mb-4 text-lg">
-                  <b>{t('UserProfile.phone')}:</b> {auth.userDetails.phone}
-                </div>
-                <div className="flex justify-center mb-6">
-                  <img
-                    className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
-                    src={auth.userDetails.image.url}
-                    alt={auth.userDetails.image.alt}
-                  />
-                </div>
-              </div>
-
-              {/* Sign out button */}
-              <div>
-                <button
-                  type="button"
-                  className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500"
-                  onClick={handleSignOut}
-                >
-                  {t('UserProfile.signOut')}
-                </button>
-              </div>
-            </>
+            <UserCard userDetails={auth.userDetails} />
           ) : (
             <>
               {/* Display this if the user is not logged in */}
-              <p className="text-lg">
-                {t('UserProfile.signInRequired')}
-              </p>
+              <p className="text-lg">{t('UserProfile.signInRequired')}</p>
               <p className="text-xl mt-8 mb-2">
                 <Link to="/sign-in" className="text-blue-600 dark:text-blue-400 hover:underline">
                   {t('UserProfile.signIn')}
-                </Link>
-                {' '} / {' '}
+                </Link>{' '}
+                /{' '}
                 <Link to="/sign-up" className="text-blue-600 dark:text-blue-400 hover:underline">
                   {t('UserProfile.signUp')}
                 </Link>

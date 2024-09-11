@@ -22,6 +22,7 @@ import SignUp from '../../pages/SignUp/SignUp'
 import CreatePlant from '../../pages/CreatePlant/CreatePlant'
 import CreateFish from '../../pages/CreateFish/CreateFish'
 import Publications from '../../pages/Publications/Publications'
+import AdminProfile from '../../pages/AdminProfile/AdminProfile'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -46,23 +47,26 @@ export default function Default() {
         <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='/fish-index' element={<FishIndexes />} />
-          <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />
 
-          <Route path='/plants' element={<Plants />} />
-          <Route path='/shops' element={<Shops />} />
           <Route path='/publications' element={<Publications />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          
           <Route path='/sign-in' element={<SignIn/>}/>
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/user-profile' element={<UserProfile/>}/>
+          <Route path='/admin-profile' element={<AdminProfile/>}/>
+
+          <Route path='/shops' element={<Shops />} />
+          <Route path='/plants' element={<Plants />} />
           <Route path='/create-plant' element={<CreatePlant/>}/>
+          
+          <Route path='/fish-index' element={<FishIndexes />} />
+          <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />
           <Route path='/create-fish' element={<CreateFish/>}/>
-          {/* 
-        <Route path='/edit-card/:cardId' element={<EditCard/>}/>
-        */}
+
+
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
