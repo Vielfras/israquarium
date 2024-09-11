@@ -47,6 +47,9 @@
     - [X] Login/Logout
     - [ ] Registration
     - [ ] User Profile when logged in
+- [ ] Services.ts
+    - [ ] FishService.ts
+    - [ ] PlantServices.ts
 - [ ] Dispaly Data:
     - [ ] Fish
     - [ ] Plant
@@ -68,6 +71,7 @@
 - [ ] Add Accessibility
 
 ### Version 0.5.0 - Polish
+- [ ] Rename all CardServices.ts functions to work with businessCard convention
 - [ ] Add a "Back to XXXX" button for the fish, plants and shops.
 - [ ] Add button at top of card to allow adding it to "My Aquarium"
 - [ ] Remove all empty scss files

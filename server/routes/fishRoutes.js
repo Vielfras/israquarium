@@ -1,7 +1,7 @@
 // fishRoutes.js
 
 const router = require('express').Router();
-const { mustLogin, allowedRoles } = require('../controllers/authControllers');
+// const { mustLogin, allowedRoles } = require('../controllers/authControllers');
 const { getRandomFish, getFishById, getFishImage, updateAFish, createFish, deleteFish } = require('../controllers/fishControllers');
 
 /*
