@@ -129,6 +129,23 @@
     "signIn": "התחברות",
     "signUp": "הרשמה"
   },
+  "AdminProfile": {
+    "title": "פרופיל מנהל",
+    "websiteStats": "סטטיסטיקות אתר",
+    "totalUsers": "סך המשתמשים",
+    "totalFish": "סך הדגים",
+    "totalPlants": "סך הצמחים",
+    "totalShops": "סך החנויות",
+    "loading": "טוען...",
+    "users": "ניהול משתמשים",
+    "noUsers": "לא נמצאו משתמשים.",
+    "fish": "ניהול דגים",
+    "noFish": "לא נמצאו דגים.",
+    "plants": "ניהול צמחים",
+    "noPlants": "לא נמצאו צמחים.",
+    "shops": "ניהול חנויות",
+    "noShops": "לא נמצאו חנויות."
+  },
   "SignInPage": {
     "title": "התחברות",
     "enterEmail": "הכנס את האימייל שלך",

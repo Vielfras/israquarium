@@ -119,6 +119,23 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone"
   },
+  "AdminProfile": {
+    "title": "Admin Profile",
+    "websiteStats": "Website Statistics",
+    "totalUsers": "Total Users",
+    "totalFish": "Total Fish",
+    "totalPlants": "Total Plants",
+    "totalShops": "Total Shops",
+    "loading": "Loading...",
+    "users": "User Management",
+    "noUsers": "No users found.",
+    "fish": "Fish Management",
+    "noFish": "No fish found.",
+    "plants": "Plant Management",
+    "noPlants": "No plants found.",
+    "shops": "Shop Management",
+    "noShops": "No shops found."
+  },
   "UserProfile": {
     "title": "User Profile",
     "email": "Email",
@@ -303,7 +320,7 @@
     "errorTitle": "Error",
     "errorMessage": "There was an error submitting the fish."
   },
-  "ShopsPage" : {
+  "ShopsPage": {
     "shopsTitle": "Shops",
     "errorFetchingCards": "Error getting cards 😞",
     "loadingCardsMessage": "Loading cards, please wait...",
