@@ -28,7 +28,7 @@ export default function HomePage() {
 
   return (
     
-    <div className="flex justify-center items-center py-8">
+    <div className="flex justify-center items-center">
 
       <DirectionProvider>
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-6xl w-full">
