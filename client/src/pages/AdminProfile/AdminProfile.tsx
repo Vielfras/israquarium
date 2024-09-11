@@ -58,10 +58,7 @@ export default function AdminProfile() {
 
         <DirectionProvider>
           {/* Admin Card */}
-          <AdminCard
-            websiteStats={websiteStats}
-            users={users}
-            handleSignOut={handleSignOut}
+          <AdminCard websiteStats={websiteStats} users={users} handleSignOut={handleSignOut}
           />
         </DirectionProvider>
       </div>

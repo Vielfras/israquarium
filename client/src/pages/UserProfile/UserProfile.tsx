@@ -10,7 +10,7 @@ export default function UserProfile() {
   const auth = useContext(AuthContext);
 
   return (
-    <div className="UserProfile Page flex justify-center">
+    <div className="Page flex justify-center">
       <div className="p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg text-center text-gray-700 dark:text-gray-300 mb-4">
         <h3 className="text-center text-3xl font-bold mb-8 text-gray-800 dark:text-gray-100 tracking-wide">
           {t('UserProfile.title')}
