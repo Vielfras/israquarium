@@ -2,6 +2,8 @@ import { useState } from 'react';
 import JournalMiniCard from '../../components/Journal/JournalMiniCard/JournalMiniCard';
 import JournalCard from '../../components/Journal/JournalCard/JournalCard';
 
+
+// TODO - Get these from the backend
 const myTropicalFishJournals = [
   {
     title: 'My Tropical Fish - Issue 1',
@@ -42,39 +44,29 @@ export default function Publications() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full text-center py-10">
-      <h1 className="text-6xl font-bold mb-8">Publications</h1>
-
       {/* Show JournalMiniCards if no journal is selected */}
       {!selectedJournal && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full max-w-6xl">
           {myTropicalFishJournals.map((journal, index) => (
-            <JournalMiniCard
-              key={index}
-              title={journal.title}
-              coverImage={journal.coverImage}
-              onClick={() => handleJournalSelect(journal)}
-            />
+            <JournalMiniCard key={index}
+              title={journal.title} coverImage={journal.coverImage}
+              onClick={() => handleJournalSelect(journal)} />
           ))}
         </div>
       )}
 
       {/* Show JournalCard if a journal is selected */}
       {selectedJournal && (
-        <JournalCard
-          title={selectedJournal.title}
+        <JournalCard title={selectedJournal.title}
           coverImage={selectedJournal.coverImage}
-          issn={selectedJournal.issn}
-          issueNumber={selectedJournal.issueNumber}
-          year={selectedJournal.year}
-          articles={selectedJournal.articles}
-          pdfUrl={selectedJournal.pdfUrl}
-        />
+          issn={selectedJournal.issn} issueNumber={selectedJournal.issueNumber}
+          year={selectedJournal.year} articles={selectedJournal.articles}
+          pdfUrl={selectedJournal.pdfUrl} />
       )}
 
       {/* Back button to go back to journal list */}
       {selectedJournal && (
-        <button
-          onClick={() => setSelectedJournal(null)}
+        <button onClick={() => setSelectedJournal(null)}
           className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
         >
           Back to Journals
