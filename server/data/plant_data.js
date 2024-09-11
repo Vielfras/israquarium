@@ -59,7 +59,7 @@ const plants = [
       { 
         src: 'Bacopa_caroliniana.jpg', 
         alt: 'Bacopa caroliniana 1',
-        creatorName: 'Unknown',
+        creatorName: 'Yakov Oksman',
         originalSource: 'http://www.israquarium.co.il', 
       }
     ],
@@ -100,7 +100,57 @@ const plants = [
         propagation: 'Обрезка и пересадка. Достаточно обрезать около 10 см.'
       }
     }
+  },
+  {
+    _id: new mongoose.Types.ObjectId('669250722a39a728cb8ae20d'),
+    name: 'Bacopa lanigera',
+    images: [
+      { 
+        src: 'Bacopa_lanigera.jpg', 
+        alt: 'Bacopa lanigera 1',
+        creatorName: 'Yakov Oksman',
+        originalSource: 'http://www.israquarium.co.il',
+      }
+    ],
+    latinName: 'Bacopa lanigera',
+    firstDescription: 'No specific description available',
+    sources: 'Israquarium',
+    height: '15 - 40 cm',
+    width: '5 - 8 cm',
+    temperature: '20 - 26°C',
+    ph: '6.3 - 7.4',
+    hardness: '4 - 16 dGH',
+    light: 'Strong to very strong',
+    growthRate: 'Fast',
+    placement: 'Foreground, midground, background',
+    languages: {
+      en: {
+        family: 'Scrophulariaceae',
+        synonyms: 'No additional names available',
+        etymology: 'Bacopa: name used by the people of Guyana, lanigera: specific epithet meaning "woolly"',
+        distribution: 'South America',
+        notes: 'Relatively easy to grow but requires strong light, soft acidic water, and CO2 nutrition. It quickly grows out of the water and is suitable for paludarium growth.',
+        propagation: 'Trimming and replanting. Cut about 10 cm.'
+      },
+      he: {
+        family: 'לועניתיים',
+        synonyms: 'אין שמות נוספים',
+        etymology: 'בקופה: כך קוראים לצמח תושבי גאיאנה, לניגרה: שם ספציפי שמשמעותו "צמרירי"',
+        distribution: 'דרום אמריקה',
+        notes: '. קל יחסית לגידול, אך יש לדאוג לאור חזק, מים רכים וחומציים ותזונה (CO2). מהר יוצא מהמים. מתאים לגידול בפלודריום',
+        propagation: 'גיזום ושתילה מחדש. מספיק לגזום כ-10 ס"מ.'
+      },
+      ru: {
+        family: 'Норичниковые',
+        synonyms: 'Нет дополнительных названий',
+        etymology: 'Bacopa: название растения в Гайане, lanigera: видовой эпитет, означающий "шерстистый"',
+        distribution: 'Южная Америка',
+        notes: 'Относительно легко выращивать, но требуется яркий свет, мягкая кислая вода и CO2. Быстро растет из воды. Подходит для палюдариума.',
+        propagation: 'Обрезка и пересадка. Обрезать около 10 см.'
+      }
+    }
   }
+  
 ];
 
 module.exports = { plants };
