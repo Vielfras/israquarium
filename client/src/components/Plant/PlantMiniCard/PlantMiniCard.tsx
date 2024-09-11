@@ -8,7 +8,7 @@ interface PlantMiniCardProps {
 
 export default function PlantMiniCard({ plant, onClick }: PlantMiniCardProps) {
   return (
-    <div className="border p-4 flex flex-col items-center cursor-pointer bg-green-50 p-1 rounded-lg"
+    <div className="border p-1 flex flex-col items-center cursor-pointer bg-green-50 rounded-lg"
       onClick={onClick}
     >
       <h4 className="text-xl font-extrabold text-green-900 mb-2">{plant.name}</h4>
