@@ -64,7 +64,12 @@
     "light": "אור",
     "growthRate": "קצב גידול",
     "placement": "מיקום",
-    "sources": "מקורות"
+    "sources": "מקורות",
+    "KebabMenu": {
+      "edit": "ערוך",
+      "delete": "מחק",
+      "report": "דווח"
+    }
   },
   "HomePage": {
     "welcomeTitle": "ברוכים הבאים ל-Israquarium",
