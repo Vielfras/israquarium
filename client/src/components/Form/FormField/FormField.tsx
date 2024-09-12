@@ -13,6 +13,7 @@ interface IFormField {
   isValid?: boolean;
 }
 
+// TODO - Rename to ValidatingFormField
 export default function FormField(formData: IFormField) {
   const [isValid, setIsValid] = useState(true);
 

@@ -7,19 +7,19 @@ import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function EditPlant() {
   const { plantId } = useParams<{ plantId: string }>();
-  const { t, i18n } = useTranslation(); // Use i18n to handle language switching
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [formData, setFormData] = useState<IPlant | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeLangTab, setActiveLangTab] = useState<'en' | 'he' | 'ru'>('en');
 
-  // Create a local translation function for the currently active tab
-  const localT = i18n.getFixedT(activeLangTab); // This ensures translations are from the selected tab's language
+  const localT = i18n.getFixedT(activeLangTab);
 
   useEffect(() => {
     const fetchPlantData = async () => {
       if (plantId) {
+        // TODO - Remove the languege, GetPlantID Should work without a languege.
         const { error, result } = await doGetPlantById(plantId, 'en');
         if (error) {
           setError(error);
@@ -88,47 +88,34 @@ export default function EditPlant() {
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label className="block text-lg font-semibold text-green-900">{t('EditPlant.name')}</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
+                <input type="text" name="name" value={formData.name}
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
-                  required
+                  required onChange={handleInputChange}
                 />
               </div>
 
               <div>
                 <label className="block text-lg font-semibold text-green-900">{t('EditPlant.latinName')}</label>
-                <input
-                  type="text"
-                  name="latinName"
-                  value={formData.latinName || ''}
-                  onChange={handleInputChange}
+                <input type="text" name="latinName" value={formData.latinName || ''}
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                  onChange={handleInputChange}
                 />
               </div>
 
               <div>
                 <label className="block text-lg font-semibold text-green-900">{t('EditPlant.sources')}</label>
-                <input
-                  type="text"
-                  name="sources"
-                  value={formData.sources || ''}
-                  onChange={handleInputChange}
+                <input type="text" name="sources" value={formData.sources || ''}
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                  onChange={handleInputChange}
                 />
               </div>
 
               {['height', 'width', 'temperature', 'ph', 'hardness', 'light', 'growthRate', 'placement'].map((field) => (
                 <div key={field}>
                   <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.${field}`)}</label>
-                  <input
-                    type="text"
-                    name={field}
-                    value={(formData as any)[field] || ''}
-                    onChange={handleInputChange}
+                  <input type="text" name={field} value={(formData as any)[field] || ''}
                     className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                    onChange={handleInputChange}
                   />
                 </div>
               ))}
@@ -139,9 +126,7 @@ export default function EditPlant() {
           <div className="mt-8">
             <div className="flex my-4 mt-12 space-x-4 justify-center">
               {(['en', 'he', 'ru'] as const).map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
+                <button key={lang} type="button"
                   className={`px-4 py-2 rounded-lg transition ${activeLangTab === lang
                     ? 'bg-green-600 text-white shadow-lg'
                     : 'bg-gray-200 text-green-900 hover:bg-gray-300'
@@ -158,9 +143,7 @@ export default function EditPlant() {
               {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
                 <div key={field} className="mb-4">
                   <label className="block text-lg font-semibold text-green-900">{localT(`EditPlant.languages.${field}`)}</label> {/* Use localT for selected language */}
-                  <input
-                    type="text"
-                    value={formData.languages[activeLangTab][field] || ''}
+                  <input type="text" value={formData.languages[activeLangTab][field] || ''}
                     onChange={(e) => handleLanguageChange(field, e.target.value)}
                     className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
                   />
@@ -170,9 +153,8 @@ export default function EditPlant() {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center mt-10"> {/* Added flex and justify-center for centering */}
-            <button
-              type="submit"
+          <div className="flex justify-center mt-10">
+            <button type="submit"
               className="w-1/3 py-3 mt-2 bg-green-600 text-white rounded-lg text-lg font-semibold hover:bg-green-700 shadow-lg transition"
             >
               {t('EditPlant.submit')}

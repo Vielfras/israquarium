@@ -32,7 +32,7 @@
     - [X] Create Plant
     - [X] Create shop
     - [ ] Edit Fish 
-    - [ ] Edit Plant
+    - [X] Edit Plant
     - [ ] Edit Shop
     - [X] Publications
     - [ ] Error Page
@@ -78,6 +78,7 @@
 - [ ] Add Accessibility
 
 ### Version 0.5.0 - Polish
+- [ ] Refactor form field to accept styles as props. 
 - [ ] Rename all CardServices.ts functions to work with businessCard convention
 - [ ] Add a "Back to XXXX" button for the fish, plants and shops.
 - [ ] Add button at top of card to allow adding it to "My Aquarium"
