@@ -171,7 +171,8 @@
     "signOut": "התנתק",
     "signInRequired": "עליך להיות מחובר כמשתמש, עסק או מנהל כדי לראות דף זה!",
     "signIn": "התחברות",
-    "signUp": "הרשמה"
+    "signUp": "הרשמה",
+    "defaultAltText": "תמונת ברירת מחדל"
   },
   "AdminProfile": {
     "title": "פרופיל מנהל",

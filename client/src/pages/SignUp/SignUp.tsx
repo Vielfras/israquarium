@@ -32,7 +32,8 @@ export default function SignUp() {
   const phoneRegex = /0[0-9]{1,2}\-?\s?[0-9]{3}\s?[0-9]{4}/;
   const nameRegex = /^[A-Za-z]{2,}$/;
   const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-  const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d.*\d.*\d.*\d)(?=.*[_*&^%$#@!-])[A-Za-z\d_*&^%$#@!-]{8,}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[*&^%$#@!-])[A-Za-z\d*&^%$#@!-]{8,}$/;
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +60,7 @@ export default function SignUp() {
         city: city || '',
         street: street || '',
         houseNumber: houseNumber ? Number(houseNumber) : 0,
-        zip: zipCode ? Number(zipCode) : 0,
+        zip: zipCode ? zipCode : '',
       },
       isBusiness,
     };
@@ -69,7 +70,7 @@ export default function SignUp() {
       toasts?.addToast('SignUpPage.⚠️', t('SignUpPage.signUpErrorTitle'), error, 'danger');
     } else {
       toasts?.addToast('SignUpPage.👍🏼', t('SignUpPage.signUpSuccessTitle'), t('SignUpPage.signUpSuccessMessage'), 'success');
-      navigate('/signin');
+      navigate('/sign-in');
     }
 
     setIsBusy(false);
@@ -169,8 +170,8 @@ export default function SignUp() {
             <div className="text-center">
               <label className="block text-lg font-medium mb-3">{t('SignUpPage.businessSignupLabel')}</label>
               <div className="flex justify-center">
-                <label className="inline-flex items-center">
-                  <input type="checkbox" className="form-checkbox" checked={isBusiness} onChange={(e) => setIsBusiness(e.target.checked)} />
+                <label htmlFor='isBusinessCheckBox' className="inline-flex items-center">
+                  <input id="isBusinessCheckBox" name="isBusinessCheckBox" type="checkbox" className="form-checkbox" checked={isBusiness} onChange={(e) => setIsBusiness(e.target.checked)} />
                   <span className="ml-2">{t('SignUpPage.yesLabel')}</span>
                 </label>
               </div>

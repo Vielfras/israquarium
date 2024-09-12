@@ -2,11 +2,12 @@ import { useState, useContext } from 'react';
 import './UserMenu.scss';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
-import defaultProfileImg from '../../../../public/images/default_profile_svg.svg'; // Import the SVG file
+import { useTranslation } from 'react-i18next';
 
 export default function UserMenu() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const auth = useContext(AuthContext);
+  const { t } = useTranslation();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -23,9 +24,6 @@ export default function UserMenu() {
     }
   };
 
-  const profileImage = auth?.userDetails?.image?.src || defaultProfileImg;
-  const profileAlt = auth?.userDetails?.image?.alt || 'Default user avatar';
-
   return (
     <div className="relative flex items-center space-x-3 rtl:space-x-reverse">
       <button type="button" onClick={toggleDropdown} id="user-menu-button"
@@ -33,8 +31,8 @@ export default function UserMenu() {
         aria-expanded={isDropdownOpen ? "true" : "false"} aria-controls="user-dropdown">
         <span className="sr-only">Open user menu</span>
         <img className="w-8 h-8 rounded-full"
-          src={profileImage} 
-          alt={profileAlt} />
+          src={auth?.userDetails?.image?.src || '/images/default_profile_svg.svg'} 
+          alt={auth?.userDetails?.image?.alt || t('UserProfile.defaultAltText')} />
       </button>
 
       {isDropdownOpen && (

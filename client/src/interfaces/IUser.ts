@@ -47,5 +47,5 @@ interface IAddress {
   city: string
   street: string
   houseNumber: number
-  zip: number
+  zip: string
 }

@@ -32,8 +32,8 @@ export default function UserCard({ userDetails }: IUserCardProps) {
             </div>
             <div className="flex justify-center mb-6">
                 <img className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
-                    src={userDetails.image.src}  
-                    alt={userDetails.image.alt}  
+                    src={userDetails.image?.src || '/images/default_profile_svg.svg'}
+                    alt={userDetails.image?.alt || t('UserProfile.defaultAltText')}
                 />
             </div>
 

@@ -188,7 +188,8 @@
     "signOut": "Sign Out",
     "signInRequired": "You have to be signed-in as a User, Business, or Admin to view this page!",
     "signIn": "Sign-in",
-    "signUp": "Sign-up"
+    "signUp": "Sign-up",
+    "defaultAltText": "Default Image"
   },
   "SignInPage": {
     "title": "Sign In",

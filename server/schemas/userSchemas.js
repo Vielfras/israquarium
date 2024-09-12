@@ -23,7 +23,7 @@ const userSchema = Joi.object().keys({
   email: Joi.string().email().required(),
   password: Joi.string().pattern(passwordPattern, { name: 'password' }).required(),
   image: Joi.object().keys({
-    url: Joi.string().uri().required(),
+    url: Joi.string().uri().optional(),
     alt: Joi.string().optional().default("Profile image"),
   }),
   address: Joi.object().keys({
