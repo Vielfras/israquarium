@@ -19,31 +19,18 @@ export default function KebabMenu({ onEdit, onDelete, onReport }: KebabMenuProps
 
   return (
     <div className="relative">
-      {/* Kebab Menu Button */}
-      <button
-        onClick={handleMenuToggle}
-        className="text-gray-600 hover:text-gray-900 transition-all duration-200 ease-in-out transform hover:scale-125"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 24"
-          strokeWidth={3.5}
-          stroke="currentColor"
-          className="w-6 h-8"
-        >
+      <button onClick={handleMenuToggle}
+        className="text-gray-600 hover:text-gray-900 transition-all duration-200 ease-in-out transform hover:scale-125">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 24"strokeWidth={3.5} stroke="currentColor"
+          className="w-6 h-8">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
         </svg>
       </button>
 
-      {/* Kebab Menu */}
       {menuOpen && (
-        <div
-          className="absolute right-0 mt-2 w-32 bg-white border rounded-lg shadow-lg z-10"
-          style={{ top: '15%' }}
-        >
+        <div style={{ top: '15%' }}
+          className="absolute right-0 mt-2 w-32 bg-white border rounded-lg shadow-lg z-10">
           <ul className="py-2 text-sm text-center text-gray-700">
-            {/* Conditionally render Edit and Delete only for admins */}
             {auth?.userDetails?.isAdmin && (
               <>
                 <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={onEdit}>
