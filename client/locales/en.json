@@ -71,6 +71,33 @@
       "report": "Report"
     }
   },
+  "EditPlant": {
+    "title": "Edit Plant",
+    "name": "Name",
+    "latinName": "Latin Name",
+    "firstDescription": "First Description",
+    "sources": "Sources",
+    "height": "Height",
+    "width": "Width",
+    "temperature": "Temperature",
+    "ph": "pH",
+    "hardness": "Hardness",
+    "light": "Light",
+    "growthRate": "Growth Rate",
+    "placement": "Placement",
+    "languages": {
+      "en": "English",
+      "he": "Hebrew",
+      "ru": "Russian",
+      "family": "Family",
+      "synonyms": "Synonyms",
+      "etymology": "Etymology",
+      "distribution": "Distribution",
+      "notes": "Notes",
+      "propagation": "Propagation"
+    },
+    "submit": "Submit"
+  },
   "HomePage": {
     "welcomeTitle": "Welcome to Israquarium",
     "welcomeDescription": "Your go-to platform for everything related to freshwater fish and aquatic plants. Whether you're just starting or a seasoned aquarist, we have the resources to help you create a thriving aquatic environment.",

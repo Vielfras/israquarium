@@ -23,6 +23,7 @@ import CreatePlant from '../../pages/CreatePlant/CreatePlant'
 import CreateFish from '../../pages/CreateFish/CreateFish'
 import Publications from '../../pages/Publications/Publications'
 import AdminProfile from '../../pages/AdminProfile/AdminProfile'
+import EditPlant from '../../pages/EditPlant/EditPlant'
 
 // import Free from '../../pages/Free/Free'
 // import User from '../../pages/User/User'
@@ -61,6 +62,8 @@ export default function Default() {
           <Route path='/shops' element={<Shops />} />
           <Route path='/plants' element={<Plants />} />
           <Route path='/create-plant' element={<CreatePlant/>}/>
+          <Route path="/edit-plant/:plantId" element={<EditPlant />} />
+          
           
           <Route path='/fish-index' element={<FishIndexes />} />
           <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />

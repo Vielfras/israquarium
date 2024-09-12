@@ -71,6 +71,33 @@
       "report": "דווח"
     }
   },
+  "EditPlant": {
+    "title": "ערוך צמח",
+    "name": "שם",
+    "latinName": "שם לטיני",
+    "firstDescription": "תיאור ראשון",
+    "sources": "מקורות",
+    "height": "גובה",
+    "width": "רוחב",
+    "temperature": "טמפרטורה",
+    "ph": "חומציות",
+    "hardness": "קושי",
+    "light": "אור",
+    "growthRate": "קצב צמיחה",
+    "placement": "מיקום",
+    "languages": {
+      "en": "אנגלית",
+      "he": "עברית",
+      "ru": "רוסית",
+      "family": "משפחה",
+      "synonyms": "מילים נרדפות",
+      "etymology": "אטימולוגיה",
+      "distribution": "תפוצה",
+      "notes": "הערות",
+      "propagation": "ריבוי"
+    },
+    "submit": "שלח"
+  },
   "HomePage": {
     "welcomeTitle": "ברוכים הבאים ל-Israquarium",
     "welcomeDescription": "הפלטפורמה שלך לכל מה שקשור לדגי מים מתוקים ולצמחי מים. בין אם אתם רק מתחילים או אקווריומיסטים מנוסים, יש לנו את המשאבים שיעזרו לכם ליצור סביבה ימית משגשגת.",
@@ -337,7 +364,7 @@
     "errorTitle": "שגיאה",
     "errorMessage": "אירעה שגיאה בהגשת הדג."
   },
-  "ShopsPage" : {
+  "ShopsPage": {
     "shopsTitle": "חנויות",
     "errorFetchingCards": "שגיאה בקבלת כרטיסים 😞",
     "loadingCardsMessage": "טוען כרטיסים, אנא המתן...",

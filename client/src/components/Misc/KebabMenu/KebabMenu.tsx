@@ -21,7 +21,7 @@ export default function KebabMenu({ onEdit, onDelete, onReport }: KebabMenuProps
     <div className="relative">
       <button onClick={handleMenuToggle}
         className="text-gray-600 hover:text-gray-900 transition-all duration-200 ease-in-out transform hover:scale-125">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 24"strokeWidth={3.5} stroke="currentColor"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 24" strokeWidth={3.5} stroke="currentColor"
           className="w-6 h-8">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
         </svg>

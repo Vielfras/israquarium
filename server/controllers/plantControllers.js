@@ -56,33 +56,51 @@ const getRandomPlant = async (req, res) => {
   }
 };
 
+// TODO - Preperation for a function to get plant data by languege only.
+// const getPlantById = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { lang } = req.query;
+//     console.log(lang);
+//     const allowedLanguages = ['en', 'he', 'ru'];
+//     if (!allowedLanguages.includes(lang)) {
+//       return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
+//     }
+
+//     const projection = {};
+//     allowedLanguages.forEach(language => {
+//       if (language !== lang) {
+//         projection[`languages.${language}`] = 0;
+//       }
+//     });
+
+//     const plant = await Plant.findById(id, projection);
+//     if (plant) {
+//       return res.status(200).json({ success: true, data: plant });
+//     }
+
+//     return res.status(404).json({ success: false, message: `Plant id '${id}' not found.` });
+//   } catch (err) {
+//     return res.status(400).json({ success: false, message: err.message });
+//   }
+// };
+
 const getPlantById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { lang } = req.body;
+    const { id } = req.params; // Get plant ID from the route parameters
 
-    const allowedLanguages = ['en', 'he', 'ru'];
-    if (!allowedLanguages.includes(lang)) {
-      return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
+    // Find the plant by ID, returning all languages (no need for projection or filtering by lang)
+    const plant = await Plant.findById(id);
+    if (!plant) {
+      return res.status(404).json({ success: false, message: `Plant with id '${id}' not found.` });
     }
 
-    const projection = {};
-    allowedLanguages.forEach(language => {
-      if (language !== lang) {
-        projection[`languages.${language}`] = 0;
-      }
-    });
-
-    const plant = await Plant.findById(id, projection);
-    if (plant) {
-      return res.status(200).json({ success: true, data: plant });
-    }
-
-    return res.status(404).json({ success: false, message: `Plant id '${id}' not found.` });
+    return res.status(200).json({ success: true, data: plant });
   } catch (err) {
-    return res.status(400).json({ success: false, message: err.message });
+    return res.status(500).json({ success: false, message: err.message });
   }
 };
+
 
 const getPlantImage = async (req, res) => {
   try {

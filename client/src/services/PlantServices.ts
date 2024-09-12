@@ -24,12 +24,12 @@ export const doGetRandomPlant = async (): Promise<{ error: string | null; result
 // ---------------------------------------------------------------------------------------------------------
 export const doGetPlantById = async (plantId: string, lang: string): Promise<{ error: string | null; result: IPlant | null }> => {
   try {
-    const response = await fetch(`${apiBase}/api/plant/${plantId}`, {
-      method: 'POST',
+    // Use GET method and pass `lang` as a query parameter
+    const response = await fetch(`${apiBase}/api/plant/${plantId}?lang=${lang}`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ lang })
     });
 
     const data = await response.json();
@@ -44,6 +44,7 @@ export const doGetPlantById = async (plantId: string, lang: string): Promise<{ e
     return { error: errMessage, result: null };
   }
 };
+
 
 // ---------------------------------------------------------------------------------------------------------
 export const doGetPlantImage = async (plantId: string, imageName: string): Promise<{ error: string | null; result: string | null }> => {

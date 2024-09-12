@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import { apiBase } from "../../../config";
 import { DirectionProvider } from "../../../context/ReadingDirectionContext";
 import { IPlant } from "../../../interfaces/IPlant";
@@ -16,11 +17,12 @@ export default function PlantCard({ plantData }: IPlantCard) {
   const { t, i18n } = useTranslation();
   const language: LanguageCode = i18n.language as LanguageCode;
   const langData = plantData.languages[language];
+  const navigate = useNavigate();  // Use navigate to go to EditPlant page
 
   const [isFavorited, setIsFavorited] = useState(false);
 
   const handleEdit = () => {
-    console.log('Edit selected');
+    navigate(`/edit-plant/${plantData._id}`);  // Navigate to the EditPlant page with plantId
   };
 
   const handleDelete = () => {
