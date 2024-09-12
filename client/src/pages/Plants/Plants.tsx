@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import PlantCard from '../../components/Plant/PlantCard/PlantCard';
 import PlantMiniCard from '../../components/Plant/PlantMiniCard/PlantMiniCard';
 import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import { IPlant } from '../../interfaces/IPlant';
 import Spinner from '../../components/Misc/Spinner/Spinner';
-import { doGetPlantsByLetter } from '../../services/PlantServices';
+import { doGetPlantsByLetter, doGetPlantById } from '../../services/PlantServices';
 
 export default function Plants() {
   const [plantData, setPlantData] = useState<IPlant[]>([]);
@@ -13,8 +14,34 @@ export default function Plants() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [selectedPlant, setSelectedPlant] = useState<IPlant | null>(null);
 
+  // Use search params to get the query string
+  const [searchParams] = useSearchParams();
+  const plantIdFromUrl = searchParams.get('plant-id');
+
   useEffect(() => {
-    if (!selectedLetter) return;
+    if (plantIdFromUrl) {
+      // If there's a plant ID in the query string, fetch that specific plant
+      const fetchPlantById = async () => {
+        setLoading(true);
+        setError(null);
+
+        const result = await doGetPlantById(plantIdFromUrl, 'en'); // You may set the language dynamically
+        if (result.error) {
+          setError(result.error);
+        } else if (result.result) {
+          setSelectedPlant(result.result); // Set the selected plant based on the fetched result
+        } else {
+          setError(`Plant with ID '${plantIdFromUrl}' not found.`);
+        }
+        setLoading(false);
+      };
+
+      fetchPlantById();
+    }
+  }, [plantIdFromUrl]);
+
+  useEffect(() => {
+    if (!selectedLetter || plantIdFromUrl) return;
 
     const fetchPlantData = async () => {
       setLoading(true);
@@ -35,7 +62,7 @@ export default function Plants() {
     };
 
     fetchPlantData();
-  }, [selectedLetter]);
+  }, [selectedLetter, plantIdFromUrl]);
 
   const handleLetterClick = (letter: string) => {
     setSelectedLetter(letter);
@@ -50,32 +77,37 @@ export default function Plants() {
       {loading && <Spinner message="Loading plants..." />}
       {error && <div className="text-red-500">{error}</div>}
 
-      {/* Plant List and Full Plant Card */}
-      {!loading && !error && selectedLetter && (
+      {/* Display plant if found via query parameter */}
+      {selectedPlant && (
         <div className="w-full mt-4">
-          {selectedPlant ? (
-              <PlantCard plantData={selectedPlant} />
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {plantData.length > 0 ? (
-                plantData.map(plant => (
-                  <PlantMiniCard
-                    key={plant._id}
-                    plant={plant}
-                    onClick={() => setSelectedPlant(plant)}
-                  />
-                ))
-              ) : (
-                <p>No plants found for the selected letter.</p>
-              )}
-            </div>
-          )}
+          <PlantCard plantData={selectedPlant} />
+        </div>
+      )}
+
+      {/* Plant List and Full Plant Card */}
+      {!loading && !error && !selectedPlant && selectedLetter && (
+        <div className="w-full mt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {plantData.length > 0 ? (
+              plantData.map((plant) => (
+                <PlantMiniCard
+                  key={plant._id}
+                  plant={plant}
+                  onClick={() => setSelectedPlant(plant)}
+                />
+              ))
+            ) : (
+              <p>No plants found for the selected letter.</p>
+            )}
+          </div>
         </div>
       )}
 
       {/* Message to prompt user to select a letter */}
-      {!selectedLetter && !loading &&
-        <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>Please select a letter to view plants.</h1>
+      {!selectedLetter && !loading && !selectedPlant &&
+        <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>
+          Please select a letter to view plants.
+        </h1>
       }
     </div>
   );

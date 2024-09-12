@@ -61,7 +61,7 @@ export default function EditPlant() {
       if (error) {
         setError(error);
       } else if (result) {
-        navigate(`/plants/${plantId}`);
+        navigate(`/plants?plant-id=${plantId}`);
       }
     }
   };
