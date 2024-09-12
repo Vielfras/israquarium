@@ -5,7 +5,6 @@ import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import { IPlant } from '../../interfaces/IPlant';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 import { doGetPlantsByLetter } from '../../services/PlantServices';
-import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function Plants() {
   const [plantData, setPlantData] = useState<IPlant[]>([]);

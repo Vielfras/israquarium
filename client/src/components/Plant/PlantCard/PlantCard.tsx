@@ -39,14 +39,14 @@ export default function PlantCard({ plantData }: IPlantCard) {
   };
 
   const details = [
+    { label: t('PlantCard.latinName'), value: plantData.latinName },
+    { label: t('PlantCard.firstDescription'), value: plantData.firstDescription },
     { label: t('PlantCard.family'), value: langData.family },
     { label: t('PlantCard.synonyms'), value: langData.synonyms },
     { label: t('PlantCard.etymology'), value: langData.etymology },
     { label: t('PlantCard.distribution'), value: langData.distribution },
     { label: t('PlantCard.notes'), value: langData.notes },
     { label: t('PlantCard.propagation'), value: langData.propagation },
-    { label: t('PlantCard.latinName'), value: plantData.latinName },
-    { label: t('PlantCard.firstDescription'), value: plantData.firstDescription },
     { label: t('PlantCard.height'), value: plantData.height },
     { label: t('PlantCard.width'), value: plantData.width },
     { label: t('PlantCard.temperature'), value: plantData.temperature },
