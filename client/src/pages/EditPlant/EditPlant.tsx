@@ -7,12 +7,15 @@ import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function EditPlant() {
   const { plantId } = useParams<{ plantId: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation(); // Use i18n to handle language switching
   const navigate = useNavigate();
   const [formData, setFormData] = useState<IPlant | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeLangTab, setActiveLangTab] = useState<'en' | 'he' | 'ru'>('en');
+
+  // Create a local translation function for the currently active tab
+  const localT = i18n.getFixedT(activeLangTab); // This ensures translations are from the selected tab's language
 
   useEffect(() => {
     const fetchPlantData = async () => {
@@ -154,7 +157,7 @@ export default function EditPlant() {
             <div dir={getDirection(activeLangTab)}>
               {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
                 <div key={field} className="mb-4">
-                  <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.languages.${field}`)}</label>
+                  <label className="block text-lg font-semibold text-green-900">{localT(`EditPlant.languages.${field}`)}</label> {/* Use localT for selected language */}
                   <input
                     type="text"
                     value={formData.languages[activeLangTab][field] || ''}
