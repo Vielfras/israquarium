@@ -63,6 +63,10 @@ export default function EditPlant() {
     }
   };
 
+  const getDirection = (lang: 'en' | 'he' | 'ru') => {
+    return lang === 'he' ? 'rtl' : 'ltr';
+  };
+
   if (loading) {
     return <div>{t('Loading...')}</div>;
   }
@@ -74,63 +78,59 @@ export default function EditPlant() {
   return (
     formData && (
       <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
-        <DirectionProvider>
-
         <h1 className="text-4xl font-bold text-center text-green-900 mb-6">{t('EditPlant.title')}</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Grid for non-language fields */}
-          <div className="grid grid-cols-2 gap-6">
-            {/* Name */}
-            <div>
-              <label className="block text-lg font-semibold text-green-900">{t('EditPlant.name')}</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
-                required
-              />
-            </div>
-
-            {/* Latin Name */}
-            <div>
-              <label className="block text-lg font-semibold text-green-900">{t('EditPlant.latinName')}</label>
-              <input
-                type="text"
-                name="latinName"
-                value={formData.latinName || ''}
-                onChange={handleInputChange}
-                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
-              />
-            </div>
-
-            {/* Sources */}
-            <div>
-              <label className="block text-lg font-semibold text-green-900">{t('EditPlant.sources')}</label>
-              <input
-                type="text"
-                name="sources"
-                value={formData.sources || ''}
-                onChange={handleInputChange}
-                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
-              />
-            </div>
-
-            {/* Plant properties: Height, Width, etc. */}
-            {['height', 'width', 'temperature', 'ph', 'hardness', 'light', 'growthRate', 'placement'].map((field) => (
-              <div key={field}>
-                <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.${field}`)}</label>
+          <DirectionProvider>
+            {/* Grid for non-language fields */}
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <label className="block text-lg font-semibold text-green-900">{t('EditPlant.name')}</label>
                 <input
                   type="text"
-                  name={field}
-                  value={(formData as any)[field] || ''}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-lg font-semibold text-green-900">{t('EditPlant.latinName')}</label>
+                <input
+                  type="text"
+                  name="latinName"
+                  value={formData.latinName || ''}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
                 />
               </div>
-            ))}
-          </div>
+
+              <div>
+                <label className="block text-lg font-semibold text-green-900">{t('EditPlant.sources')}</label>
+                <input
+                  type="text"
+                  name="sources"
+                  value={formData.sources || ''}
+                  onChange={handleInputChange}
+                  className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                />
+              </div>
+
+              {['height', 'width', 'temperature', 'ph', 'hardness', 'light', 'growthRate', 'placement'].map((field) => (
+                <div key={field}>
+                  <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.${field}`)}</label>
+                  <input
+                    type="text"
+                    name={field}
+                    value={(formData as any)[field] || ''}
+                    onChange={handleInputChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                  />
+                </div>
+              ))}
+            </div>
+          </DirectionProvider>
 
           {/* Language tabs for language-specific fields */}
           <div className="mt-8">
@@ -151,17 +151,19 @@ export default function EditPlant() {
             </div>
 
             {/* Fields for the active language */}
-            {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
-              <div key={field}>
-                <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.languages.${field}`)}</label>
-                <input
-                  type="text"
-                  value={formData.languages[activeLangTab][field] || ''}
-                  onChange={(e) => handleLanguageChange(field, e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
-                />
-              </div>
-            ))}
+            <div dir={getDirection(activeLangTab)}>
+              {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
+                <div key={field} className="mb-4">
+                  <label className="block text-lg font-semibold text-green-900">{t(`EditPlant.languages.${field}`)}</label>
+                  <input
+                    type="text"
+                    value={formData.languages[activeLangTab][field] || ''}
+                    onChange={(e) => handleLanguageChange(field, e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Submit Button */}
@@ -172,8 +174,6 @@ export default function EditPlant() {
             {t('EditPlant.submit')}
           </button>
         </form>
-        
-        </DirectionProvider>
       </div>
     )
   );
