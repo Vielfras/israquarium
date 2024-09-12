@@ -170,12 +170,14 @@ export default function EditPlant() {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="mt-32 mx-auto w-2/6 py-3 bg-green-600 text-white rounded-lg text-lg font-semibold hover:bg-green-700 shadow-lg transition"
-          >
-            {t('EditPlant.submit')}
-          </button>
+          <div className="flex justify-center mt-10"> {/* Added flex and justify-center for centering */}
+            <button
+              type="submit"
+              className="w-1/3 py-3 mt-2 bg-green-600 text-white rounded-lg text-lg font-semibold hover:bg-green-700 shadow-lg transition"
+            >
+              {t('EditPlant.submit')}
+            </button>
+          </div>
         </form>
       </div>
     )
