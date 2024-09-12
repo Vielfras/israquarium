@@ -4,7 +4,10 @@
 
 
 ### Bridge:
+- Auto SignIn if token exists
 - Check SignUp page
+- Check EditPlant
+- Move CreateFish and CreatePlant to Admin Dashboard
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
