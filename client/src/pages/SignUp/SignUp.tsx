@@ -1,4 +1,3 @@
-import './SignUp.css';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
@@ -65,12 +64,16 @@ export default function SignUp() {
       isBusiness,
     };
 
-    const { error } = await auth.signUp(userData);
-    if (error) {
-      toasts?.addToast('SignUpPage.⚠️', t('SignUpPage.signUpErrorTitle'), error, 'danger');
+    if (auth) {
+      const { error } = await auth.signUp(userData);
+      if (error) {
+        toasts?.addToast('SignUpPage.⚠️', t('SignUpPage.signUpErrorTitle'), error, 'danger');
+      } else {
+        toasts?.addToast('SignUpPage.👍🏼', t('SignUpPage.signUpSuccessTitle'), t('SignUpPage.signUpSuccessMessage'), 'success');
+        navigate('/sign-in');
+      }
     } else {
-      toasts?.addToast('SignUpPage.👍🏼', t('SignUpPage.signUpSuccessTitle'), t('SignUpPage.signUpSuccessMessage'), 'success');
-      navigate('/sign-in');
+      toasts?.addToast('SignUpPage.⚠️', t('SignUpPage.signUpErrorTitle'), t('SignUpPage.authContextError'), 'danger');
     }
 
     setIsBusy(false);
