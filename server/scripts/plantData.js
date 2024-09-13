@@ -213,7 +213,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var._angustifolia.jpg",
+        "src": "Anubias_barteri_var_angustifolia.jpg",
         "alt": "Anubias barteri var. angustifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -247,7 +247,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var._barter.jpg",
+        "src": "Anubias_barteri_var_barteri.jpg",
         "alt": "Anubias barteri var. barteri 1",
         "creatorName": "",
         "originalSource": ""
@@ -281,7 +281,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var._caladiifolia.jpg",
+        "src": "Anubias_barteri_var_caladiifolia.jpg",
         "alt": "Anubias barteri var. caladiifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -315,7 +315,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var._glabra.jpg",
+        "src": "Anubias_barteri_var_glabra.jpg",
         "alt": "Anubias barteri var. glabra 1",
         "creatorName": "",
         "originalSource": ""
@@ -349,7 +349,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_nana.jpg",
+        "src": "Anubias_barteri_var_nana.jpg",
         "alt": "Anubias barteri var. nana 1",
         "creatorName": "",
         "originalSource": ""
@@ -381,7 +381,14 @@ const plants = [
   {
     "name": "Anubias gigantea",
     "latinName": "Anubias gigantea",
-    "images": [],
+    "images": [
+      {
+      "src": "Anubias gigantea.jpg",
+      "alt": "Unavailabe",
+      "creatorName": "",
+      "originalSource": ""
+    }
+  ],
     "firstDescription": "No specific description available",
     "sources": "",
     "height": "30 - 105 cm",
@@ -1158,8 +1165,8 @@ const plants = [
     "latinName": "Blyxa aubertii",
     "images": [
       {
-        "src": "Blyxa_auberti.jpg",
-        "alt": "Blyxa aubertii 1",
+        "src": "Blyxa_aubertii.jpg",
+        "alt": "Blyxa aubertiii 1",
         "creatorName": "",
         "originalSource": ""
       }
@@ -1192,7 +1199,7 @@ const plants = [
     "latinName": "Blyxa japonica",
     "images": [
       {
-        "src": "Blyxa_japonica1.jpg",
+        "src": "Blyxa_japonica.jpg",
         "alt": "Blyxa japonica 1",
         "creatorName": "",
         "originalSource": ""
@@ -1464,7 +1471,7 @@ const plants = [
     "latinName": "Cardamina lyrata",
     "images": [
       {
-        "src": "Cardamine_lyrata.jpg",
+        "src": "Cardamina_lyrata.jpg",
         "alt": "Cardamina lyrata 1",
         "creatorName": "",
         "originalSource": ""
@@ -1973,7 +1980,7 @@ const plants = [
     "latinName": "Eichhornia azurea",
     "images": [
       {
-        "src": "Eichhornia_azurea.JPG",
+        "src": "Eichhornia_azurea.jpg",
         "alt": "Eichhornia azurea 1",
         "creatorName": "",
         "originalSource": ""
@@ -2109,7 +2116,7 @@ const plants = [
     "latinName": "Eichhornia sp.",
     "images": [
       {
-        "src": "Eichhornia_sp..jpg",
+        "src": "Eichhornia_sp.jpg",
         "alt": "Eichhornia sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -2345,7 +2352,14 @@ const plants = [
   {
     "name": "Eriocaulon robustius",
     "latinName": "",
-    "images": [],
+    "images": [
+      {
+        "src": "Eriocaulon_robustius.jpg",
+        "alt": "Eriocaulon robustius 1",
+        "creatorName": "",
+        "originalSource": ""
+      }
+    ],
     "firstDescription": "No specific description available",
     "sources": "",
     "height": "",
@@ -5452,4 +5466,3 @@ const plants = [
 ];
 
 module.exports = { plants };
-  
