@@ -6,6 +6,7 @@ import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import { IPlant } from '../../interfaces/IPlant';
+import { doCreatePlant } from '../../services/PlantServices'; // Import doCreatePlant
 
 export default function CreatePlant() {
   const { t } = useTranslation();
@@ -60,7 +61,7 @@ export default function CreatePlant() {
       growthRate,
       placement,
       sources,
-      images: [], // You can handle image upload separately
+      images: [], // Handle image upload separately
       languages: {
         en: { family, synonyms, etymology, distribution, notes, propagation },
         he: { family: '', synonyms: '', etymology: '', distribution: '', notes: '', propagation: '' },
@@ -69,14 +70,14 @@ export default function CreatePlant() {
       plantIndices: [],
     };
 
-    // Mocking an API call here, replace with actual call
-    // const { error } = await auth.submitPlant(plantData); // Assuming `auth.submitPlant` is a method for submitting plant data
-    const error = null;
+    // Send the data to the backend
+    const { error, result } = await doCreatePlant(plantData); // Call doCreatePlant
+
     if (error) {
       toasts?.addToast('CreatePlant.⚠️', t('CreatePlant.errorTitle'), error, 'danger');
     } else {
       toasts?.addToast('CreatePlant.👍🏼', t('CreatePlant.successTitle'), t('CreatePlant.successMessage'), 'success');
-      navigate('/plants');
+      navigate('/plants'); // Navigate to the plants list after successful creation
     }
 
     setIsBusy(false);
@@ -183,9 +184,7 @@ export default function CreatePlant() {
                 label={t('CreatePlant.heightLabel')}
                 placeholder={t('CreatePlant.heightPlaceholder')}
                 value={height}
-                regex={numberRegex}
                 onChange={(e) => setHeight(e.target.value)}
-                isValid={numberRegex.test(height)}
                 validationMessage={t('CreatePlant.validation.height')}
               />
               <FormField
@@ -194,9 +193,7 @@ export default function CreatePlant() {
                 label={t('CreatePlant.widthLabel')}
                 placeholder={t('CreatePlant.widthPlaceholder')}
                 value={width}
-                regex={numberRegex}
                 onChange={(e) => setWidth(e.target.value)}
-                isValid={numberRegex.test(width)}
                 validationMessage={t('CreatePlant.validation.width')}
               />
               <FormField
@@ -205,9 +202,7 @@ export default function CreatePlant() {
                 label={t('CreatePlant.temperatureLabel')}
                 placeholder={t('CreatePlant.temperaturePlaceholder')}
                 value={temperature}
-                regex={numberRegex}
                 onChange={(e) => setTemperature(e.target.value)}
-                isValid={numberRegex.test(temperature)}
                 validationMessage={t('CreatePlant.validation.temperature')}
               />
             </div>
@@ -219,9 +214,7 @@ export default function CreatePlant() {
                 label={t('CreatePlant.phLabel')}
                 placeholder={t('CreatePlant.phPlaceholder')}
                 value={ph}
-                regex={numberRegex}
                 onChange={(e) => setPh(e.target.value)}
-                isValid={numberRegex.test(ph)}
                 validationMessage={t('CreatePlant.validation.ph')}
               />
               <FormField
@@ -230,9 +223,7 @@ export default function CreatePlant() {
                 label={t('CreatePlant.hardnessLabel')}
                 placeholder={t('CreatePlant.hardnessPlaceholder')}
                 value={hardness}
-                regex={numberRegex}
                 onChange={(e) => setHardness(e.target.value)}
-                isValid={numberRegex.test(hardness)}
                 validationMessage={t('CreatePlant.validation.hardness')}
               />
               <FormField
