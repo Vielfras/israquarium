@@ -70,9 +70,10 @@
       "delete": "מחק",
       "report": "דווח"
     },
-    "deleteConfirmation": "האם אתה בטוח שברצונך למחוק את הצמח? פעולה זו אינה הפיכה.",
-    "deleteSuccess": "הצמח נמחק בהצלחה.",
-    "deleteFailure": "כשל במחיקת הצמח."
+    "deleteConfirmation": "האם אתה בטוח?",
+    "deleteWarning": "פעולה זו אינה ניתנת לשחזור. ברגע שהצמח נמחק, לא ניתן לשחזר אותו.",
+    "confirmDelete": "כן, מחק",
+    "cancelDelete": "בטל"
   },
   "EditPlant": {
     "title": "ערוך צמח",

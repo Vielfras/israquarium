@@ -6,6 +6,7 @@ import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
+import Modal from '../../Misc/Modal/Modal'; 
 import { doDeletePlant } from '../../../services/PlantServices';
 
 interface IPlantCard {
@@ -21,24 +22,31 @@ export default function PlantCard({ plantData }: IPlantCard) {
   const navigate = useNavigate();
 
   const [isFavorited, setIsFavorited] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleEdit = () => {
     navigate(`/edit-plant/${plantData._id}`);
   };
 
   const handleDelete = async () => {
-    const isConfirmed = window.confirm(t('PlantCard.deleteConfirmation'));
-    
-    if (isConfirmed) {
-      const { error } = await doDeletePlant(plantData._id);
-  
-      if (error) {
-        alert(t('PlantCard.deleteFailure'));
-      } else {
-        alert(t('PlantCard.deleteSuccess'));
-        navigate('/plants');
-      }
+    setShowDeleteModal(true);
+  };
+
+  const confirmDelete = async () => {
+    const { error } = await doDeletePlant(plantData._id);
+
+    if (error) {
+      alert(t('PlantCard.deleteFailure'));
+    } else {
+      alert(t('PlantCard.deleteSuccess'));
+      navigate('/plants');
     }
+
+    setShowDeleteModal(false);
+  };
+
+  const cancelDelete = () => {
+    setShowDeleteModal(false);
   };
 
   const handleReport = () => {
@@ -46,7 +54,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
   };
 
   const handleFavoriteToggle = (favorited: boolean) => {
-    console.log(favorited ? 'Plant favorited' : 'Plant unfavorited');
     setIsFavorited(favorited);
   };
 
@@ -103,6 +110,14 @@ export default function PlantCard({ plantData }: IPlantCard) {
           </tbody>
         </table>
       </DirectionProvider>
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && (
+        <Modal title={t('PlantCard.deleteConfirmation')}
+          message={t('PlantCard.deleteWarning')} confirmText={t('PlantCard.confirmDelete')} cancelText={t('PlantCard.cancelDelete')}
+          onConfirm={confirmDelete} onCancel={cancelDelete}
+        />
+      )}
     </div>
   );
 }

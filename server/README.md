@@ -51,3 +51,11 @@ A freshwater fish encyclopedia.
 ### Notes
 - Remember to maintain clean and aesthetic code and design, as this project will be part of your portfolio and represent your skills to potential employers.
 - Test the application thoroughly to ensure all functionalities work as expected.
+
+
+
+## Polish
+- [ ] JWT Token should refresh on interactions before its timer runs out
+
+## Version 0.1.0:
+
