@@ -120,12 +120,12 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
       {/* Plant Details */}
       <DirectionProvider>
-        <table className="w-full mt-4">
+      <table className="mt-4">
           <tbody>
             {details.map((detail, index) => (
               <tr key={index} className={index % 2 === 0 ? 'bg-green-50' : 'bg-white'}>
-                <td className="font-bold p-2">{detail.label}:</td>
-                <td className="p-2">{detail.value}</td>
+                <td className="font-bold p-2 sm:whitespace-nowrap">{detail.label}:</td>
+                <td className="w-full p-2">{detail.value}</td>
               </tr>
             ))}
           </tbody>
