@@ -4,8 +4,6 @@
 
 
 ### Bridge:
-- Auto SignIn if token exists
-- Check SignUp page
 - Check EditPlant
 - Move CreateFish and CreatePlant to Admin Dashboard
 
@@ -47,10 +45,10 @@
 - [ ] Replace the login alert with a toast.
 
 ### Version 0.3.0 - Functionality
-- [ ] Authorization 
+- [X] Authorization 
     - [X] Login/Logout
-    - [ ] Registration
-    - [ ] User Profile when logged in
+    - [X] Registration
+    - [X] User Profile when logged in
 - [ ] Toggle likes:
     - [ ] Plants
     - [ ] Fish
@@ -70,7 +68,7 @@
     - [ ] Shop
 - [ ] Edit Data:
     - [ ] Fish
-    - [ ] Plant
+    - [X] Plant
     - [ ] Shop
 - [ ] Improve the error shown when content from server is loading or inaccecible:
     - Currently its a simple text "Error: Failed to fetch" with no CSS
