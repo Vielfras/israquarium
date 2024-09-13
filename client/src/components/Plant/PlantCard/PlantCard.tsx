@@ -6,8 +6,9 @@ import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
-import Modal from '../../Misc/Modal/Modal'; 
-import { doDeletePlant } from '../../../services/PlantServices';
+import { doDeletePlant, doSubmitPlantReport } from '../../../services/PlantServices';
+import Modal from '../../Misc/Modal/Modal';
+import ReportingModal from '../../Misc/Modal/ReportingModal';
 
 interface IPlantCard {
   plantData: IPlant;
@@ -23,6 +24,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   const [isFavorited, setIsFavorited] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showReportingModal, setShowReportingModal] = useState(false);
 
   const handleEdit = () => {
     navigate(`/edit-plant/${plantData._id}`);
@@ -50,7 +52,23 @@ export default function PlantCard({ plantData }: IPlantCard) {
   };
 
   const handleReport = () => {
-    console.log('Report selected');
+    setShowReportingModal(true);
+  };
+
+  const handleReportConfirm = async (reason: string, message: string) => {
+    const { error } = await doSubmitPlantReport(plantData._id, reason, message);
+
+    if (error) {
+      alert(t('PlantCard.reportFailure'));
+    } else {
+      alert(t('PlantCard.reportSuccess'));
+    }
+
+    setShowReportingModal(false);
+  };
+
+  const handleReportCancel = () => {
+    setShowReportingModal(false);
   };
 
   const handleFavoriteToggle = (favorited: boolean) => {
@@ -93,7 +111,10 @@ export default function PlantCard({ plantData }: IPlantCard) {
       {/* Plant Image */}
       <div>
         {plantData.images.map((image, index) => (
-          <img key={index} src={`${apiBase}/api/plant/image/${plantData._id}/${image.src}`} alt={image.alt} className="w-full rounded" />
+          <img key={index} className="w-full rounded"
+            src={`${apiBase}/api/plant/image/${plantData._id}/${image.src}`}
+            alt={image.alt}
+          />
         ))}
       </div>
 
@@ -114,10 +135,20 @@ export default function PlantCard({ plantData }: IPlantCard) {
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
         <Modal title={t('PlantCard.deleteConfirmation')}
-          message={t('PlantCard.deleteWarning')} confirmText={t('PlantCard.confirmDelete')} cancelText={t('PlantCard.cancelDelete')}
-          onConfirm={confirmDelete} onCancel={cancelDelete}
+          message={t('PlantCard.deleteWarning')}
+          confirmText={t('PlantCard.confirmDelete')}
+          cancelText={t('PlantCard.cancelDelete')}
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
         />
       )}
+
+      {/* Reporting Modal */}
+      <ReportingModal
+        onConfirm={handleReportConfirm}
+        onCancel={handleReportCancel}
+        show={showReportingModal}
+      />
     </div>
   );
 }

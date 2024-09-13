@@ -47,10 +47,10 @@
     "additionalInformation": "מידע נוסף",
     "sources": "מקורות"
   },
-  "PlantsPage" : {
-    "selectLetter" : "אנה בחר באות כדי לראות את הצמחים שמתחילים בה.",
-    "letterEmpty" : "לא נמצאו צמחים שמתחילים באות",
-    "plantNotFoundError" : "לא נמצא."
+  "PlantsPage": {
+    "selectLetter": "אנה בחר באות כדי לראות את הצמחים שמתחילים בה.",
+    "letterEmpty": "לא נמצאו צמחים שמתחילים באות",
+    "plantNotFoundError": "לא נמצא."
   },
   "PlantCard": {
     "family": "משפחה",
@@ -78,7 +78,9 @@
     "deleteConfirmation": "האם אתה בטוח?",
     "deleteWarning": "פעולה זו אינה ניתנת לשחזור. ברגע שהצמח נמחק, לא ניתן לשחזר אותו.",
     "confirmDelete": "כן, מחק",
-    "cancelDelete": "בטל"
+    "cancelDelete": "בטל",
+    "reportSuccess": "הדיווח נשלח בהצלחה.",
+    "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב מאוחר יותר."
   },
   "EditPlant": {
     "title": "ערוך צמח",
@@ -380,5 +382,21 @@
     "loadingCardsMessage": "טוען כרטיסים, אנא המתן...",
     "noCardsAvailable": "אין כרטיסים זמינים כרגע.",
     "totalCards": "סה\"כ {{count}} כרטיסים"
+  },
+  "ReportModal": {
+    "reportIssue": "דיווח על בעיה",
+    "reportReason": "סיבת הדיווח",
+    "selectReason": "בחר סיבה",
+    "reportPhoto": "תמונה לא הולמת",
+    "reportSpelling": "שגיאת כתיב",
+    "reportIncorrect": "מידע שגוי",
+    "reportLicense": "הפרת רישיון",
+    "reportOther": "אחר",
+    "reportMessage": "פרטים נוספים",
+    "enterDetails": "הזן פרטים נוספים כאן...",
+    "submitReport": "שלח דיווח",
+    "cancelReport": "ביטול",
+    "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב.",
+    "reportSuccess": "הדיווח נשלח בהצלחה. תודה על המשוב שלך."
   }
 }

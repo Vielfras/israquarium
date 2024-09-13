@@ -73,14 +73,14 @@
     "KebabMenu": {
       "edit": "Редактировать",
       "delete": "Удалить",
-      "report": "Пожаловаться"
+      "report": "Уведомить"
     },
-    "PlantCard": {
-      "deleteConfirmation": "Вы уверены?",
-      "deleteWarning": "Это действие необратимо. После удаления растение нельзя будет восстановить.",
-      "confirmDelete": "Да, удалить",
-      "cancelDelete": "Отмена"
-    }
+    "deleteConfirmation": "Вы уверены?",
+    "deleteWarning": "Это действие необратимо. После удаления растение нельзя будет восстановить.",
+    "confirmDelete": "Да, удалить",
+    "cancelDelete": "Отмена",
+    "reportSuccess": "Уведомление успешно отправлено.",
+    "reportFailure": "Не удалось отправить уведомление. Пожалуйста, попробуйте снова позже."
   },
   "EditPlant": {
     "title": "Редактировать растение",
@@ -383,5 +383,21 @@
     "loadingCardsMessage": "Загрузка карт, пожалуйста, подождите...",
     "noCardsAvailable": "На данный момент карты недоступны.",
     "totalCards": "Всего {{count}} карта(ы)"
+  },
+  "ReportModal": {
+    "reportIssue": "Сообщить о проблеме",
+    "reportReason": "Причина обращения",
+    "selectReason": "Выберите причину",
+    "reportPhoto": "Неуместное фото",
+    "reportSpelling": "Орфографическая ошибка",
+    "reportIncorrect": "Некорректная информация",
+    "reportLicense": "Нарушение лицензии",
+    "reportOther": "Другое",
+    "reportMessage": "Дополнительные сведения",
+    "enterDetails": "Введите дополнительные сведения здесь...",
+    "submitReport": "Отправить отчет",
+    "cancelReport": "Отмена",
+    "reportFailure": "Не удалось отправить отчет. Пожалуйста, попробуйте снова.",
+    "reportSuccess": "Отчет успешно отправлен. Спасибо за ваш отзыв."
   }
 }

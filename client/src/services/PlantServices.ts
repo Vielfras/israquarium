@@ -175,3 +175,41 @@ export const doDeletePlant = async (plantId: string): Promise<{ error: string | 
     return { error: errMessage, result: null };
   }
 };
+
+// ---------------------------------------------------------------------------------------------------------
+export const doSubmitPlantReport = async (plantId: string,
+  reason: string,
+  message: string
+): Promise<{ error: string | null }> => {
+  const token = await getToken();
+  if (!token) {
+    return { error: `Can't read token from local storage` };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/reports`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+      body: JSON.stringify({
+        plantId,
+        reason,
+        message,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return { error: data.message || 'Report submission failed' };
+    }
+
+    return { error: null };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: `Error submitting report (${errMessage})` };
+  }
+};
+
