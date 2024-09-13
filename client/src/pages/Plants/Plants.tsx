@@ -14,22 +14,20 @@ export default function Plants() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [selectedPlant, setSelectedPlant] = useState<IPlant | null>(null);
 
-  // Use search params to get the query string
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const plantIdFromUrl = searchParams.get('plant-id');
 
   useEffect(() => {
     if (plantIdFromUrl) {
-      // If there's a plant ID in the query string, fetch that specific plant
       const fetchPlantById = async () => {
         setLoading(true);
         setError(null);
 
-        const result = await doGetPlantById(plantIdFromUrl, 'en'); // You may set the language dynamically
+        const result = await doGetPlantById(plantIdFromUrl, 'en'); // TODO - change this to be dynamic by language
         if (result.error) {
           setError(result.error);
         } else if (result.result) {
-          setSelectedPlant(result.result); // Set the selected plant based on the fetched result
+          setSelectedPlant(result.result);
         } else {
           setError(`Plant with ID '${plantIdFromUrl}' not found.`);
         }
@@ -69,6 +67,12 @@ export default function Plants() {
     setSelectedPlant(null);
   };
 
+  const handlePlantClick = (plant: IPlant) => {
+    setSelectedPlant(plant);
+    // Update the URL with the plant ID as a query parameter
+    setSearchParams({ 'plant-id': plant._id });
+  };
+
   return (
     <div className="w-full flex flex-col items-center">
       <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick} />
@@ -93,7 +97,7 @@ export default function Plants() {
                 <PlantMiniCard
                   key={plant._id}
                   plant={plant}
-                  onClick={() => setSelectedPlant(plant)}
+                  onClick={() => handlePlantClick(plant)} 
                 />
               ))
             ) : (
