@@ -1,0 +1,2135 @@
+[
+    {
+        "_id": "5638da21-6d9c-49b5-ace2-88d76f7a3b88",
+        "name": "Nannostomus anduzei",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Nannostomus%20anduzei.jpg",
+                "alt": "Nannostomus anduzei 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Nannostomus anduzei Fernandez & Weitzman, 1987",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "מ-40 ס\"מ",
+        "fishSize": "(SL) עד 2.0 ס\"מ",
+        "maxTemp": "29",
+        "minTemp": "22",
+        "ph": "5.5 - 7.5",
+        "dGH": "0 - 14",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Characiformes",
+                "family": "Lebiasinidae - עפרונוניים",
+                "subfamily": "Pyrrhulininae",
+                "synonyms": "ננוסטומוס אנדוזיי Miniature Nannostomus Anduzi's Nannostomus",
+                "etymology": "Nannostomus : nannus (.קטן : (לטין stoma (פה : (יווני anduzei :",
+                "distribution": "דרום אמריקה : נהרות אורינוקו, ארארי, נגרו",
+                "additionalRequirements": ".רגישים מאוד לעליות ברמות החנקנים",
+                "aquariumSetup": ".צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .גזעי עץ",
+                "intraspeciesCompatibility": ".דג להקה. מרגיש יותר טוב בקבוצות של לפחות 5-6 דגיםת רצוי יותר",
+                "interspeciesCompatibility": ".מסתדר עם כל הדגים שאינם אגרסיביים .לא ניתן לגדל אותו עם דגים גדולים יחסית וטורפים",
+                "feeding": ".אוכל רוב סוגי המזון לוקח מזון בדרך כלל מפני המים או בשכבות העליונה והאמצעית, אך יכול\r\n\t  גם לקחת מזון מהקרקע",
+                "sexualDimorphism": ".נקבה מלאה יותר ובטנה תפוחה ועגולה",
+                "breeding": ".תנאיי גידול עיפרונונים",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "178681dc-dfc4-4f0b-bb2a-dd61483c3042",
+        "name": "Nannostomus beckfordi",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Nannostomus%20beckfordi.jpg",
+                "alt": "Nannostomus beckfordi 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Nannostomus beckfordi  Günther, 1872",
+        "firstDescription": "Günther, A. On a new genus of characinoid fishes from Demerara. Proc. Zool. Soc. Lond. 146 , 1872",
+        "sources": "",
+        "tankVolume": "מ-50 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "22",
+        "ph": "6.0 - 7.8. לרבייה רצויים מים חומציים עם חומציות 5.5 - 6.2",
+        "dGH": "4 - 18. לרבייה צריכים להיות מים רכים מאוד עם קשיות נמוכה מ-6.0",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Characiformes",
+                "family": "Lebiasinidae",
+                "subfamily": "Pyrrhulininae",
+                "synonyms": "ננוסטומוס בקפורדי עפרונון זהוב Anomalous pencilfish Beckford's Pencil Fish Brown pencilfish Golden pencilfish Nannostomus anomalus Steindachner , 1876 Nannostomus aripiragensis Meinken , 1931 Nannostomus beckfordi surinami Hoedeman , 1954 Nannostomus simplex Eigenmann , 1909",
+                "etymology": "Nannostomus : nannus (.קטן : (לטין stoma (פה : (יווני beckfordi : Beckford לכבוד",
+                "distribution": ". דרום אמריקה : נהרות גוויאנה, אמזונס, נגרו",
+                "additionalRequirements": "",
+                "aquariumSetup": ". אוהב אקווריום אם הרבה צמחים וגם מספיק מקומות מים פתוחים לשחייה מהירה . זגעי עץ",
+                "intraspeciesCompatibility": ". דג להקה , רצוי לגדל לפחות 4 - 5 דגים. בלהקות גדולות יותר מרגיש בטוח וטוב יותר . לציין שזכרים מבלים את היום בקרבות קלות ושחייה לאחר הנקבות . בדרך כלל המשחקים האלו לא גורמים לפציעות",
+                "interspeciesCompatibility": "מסתדר טוב עם דגי להקה אחרים. באקווריום תופס שכבות האמצאית והעליונה. לא פוגע בצמחים . ובדגים האחרים.\r\n\t   לא מסתדר אם דגים אגרסיביים גדולים היכולים לפגוע בו",
+                "feeding": ". אוכל רוב סוגי מזון - קפוא , יבש , חי .אוכל מזון מפני המים ומשכבת האמצעית והעליונה של המים באקווריום. לא אוהב לקחת אוכל מהקרקע",
+                "sexualDimorphism": ". בטן של הנקבה עגולה ותפוחה יותר. זכר רזה יותר . כמו כן בדרך כלל בסיסי סנפירים אצל זכרים אדומים יותר ואצל נקבה לרוב ללא צבע אדום",
+                "breeding": ". רבייה זוגית או קבוצתית ביחס של 2 - 3 זכרים לנקבה אחת לזירוז הרבייה יש להפריד בין זכרים לנקיבות לשבוע , לאכיל במזון מגוון יותר ולהחליף \r\n\t  את המים . בתדירות גבוהה יותר מיכל לרבייה ומים צריכים להיות נקיים מאוד. מים צריכים להיות רכים מאוד עם קשיות 2 - 6 וחומציים .\r\n\t  עם חומציות 5.5 - 6.5. כמו כן רצוי להוסיף למים תמיסת כבול גודל האקווריום לרבייה תלוי בכמות הדגים שאמורים להכנס בו. גודל מינימאלי - 5 - 8 ליטרים במקרה שמכניסים\r\n\t  לרבייה זוג. על הקרקע יש לשים רשת ביטחון ועליה הרבה צמחים כגון ג'ווה מוסוס או \r\n\t  צמחים אחרים עם עלים קטנים ורבים. רבייה בדרך כלל למחרת בבוקר. דגים בוגרים\r\n\t  אוכלים את הביצים , לכן . יש להוציא אותם. ביצים בוקעות לאחר כ-18 - 24 שעות ולאחר עוד כ-5-4 ימים דגיגים\r\n\t  מתחילים לשחות . מזון התחלתי לדגיגים - אינפוזוריות , לאחר כ-שבוע - 10 ימים - נאופלי ארטמיה ונמטודות . מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": ". דג שכיח מאוד וקל לגידול כמו לכל הננוסטומוסים , לדג יש מופע ימי ומופע לילי. בלילה צבע של הדג משתנה לחלוטין ודג הופך . להיות\r\n\t   מפוספס עם פסים מאונכיים"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7c54b719-35ca-4c2a-99f3-954be0843276",
+        "name": "Nannostomus bifasciatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus bifasciatusHoedeman, 1954",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f4eeec7b-5a73-456b-8aa5-2c1a77047597",
+        "name": "Nannostomus britskii",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus britskiiWeitzman, 1978",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "31d4b724-510e-4125-9ae1-1971dcf8346f",
+        "name": "Nannostomus digrammus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus digrammus(Fowler, 1913)Photo C. Appleby",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "cecc6c28-086d-4532-a2a7-0862d8798e25",
+        "name": "Nannostomus eques",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Nannostomus%20eques.jpg",
+                "alt": "Nannostomus eques 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Nannostomus eques  Steindachner, 1876",
+        "firstDescription": "Steindachner, F. Ichthyologische Beiträe (V). Sitzungsber. Akad. Wiss. Wien v. 74 (1. Abth.): 49-240, Pls. 1-15. , 1876",
+        "sources": "",
+        "tankVolume": "מ-50 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "22",
+        "ph": "6.0 - 7.8. לרבייה רצויים מים חומציים עם חומציות 5.5 - 6.2",
+        "dGH": "4 - 18. לרבייה צריכים להיות מים רכים מאוד עם קשיות נמוכה מ-6.0",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Characiformes",
+                "family": "Lebiasinidae",
+                "subfamily": "Pyrrhulininae",
+                "synonyms": "ננוסטומוס אקבס עפרונון מקל-הוקי Brown pencilfish Diptail pencilfish Tube-mouthed pencilfish Poecilobrycon eques (Steindachner, 1876) Poecilobrycon auratus Eigenmann, 1909",
+                "etymology": "Nannostomus : nannus (.קטן : (לטין stoma (פה : (יווני eques :",
+                "distribution": ". דרום אמריקה : מערכת נהר אמזונס בברזיל ופרו",
+                "additionalRequirements": "",
+                "aquariumSetup": ". אוהב אקווריום אם הרבה צמחים וגם צפים . זגעי עץ",
+                "intraspeciesCompatibility": ". דג להקה , רצוי לגדל לפחות 4 - 5 דגים. בלהקות גדולות יותר מרגיש בטוח וטוב יותר",
+                "interspeciesCompatibility": ". מסתדר טוב עם דגי להקה אחרים. באקווריום תופס שכבה העליונה. לא פוגע בצמחים ובדגים האחרים",
+                "feeding": ". אוכל רוב סוגי מזון - קפוא , יבש , חי .אוכל מזון מפני המים ומשכבת האמצעית והעליונה של המים באקווריום. לא לקח אוכל מהקרקע . לדג יש יכולת לאכול מזון די גדול. הוא פשוט מסדר את פיו בצורת צינור ושואב את המזון לתוך הפה",
+                "sexualDimorphism": ". בטן של הנקבה עגולה ותפוחה יותר. זכר רזה יותר כמו כן בגבול התחתון-קידמי של סנפירי האנאלי והגחון של הזכר ישנו פס כחול בהיר וסנפירים האלה . אדמדמים.\r\n\t אצל נקבה סנפירים שקופים . ב תמונה זכר נמצא קדימה והנקבה אחורה",
+                "breeding": ". רבייה זוגית או קבוצתית ביחס של 2 - 3 זכרים לנקבה אחת לזירוז הרבייה יש להפריד בין זכרים לנקיבות לשבוע , לאכיל במזון מגוון יותר ולהחליף \r\n\t  את המים . בתדירות גבוהה יותר מיכל לרבייה ומים צריכים להיות נקיים מאוד. מים צריכים להיות רכים מאוד עם קשיות 1 - 3 וחומציים .\r\n\t  עם חומציות 5.5 - 6.5. כמו כן רצוי להוסיף למים תמיסת כבול גודל האקווריום לרבייה תלוי בכמות הדגים שאמורים להכנס בו. גודל מינימאלי - 5 - 8 ליטרים במקרה שמכניסים\r\n\t  לרבייה זוג. על הקרקע יש לשים רשת ביטחון ועליה הרבה צמחים כגון ג'ווה מוסוס או \r\n\t  צמחים אחרים עם עלים קטנים ורבים. רבייה בדרך כלל למחרת בבוקר. דגים בוגרים\r\n\t  אוכלים את הביצים , לכן יש להוציא אותם. אקווריום עם הביצים יש להחשיך .\r\n\t  ביצים בוקעות לאחר כ-18 - 24 שעות ולאחר עוד - כ-5-4 ימים דגיגים\r\n\t  מתחילים לשחות מזון התחלתי לדגיגים - אינפוזוריות , לאחר כ-שבוע - שבועיים . נאופלי ארטמיה ונמטודות . מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": "כמו לכל הננוסטומוסים , לדג יש מופע ימי ומופע לילי. בלילה צבע של הדג משתנה לחלוטין ודג הופך . להיות\r\n\t   מפוספס עם פסים מאונכיים"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "194f506d-5ad8-4853-86fe-7ea2a3969019",
+        "name": "Nannostomus espei",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus espei(Meinken, 1956)",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f793ea32-74a6-420e-a254-e2676a3a0af2",
+        "name": "Nannostomus harrisoni",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus harrisoni(Eigenmann, 1909)Photo C. Appleby",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "3f888f5b-b299-4e4a-b244-47223fd26b9d",
+        "name": "Nannostomus limatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus limatusWeitzman, 1978",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "af8384dc-4bb8-4c08-b9b4-242650191fc3",
+        "name": "Nannostomus marginatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus marginatusEigenmann, 1909Photo Stefan Hetz",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "0bb4189f-cddb-448f-8d25-e6bde50af26e",
+        "name": "Nannostomus mortenthaleri",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus mortenthaleriPaepke & Arendt, 2001PhotoTula Top",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "1a4347ce-319c-49e8-9482-ee2d9ff83637",
+        "name": "Nannostomus marilynae",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus marilynaeWeitzman & Cobb, 1975Photo Aqualog-Verlag",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "94c190d4-9b34-448b-9b18-c885df37d3ea",
+        "name": "Nannostomus minimus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus minimusEigenmann, 1909",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "98d1ffa5-d133-412f-b5fa-9b958f94652e",
+        "name": "Nannostomus nitidus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus nitidusWeitzman, 1978Photo P. Hoffmann & M. Hoffmann",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "47f8aa60-9cfe-4ee4-9d32-9922379e23ab",
+        "name": "Nannostomus trifasciatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus trifasciatusSteindachner, 1876Photo C. Appleby",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "a3beaef0-1dbf-4e37-a2c4-0b6c3738f747",
+        "name": "Nannostomus unifasciatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Nannostomus unifasciatusSteindachner, 1876",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7270666f-fbcc-4f52-a7c1-99867c1a54e7",
+        "name": "Betta akarensis",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20akarensis.jpg",
+                "alt": "Betta akarensis 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta akarensis Regan, 1910",
+        "firstDescription": "Regan, C. T. The Asiatic fishes of the family Anabantidae . Proc. Zool. Soc. Lond. 767-787, 1910.",
+        "sources": "",
+        "tankVolume": "מ-50 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "21",
+        "ph": "5.0 - 7.0",
+        "dGH": "2 - 12",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. akarensis",
+                "synonyms": "Akar betta Sarawak Betta Ladder-Fined Betta Ladder Mouthbrooder Betta climacura Vierke, 1988",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים akarensis : מנהר אקר",
+                "distribution": ".אסיה : נהר אקר בבורנאו",
+                "additionalRequirements": ".מרגיש טוב יותר במים חומציים עם תוספת תמיסת כבול",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "breeding": ".שייך לדגי קרב הדוגרים את הביצים בפה .רביית דגי קרב הדוגים בפה",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7f09351d-777b-423f-aa13-bb45463b4d08",
+        "name": "Betta albimarginata",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20albimarginata.jpg",
+                "alt": "Betta albimarginata 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta albimarginata Kottelat & Ng, 1994",
+        "firstDescription": "Kottelat, M. and Ng, P. K. L. Diagnoses of five new species of fighting fishes from Banka and \r\nBorneo ( Teleostei : Belontiidae ). Ichthyol. Explor. Freshwaters 65-78, 1994.",
+        "sources": "",
+        "tankVolume": "מ-30 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "21",
+        "ph": "4.0 - 6.5",
+        "dGH": "0 - 12",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. albimarginata",
+                "synonyms": "Whiteseam Fighter",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים albimarginata (לטין) : albus : לבן margo : שוליים עקב שוליים לבנים של הסנפירי זכר",
+                "distribution": ".אסיה : נהר סבוקו בבורנאו",
+                "additionalRequirements": ".מרגיש טוב יותר במים חומציים עם תוספת תמיסת כבול",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "breeding": ".שייך לדגי קרב הדוגרים את הביצים בפה .רביית דגי קרב הדוגים בפה",
+                "additionalInformation": ".בטבע חי בנחלי יער במים רדודים בגובה 10-5 ס\"מ בין לכלוך\r\n\t   מעלים ושורשי צמחים"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "0168a0b9-e9ae-4767-9c2d-6945892b2c63",
+        "name": "Betta anabatoides",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20anabatoides.jpg",
+                "alt": "Betta anabatoides 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta anabatoides Bleeker, 1851",
+        "firstDescription": "Bleeker, P. Nieuwe bijdrage tot de kennis der ichthyologische fauna van Borneo \r\nmet beschrijving van eenige nieuwe soorten van zoetwatervisschen. Natuurkd. Tijdschr. Neder. Indie 259-275, 1851.",
+        "sources": "",
+        "tankVolume": "מ-50 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "30",
+        "minTemp": "23",
+        "ph": "4.0 - 6.5",
+        "dGH": "0 - 8",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. anabatoides",
+                "synonyms": "Giant betta Pearly Betta Large Unspotted Mouthbrooder",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים anabatoides : דומה למשפחת אנבנטוידים",
+                "distribution": ".אסיה : בורנאו",
+                "additionalRequirements": ".מרגיש טוב יותר במים חומציים עם תוספת תמיסת כבול",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "breeding": ".שייך לדגי קרב הדוגרים את הביצים בפה .רביית דגי קרב הדוגים בפה",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "602d1274-d330-47af-8cd8-6984ac8637da",
+        "name": "Betta antoni",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/Plants/Plants_files/planet%202.gif",
+                "alt": "Betta antoni 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta antoni Tan & Ng, 2006",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "",
+                "synonyms": "",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים antoni :",
+                "distribution": ".אסיה : מערכת נהר קפואס בקלימנטן",
+                "additionalRequirements": "",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": "",
+                "feeding": "",
+                "breeding": "",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "70d1ed86-4456-4150-a5b5-5bad9560441c",
+        "name": "Betta aurigans",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20aurigans.jpg",
+                "alt": "Betta aurigans 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta aurigans Tan & Lim, 2004",
+        "firstDescription": "Tan, H. H. and Lim, K. K. P. Inland fishes from the Anambas and Natuna Islands, South China Sea, \r\nwith description of a new species of Betta ( Teleostei : Osphronemidae ). The Raffles Bulletin of Zoology Supplement No. 11: 107-115, 2004.",
+        "sources": "",
+        "tankVolume": "מ-40 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "21",
+        "ph": "5.0 - 6.5",
+        "dGH": "0 - 10",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. akarensis",
+                "synonyms": "",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים aurigans (.עם גווני זהב : (לטין",
+                "distribution": "אסיה : נהר פואלו בטונה",
+                "additionalRequirements": ".מרגיש טוב יותר במים חומציים עם תוספת תמיסת כבול",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "breeding": ".שייך לדגי קרב הדוגרים את הביצים בפה .רביית דגי קרב הדוגים בפה",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "187a3686-9fa4-45e2-9764-87bc52d914eb",
+        "name": "Betta balunga",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20balunga1.jpg",
+                "alt": "Betta balunga 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta balunga Herre, 1940",
+        "firstDescription": "Herre, A. W. C. T. Additions to the fish fauna of Malaya and notes on rare or little \rknown Malayan and Bornean fishes. Bull. Raffles Mus. 27-61, 1940.",
+        "sources": "",
+        "tankVolume": "מ-30 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "21",
+        "ph": "5.0 - 6.9",
+        "dGH": "0 - 12",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. akarensis",
+                "synonyms": "Balunga Mouthbrooder",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים balunga : בשם נהר בלונגה",
+                "distribution": "אסיה : בורנאו, נהרות בלונגה וסבוקו",
+                "additionalRequirements": ".מרגיש טוב יותר במים חומציים עם תוספת תמיסת כבול",
+                "aquariumSetup": ".גזעי עץ .צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .צינורות, מערות",
+                "intraspeciesCompatibility": "",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "sexualDimorphism": ".זיהוי בן המינים",
+                "breeding": ".שייך לדגי קרב הדוגרים את הביצים בפה .רביית דגי קרב הדוגים בפה",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "151aa00e-4eb9-4e89-9115-593079ccb563",
+        "name": "Betta bellica",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20bellica.jpg",
+                "alt": "Betta bellica 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta bellica Sauvage, 1884",
+        "firstDescription": "Sauvage, H. E. Note sur une collection de poissons recueillie a Perak, \rpresqu'Ile de Malacca. Bull. Soc. Zool. Fr. 216-220, 1884.",
+        "sources": "",
+        "tankVolume": "מ-50 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "28",
+        "minTemp": "21",
+        "ph": "5.5 - 7.2",
+        "dGH": "4 - 16",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. bellica",
+                "synonyms": "Slim betta Slender betta Striped betta Striped Fighting Fish Bellicose fighting fish Betta fasciata Regan, 1910",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים bellica : תשוקת מלחמה",
+                "distribution": "אסיה : אינדונזיה, מלאיה",
+                "additionalRequirements": "",
+                "aquariumSetup": ".צמחייה - צמחי שורש וגבעול , ג'וה מוסוס .חייבים להיות צמחים עם עלים רחבים המשמשים את הדגים בתקופת הרבייה",
+                "intraspeciesCompatibility": "דג שקט ומסתדר עם דגים אחרים , אך לא ניתן להחזיק\r\t   זמן רב שני זכרים באקווריום אחד",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".מעדיף מזון חי, בקושי מתרגל לאכול מזון יבש",
+                "breeding": ".שייך לדגי קרב הבונים קן בועות זכר בונה קן בועות מתחת לעלה רחב, לכן באקווריום חייב ליהות צמח עם\r\t   עלים רחבים, ונקבה מטילה סך הכל עד 250 ביצים שבוקעות לאחר יום - יומיים.\r\t   הרבה פעמים לנקבה המוכנה לרבייה מופיעים פסים בהירים על הגוף .רביית דגי קרב הבונים קן בועות",
+                "additionalInformation": ""
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f9998d87-336c-4858-88fc-7a38162a6277",
+        "name": "Betta breviobesus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta breviobesusTan & Kottelat, 1998",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "30336739-a00d-4e88-bdbb-9731d5f930e8",
+        "name": "Betta brownorum",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta brownorumWitte & Schmidt, 1992Picture: E. Naus,AquaWorld",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "ffd929f0-17b2-43f9-a049-74d73090c4df",
+        "name": "Betta burdigala",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta burdigalaKottelat & Ng, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6a799fec-98dc-4491-98c4-90df7e88dfe0",
+        "name": "Betta channoides",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta channoidesKottelat & Ng, 1994זכרנקבהPhoto by Kei Sasaki",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f0a78678-953e-4e40-b5b7-e010a819bc46",
+        "name": "Betta chini",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta chiniNg, 1993Photo by Eric Bourdier",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f82dcf63-b2e0-45c0-bff7-882b7b7cdf87",
+        "name": "Betta chloropharynx",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta chloropharynxKottelat & Ng, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "c9efa8a5-2216-4ab9-810d-f3fbd4d31ff3",
+        "name": "Betta coccina",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta coccinaVierke, 1979זכרPhoto by Jirapat ChunthapongנקבהPhoto by Jirapat Chunthapong",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "69b35364-8a44-47fa-931f-952a873d87f5",
+        "name": "Betta dimidiata",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta dimidiataRoberts, 1989",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "e6f613ca-4663-48be-a66c-471b14bccbe8",
+        "name": "Betta edithae",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta edithaeVierke, 1984זכרנקבהPicture: E. Naus,AquaWorld",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7707f044-dda0-4716-aa9d-e59002b9290d",
+        "name": "Betta enisae",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta enisaeKottelat, 1995Photo by Kei Sasaki",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "02d75f51-98c3-4a37-a035-79b707046668",
+        "name": "Betta falx",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta falxTan & Kottelat, 1998",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "06b0149b-d25f-4937-9d9d-a0b0601724f4",
+        "name": "Betta foerschi",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta foerschiVierke, 1979",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "dc828ddb-43f5-49aa-85e9-25bdafbe6d24",
+        "name": "Betta fusca",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta fuscaRegan, 1910",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "5093aaf4-29ba-4208-a26d-9e67d04f6ced",
+        "name": "Betta hipposideros",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta hipposiderosNg & Kottelat, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "22c60b7a-2e08-4cf0-9627-5dc1553f8d8e",
+        "name": "Betta imbellis",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta imbellisLadiges 1975",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "833c7e79-e8e3-429c-8292-99502ecd632e",
+        "name": "Betta livida",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta lividaNg & Kottelat, 1992",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "eb045d75-adbb-4bb2-9dab-f6af20419b9e",
+        "name": "Betta macrostoma",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta macrostomaRegan, 1910זכרנקבהPhoto by Nonn Panitvong",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "549ab989-1f07-4748-8d72-474ea51abf4d",
+        "name": "Betta miniopinna",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta miniopinnaTan & Tan, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "8a560265-5c12-454a-a010-e731bc330618",
+        "name": "Betta ocellata",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta ocellatade Beaufort, 1933",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "a8e8b191-0cd4-4196-a153-9c0accb2deb4",
+        "name": "Betta patoti",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta patotiWeber & de Beaufort, 1922זכרנקבהPicture: E. Naus,AquaWorld",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "66db280a-f280-494b-b037-e9cbf420909b",
+        "name": "Betta pi",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta piTan, 1998",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "27c9ff8a-9972-4f12-bb9c-698f8201734c",
+        "name": "Betta picta",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta picta(Valenciennes, 1846)זכרנקבה",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "68258419-b3a2-4dfd-a428-02e971c853d5",
+        "name": "Betta pinguis",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta pinguisTan & Kottelat, 1998",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "3c7d3674-22c7-4918-b8fa-d09ef902b743",
+        "name": "Betta prima",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta primaKottelat, 1994זכרPhoto by Atison PhumchoosriנקבהPhoto by Atison Phumchoosri",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "4de808eb-54c6-4035-98a7-8bdcadf650e6",
+        "name": "Betta pugnax",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta pugnax(Cantor, 1849)Photo by Atison Phumchoosri",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "e42d182c-0bac-46f0-a3f6-c6ceb481e96a",
+        "name": "Betta pulchra",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta pulchraTan & Tan, 1996",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6717ca72-9337-48ad-92bb-5fdd661be88e",
+        "name": "Betta renata",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta renataTan, 1998",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "4e5247f6-7645-402a-99f1-cdfa67b7d35e",
+        "name": "Betta rubra",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta rubraPerugia, 1893",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "13161e6f-d0a1-474e-8388-71fa68440e9f",
+        "name": "Betta rutilans",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta rutilansWitte & Kottelat, 1991Photo by Tony Terceira",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "adc32756-8f55-4903-b2bb-b1f14e7110ed",
+        "name": "Betta schalleri",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta schalleriKottelat & Ng, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "722e10e7-81e4-423e-99fe-921dce165b64",
+        "name": "Betta simorum",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta simorumTan & Ng, 1996",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "10922425-86dd-4590-b898-e1836d70c0cf",
+        "name": "Betta simplex",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta simplexKottelat, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "9a930a7e-f10f-4b03-a64b-51534889c2b5",
+        "name": "Betta smaragdina",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta smaragdinaLadiges, 1972Photo by Napraforgo",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "e23178ef-1312-4c3e-b0cc-a27bea83453d",
+        "name": "Betta spilotogena",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta spilotogenaNg & Kottelat, 1994",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "ca1c0871-7fb0-4e6f-be92-ebee56c09660",
+        "name": "Betta splendens",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Betta%20splendens.jpg",
+                "alt": "Betta splendens 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Betta splendens Regan, 1910",
+        "firstDescription": "Regan, C. T. The Asiatic fishes of the family Anabantidae . Proc. Zool. Soc. Lond. 767-787, 1910.",
+        "sources": "",
+        "tankVolume": "מ-30 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "30",
+        "minTemp": "21",
+        "ph": "6.0 - 8.0",
+        "dGH": "2 - 18",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Osphronemidae - גורמיים",
+                "subfamily": "Macropodinae",
+                "group": "B. splendens",
+                "synonyms": "דג קרב Siamese fighting fish Betta splendens abbreviata Blanc, 1963 Micracanthus marchei Sauvage, 1879",
+                "etymology": "Betta : לדגים האלה \"ikan bettah\" נוצר משם מקורי בתאילנד שתושביה קוראים splendens : נהדר, מבריק",
+                "distribution": "אסיה",
+                "additionalRequirements": "",
+                "aquariumSetup": ".צמחייה - צמחי שורש וגבעול , ג'וה מוסוס",
+                "intraspeciesCompatibility": ".שני זכרים אינם יכולים לחיות באקווריום אחד. מהר מאוד מתחילים הקרבות ביניהם",
+                "interspeciesCompatibility": ".לא אוהב שכנים פעילים מידי",
+                "feeding": ".אוכל רוב סוגי המזון",
+                "breeding": ".שייך לדגי קרב הבונים קן בועות זכר בונה קן בועות מעל פני המים. רצוי לסים צמח  ריצ'יה לתוך האקווריום ואז קן בועות שמעורב עם \r\n\t   ריצ'יה הוא חזק יותר. זכר שמוכן לרבייה קורא לנקבה ומחזר אחריה. ההטלה מתבצעת בזמן החיבוק של הנקבה על ידי זכר.\r\n\t   כל הביצים שנקבה מטילה הם אוספים\r\n\t   לתוך הקן בועות (עד 500 ביצים) . לאחר הטלת הביצים יש להוציא את\r\n\t   הנקבה מהאקווריום, כי זכר יכול להרוג אותה. זכר מטפל בביצים ובדגיגים ומתקן את הקן.\r\n\t   ביצים בוקעות לאחר כ-36 - 20 שעות. \r\n\t   ימים ראשונים דגיגים נמצאים תלויים בין בועות בקן ובעוד  כ-5 - 3 ימים דגיגים מתחילים לשחות.\r\n\t   לאחר שהדגיגים מתפזרים בכל האקווריום יש להוציא  ממנו גם את הזכר .רביית דגי קרב הבונים קן בועות",
+                "additionalInformation": "רוב המוחלט של דגי קרב סיאמיים מגיים מרבייה בחוות ולא מהטבע. קיימות הרבה \r\n\t  מאוד ווריאציות צבעוניות ושל צורות הזנב"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "dc785f44-d50d-42ba-9643-33e33784cba3",
+        "name": "Betta strohi",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta strohiSchaller & Kottelat, 1989",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "5ddf6805-2f21-4557-82e3-66d6b615c0ad",
+        "name": "Betta taeniata",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta taeniataRegan, 1910",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6e4b4ce7-d954-4cf4-ab83-d2586cbea4db",
+        "name": "Betta tomi",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta tomiNg & Kottelat, 1994Photo by Edward Miller",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "b6ae228c-2cb2-45fd-9f6d-717edd74fead",
+        "name": "Betta tussyae",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta tussyaeSchaller, 1985",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f6a34de1-746d-4418-bfa4-2c3d1e80bd70",
+        "name": "Betta unimaculata",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta unimaculata(Popta, 1905)",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "ec17dbef-23f1-4f8e-a02d-d01fc7541c28",
+        "name": "Betta waseri",
+        "images": [],
+        "tribe": "",
+        "latinName": "Betta waseriKrummenacher, 1986",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "62953909-4faf-41e4-9439-6a7ee325232f",
+        "name": "Otocinclus affinis",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus affinisSteindachner, 1877",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6f5627aa-1248-452d-bb4c-74d4c3219e6a",
+        "name": "Otocinclus bororo",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus bororoSchaefer, 1997",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6c5a2c09-85b9-4c04-a348-c8f69be927b0",
+        "name": "Otocinclus caxarari",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus caxarariSchaefer, 1997Picture S.A.Schaefe",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7984feb5-22be-436c-b3a4-a604c89facc0",
+        "name": "Otocinclus cocama",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Otocinclus_cocama.jpg",
+                "alt": "Otocinclus cocama 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Otocinclus cocama Reis 2004",
+        "firstDescription": "Reis, R. E. Otocinclus cocama , a new uniquely colored loricariid catfish from \rPeru ( Teleostei: Siluriformes ), with comments on the impact of \rtaxonomic revisions to the discovery of new taxa. Neotropical Ichthyol. v. 2 (no. 3): 109-115, 2004",
+        "sources": "",
+        "tankVolume": "מ-40 ס\"מ",
+        "fishSize": "",
+        "maxTemp": "25",
+        "minTemp": "21",
+        "ph": "6.0 - 7.5",
+        "dGH": "0-12°",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Siluriformes - דגי חתול",
+                "family": "Loricariidae - לוריקרידיים",
+                "subfamily": "Hypoptopomatinae",
+                "synonyms": "אוטוצינקלוס קוכמה אוטוצינקלוס זברה Zebra Oto Otocinclus sp. \"zebra\"",
+                "etymology": "Otocinclus : ous, oto ( אוזן :(יווני cinclus (. מעשה - רשת :(לטין עקב דמיון חורים על הראש באזור האוזניים cocama : שגר במקומות המחייה של הדג ,Cocama-Cocamilla בשם שבט",
+                "distribution": "דרום אמריקה : נהר אוקיאלי בפרו",
+                "additionalRequirements": ".דורש מים נקיים מאוד, ללא ניטראטים",
+                "aquariumSetup": ".אוהב אקווריום אם הרבה צמחים וגם .זגעי עץ אבנים גדולות חלקות",
+                "intraspeciesCompatibility": ".שוכרי שלום. רצוי לגדל בקבוצה",
+                "interspeciesCompatibility": ".שוכרי שלום",
+                "feeding": ".תזונה עיקרית - עצות. רצוי לתת תוספת של ירקות",
+                "sexualDimorphism": ".אצל זכר האודונטודים בבסיס של סנפיר הזנב מייצים איבר מגע מסויים .כמו כן הפפילה הגניטאלית בצורת קונוס",
+                "breeding": "",
+                "additionalInformation": "בטבע המצאות זכרים הרבה יותר נדירה מנקבות. מתוך 20 דגים שהשתמשו בהם\r\t   לתאור מדעי של הדג, רק 2 היו זכרים"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "1aaf3785-a473-4f10-981e-9b30c97d3dcb",
+        "name": "Otocinclus flexilis",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus flexilisCope, 1894",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "ae5b1eab-6c18-4e52-9c05-dd7802e64242",
+        "name": "Otocinclus gibbosus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus gibbosusMiranda Ribeiro, 1908",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "8c4c446e-8212-400d-8298-ccbe7d8b4397",
+        "name": "Otocinclus hasemani",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus hasemaniSteindachner, 1915",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "7c3633c8-700d-43e3-9c8f-69c4ab496edc",
+        "name": "Otocinclus hoppei",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus hoppeiMiranda-Ribeiro, 1939Photo Vedran Cuncic",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "3b014d6e-d816-4ef3-ad79-2e901a2f8b68",
+        "name": "Otocinclus huaorani",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus huaoraniSchaefer, 1997",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "5d8527eb-aaa4-4009-bc04-ffb74b5093a7",
+        "name": "Otocinclus macrospilus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus macrospilusEigenmann & Allen, 1942PhotoY. Oksman",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "a7a4a8d3-07c8-4090-bc63-2f2ab8e0d985",
+        "name": "Otocinclus mariae",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus mariaeFowler, 1940",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "f99df335-ebdd-48cc-87a1-ebde4f25e822",
+        "name": "Otocinclus mura",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus muraSchaefer, 1997Picture S.A.Schaefe",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "ebb20301-f9c8-416a-9ae5-fcd3c3fc9c68",
+        "name": "Otocinclus tapirape",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus tapirapeBritto & Moreira, 2002Holotype",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "fbc21fb8-48d2-4c6c-bcca-80fdc2d59009",
+        "name": "Otocinclus vestitus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus vestitusCope, 1872",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "99936c7f-982a-4389-835d-3221f9fe2082",
+        "name": "Otocinclus vittatus",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus vittatusRegan, 1904",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "2fd1e0de-d9c4-47b3-9145-18d53b1a4e18",
+        "name": "Otocinclus xakriaba",
+        "images": [],
+        "tribe": "",
+        "latinName": "Otocinclus xakriabaSchaefer, 1997Picture S. A. Schaefer",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "",
+        "fishSize": "",
+        "maxTemp": "",
+        "minTemp": "",
+        "ph": "",
+        "dGH": "",
+        "languages": {
+            "en": {},
+            "he": {},
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "2daff1aa-33cc-459a-ae88-f071c87fc133",
+        "name": "Dicrossus filamentosus",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Dicrossus%20filamentosus-male.jpg",
+                "alt": "Dicrossus filamentosus 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Dicrossus filamentosus Ladiges, 1958",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "מ-60 ס\"מ",
+        "fishSize": "(SL) זכר - עד 8.0 ס\"מ(SL) נקבה - עד 4.0 ס\"מ",
+        "maxTemp": "28",
+        "minTemp": "20",
+        "ph": "5.8 - 7.8",
+        "dGH": "0 - 14",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Cichlidae - אמנוניים",
+                "subfamily": "Geophaginae",
+                "synonyms": "דיקרוסוס פילמנטוזוס שחמט ציקליד Checkerboard lyretail Chessboard cichlid Lyrefinned checkerboard cichlid Crenicara filamentosa Ladiges, 1958 Dicrossus filamentosa (Ladiges, 1958)",
+                "etymology": "Dicrossus (יווני): di : שתיים krossoi : ציצית עקב מבנה אנטומי של המכסת זימים filamentosus : חוט דקיק עקב שני \"חוטים\" בסנפיר הזנב",
+                "distribution": ".דרום אמריקה: נהר אמזונס, ריו-נגרו, אורינוקו בקולומביה וונסואלה",
+                "additionalRequirements": ".מיים נקיים ללא רמות החנקנים גבוהות .מרגיש טוב יותר אם מוסיפים תמיסת כבול למים - מים חומים",
+                "aquariumSetup": ".הרבה צמחים, גזעי עץ, קדים קטנים",
+                "intraspeciesCompatibility": ".זכרים עלולים להיות אגרסיביים כלפי זכרים אחרים יחד עם זאת, באקווריומים גדולים עם הרבה צמחים ומקומות מסתור ניתן \r\t   לגדל קבוצה עם .מספר זכרים ושתי-שלוש נקבות לכל זכר",
+                "interspeciesCompatibility": ".חריתיים שונים, דגים לא אגרסיביים ולא גדולים מידי",
+                "feeding": ".אוכל רוב סוגי מזון",
+                "sexualDimorphism": "כבר בגיל צעיר אצל זכר מופיעים שני חוטים דקים בצידי סנפיר\r\t   הזנב. לנקבה סנפיר הזנב .עגול. כמו כן נקבה קטנה יותר מזכר",
+                "breeding": "בונה משפחה מונוגאמית (זכר ונקבה). יחד עם זאת \r\t    לציין שניתן לגדל גם קבוצת דגים - 2 - 3 זכרים .ו-3 - 6 נקבות נקבה מטילה עד 50 ביצים על\r\t   מצע שטוח, בדרך כלל על העלה. בדרך כלל נקבה שומרת על הביצים ועל הדגיגים\r\t   לבד. זכר נמצע בסביבה ושומר על מקום כולו באקווריום קטן יש סיכוי שהנקבה תתקוף את הזכר.\r\t   ביצים בוקעות לאחר כ- 3 - 2 ימים ולאחר עוד 5 - 4 ימים דגיגים מתחילים לשחות. \r\t   מזון התחלתי .ארטמיה, אינפוזוריות - .מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": ".קיימות מספר ווריאציות צבע"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "1ca571a8-07db-4427-92d7-cc5027301c7a",
+        "name": "Dicrossus maculatus",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Dicrossus%20maculatus.jpg",
+                "alt": "Dicrossus maculatus 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Dicrossus maculatus Steindachner, 1875",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "מ-60 ס\"מ",
+        "fishSize": "(SL) זכר - עד 8.0 ס\"מ(SL) נקבה - עד 4.0 ס\"מ",
+        "maxTemp": "28",
+        "minTemp": "20",
+        "ph": "5.5 - 7.5",
+        "dGH": "0 - 14",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Cichlidae - אמנוניים",
+                "subfamily": "Geophaginae",
+                "synonyms": "דיקרוסוס מקולטוס Crenicara maculata (Steindachner, 1875) Crenicara praetoriusi Weise, 1935 Crenicara praetoriusi Ahl, 1936",
+                "etymology": "Dicrossus (יווני): di : שתיים krossoi : ציצית עקב מבנה אנטומי של המכסת זימים maculatus : מוכתם",
+                "distribution": ".דרום אמריקה: נהרות תפג'וס ונאוס בברזיל",
+                "additionalRequirements": ".מיים נקיים ללא רמות החנקנים גבוהות .מרגיש טוב יותר אם מוסיפים תמיסת כבול למים - מים חומים",
+                "aquariumSetup": ".הרבה צמחים, גזעי עץ, קדים קטנים",
+                "intraspeciesCompatibility": ".זכרים עלולים להיות אגרסיביים כלפי זכרים אחרים יחד עם זאת, באקווריומים גדולים עם הרבה צמחים ומקומות מסתור ניתן \r\t   לגדל קבוצה עם .מספר זכרים ושתי-שלוש נקבות לכל זכר",
+                "interspeciesCompatibility": ".חריתיים שונים, דגים לא אגרסיביים ולא גדולים מידי",
+                "feeding": ".אוכל רוב סוגי מזון",
+                "sexualDimorphism": "סנפיר הזנב של הזכר מאורך ועם ציור מנוקד, לנקבה - מעוגל ושקוף. כמו כן\r\t  לזכר סנפירי הגחון ארוכים ונמשכים לחוטיים וגם קרנות הרכים  בסנפירי הגב והאנאלי מנוקדים וארוכים,\r\t  לנקבה  שקופים .ועגולים",
+                "breeding": "בונה משפחה מונוגאמית (זכר ונקבה). יחד עם זאת \r\t    לציין שניתן לגדל גם קבוצת דגים - 2 - 3 זכרים .ו-3 - 6 נקבות נקבה מטילה עד 50 ביצים על\r\t   מצע שטוח, בדרך כלל על העלה. בדרך כלל נקבה שומרת על הביצים ועל הדגיגים\r\t   לבד. זכר נמצע בסביבה ושומר על מקום כולו באקווריום קטן יש סיכוי שהנקבה תתקוף את הזכר.\r\t   ביצים בוקעות לאחר כ- 3 - 2 ימים ולאחר עוד 5 - 4 ימים דגיגים מתחילים לשחות. \r\t   מזון התחלתי .ארטמיה, אינפוזוריות - .מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": ".קיימות מספר ווריאציות צבע"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "6ccfe72a-c211-4949-9dfa-a9366216330b",
+        "name": "Dicrossus sp.\"Rio Negro\"",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Dicrossus%20sp.%20Rio%20Negro.jpg",
+                "alt": "Dicrossus sp. \"Rio Negro\" 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Dicrossus sp. \"Rio Negro\"",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "מ-80 ס\"מ",
+        "fishSize": "(SL) זכר - עד 10.0 ס\"מ(SL) נקבה - עד 5.0 ס\"מ",
+        "maxTemp": "28",
+        "minTemp": "20",
+        "ph": "5.5 - 7.8",
+        "dGH": "0 - 14",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Cichlidae - אמנוניים",
+                "subfamily": "Geophaginae",
+                "synonyms": "דיקרוסוס ריו נגרו Dicrossus sp. \"Peru\" Dicrossus sp. \"Red-fin\" Dicrossus sp. \"Double-dot\"",
+                "etymology": "Dicrossus (יווני): di : שתיים krossoi : ציצית עקב מבנה אנטומי של המכסת זימים",
+                "distribution": ".דרום אמריקה: נהרות ריו פרטו וריו נגרו בצפון-מערב ברזיל ובפרו",
+                "additionalRequirements": ".מיים נקיים ללא רמות החנקנים גבוהות .מרגיש טוב יותר אם מוסיפים תמיסת כבול למים - מים חומים",
+                "aquariumSetup": ".הרבה צמחים, גזעי עץ, קדים קטנים",
+                "intraspeciesCompatibility": ".זכרים עלולים להיות אגרסיביים כלפי זכרים אחרים",
+                "interspeciesCompatibility": ".חריתיים שונים, דגים לא אגרסיביים ולא גדולים מידי",
+                "feeding": ".אוכל רוב סוגי מזון",
+                "sexualDimorphism": "קשה, בדרך כלל ניתן אצל דגים בוגרים ומוכנים לרבייה. סנפירי הגב , האנאלי\r\t   והזנב .מנוקדים אצל זכר ושקופים אצל נקבה",
+                "breeding": ".רבייה יחסית קשה, מוצלחת במים רכים וחומציים מאוד בלבד .בונה משפחה מונוגאמית (זכר ונקבה) נקבה מטילה עד 90 ביצים על\r\t   מצע שטוח, בדרך כלל על העלה. בדרך כלל נקבה שומרת על הביצים ועל הדגיגים\r\t   לבד. זכר נמצע בסביבה ושומר על מקום כולו באקווריום קטן יש סיכוי שהנקבה תתקוף את הזכר.\r\t   ביצים בוקעות לאחר כ- 3 - 2 ימים ולאחר עוד 5 - 4 ימים דגיגים מתחילים לשחות. \r\t   מזון התחלתי .ארטמיה, אינפוזוריות - .מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": ".קיימות מספר ווריאציות צבע"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    },
+    {
+        "_id": "e5aa4105-e74e-4af1-bf99-0c7f8c517fbd",
+        "name": "Dicrossus sp. \"Tapajs\"",
+        "images": [
+            {
+                "src": "http://www.israquarium.co.il/FishPhoto/Dicrossus%20sp.%20Tapajos.jpg",
+                "alt": "Dicrossus sp. \"Tapajós\" 1",
+                "creatorName": "",
+                "originalSource": ""
+            }
+        ],
+        "tribe": "",
+        "latinName": "Dicrossus sp. \"Tapajós\"",
+        "firstDescription": "",
+        "sources": "",
+        "tankVolume": "מ-60 ס\"מ",
+        "fishSize": "(SL) זכר - עד 7.0 ס\"מ(SL) נקבה - עד 3.0 ס\"מ",
+        "maxTemp": "28",
+        "minTemp": "20",
+        "ph": "5.5 - 7.8",
+        "dGH": "0 - 14",
+        "languages": {
+            "en": {},
+            "he": {
+                "subclass": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Cichlidae - אמנוניים",
+                "subfamily": "Geophaginae",
+                "synonyms": "דיקרוסוס טפג'וס Tapajós checherboard cichlid",
+                "etymology": "Dicrossus (יווני): di : שתיים krossoi : ציצית עקב מבנה אנטומי של המכסת זימים",
+                "distribution": ".דרום אמריקה: טפג'וס",
+                "additionalRequirements": ".מיים נקיים ללא רמות החנקנים גבוהות .מרגיש טוב יותר אם מוסיפים תמיסת כבול למים - מים חומים",
+                "aquariumSetup": ".הרבה צמחים, גזעי עץ, קדים קטנים",
+                "intraspeciesCompatibility": ".זכרים עלולים להיות אגרסיביים כלפי זכרים אחרים",
+                "interspeciesCompatibility": ".חריתיים שונים, דגים לא אגרסיביים ולא גדולים מידי",
+                "feeding": ".אוכל רוב סוגי מזון",
+                "sexualDimorphism": "קשה, בדרך כלל ניתן אצל דגים בוגרים ומוכנים לרבייה. סנפירי הגב , האנאלי\r\t   והזנב .מנוקדים אצל זכר ושקופים אצל נקבה",
+                "breeding": ".רבייה יחסית קשה, מוצלחת במים רכים וחומציים מאוד בלבד .בונה משפחה מונוגאמית (זכר ונקבה) נקבה מטילה עד 90 ביצים על\r\t   מצע שטוח, בדרך כלל על העלה. בדרך כלל נקבה שומרת על הביצים ועל הדגיגים\r\t   לבד. זכר נמצע בסביבה ושומר על מקום כולו באקווריום קטן יש סיכוי שהנקבה תתקוף את הזכר.\r\t   ביצים בוקעות לאחר כ- 3 - 2 ימים ולאחר עוד 5 - 4 ימים דגיגים מתחילים לשחות. \r\t   מזון התחלתי .ארטמיה, אינפוזוריות - .מתבגרים בגיל 7 - 5 חודשים",
+                "additionalInformation": ".קיימות מספר ווריאציות צבע"
+            },
+            "ru": {}
+        },
+        "fishIndices": []
+    }
+]
