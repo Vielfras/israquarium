@@ -69,7 +69,10 @@
       "edit": "Edit",
       "delete": "Delete",
       "report": "Report"
-    }
+    },
+    "deleteConfirmation": "Are you sure you want to delete this plant? This action is not reversible.",
+    "deleteSuccess": "Plant successfully deleted.",
+    "deleteFailure": "Failed to delete the plant."
   },
   "EditPlant": {
     "title": "Edit Plant",

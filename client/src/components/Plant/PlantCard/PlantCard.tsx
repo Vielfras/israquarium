@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import { apiBase } from "../../../config";
 import { DirectionProvider } from "../../../context/ReadingDirectionContext";
 import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
+import { doDeletePlant } from '../../../services/PlantServices';
 
 interface IPlantCard {
   plantData: IPlant;
@@ -17,16 +18,27 @@ export default function PlantCard({ plantData }: IPlantCard) {
   const { t, i18n } = useTranslation();
   const language: LanguageCode = i18n.language as LanguageCode;
   const langData = plantData.languages[language];
-  const navigate = useNavigate();  // Use navigate to go to EditPlant page
+  const navigate = useNavigate();
 
   const [isFavorited, setIsFavorited] = useState(false);
 
   const handleEdit = () => {
-    navigate(`/edit-plant/${plantData._id}`);  // Navigate to the EditPlant page with plantId
+    navigate(`/edit-plant/${plantData._id}`);
   };
 
-  const handleDelete = () => {
-    console.log('Delete selected');
+  const handleDelete = async () => {
+    const isConfirmed = window.confirm(t('PlantCard.deleteConfirmation'));
+    
+    if (isConfirmed) {
+      const { error } = await doDeletePlant(plantData._id);
+  
+      if (error) {
+        alert(t('PlantCard.deleteFailure'));
+      } else {
+        alert(t('PlantCard.deleteSuccess'));
+        navigate('/plants');
+      }
+    }
   };
 
   const handleReport = () => {
