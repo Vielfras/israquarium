@@ -7,12 +7,16 @@ import string
 import logging
 from tqdm import tqdm
 import uuid  # For generating unique IDs
+import os  # For file and directory operations
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 # Base URL for the plant data
 base_url = "http://www.israquarium.co.il/Plants/"
+
+# Base URL for the plant photos
+photos_base_url = "http://www.israquarium.co.il/PlantsPhoto/"
 
 def get_plant_names_from_page(url, session):
     """
@@ -86,13 +90,15 @@ def get_plant_names_from_page(url, session):
         logging.error(f"Error parsing the page at {url}: {e}")
         return [], False
 
-def get_plant_details(plant, session):
+def get_plant_details(plant, session, images_folder):
     """
     Fetches and parses detailed plant data from the individual plant page.
+    Downloads the plant image and saves it in the images folder.
 
     Args:
         plant (dict): A dictionary containing plant's basic info and URL.
         session (requests.Session): The session object for HTTP requests.
+        images_folder (str): The path to the images folder.
 
     Returns:
         dict: A dictionary containing detailed plant data.
@@ -155,12 +161,24 @@ def get_plant_details(plant, session):
                 # Extract latinName and firstDescription
                 text_lines = td.get_text(separator='\n').split('\n')
                 plant_data['latinName'] = text_lines[0].strip()
-                plant_data['firstDescription'] = text_lines[1].strip()
+                if len(text_lines) > 1:
+                    plant_data['firstDescription'] = text_lines[1].strip()
 
                 # Extract image info
                 img_tag = td.find('img')
                 if img_tag:
-                    img_src = img_tag['src'].replace('..', base_url).replace(' ', '%20')
+                    # Correctly construct the image URL
+                    img_src_raw = img_tag['src']
+                    img_src = ''
+                    if img_src_raw.startswith('../PlantsPhoto/'):
+                        img_filename = img_src_raw.replace('../PlantsPhoto/', '').replace(' ', '%20')
+                        img_src = photos_base_url + img_filename
+                    elif img_src_raw.startswith('../Plants/Plants_files/'):
+                        img_filename = img_src_raw.replace('../Plants/Plants_files/', '').replace(' ', '%20')
+                        img_src = base_url + 'Plants_files/' + img_filename
+                    else:
+                        img_src = img_src_raw.replace('..', base_url).replace(' ', '%20')
+
                     img_alt = img_tag.get('alt', '')
                     plant_data['images'].append({
                         'src': img_src,
@@ -168,6 +186,9 @@ def get_plant_details(plant, session):
                         'creatorName': '',
                         'originalSource': ''
                     })
+
+                    # Download the image
+                    download_image(img_src, plant['scientific_name'], images_folder)
 
         # Extract the detailed data table
         detail_table = soup.find('table', class_='StTable')
@@ -222,9 +243,47 @@ def get_plant_details(plant, session):
         logging.error(f"Error parsing the plant page at {url}: {e}")
         return None
 
+def download_image(img_src, scientific_name, images_folder):
+    """
+    Downloads the image from img_src and saves it in the images folder.
+
+    Args:
+        img_src (str): The source URL of the image.
+        scientific_name (str): The scientific name of the plant.
+        images_folder (str): The path to the images folder.
+    """
+    try:
+        response = requests.get(img_src, stream=True)
+        response.raise_for_status()
+    except Exception as e:
+        logging.warning(f"Failed to download image from {img_src}: {e}")
+        return
+
+    # Determine the image extension
+    img_ext = os.path.splitext(img_src)[1]
+    if not img_ext:
+        img_ext = '.jpg'  # Default to .jpg if no extension
+
+    # Clean the scientific name to create a valid filename
+    valid_filename = ''.join(c if c.isalnum() or c in (' ', '_', '-') else '_' for c in scientific_name)
+    image_filename = f"{valid_filename.replace(' ', '_')}{img_ext}"
+    image_path = os.path.join(images_folder, image_filename)
+
+    try:
+        with open(image_path, 'wb') as img_file:
+            for chunk in response.iter_content(1024):
+                img_file.write(chunk)
+        logging.info(f"Image saved: {image_path}")
+    except IOError as e:
+        logging.error(f"Failed to save image {image_filename}: {e}")
+
 def main():
     session = requests.Session()
     all_plant_data = []
+
+    # Create images folder if it doesn't exist
+    images_folder = 'images'
+    os.makedirs(images_folder, exist_ok=True)
 
     # Generate index page URLs from A to Z
     index_pages = [f"{base_url}LIndex{letter}.html" for letter in string.ascii_uppercase]
@@ -243,7 +302,7 @@ def main():
     # Fetch detailed data for each plant
     for plant in tqdm(all_plant_data, desc="Processing individual plant pages"):
         logging.info(f"Fetching details for plant: {plant['scientific_name']}")
-        plant_details = get_plant_details(plant, session)
+        plant_details = get_plant_details(plant, session, images_folder)
         if plant_details:
             detailed_plant_data.append(plant_details)
 
