@@ -8,7 +8,8 @@ import { IFish, IFishIndex } from '../../interfaces/IFish';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Spinner from '../../components/Misc/Spinner/Spinner';
-import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow'; // Import AlphabetRow
+import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
+import FishIndexCard from '../../components/Fish/FishIndexCard/FishIndexCard';
 
 const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
@@ -67,6 +68,7 @@ export default function FishIndexes() {
     setLoading(true);
 
     try {
+      // Fetch fish data
       const response = await fetch(`${apiFishCall}?index=${index._id}`);
       if (!response.ok) {
         throw new Error(t('FishPage.errorFetchingData'));
@@ -94,27 +96,38 @@ export default function FishIndexes() {
     <div className="flex flex-col items-center">
       <div className="flex flex-row gap-2 pb-3">
         <Link to={'/create-fish'} className="px-4 py-2 bg-blue-500 text-white rounded">
-          Create Fish
+          {t('FishPage.createFish')}
         </Link>
       </div>
 
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
 
       {error && (
-        <div className="text-red-500">{t('FishPage.errorFetchingIndex')}<br />Error: {error}</div>
+        <div className="text-red-500">
+          {t('FishPage.errorFetchingIndex')}
+          <br />
+          Error: {error}
+        </div>
       )}
 
       {!loading && !error && fishIndexData && (
-        <div className={`w-full ${selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4'}`}>
+        <div
+          className={`w-full ${
+            selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4'
+          }`}
+        >
           {fishIndexData.map((index) => (
-            <button key={index._id}
+            <button
+              key={index._id}
               onClick={() => {
                 setSelectedIndex(index);
-                const indexName = currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian;
+                const indexName =
+                  currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian;
                 navigate(`/fish-index/${encodeURIComponent(indexName)}`);
               }}
-              className={`px-4 py-2 rounded-lg font-bold ${selectedIndex && selectedIndex._id === index._id ? 'text-white' : ' text-gray-800 dark:text-white'
-                }`}
+              className={`px-4 py-2 rounded-lg font-bold ${
+                selectedIndex && selectedIndex._id === index._id ? 'text-white' : ' text-gray-800 dark:text-white'
+              }`}
             >
               <FishIndex fishIndex={index} />
               <div className="text-center mt-2">
@@ -127,15 +140,15 @@ export default function FishIndexes() {
 
       {/* Alphabet Row */}
       {selectedIndex && (
-        <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick}/>
+        <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick} />
       )}
 
       {/* Mini Fish Cards */}
       {selectedLetter && fishData && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
           {fishData
-            .filter(fish => fish.name.startsWith(selectedLetter))
-            .map(fish => (
+            .filter((fish) => fish.name.startsWith(selectedLetter))
+            .map((fish) => (
               <div key={fish._id}>
                 <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
                 {expandedFishId === fish._id && (
@@ -146,6 +159,11 @@ export default function FishIndexes() {
               </div>
             ))}
         </div>
+      )}
+
+     {/* Display FishIndexCard */}
+     {selectedIndex && (
+        <FishIndexCard fishIndexKey={selectedIndex.english} />
       )}
     </div>
   );
