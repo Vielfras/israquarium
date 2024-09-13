@@ -11,8 +11,8 @@ const validationOptions = {
 const imageSchema = Joi.object({
     src: Joi.string().required(),
     alt: Joi.string().required(),
-    creatorName: Joi.string().optional(),
-    originalSource: Joi.string().optional(),
+    creatorName: Joi.string().allow('').optional(),
+    originalSource: Joi.string().allow('').optional(),
 }).options(validationOptions);
 
 
