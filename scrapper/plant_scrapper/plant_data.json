@@ -1,0 +1,690 @@
+[
+    {
+        "scientific_name": "Acorus gramineus",
+        "common_name": "אקורוס גרמינאוס"
+    },
+    {
+        "scientific_name": "Alternanthera ocipus",
+        "common_name": "אלטרנאנטרה אוסיפוס"
+    },
+    {
+        "scientific_name": "Alternantera reineckii",
+        "common_name": "אלטרנאנטרה ריינקי"
+    },
+    {
+        "scientific_name": "Alternantera sessilis",
+        "common_name": "אלטרנאנטרה ססיליס"
+    },
+    {
+        "scientific_name": "Ammannia auriculata",
+        "common_name": "אמאניה אאוריקולטה"
+    },
+    {
+        "scientific_name": "Ammannia gracilis",
+        "common_name": "אמניה גרסיליס"
+    },
+    {
+        "scientific_name": "Ammannia senegalensis",
+        "common_name": "אמניה סנגלנסיס"
+    },
+    {
+        "scientific_name": "Anubias afzelii",
+        "common_name": "אנוביאס אפצלי"
+    },
+    {
+        "scientific_name": "Anubias barteri var. angustifolia",
+        "common_name": "אנוביאס אנגוסטיפוליה"
+    },
+    {
+        "scientific_name": "Anubias barteri var. barteri",
+        "common_name": "אנוביאס ברטרי"
+    },
+    {
+        "scientific_name": "Anubias barteri var. caladiifolia",
+        "common_name": "אנוביאס קלדייפוליה"
+    },
+    {
+        "scientific_name": "Anubias barteri var. glabra",
+        "common_name": "אנוביאס גלברה"
+    },
+    {
+        "scientific_name": "Anubias barteri var. nana",
+        "common_name": "אנוביאס ננה"
+    },
+    {
+        "scientific_name": "Anubias gigantea",
+        "common_name": "אנוביאס ענק"
+    },
+    {
+        "scientific_name": "Anubias gilletii",
+        "common_name": "אנוביאס ג'ילטה"
+    },
+    {
+        "scientific_name": "Anubias gracilis",
+        "common_name": "אנוביאס גרסיליס"
+    },
+    {
+        "scientific_name": "Aponogeton abyssinicus",
+        "common_name": "אפונוגטון אביסיניקוס"
+    },
+    {
+        "scientific_name": "Aponogeton boivinianus",
+        "common_name": "אפונוגטון בויביאנוס"
+    },
+    {
+        "scientific_name": "Aponogeton capuronii",
+        "common_name": "אפונוגטון קפורוני"
+    },
+    {
+        "scientific_name": "Aponogeton crispus",
+        "common_name": "אפונוגטון קריספוס"
+    },
+    {
+        "scientific_name": "Aponogeton elongatus",
+        "common_name": "אפונוגטון אלונגטוס"
+    },
+    {
+        "scientific_name": "Aponogeton longiplumulosus",
+        "common_name": "אפונוגטון לונגיפלומולוזוס"
+    },
+    {
+        "scientific_name": "Aponogeton madagascariensis",
+        "common_name": "אפונוגטון מדגסקריאנסיס"
+    },
+    {
+        "scientific_name": "Aponogeton natans",
+        "common_name": "אפונוגטון נטנס"
+    },
+    {
+        "scientific_name": "Aponogeton rigidifolius",
+        "common_name": "אפונוגטון ריגידיפוליאוס"
+    },
+    {
+        "scientific_name": "Aponogeton ulvaceus",
+        "common_name": "אפונוגטון אולבצאוס"
+    },
+    {
+        "scientific_name": "Aponogeton undulatus",
+        "common_name": "אפונוגטון אונדולטוס"
+    },
+    {
+        "scientific_name": "Bacopa caroliniana",
+        "common_name": "בקופה קרוליניאנה"
+    },
+    {
+        "scientific_name": "Bacopa lanigera",
+        "common_name": "ברופה לניגרה"
+    },
+    {
+        "scientific_name": "Bacopa madagascariensis",
+        "common_name": "בקופה מדגסקריאנסיס"
+    },
+    {
+        "scientific_name": "Bacopa monnieri",
+        "common_name": "בקופה מוניארי"
+    },
+    {
+        "scientific_name": "Bacopa myriophylloides",
+        "common_name": "בקופה מיריופילואידס"
+    },
+    {
+        "scientific_name": "Bacopa reflexa",
+        "common_name": "ברקלאיה רפלקסה"
+    },
+    {
+        "scientific_name": "Barclaya longifolia",
+        "common_name": "ברקלאיה לונגיפוליה"
+    },
+    {
+        "scientific_name": "Barclaya motleyi",
+        "common_name": "ברקלאיה מוטלאי"
+    },
+    {
+        "scientific_name": "Blyxa alternifolia",
+        "common_name": "בליקסה אלטרניפוליה"
+    },
+    {
+        "scientific_name": "Blyxa aubertii",
+        "common_name": "בליקסה אוברטיי"
+    },
+    {
+        "scientific_name": "Blyxa japonica",
+        "common_name": "בליקסה יפוניקה"
+    },
+    {
+        "scientific_name": "Blyxa novoguineensis",
+        "common_name": "בליקסה נובוגבינאאנסיס"
+    },
+    {
+        "scientific_name": "Bolbitis heteroclita",
+        "common_name": "בולביטיס הטרוקליטה"
+    },
+    {
+        "scientific_name": "Bolbitis heudelotii",
+        "common_name": "בולביטיס האודלוטי"
+    },
+    {
+        "scientific_name": "Cabomba aquatica",
+        "common_name": "קבומבה אקווטיקה"
+    },
+    {
+        "scientific_name": "Cabomba caroliniana",
+        "common_name": "קבומבה קרוליניאנה"
+    },
+    {
+        "scientific_name": "Cabomba furcata",
+        "common_name": "קבומבה פורקטה"
+    },
+    {
+        "scientific_name": "Callitriche palustris",
+        "common_name": "קליטריצ'ה פלוסטריס"
+    },
+    {
+        "scientific_name": "Cardamina lyrata",
+        "common_name": "קרדמינה לירטה"
+    },
+    {
+        "scientific_name": "Ceratophyllum demersum",
+        "common_name": "צרטופילום דמרסום"
+    },
+    {
+        "scientific_name": "Ceratophyllum submersum",
+        "common_name": "צרטופילום סבמרסום"
+    },
+    {
+        "scientific_name": "Ceratopteris cornuta",
+        "common_name": "צרטופטריס קורנוטה"
+    },
+    {
+        "scientific_name": "Ceratopteris pteridoides",
+        "common_name": "צרטופטריס פטרידוידס"
+    },
+    {
+        "scientific_name": "Ceratopteris thalictroides",
+        "common_name": "צרטופטריס טאליקטרוידס"
+    },
+    {
+        "scientific_name": "Crassula helmsii",
+        "common_name": "קרסולה הלמסי"
+    },
+    {
+        "scientific_name": "Crinum calamistratum",
+        "common_name": "קרינום קלמיסטראטום"
+    },
+    {
+        "scientific_name": "Crinum natans",
+        "common_name": "קרינום נטנס"
+    },
+    {
+        "scientific_name": "Crinum thaianum",
+        "common_name": "קרינום טאיאנום"
+    },
+    {
+        "scientific_name": "Cryptocoryne",
+        "common_name": "קריפטוקורינה"
+    },
+    {
+        "scientific_name": "Cyperus helferi",
+        "common_name": "ציפרוס הלפרי"
+    },
+    {
+        "scientific_name": "Didiplis diandra",
+        "common_name": "דידיפליס דיאנדרה"
+    },
+    {
+        "scientific_name": "Echinodorus",
+        "common_name": "אכינודורוס"
+    },
+    {
+        "scientific_name": "Egeria densa",
+        "common_name": "אגריה דנסה"
+    },
+    {
+        "scientific_name": "Egeria najas",
+        "common_name": "אגריה נג'אס"
+    },
+    {
+        "scientific_name": "Eichhornia azurea",
+        "common_name": "איחורניה אזוראה"
+    },
+    {
+        "scientific_name": "Eichhornia crassipes",
+        "common_name": "איחורניה קרסיפס"
+    },
+    {
+        "scientific_name": "Eichhornia diversifolia",
+        "common_name": "איחורניה דיברסיפוליה"
+    },
+    {
+        "scientific_name": "Eichhornia natans",
+        "common_name": "איחורניה נתנס"
+    },
+    {
+        "scientific_name": "Eichhornia sp.",
+        "common_name": "איחורניה"
+    },
+    {
+        "scientific_name": "Eleocharis acicularis",
+        "common_name": "אלאוצ'ריס אציקולריס"
+    },
+    {
+        "scientific_name": "Eleocharis minima",
+        "common_name": "אלאוצ'ריס מינימה"
+    },
+    {
+        "scientific_name": "Eleocharis vivipara",
+        "common_name": "אלאוצ'ריס וויוויפרה"
+    },
+    {
+        "scientific_name": "Elodea canadensis",
+        "common_name": "אלודאה קנדאנסיס"
+    },
+    {
+        "scientific_name": "Elodea nuttallii",
+        "common_name": "אלודאה נוטלי"
+    },
+    {
+        "scientific_name": "Eriocaulon cinereum",
+        "common_name": "אריוקאולון צינראום"
+    },
+    {
+        "scientific_name": "Eriocaulon robustius",
+        "common_name": "רובוסטיוס"
+    },
+    {
+        "scientific_name": "Eusteralis stellata",
+        "common_name": "אוסטרליס סטלטה"
+    },
+    {
+        "scientific_name": "Fissidens grandifrons",
+        "common_name": "פיסידנס גרנדיפרונס"
+    },
+    {
+        "scientific_name": "Fissidens nobilis",
+        "common_name": "פיסידנס נוביליס"
+    },
+    {
+        "scientific_name": "Glossostigma elatinoides",
+        "common_name": "גלוסוסטיגמה"
+    },
+    {
+        "scientific_name": "Gymnocoronis spilanthoides",
+        "common_name": "גימנוקורוניס ספילנטוידס"
+    },
+    {
+        "scientific_name": "Hemianthus callitrichoides",
+        "common_name": "המיאנטוס קליטריצ'וידס"
+    },
+    {
+        "scientific_name": "Hemianthus micranthemoides",
+        "common_name": "המיאנטוס מיקראנטמוידס"
+    },
+    {
+        "scientific_name": "Heteranthera reniformis",
+        "common_name": "הטראנטרה רניפורמיס"
+    },
+    {
+        "scientific_name": "Heteranthera zosterifolia",
+        "common_name": "הטראנטרה זוסטריפוליה"
+    },
+    {
+        "scientific_name": "Hottonia palustris",
+        "common_name": "חוטוניה פלוסטריס"
+    },
+    {
+        "scientific_name": "Hydrilla verticillata",
+        "common_name": "הידרילה וורטיצילטה"
+    },
+    {
+        "scientific_name": "Hydrocotyle leucocephala",
+        "common_name": "הידרוקוטילה ליוקוצפלה"
+    },
+    {
+        "scientific_name": "Hydrocotyle sibthorpioides",
+        "common_name": "הידרוקוטילה סיבטורפיוידס"
+    },
+    {
+        "scientific_name": "Hydrocotyle verticillata",
+        "common_name": "הידרוקוטילה וורטיצילטה"
+    },
+    {
+        "scientific_name": "Hydrocotyle vulgaris",
+        "common_name": "הידרוקוטילה וולגריס"
+    },
+    {
+        "scientific_name": "Hydrothrix gardneri",
+        "common_name": "הידרוטיקס גרדנרי"
+    },
+    {
+        "scientific_name": "Hydrotriche hottoniiflora",
+        "common_name": "הידרוטריצ'ה הוטונייפלורה"
+    },
+    {
+        "scientific_name": "Hygrophila corymbosa",
+        "common_name": "היגרופילה קורימבוזה"
+    },
+    {
+        "scientific_name": "Hygrophila difformis",
+        "common_name": "היגרופילה דיפורמיס"
+    },
+    {
+        "scientific_name": "Hygrophila guianensis",
+        "common_name": "היגרופילה גוויאננסיס"
+    },
+    {
+        "scientific_name": "Hygrophila polysperma",
+        "common_name": "היגרופילה פוליספרמה"
+    },
+    {
+        "scientific_name": "Hygrophila salicifolia",
+        "common_name": "היגרופילה סליציפוליה"
+    },
+    {
+        "scientific_name": "Isoetes taiwanensis",
+        "common_name": "איזואטס טאיווננסיס"
+    },
+    {
+        "scientific_name": "Isoetes velata",
+        "common_name": "איזואטס וולטה"
+    },
+    {
+        "scientific_name": "Lagarosiphon cordofanus",
+        "common_name": "לגרוסיפון קורדופנוס"
+    },
+    {
+        "scientific_name": "Lagarosiphon madagascariensis",
+        "common_name": "לגרוסיפון מדגסקריאנסיס"
+    },
+    {
+        "scientific_name": "Lagarosiphon major",
+        "common_name": "לגרוסיפון גדול"
+    },
+    {
+        "scientific_name": "Lilaeopsis brasiliensis",
+        "common_name": "לילאופסיס ברזיליאנסיס"
+    },
+    {
+        "scientific_name": "Lilaeopsis carolinensis",
+        "common_name": "לילאופסיס קרוליננסיס"
+    },
+    {
+        "scientific_name": "Limnobium laevigatum",
+        "common_name": "לימנוביום לביגטום"
+    },
+    {
+        "scientific_name": "Limnophila aquatica",
+        "common_name": "לימנופילה אקווטיקה"
+    },
+    {
+        "scientific_name": "Limnophila aromatica",
+        "common_name": "לימנופילה ארומטיקה"
+    },
+    {
+        "scientific_name": "Limnophila indica",
+        "common_name": "לימנופילה אינדיקה"
+    },
+    {
+        "scientific_name": "Lobelia cardinalis",
+        "common_name": "לובליה קרדינליס"
+    },
+    {
+        "scientific_name": "Ludwigia arcuata",
+        "common_name": "ליודביגיה ארקואטה"
+    },
+    {
+        "scientific_name": "Ludwigia brevipes",
+        "common_name": "ליודביגיה ברביפס"
+    },
+    {
+        "scientific_name": "Ludwigia epilobioides",
+        "common_name": "ליודביגיה אפילוביואידס"
+    },
+    {
+        "scientific_name": "Ludwigia glandulosa",
+        "common_name": "ליודביגיה גלנדולוזה"
+    },
+    {
+        "scientific_name": "Ludwigia inclinata",
+        "common_name": "ליודביגיה אינקלינטה"
+    },
+    {
+        "scientific_name": "Ludwigia ovalis",
+        "common_name": "ליודביגיה אובליס"
+    },
+    {
+        "scientific_name": "Ludwigia palustris",
+        "common_name": "ליודביגיה פלוסטריס"
+    },
+    {
+        "scientific_name": "Ludwigia repens",
+        "common_name": "ליודביגיה רפנס"
+    },
+    {
+        "scientific_name": "Ludwigia repens x arcuata",
+        "common_name": "ארקואטה  x ליודביגיה רפנס"
+    },
+    {
+        "scientific_name": "Ludwigia sedoides",
+        "common_name": "ליודביגיה סדוידס"
+    },
+    {
+        "scientific_name": "Ludwigia sp. \"Cuba\"",
+        "common_name": "\"ליודביגיה \"קובה"
+    },
+    {
+        "scientific_name": "Mayaca fluviatilis",
+        "common_name": "מאיאקה פלוביאטיליס"
+    },
+    {
+        "scientific_name": "Mayaca sellowiana",
+        "common_name": "מאיאקה סלוביאנה"
+    },
+    {
+        "scientific_name": "Mayaca sp.",
+        "common_name": "מאיאקה"
+    },
+    {
+        "scientific_name": "Mayaca sp.1",
+        "common_name": "מאיאקה"
+    },
+    {
+        "scientific_name": "Microcarpaea minima",
+        "common_name": "מיקרוקרפאה מינימה"
+    },
+    {
+        "scientific_name": "Microsorum pteropus",
+        "common_name": "מיקרוסורום פטרופוס"
+    },
+    {
+        "scientific_name": "Myriophyllum aquaticum",
+        "common_name": "מיריופילום אקווטיקום"
+    },
+    {
+        "scientific_name": "Myriophyllum hippuroides",
+        "common_name": "מיריופילום היפורואידס"
+    },
+    {
+        "scientific_name": "Myriophyllum mattogrossense",
+        "common_name": "מיריופילום מטוגרוסנסה"
+    },
+    {
+        "scientific_name": "Myriophyllum pinnatum",
+        "common_name": "מיריופילום פינטום"
+    },
+    {
+        "scientific_name": "Myriophyllum simulans",
+        "common_name": "מיריופילום סימולנס"
+    },
+    {
+        "scientific_name": "Myriophyllum spicatum",
+        "common_name": "מיריופילום ספיקטום"
+    },
+    {
+        "scientific_name": "Myriophyllum tuberculatum",
+        "common_name": "מיריופילום טוברקולטום"
+    },
+    {
+        "scientific_name": "Myriophyllum ussuriense",
+        "common_name": "מיריופילום אוסוריאנסה"
+    },
+    {
+        "scientific_name": "Najas conferta",
+        "common_name": "נג'אס קונפרטה"
+    },
+    {
+        "scientific_name": "Najas guadalupensis",
+        "common_name": "נאג'אס קוודלופנסיס"
+    },
+    {
+        "scientific_name": "Najas indica",
+        "common_name": "נג'אס אינדיקה"
+    },
+    {
+        "scientific_name": "Najas sp.",
+        "common_name": "נג'אס"
+    },
+    {
+        "scientific_name": "Nesaea crassicaulis",
+        "common_name": "נסאה קרסיקאוליס"
+    },
+    {
+        "scientific_name": "Nesaea pedicellata",
+        "common_name": "נסאה פדיצלטה"
+    },
+    {
+        "scientific_name": "Nesaea triflora",
+        "common_name": "נסאה טריפלורה"
+    },
+    {
+        "scientific_name": "Nuphar japonica",
+        "common_name": "נופר ג'אפוניקה"
+    },
+    {
+        "scientific_name": "Nymphaea glandulifera",
+        "common_name": "נימפאה גלנדוליפרה"
+    },
+    {
+        "scientific_name": "Nymphaea lotus",
+        "common_name": "נימפאה לוטוס"
+    },
+    {
+        "scientific_name": "Nymphaea micrantha",
+        "common_name": "נימפאה מיקרנטה"
+    },
+    {
+        "scientific_name": "Nymphaea rudgeana",
+        "common_name": "נימפאה רודגאנה"
+    },
+    {
+        "scientific_name": "Nymphoides aquatica",
+        "common_name": "נימפוידס אקווטיקה"
+    },
+    {
+        "scientific_name": "Ottelia alismoides",
+        "common_name": "אוטליה אליסמוידס"
+    },
+    {
+        "scientific_name": "Ottelia brasiliensis",
+        "common_name": "אוטליה ברזיליאנסיס"
+    },
+    {
+        "scientific_name": "Ottelia ulvifolia",
+        "common_name": "אוטליה אולביפוליה"
+    },
+    {
+        "scientific_name": "Pistia stratiotes",
+        "common_name": "פיסטיה דטרטיוטס"
+    },
+    {
+        "scientific_name": "Potamogeton gayi",
+        "common_name": "פוטמוגטון גאיה"
+    },
+    {
+        "scientific_name": "Potamogeton wrightii",
+        "common_name": "פוטמוגטון ריגטיי"
+    },
+    {
+        "scientific_name": "Riccia fluitans",
+        "common_name": "ריצ'יה"
+    },
+    {
+        "scientific_name": "Rorippa aquaticum",
+        "common_name": "רוריפה אקווטיקום"
+    },
+    {
+        "scientific_name": "Rotala macrandra",
+        "common_name": "רוטלה מקרנדה"
+    },
+    {
+        "scientific_name": "Rotala rotundifolia",
+        "common_name": "רוטלה רוטונדיפוליה"
+    },
+    {
+        "scientific_name": "Rotala sp. \"Nanjenshan\"",
+        "common_name": "רוטלה ננג'נשן"
+    },
+    {
+        "scientific_name": "Rotala wallichii",
+        "common_name": "רוטלה ווליצ'יי"
+    },
+    {
+        "scientific_name": "Sagittaria platyphylla",
+        "common_name": "סגיטריה פלטיפילה"
+    },
+    {
+        "scientific_name": "Sagittaria subulata",
+        "common_name": "סגיטריה סובולטה"
+    },
+    {
+        "scientific_name": "Saururus cernuus",
+        "common_name": "סאורוס צרנוס"
+    },
+    {
+        "scientific_name": "Sium suave",
+        "common_name": "סיום סואבה"
+    },
+    {
+        "scientific_name": "Shinnersia rivularis",
+        "common_name": "שינרסיה ריבולריס"
+    },
+    {
+        "scientific_name": "Spiranthes cernua",
+        "common_name": "ספיראנטס צרנוא"
+    },
+    {
+        "scientific_name": "Tonina fluviatilis",
+        "common_name": "טונינה פלוביאטיליס"
+    },
+    {
+        "scientific_name": "Tonina sp.",
+        "common_name": "טונינה"
+    },
+    {
+        "scientific_name": "Utricularia aurea",
+        "common_name": "אוטריקולריה אוראה"
+    },
+    {
+        "scientific_name": "Vallisneria americana var. americana",
+        "common_name": "ווליסנריה אמריקנה"
+    },
+    {
+        "scientific_name": "Vallisneria americana var. biwaensis",
+        "common_name": "ווליסנריה אמריקנה ביבאנסיס"
+    },
+    {
+        "scientific_name": "Vallisneria gigantea",
+        "common_name": "ווליסנריה גיגנטאה"
+    },
+    {
+        "scientific_name": "Vallisneria spiralis var. spiralis",
+        "common_name": "ווליסנריה ספירליס"
+    },
+    {
+        "scientific_name": "Vesicularia dubyana",
+        "common_name": "ג'אווה מוסוס"
+    },
+    {
+        "scientific_name": "Zosterella dubia",
+        "common_name": "זוסטריפוליה דוביה"
+    }
+]
