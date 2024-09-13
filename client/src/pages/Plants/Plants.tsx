@@ -6,8 +6,11 @@ import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import { IPlant } from '../../interfaces/IPlant';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 import { doGetPlantsByLetter, doGetPlantById } from '../../services/PlantServices';
+import { useTranslation } from 'react-i18next';
+import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function Plants() {
+  const { t } = useTranslation();
   const [plantData, setPlantData] = useState<IPlant[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +32,7 @@ export default function Plants() {
         } else if (result.result) {
           setSelectedPlant(result.result);
         } else {
-          setError(`Plant with ID '${plantIdFromUrl}' not found.`);
+          setError(`'${plantIdFromUrl}' ${t('PlantsPage.plantNotFoundError')}`);
         }
         setLoading(false);
       };
@@ -49,11 +52,11 @@ export default function Plants() {
       const result = await doGetPlantsByLetter(selectedLetter);
 
       if (result.error) {
-        setError(result.error);
+        setError(`${t('PlantsPage.letterEmpty')} '${selectedLetter}'.`);
       } else if (result.result && result.result.length > 0) {
         setPlantData(result.result);
       } else {
-        setError(`No plants found starting with the letter '${selectedLetter}'.`);
+        setError(`${t('PlantsPage.letterEmpty')} '${selectedLetter}'.`);
       }
 
       setLoading(false);
@@ -69,7 +72,6 @@ export default function Plants() {
 
   const handlePlantClick = (plant: IPlant) => {
     setSelectedPlant(plant);
-    // Update the URL with the plant ID as a query parameter
     setSearchParams({ 'plant-id': plant._id });
   };
 
@@ -79,7 +81,9 @@ export default function Plants() {
 
       {/* Loading and Error Handling */}
       {loading && <Spinner message="Loading plants..." />}
-      {error && <div className="text-red-500">{error}</div>}
+      <DirectionProvider>
+        {error && <div className="text-red-500">{error}</div>}
+      </DirectionProvider>
 
       {/* Display plant if found via query parameter */}
       {selectedPlant && (
@@ -94,25 +98,25 @@ export default function Plants() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {plantData.length > 0 ? (
               plantData.map((plant) => (
-                <PlantMiniCard
-                  key={plant._id}
-                  plant={plant}
-                  onClick={() => handlePlantClick(plant)} 
+                <PlantMiniCard key={plant._id} plant={plant}
+                  onClick={() => handlePlantClick(plant)}
                 />
               ))
             ) : (
-              <p>No plants found for the selected letter.</p>
+              <p>{`${t('PlantsPage.letterEmpty')} '${selectedLetter}'.`}</p>
             )}
           </div>
         </div>
       )}
 
       {/* Message to prompt user to select a letter */}
-      {!selectedLetter && !loading && !selectedPlant &&
-        <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>
-          Please select a letter to view plants.
-        </h1>
-      }
+      <DirectionProvider>
+        {!selectedLetter && !loading && !selectedPlant &&
+          <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>
+            {`${t('PlantsPage.selectLetter')}`}
+          </h1>
+        }
+      </DirectionProvider>
     </div>
   );
 }

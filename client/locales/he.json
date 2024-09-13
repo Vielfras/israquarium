@@ -47,6 +47,11 @@
     "additionalInformation": "מידע נוסף",
     "sources": "מקורות"
   },
+  "PlantsPage" : {
+    "selectLetter" : "אנה בחר באות כדי לראות את הצמחים שמתחילים בה.",
+    "letterEmpty" : "לא נמצאו צמחים שמתחילים באות",
+    "plantNotFoundError" : "לא נמצא."
+  },
   "PlantCard": {
     "family": "משפחה",
     "synonyms": "שמות נרדפים",

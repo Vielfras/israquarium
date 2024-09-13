@@ -47,6 +47,11 @@
     "additionalInformation": "Additional Information",
     "sources": "Sources"
   },
+  "PlantsPage": {
+    "selectLetter": "Please select a letter to view the plants that start with it.",
+    "letterEmpty": "No plants found starting with the letter",
+    "plantNotFoundError": "Plant not found."
+  },
   "PlantCard": {
     "family": "Family",
     "synonyms": "Synonyms",
