@@ -113,7 +113,7 @@ export default function FishIndexes() {
       {!loading && !error && fishIndexData && (
         <div
           className={`w-full ${
-            selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4'
+            selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pb-4'
           }`}
         >
           {fishIndexData.map((index) => (
