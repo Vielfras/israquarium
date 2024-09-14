@@ -14,7 +14,6 @@ import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import FishIndexCard from '../../components/Fish/FishIndexCard/FishIndexCard';
 import { doGetFishByIndexAndLetter } from '../../services/FishServices';
 
-const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
 
 export default function FishIndexes() {
@@ -23,6 +22,7 @@ export default function FishIndexes() {
   const [fishData, setFishData] = useState<IFish[] | null>(null);
   const [loading, setLoading] = useState(false); // Set initial loading to false
   const [error, setError] = useState<string | null>(null);
+  const [isIndexCollapsed, setIsIndexCollapsed] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<IFishIndex | null>(null);
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [expandedFishId, setExpandedFishId] = useState<string | null>(null);
@@ -119,6 +119,25 @@ export default function FishIndexes() {
     fetchFishDataByLetter();
   }, [selectedLetter, selectedIndex, t]);
 
+
+  const sortedFishIndexData = fishIndexData
+    ? [...fishIndexData].sort((a, b) => {
+      const nameA =
+        currentLang === 'en'
+          ? a.english
+          : currentLang === 'he'
+            ? a.hebrew
+            : a.russian;
+      const nameB =
+        currentLang === 'en'
+          ? b.english
+          : currentLang === 'he'
+            ? b.hebrew
+            : b.russian;
+      return nameA.localeCompare(nameB);
+    })
+    : null;
+
   return (
     <div className="flex flex-col items-center">
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
@@ -126,40 +145,56 @@ export default function FishIndexes() {
       {error && <div className="text-red-500">{error}</div>}
 
       {/* Fish Index Buttons */}
-      {!loading && !error && fishIndexData && (
-        <div
-          className={`w-full ${
-            selectedIndex
-              ? 'flex flex-row flex-wrap gap-2 pb-2 justify-center'
-              : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4'
-          }`}
-        >
-          {fishIndexData.map((index) => {
-            const isSelected = selectedIndex && selectedIndex._id === index._id;
-            const buttonSizeClass = selectedIndex ? 'w-24 h-24' : 'w-48 h-48';
-            const imageSize = selectedIndex ? 'small' : 'large';
-            const displayName =
-              currentLang === 'en'
-                ? index.english
-                : currentLang === 'he'
-                ? index.hebrew
-                : index.russian;
-
-            return (
-              <button
-                key={index._id}
-                className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${
-                  isSelected ? 'text-white' : 'text-gray-800 dark:text-white'
-                }`}
-                onClick={() => {
-                  handleIndexClick(index);
-                }}
+      {!loading && !error && sortedFishIndexData && (
+        <div className="w-full">
+          {/* Collapse/Expand Button for small screens */}
+          {selectedIndex &&
+            <div className="sm:hidden flex justify-center mb-2">
+              <button onClick={() => setIsIndexCollapsed(!isIndexCollapsed)}
+                className="px-4 py-2 bg-blue-500 text-white rounded"
               >
-                <FishIndex fishIndex={index} size={imageSize} />
-                <div className="text-center mt-1 text-sm">{displayName}</div>
+                {isIndexCollapsed ? t('FishPage.showIndexes') : t('FishPage.hideIndexes')}
               </button>
-            );
-          })}
+            </div>
+          }
+
+          {/* Index Buttons */}
+          <div
+            className={`${isIndexCollapsed ? 'hidden' :
+                selectedIndex
+                  ? 'flex flex-row flex-wrap gap-2 pb-2 justify-center'
+                  : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4'
+
+              }`}
+          >
+            {sortedFishIndexData.map((index) => {
+              const isSelected = selectedIndex && selectedIndex._id === index._id;
+              const buttonSizeClass = selectedIndex ? 'w-24 h-24' : 'w-48 h-48';
+              const imageSize = selectedIndex ? 'small' : 'large';
+              const displayName =
+                currentLang === 'en'
+                  ? index.english
+                  : currentLang === 'he'
+                    ? index.hebrew
+                    : index.russian;
+
+              return (
+                <button
+                  key={index._id}
+                  className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${isSelected
+                      ? 'bg-blue-500 text-white'
+                      : 'text-gray-800 dark:text-white'
+                    }`}
+                  onClick={() => {
+                    handleIndexClick(index);
+                  }}
+                >
+                  <FishIndex fishIndex={index} size={imageSize} />
+                  <div className="text-center mt-1 text-sm">{displayName}</div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
 
