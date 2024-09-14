@@ -1,3 +1,5 @@
+// PlantCard.tsx
+
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiBase } from "../../../config";
@@ -6,7 +8,7 @@ import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
-import { doDeletePlant, doSubmitPlantReport, togglePlantLike } from '../../../services/PlantServices';
+import { doDeletePlant, doSubmitPlantReport, doTogglePlantLike } from '../../../services/PlantServices';
 import Modal from '../../Misc/Modal/Modal';
 import ReportingModal from '../../Misc/Modal/ReportingModal';
 import { AuthContext } from '../../../context/AuthContext';
@@ -82,7 +84,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
   };
 
   const handleFavoriteToggle = async (favorited: boolean) => {
-    const { error } = await togglePlantLike(plantData._id);
+    const { error } = await doTogglePlantLike(plantData._id);
     if (error) {
       alert(`${t('PlantCard.favoriteError')}\n${error}`);
     } else {

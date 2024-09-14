@@ -177,7 +177,7 @@ export const doDeletePlant = async (plantId: string): Promise<{ error: string | 
 };
 
 // ---------------------------------------------------------------------------------------------------------
-export const togglePlantLike = async (plantId: string): Promise<{ error: string | null }> => {
+export const doTogglePlantLike = async (plantId: string): Promise<{ error: string | null }> => {
   const token = await getToken();
   if (!token) {
     return { error: 'Authentication required. No token found.' };
