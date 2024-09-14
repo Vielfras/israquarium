@@ -1,3 +1,5 @@
+// About.tsx
+
 import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 

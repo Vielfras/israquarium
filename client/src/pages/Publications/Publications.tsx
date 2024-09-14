@@ -1,3 +1,5 @@
+//  Publications.tsx
+
 import { useState } from 'react';
 import JournalMiniCard from '../../components/Journal/JournalMiniCard/JournalMiniCard';
 import JournalCard from '../../components/Journal/JournalCard/JournalCard';

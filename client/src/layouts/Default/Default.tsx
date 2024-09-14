@@ -1,3 +1,5 @@
+// Default.tsx 
+
 import './Default.scss'
 import '../../pages/Page.scss'
 
@@ -24,20 +26,6 @@ import CreateFish from '../../pages/CreateFish/CreateFish'
 import Publications from '../../pages/Publications/Publications'
 import AdminProfile from '../../pages/AdminProfile/AdminProfile'
 import EditPlant from '../../pages/EditPlant/EditPlant'
-
-// import Free from '../../pages/Free/Free'
-// import User from '../../pages/User/User'
-// import Business from '../../pages/Business/Business'
-// import Admin from '../../pages/Admin/Admin'
-// import SignIn from '../../pages/SignIn/SignIn'
-// import UserProfile from '../../pages/UserProfile/UserProfile'
-// import CardDetails from '../../pages/CardDetails/CardDetails'
-// import SignUp from '../../pages/SignUp/SignUp'
-// import MyOwnCards from '../../pages/MyOwnCards/MyOwnCards'
-// import EditCard from '../../pages/EditCard/EditCard'
-// import CreateCard from '../../pages/CreateCard/CreateCard'
-// import LikedCards from '../../pages/LikedCards/LikedCards'
-// import SearchResults from '../../pages/SearchResults/SearchResults'
 
 export default function Default() {
   return (

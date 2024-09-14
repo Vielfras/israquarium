@@ -1,4 +1,4 @@
-import './NotFound.scss';
+// NotFound.tsx
 
 export default function NotFound() {
   return (
