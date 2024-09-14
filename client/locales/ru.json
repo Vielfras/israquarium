@@ -45,7 +45,16 @@
     "sexualDimorphism": "Сексуальный диморфизм",
     "breeding": "Разведение",
     "additionalInformation": "Дополнительная информация",
-    "sources": "Источники"
+    "sources": "Источники",
+    "deleteConfirmation": "Вы уверены, что хотите удалить эту рыбу?",
+    "deleteWarning": "Это действие необратимо.",
+    "confirmDelete": "Я уверен.",
+    "cancelDelete": "Отмена",
+    "deleteSuccess": "Рыба успешно удалена.",
+    "deleteFailure": "Не удалось удалить рыбу.",
+    "reportSuccess": "Отчёт успешно отправлен.",
+    "reportFailure": "Не удалось отправить отчёт. Попробуйте позже.",
+    "favoriteError": "Рыба недоступна."
   },
   "PlantsPage": {
     "selectLetter": "Пожалуйста, выберите букву, чтобы увидеть растения, начинающиеся на неё.",

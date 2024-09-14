@@ -45,7 +45,16 @@
     "sexualDimorphism": "Sexual Dimorphism",
     "breeding": "Breeding",
     "additionalInformation": "Additional Information",
-    "sources": "Sources"
+    "sources": "Sources",
+    "deleteConfirmation": "Are you sure you want to delete this fish?",
+    "deleteWarning": "This action is not reversible.",
+    "confirmDelete": "I'm sure.",
+    "cancelDelete": "Cancel",
+    "deleteSuccess": "Fish successfully deleted.",
+    "deleteFailure": "Failed to delete the fish.",
+    "reportSuccess": "Report sent successfully.",
+    "reportFailure": "Reporting failed. Please try again later.",
+    "favoriteError": "Fish unreachable."
   },
   "PlantsPage": {
     "selectLetter": "Please select a letter to view the plants that start with it.",

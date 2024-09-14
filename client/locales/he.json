@@ -45,7 +45,16 @@
     "sexualDimorphism": "שוני מיני",
     "breeding": "רבייה",
     "additionalInformation": "מידע נוסף",
-    "sources": "מקורות"
+    "sources": "מקורות",
+    "deleteConfirmation": "האם אתה בטוח שברצונך למחוק את הדג הזה?",
+    "deleteWarning": "לא ניתן לבטל פעולה זו.",
+    "confirmDelete": "אני בטוח.",
+    "cancelDelete": "ביטול",
+    "deleteSuccess": "הדג נמחק בהצלחה.",
+    "deleteFailure": "נכשל במחיקת הדג.",
+    "reportSuccess": "הדיווח נשלח בהצלחה.",
+    "reportFailure": "הדיווח נכשל. אנא נסה שוב מאוחר יותר.",
+    "favoriteError": "לא ניתן להגיע לדג."
   },
   "PlantsPage": {
     "selectLetter": "אנה בחר באות כדי לראות את הצמחים שמתחילים בה.",

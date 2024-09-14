@@ -1,7 +1,7 @@
 // errorHandling.js
 
 const notLoggedIn = () => {
-    return { sucees: false, message: 'Forbidden: Must be logged-in to view this content.' };
+    return { sucees: false, message: 'Forbidden: Must be logged-in to interact with this content.' };
 }
 
 const userNotFound = (searchedId) => {

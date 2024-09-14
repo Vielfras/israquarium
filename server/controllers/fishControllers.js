@@ -171,6 +171,37 @@ const updateAFish = async (req, res) => {
   }
 };
 
+const toggleFishLike = async (req, res) => {
+  const { id } = req.params; 
+  const userId = req.user.id; 
+
+  try {
+    const fish = await Fish.findById(id);
+    if (!fish) {
+      return res.status(404).json({ success: false, message: `Fish with id '${id}' not found.` });
+    }
+
+    const userIndex = fish.likes.indexOf(userId);
+
+    if (userIndex === -1) {
+      fish.likes.push(userId);
+    } else {
+      
+      fish.likes.splice(userIndex, 1);
+    }
+
+    await fish.save();
+
+    return res.status(200).json({
+      success: true,
+      likes: fish.likes,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: `Failed to toggle like due to: ${err.message}` });
+  }
+};
+
+
 
 
 module.exports = {
@@ -180,4 +211,5 @@ module.exports = {
   createFish,
   deleteFish,
   updateAFish,
+  toggleFishLike,
 };

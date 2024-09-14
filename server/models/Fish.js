@@ -39,6 +39,7 @@ const fishSchema = new mongoose.Schema({
     he: languageSchema,
     ru: languageSchema,
   },
+  likes: [mongoose.SchemaTypes.ObjectId],
   fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }]
 }, {
   timestamps: true,
