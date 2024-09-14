@@ -48,7 +48,18 @@ export default function AdminProfile() {
 
         <DirectionProvider>
           {auth?.userDetails?.isAdmin ? (
-            <AdminCard websiteStats={websiteStats} users={users} handleSignOut={handleSignOut} />
+            <>
+              <div className="flex justify-center rtl:space-x-reverse space-x-4 mb-6">
+                <Link to="/create-fish" className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">
+                    {t('AdminProfile.createFish')}
+                </Link>
+                <Link to="/create-plant" className="bg-green-600 text-white py-2 px-4 rounded-lg shadow hover:bg-green-700">
+                    {t('AdminProfile.createPlant')}
+                </Link>
+              </div>
+
+              <AdminCard websiteStats={websiteStats} users={users} handleSignOut={handleSignOut} />
+            </>
           ) : (
             <>
               <p className="text-lg">{t('AdminProfile.signInRequired')}</p>

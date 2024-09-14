@@ -195,6 +195,8 @@
     "totalFish": "Total Fish",
     "totalPlants": "Total Plants",
     "totalShops": "Total Shops",
+    "createFish" : "Add Fish",
+    "createPlant" : "Add Plant",
     "loading": "Loading...",
     "users": "User Management",
     "noUsers": "No users found.",
