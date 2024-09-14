@@ -20,10 +20,4 @@ router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAFish);
 router.delete('/:id', mustLogin, allowedRoles(["admin"]), deleteFish);
 router.patch('/:id', mustLogin, toggleFishLike);
 
-// TOOD - Remove after automated tests are written
-// router.post('/', createFish);
-// router.put('/:id', updateAFish);
-// router.delete('/:id', deleteFish);
-
-
 module.exports = router;

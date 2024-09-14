@@ -15,10 +15,9 @@ export default function PlantMiniCard({ plant, onClick }: PlantMiniCardProps) {
       
       {/* Ensure plant images are displayed correctly */}
       {plant.images.length > 0 && (
-        <img
-          src={`${apiBase}/api/plant/image/${plant._id}/${plant.images[0].src}`}  // Correct URL formation
+        <img className="w-full h-32 object-cover mb-2"
+          src={`${apiBase}/api/plant/image/${plant._id}/${plant.images[0].src}`}
           alt={plant.images[0].alt}
-          className="w-full h-32 object-cover mb-2"
         />
       )}
     </div>
