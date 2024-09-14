@@ -5,7 +5,7 @@ import FishCard from '../../components/Fish/FishCard/FishCard';
 import FishMiniCard from '../../components/Fish/FishMiniCard/FishMiniCard';
 import FishIndex from '../../components/Fish/FishIndex/FishIndex';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
@@ -68,7 +68,6 @@ export default function FishIndexes() {
     setLoading(true);
 
     try {
-      // Fetch fish data
       const response = await fetch(`${apiFishCall}?index=${index._id}`);
       if (!response.ok) {
         throw new Error(t('FishPage.errorFetchingData'));
@@ -94,11 +93,6 @@ export default function FishIndexes() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-row gap-2 pb-3">
-        <Link to={'/create-fish'} className="px-4 py-2 bg-blue-500 text-white rounded">
-          {t('FishPage.createFish')}
-        </Link>
-      </div>
 
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
 
@@ -111,24 +105,16 @@ export default function FishIndexes() {
       )}
 
       {!loading && !error && fishIndexData && (
-        <div
-          className={`w-full ${
-            selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pb-4'
-          }`}
-        >
+        <div className={`w-full ${selectedIndex ? 'flex flex-row gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pb-4'}`}>
           {fishIndexData.map((index) => (
-            <button
-              key={index._id}
+            <button key={index._id}
+              className={`px-4 py-2 rounded-lg font-bold ${selectedIndex && selectedIndex._id === index._id ? 'text-white' : ' text-gray-800 dark:text-white'}`}
               onClick={() => {
                 setSelectedIndex(index);
                 const indexName =
                   currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian;
                 navigate(`/fish-index/${encodeURIComponent(indexName)}`);
-              }}
-              className={`px-4 py-2 rounded-lg font-bold ${
-                selectedIndex && selectedIndex._id === index._id ? 'text-white' : ' text-gray-800 dark:text-white'
-              }`}
-            >
+              }}>
               <FishIndex fishIndex={index} />
               <div className="text-center mt-2">
                 {currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian}
@@ -146,8 +132,7 @@ export default function FishIndexes() {
       {/* Mini Fish Cards */}
       {selectedLetter && fishData && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
-          {fishData
-            .filter((fish) => fish.name.startsWith(selectedLetter))
+          {fishData.filter((fish) => fish.name.startsWith(selectedLetter))
             .map((fish) => (
               <div key={fish._id}>
                 <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
@@ -161,8 +146,8 @@ export default function FishIndexes() {
         </div>
       )}
 
-     {/* Display FishIndexCard */}
-     {selectedIndex && (
+      {/* Display FishIndexCard */}
+      {selectedIndex && (
         <FishIndexCard fishIndexKey={selectedIndex.english} />
       )}
     </div>
