@@ -1,7 +1,7 @@
 //  fishSchemas.js
 
 const Joi = require('joi');
-const {imageSchema} = require('./commonSchemas');
+const { imageSchema } = require('./commonSchemas');
 
 
 const validationOptions = {
@@ -11,54 +11,55 @@ const validationOptions = {
 
 
 const languageSchema = Joi.object({
-  subclass: Joi.string().optional(),
-  order: Joi.string().optional(),
-  family: Joi.string().optional(),
-  subfamily: Joi.string().optional(),
-  synonyms: Joi.string().optional(),
-  etymology: Joi.string().optional(),
-  distribution: Joi.string().optional(),
-  additionalRequirements: Joi.string().optional(),
-  aquariumSetup: Joi.string().optional(),
-  intraspeciesCompatibility: Joi.string().optional(),
-  interspeciesCompatibility: Joi.string().optional(),
-  feeding: Joi.string().optional(),
-  sexualDimorphism: Joi.string().optional(),
-  breeding: Joi.string().optional(),
-  additionalInformation: Joi.string().optional(),
+  subclass: Joi.string().allow('').optional(),
+  order: Joi.string().allow('').optional(),
+  family: Joi.string().allow('').optional(),
+  subfamily: Joi.string().allow('').optional(),
+  synonyms: Joi.string().allow('').optional(),
+  etymology: Joi.string().allow('').optional(),
+  distribution: Joi.string().allow('').optional(),
+  additionalRequirements: Joi.string().allow('').optional(),
+  aquariumSetup: Joi.string().allow('').optional(),
+  intraspeciesCompatibility: Joi.string().allow('').optional(),
+  interspeciesCompatibility: Joi.string().allow('').optional(),
+  feeding: Joi.string().allow('').optional(),
+  sexualDimorphism: Joi.string().allow('').optional(),
+  breeding: Joi.string().allow('').optional(),
+  additionalInformation: Joi.string().allow('').optional(),
 });
 
-// TODO - Make everything but the name and fishIndices optional?
+
+
 const fishSchema = Joi.object({
   name: Joi.string().required(),
   latinName: Joi.string().required(),
-  images: Joi.array().items(imageSchema).required(),
-  tribe: Joi.string().required(),
-  firstDescription: Joi.string().required(),
-  sources: Joi.string().required(),
-  tankVolume: Joi.string().required(),
-  fishSize: Joi.string().required(),
-  maxTemp: Joi.number().required(),
-  minTemp: Joi.number().required(),
-  ph: Joi.number().required(),
-  dGH: Joi.number().required(),
+  images: Joi.array().items(imageSchema).optional(),
+  tribe: Joi.string().allow('').optional(),
+  firstDescription: Joi.string().allow('').optional(),
+  sources: Joi.string().allow('').optional(),
+  tankVolume: Joi.string().allow('').optional(),
+  fishSize: Joi.string().allow('').optional(),
+  maxTemp: Joi.number().optional(),
+  minTemp: Joi.number().optional(),
+  ph: Joi.number().optional(),
+  dGH: Joi.number().optional(),
   languages: Joi.object({
     en: languageSchema,
     he: languageSchema,
     ru: languageSchema,
   }).optional(),
-  fishIndices: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).required()
+  fishIndices: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).min(1).required(),
 }).options(validationOptions);
 
 const updateFishSchema = Joi.object({
   name: Joi.string().optional(),
   latinName: Joi.string().optional(),
   images: Joi.array().items(imageSchema).optional(),
-  tribe: Joi.string().optional(),
-  firstDescription: Joi.string().optional(),
-  sources: Joi.string().optional(),
-  tankVolume: Joi.string().optional(),
-  fishSize: Joi.string().optional(),
+  tribe: Joi.string().allow('').optional(),
+  firstDescription: Joi.string().allow('').optional(),
+  sources: Joi.string().allow('').optional(),
+  tankVolume: Joi.string().allow('').optional(),
+  fishSize: Joi.string().allow('').optional(),
   maxTemp: Joi.number().optional(),
   minTemp: Joi.number().optional(),
   ph: Joi.number().optional(),
@@ -68,12 +69,12 @@ const updateFishSchema = Joi.object({
     he: languageSchema.optional(),
     ru: languageSchema.optional(),
   }),
-  fishIndices: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).optional()
-}).options(validationOptions).min(1).messages({
-  'object.min': "The request's body must include at least one valid key",
+  fishIndices: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).optional(),
+})
+.options(validationOptions).min(1).messages({ 'object.min': "The request's body must include at least one valid key", 
 });
 
-module.exports = { 
+module.exports = {
   fishSchema,
   updateFishSchema,
- };
+};

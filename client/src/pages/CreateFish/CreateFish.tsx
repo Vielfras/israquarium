@@ -1,13 +1,15 @@
 // CreateFish.tsx
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
 import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
-import { IFish } from '../../interfaces/IFish';
+import { IFish, IFishIndex } from '../../interfaces/IFish';
+import { doCreateFish } from '../../services/FishServices';
+import { doGetFishIndexes } from '../../services/FishIndexServices';
 
 type LanguageCode = 'en' | 'he' | 'ru';
 
@@ -25,6 +27,9 @@ export default function CreateFish() {
   const [ph, setPh] = useState<string>('');
   const [dGH, setDGH] = useState<string>('');
   const [isBusy, setIsBusy] = useState<boolean>(false);
+  const [fishIndexes, setFishIndexes] = useState<IFishIndex[]>([]);
+  const [selectedFishIndex, setSelectedFishIndex] = useState<string>('');
+
 
   const [activeLangTab, setActiveLangTab] = useState<LanguageCode>('en');
   const [languageData, setLanguageData] = useState<{
@@ -100,11 +105,13 @@ export default function CreateFish() {
   });
 
 
-  const localT = i18n.getFixedT(activeLangTab);
 
   const auth = useContext(AuthContext);
   const toasts = useContext(ToastsContext);
   const navigate = useNavigate();
+
+  const localT = i18n.getFixedT(activeLangTab);
+  const currentLang = (i18n.language as 'en' | 'he' | 'ru') || 'en';
 
   // Validation regex
   const nameRegex = /^[A-Za-z\s]{2,}$/;
@@ -120,11 +127,25 @@ export default function CreateFish() {
     });
   };
 
+  useEffect(() => {
+    async function fetchFishIndexes() {
+      const { error, result } = await doGetFishIndexes();
+      console.log(result);
+      if (error) {
+        toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), error, 'danger');
+      } else if (result) {
+        setFishIndexes(result);
+      }
+    }
+
+    fetchFishIndexes();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsBusy(true);
 
-    if (!name) {
+    if (!name || !selectedFishIndex) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), t('CreateFish.errorMessage'), 'danger');
       setIsBusy(false);
       return;
@@ -146,14 +167,15 @@ export default function CreateFish() {
       images: [],
       languages: languageData,
       likes: [],
+      fishIndices: [selectedFishIndex],
     };
 
-    const error = null; // TODO - Replace with actual error handling
+    const { error, result } = await doCreateFish(fishData);
     if (error) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), error, 'danger');
     } else {
       toasts?.addToast('CreateFish.👍🏼', t('CreateFish.successTitle'), t('CreateFish.successMessage'), 'success');
-      navigate('/fish');
+      navigate('/fish-index');
     }
 
     setIsBusy(false);
@@ -165,11 +187,46 @@ export default function CreateFish() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="bg-blue-50 dark:bg-sky-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
+      <div className="bg-white dark:bg-sky-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('CreateFish.submitFishTitle')}</h3>
 
         <DirectionProvider>
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Fish Index Dropdown */}
+            <div className="grid grid-cols-1">
+              <div className="mb-4">
+                <label htmlFor="formFishIndex" className="block text-gray-700 dark:text-gray-300 font-bold mb-2">
+                  {t('CreateFish.fishIndexLabel')}
+                </label>
+                <select
+                  id="formFishIndex"
+                  value={selectedFishIndex}
+                  onChange={(e) => setSelectedFishIndex(e.target.value)}
+                  className="...">
+                  <option value="">{t('CreateFish.fishIndexPlaceholder')}</option>
+                  {fishIndexes.map((index) => {
+                    const displayName =
+                      currentLang === 'en'
+                        ? index.english
+                        : currentLang === 'he'
+                          ? index.hebrew
+                          : currentLang === 'ru'
+                            ? index.russian
+                            : index.english;
+
+                    return (
+                      <option key={index._id} value={index._id}>
+                        {displayName}
+                      </option>
+                    );
+                  })}
+                </select>
+                {!selectedFishIndex && (
+                  <p className="text-red-500 text-xs italic mt-2">{t('CreateFish.validation.fishIndex')}</p>
+                )}
+              </div>
+            </div>
+
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FormField controlId="formGridFishName" type="text"
@@ -267,17 +324,27 @@ export default function CreateFish() {
               />
             </div>
 
+            {/* Sources Field */}
+            <div className="grid grid-cols-1">
+              <FormField controlId="formGridSources"
+                type="text"
+                label={t('CreatePlant.sourcesLabel')}
+                placeholder={t('CreatePlant.sourcesPlaceholder')}
+                value={sources}
+                onChange={(e) => setSources(e.target.value)}
+              />
+            </div>
+
             {/* Language Tabs */}
             <div className="mt-8">
               <div className="flex my-4 mt-12 space-x-4 justify-center">
                 {(['en', 'he', 'ru'] as LanguageCode[]).map((lang) => (
                   <button
                     key={lang} type="button"
-                    className={`px-4 py-2 rounded-lg transition ${
-                      activeLangTab === lang
-                        ? 'bg-blue-600 text-white font-bold shadow-lg'
-                        : 'bg-gray-50 text-blue-900 hover:bg-blue-100'
-                    }`}
+                    className={`px-4 py-2 rounded-lg transition ${activeLangTab === lang
+                      ? 'bg-blue-600 text-white font-bold shadow-lg'
+                      : 'bg-gray-50 text-blue-900 hover:bg-blue-100'
+                      }`}
                     onClick={() => setActiveLangTab(lang)}
                   >
                     {t(`CreateFish.languages.${lang}`)}
@@ -288,19 +355,22 @@ export default function CreateFish() {
               {/* Fields for the active language */}
               <div dir={getDirection(activeLangTab)} className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {(
-                  [ 'subclass', 'order', 'family', 'subfamily',
-                    'synonyms', 'etymology', 'distribution', 'additionalRequirements', 
+                  ['subclass', 'order', 'family', 'subfamily',
+                    'synonyms', 'etymology', 'distribution', 'additionalRequirements',
                     'aquariumSetup', 'intraspeciesCompatibility', 'interspeciesCompatibility', 'feeding',
                     'sexualDimorphism', 'breeding', 'additionalInformation',
                   ] as const
                 ).map((field) => (
-                    <FormField controlId={`formGrid${field}`} type="text"
+                  <FormField
+                    key={field} // Add the key prop here
+                    controlId={`formGrid${field}`}
+                    type="text"
                     label={localT(`CreateFish.${field}Label`)}
                     placeholder={localT(`CreateFish.${field}Placeholder`)}
                     value={languageData[activeLangTab][field]}
                     onChange={(e) => handleLanguageChange(field, e.target.value)}
-                    isLtrRtlResponsive={false} 
-                    />
+                    isLtrRtlResponsive={false}
+                  />
                 ))}
               </div>
             </div>
@@ -309,9 +379,8 @@ export default function CreateFish() {
             <div className="text-center">
               <button
                 type="submit"
-                className={`bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  isBusy ? 'opacity-50' : ''
-                }`}
+                className={`bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ${isBusy ? 'opacity-50' : ''
+                  }`}
                 disabled={isBusy}
               >
                 {isBusy ? (

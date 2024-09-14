@@ -47,7 +47,7 @@ export default function FishCard({ fishData }: IFishCard) {
       alert(t('FishCard.deleteFailure'));
     } else {
       alert(t('FishCard.deleteSuccess'));
-      navigate('/fish');
+      navigate('/fish-index');
     }
 
     setShowDeleteModal(false);

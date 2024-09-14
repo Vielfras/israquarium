@@ -88,7 +88,7 @@ export default function CreatePlant() {
     setIsBusy(true);
 
     // Basic validation before submission
-    if (!name || !latinName || !sources) {
+    if (!name) {
       toasts?.addToast('CreatePlant.⚠️', t('CreatePlant.errorTitle'), t('CreatePlant.errorMessage'), 'danger');
       setIsBusy(false);
       return;
@@ -136,8 +136,7 @@ export default function CreatePlant() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridPlantName"
+              <FormField controlId="formGridPlantName"
                 type="text"
                 label={t('CreatePlant.plantNameLabel')}
                 placeholder={t('CreatePlant.plantNamePlaceholder')}
@@ -147,8 +146,7 @@ export default function CreatePlant() {
                 isValid={nameRegex.test(name)}
                 validationMessage={t('CreatePlant.validation.plantName')}
               />
-              <FormField
-                controlId="formGridLatinName"
+              <FormField controlId="formGridLatinName"
                 type="text"
                 label={t('CreatePlant.latinNameLabel')}
                 placeholder={t('CreatePlant.latinNamePlaceholder')}
@@ -162,8 +160,7 @@ export default function CreatePlant() {
 
             {/* Additional General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridHeight"
+              <FormField controlId="formGridHeight"
                 type="text"
                 label={t('CreatePlant.heightLabel')}
                 placeholder={t('CreatePlant.heightPlaceholder')}
@@ -171,8 +168,7 @@ export default function CreatePlant() {
                 onChange={(e) => setHeight(e.target.value)}
                 validationMessage={t('CreatePlant.validation.height')}
               />
-              <FormField
-                controlId="formGridWidth"
+              <FormField controlId="formGridWidth"
                 type="text"
                 label={t('CreatePlant.widthLabel')}
                 placeholder={t('CreatePlant.widthPlaceholder')}
@@ -180,8 +176,7 @@ export default function CreatePlant() {
                 onChange={(e) => setWidth(e.target.value)}
                 validationMessage={t('CreatePlant.validation.width')}
               />
-              <FormField
-                controlId="formGridTemperature"
+              <FormField controlId="formGridTemperature"
                 type="text"
                 label={t('CreatePlant.temperatureLabel')}
                 placeholder={t('CreatePlant.temperaturePlaceholder')}
@@ -193,8 +188,7 @@ export default function CreatePlant() {
 
             {/* More General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridPH"
+              <FormField controlId="formGridPH"
                 type="text"
                 label={t('CreatePlant.phLabel')}
                 placeholder={t('CreatePlant.phPlaceholder')}
@@ -202,8 +196,7 @@ export default function CreatePlant() {
                 onChange={(e) => setPh(e.target.value)}
                 validationMessage={t('CreatePlant.validation.ph')}
               />
-              <FormField
-                controlId="formGridHardness"
+              <FormField controlId="formGridHardness"
                 type="text"
                 label={t('CreatePlant.hardnessLabel')}
                 placeholder={t('CreatePlant.hardnessPlaceholder')}
@@ -211,8 +204,7 @@ export default function CreatePlant() {
                 onChange={(e) => setHardness(e.target.value)}
                 validationMessage={t('CreatePlant.validation.hardness')}
               />
-              <FormField
-                controlId="formGridLight"
+              <FormField controlId="formGridLight"
                 type="text"
                 label={t('CreatePlant.lightLabel')}
                 placeholder={t('CreatePlant.lightPlaceholder')}
@@ -223,16 +215,14 @@ export default function CreatePlant() {
 
             {/* Additional General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridGrowthRate"
+              <FormField controlId="formGridGrowthRate"
                 type="text"
                 label={t('CreatePlant.growthRateLabel')}
                 placeholder={t('CreatePlant.growthRatePlaceholder')}
                 value={growthRate}
                 onChange={(e) => setGrowthRate(e.target.value)}
               />
-              <FormField
-                controlId="formGridPlacement"
+              <FormField controlId="formGridPlacement"
                 type="text"
                 label={t('CreatePlant.placementLabel')}
                 placeholder={t('CreatePlant.placementPlaceholder')}
@@ -243,8 +233,7 @@ export default function CreatePlant() {
 
             {/* Sources Field */}
             <div className="grid grid-cols-1">
-              <FormField
-                controlId="formGridSources"
+              <FormField controlId="formGridSources"
                 type="text"
                 label={t('CreatePlant.sourcesLabel')}
                 placeholder={t('CreatePlant.sourcesPlaceholder')}
@@ -272,8 +261,7 @@ export default function CreatePlant() {
               {/* Fields for the active language */}
               <div dir={getDirection(activeLangTab)} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
-                    <FormField key={field}
-                      controlId={`formGrid${field}`}
+                    <FormField key={field} controlId={`formGrid${field}`}
                       type="text"
                       isLtrRtlResponsive={false}
                       label={localT(`CreatePlant.${field}Label`)}

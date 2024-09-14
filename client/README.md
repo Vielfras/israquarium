@@ -4,7 +4,8 @@
 
 
 ### Bridge:
-- Stylise CreatePlant and CreateFish to better fit the motif of what they do.
+- [ ] When token runs out and auth fails, need to notifu user and handle problem
+
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
@@ -38,6 +39,7 @@
     - [ ] Error Page
     - [ ] Page Not found
     - [X] Favorite Icon
+
 
 ### Issues
 - [ ] Incorrect form field validation causes the size of the parent container to increase suddenly

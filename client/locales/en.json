@@ -58,6 +58,8 @@
   },
   "CreateFish": {
     "submitFishTitle": "New Fish",
+    "fishIndexLabel": "Fish Index",
+    "fishIndexPlaceholder": "Select a fish index",
     "fishNameLabel": "Fish Name",
     "fishNamePlaceholder": "Enter the common name of the fish",
     "latinNameLabel": "Latin Name",
@@ -121,6 +123,7 @@
       "ru": "Russian"
     },
     "validation": {
+      "fishIndex": "Please select a fish index.",
       "fishName": "Please enter a valid fish name.",
       "latinName": "Please enter a valid Latin name.",
       "tankVolume": "Please enter a valid tank volume.",
@@ -195,7 +198,7 @@
     },
     "submit": "Submit"
   },
-    "CreatePlant": {
+  "CreatePlant": {
     "submitPlantTitle": "New Plant",
     "plantNameLabel": "Plant Name",
     "plantNamePlaceholder": "Enter the common name of the plant",
@@ -318,15 +321,15 @@
   },
   "AdminProfile": {
     "title": "Admin Profile",
-    "signInRequired" : "Only Administrators can view this page.",
-    "signIn" : "Sign-in",
+    "signInRequired": "Only Administrators can view this page.",
+    "signIn": "Sign-in",
     "websiteStats": "Website Statistics",
     "totalUsers": "Total Users",
     "totalFish": "Total Fish",
     "totalPlants": "Total Plants",
     "totalShops": "Total Shops",
-    "createFish" : "Add Fish",
-    "createPlant" : "Add Plant",
+    "createFish": "Add Fish",
+    "createPlant": "Add Plant",
     "loading": "Loading...",
     "users": "User Management",
     "noUsers": "No users found.",
@@ -342,7 +345,7 @@
     "email": "Email",
     "name": "Name",
     "phone": "Phone",
-    "adminDashboard" : "Dashboard",
+    "adminDashboard": "Dashboard",
     "signOut": "Sign Out",
     "signInRequired": "You have to be signed-in as a User, Business, or Admin to view this page!",
     "signIn": "Sign-in",
@@ -423,8 +426,6 @@
     "reportFailure": "Failed to submit the report. Please try again.",
     "reportSuccess": "Report submitted successfully. Thank you for your feedback."
   },
-
-
   "FishIndex": {
     "Corydoras": {
       "title": "Corydoras",

@@ -6,6 +6,7 @@ const path = require('path');
 const schemas = require("../schemas/fishSchemas");
 // const User = require("../models/User");
 const Fish = require("../models/Fish");
+const FishIndex = require('../models/FishIndex');
 const Err = require("../utils/errorHandling");
 
 
@@ -105,27 +106,49 @@ const getFishImage = async (req, res) => {
 
 const createFish = async (req, res) => {
   try {
-    const { indexId } = req.body;
-    const fishIndex = await FishIndex.findById(indexId);
-    if (!fishIndex) {
-      return res.status(404).json({ success: false, message: `Fish index with id '${indexId}' not found.` });
+    const { fishIndices } = req.body;
+
+    // Check if fishIndices is provided and is an array
+    if (!Array.isArray(fishIndices) || fishIndices.length === 0) {
+      return res.status(400).json({ success: false, message: 'fishIndices must be a non-empty array of IDs.' });
     }
 
+    // Validate that all IDs in fishIndices are valid ObjectIDs
+    // for (const id of fishIndices) {
+    //   if (!mongoose.Types.ObjectId.isValid(id)) {
+    //     return res.status(400).json({ success: false, message: `Invalid fish index ID: '${id}'.` });
+    //   }
+    // }
+
+    // Fetch all FishIndex documents matching the IDs in fishIndices
+    const fishIndexDocs = await FishIndex.find({ _id: { $in: fishIndices } });
+
+    // Check if all IDs exist
+    if (fishIndexDocs.length !== fishIndices.length) {
+      const existingIds = fishIndexDocs.map(doc => doc._id.toString());
+      const missingIds = fishIndices.filter(id => !existingIds.includes(id));
+      return res.status(404).json({ success: false, message: `Fish index IDs not found: ${missingIds.join(', ')}.` });
+    }
+
+    // Validate the rest of the fish data using your schema
     const { error, value } = schemas.fishSchema.validate(req.body);
     if (error) {
       return res.status(400).json({ success: false, message: error.details.map(d => d.message).join(', ') });
     }
 
+    // Create the new fish
     const newFish = new Fish(value);
     await newFish.save();
 
-    // Add the new fish to the specified index
-    fishIndex.fishes.push(newFish._id);
-    await fishIndex.save();
+    // Update each FishIndex by adding the new fish's ID to its fishes array
+    for (const fishIndex of fishIndexDocs) {
+      fishIndex.fishes.push(newFish._id);
+      await fishIndex.save();
+    }
 
     return res.status(201).json({ success: true, data: newFish });
   } catch (err) {
-    return res.status(400).json({ success: false, message: err.message });
+    return res.status(500).json({ success: false, message: err.message });
   }
 };
 
