@@ -20,6 +20,13 @@
     "contactUs": "Contact Us",
     "rightsReserved": "All Rights Reserved."
   },
+  "FishPage": {
+    "loadingMessage": "Loading...",
+    "errorFetchingIndex": "Error fetching fish indexes.",
+    "errorFetchingData": "Error fetching fish data.",
+    "letterEmpty": "No fish found for the letter",
+    "selectLetter": "Select a letter to see the fish in this index."
+  },
   "FishCard": {
     "subclass": "Subclass",
     "order": "Order",

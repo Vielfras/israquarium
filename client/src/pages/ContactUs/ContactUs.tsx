@@ -1,4 +1,5 @@
-import './ContactUs.scss';
+// ContactUs.tsx
+
 import { useTranslation } from 'react-i18next';
 
 export default function ContactUs() {

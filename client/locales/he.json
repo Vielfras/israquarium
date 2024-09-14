@@ -20,6 +20,13 @@
     "contactUs": "צור קשר",
     "rightsReserved": "כל הזכויות שמורות."
   },
+  "FishPage": {
+    "loadingMessage": "טוען...",
+    "errorFetchingIndex": "שגיאה בטעינת אינדקסי הדגים.",
+    "errorFetchingData": "שגיאה בטעינת נתוני הדגים.",
+    "letterEmpty": "לא נמצאו דגים עבור האות",
+    "selectLetter": "בחר אות כדי לראות את הדגים באינדקס זה."
+  },
   "FishCard": {
     "subclass": "תת-מחלקה",
     "order": "סדר",

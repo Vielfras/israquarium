@@ -87,7 +87,6 @@ export default function CreatePlant() {
     e.preventDefault();
     setIsBusy(true);
 
-    // Basic validation before submission
     if (!name) {
       toasts?.addToast('CreatePlant.⚠️', t('CreatePlant.errorTitle'), t('CreatePlant.errorMessage'), 'danger');
       setIsBusy(false);

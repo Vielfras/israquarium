@@ -20,6 +20,13 @@
     "contactUs": "Связаться с нами",
     "rightsReserved": "Все права сохранены."
   },
+  "FishPage": {
+    "loadingMessage": "Загрузка...",
+    "errorFetchingIndex": "Ошибка при загрузке индексов рыб.",
+    "errorFetchingData": "Ошибка при загрузке данных о рыбах.",
+    "letterEmpty": "Рыбы для буквы не найдены",
+    "selectLetter": "Выберите букву, чтобы увидеть рыб в этом индексе."
+  },
   "FishCard": {
     "subclass": "Подкласс",
     "order": "Отряд",
