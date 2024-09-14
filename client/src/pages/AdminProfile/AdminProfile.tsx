@@ -11,11 +11,9 @@ export default function AdminProfile() {
   const { t } = useTranslation();
   const auth = useContext(AuthContext);
 
-  // State definitions
   const [websiteStats, setWebsiteStats] = useState<IWebsiteStats | null>(null);
   const [users, setUsers] = useState<IUserDetails[]>([]);
 
-  // Fetch data for admin
   useEffect(() => {
     if (auth?.userDetails?.isAdmin) {
       fetchWebsiteStats();
@@ -40,7 +38,7 @@ export default function AdminProfile() {
   };
 
   return (
-    <div className="AdminProfile Page flex justify-center">
+    <div className="flex justify-center">
       <div className="p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg text-center text-gray-700 dark:text-gray-300 mb-4">
         <h3 className="text-center text-3xl font-bold mb-8 text-gray-800 dark:text-gray-100 tracking-wide">
           {t('AdminProfile.title')}
