@@ -1,3 +1,5 @@
+// FishIndexCard.tsx
+
 import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../../context/ReadingDirectionContext';
 
@@ -13,7 +15,6 @@ export default function FishIndexCard({ fishIndexKey }: FishIndexCardProps) {
   const subtitle = t(`FishIndex.${fishIndexKey}.subtitle`);
   const content = t(`FishIndex.${fishIndexKey}.content`);
 
-  // Parse content into sections
   const contentSections = parseContent(content);
 
   return (
@@ -28,7 +29,7 @@ export default function FishIndexCard({ fishIndexKey }: FishIndexCardProps) {
           </h2>
         )}
 
-        <main className={`space-y-8 ${currentLang === 'he' || currentLang === 'ru' ? 'text-right' : 'text-left'}`}>
+        <main className={`space-y-8 ${currentLang === 'he' ? 'text-right' : 'text-left'}`}>
           {contentSections.map((section, index) => (
             <section key={index}>
               {section.heading && (

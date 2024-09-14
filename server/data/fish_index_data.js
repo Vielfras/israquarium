@@ -7,7 +7,7 @@ const fishIndex = [
         _id: new mongoose.Types.ObjectId('668acc05985732c151744bf4'),
         hebrew: "שרייניים",
         english: "Loricariidae",
-        russian: "лорика́риевые",
+        russian: "Лорика́риевые",
         image: {
             src: 'Loricariidae.jpg',
             alt: 'Loricariidae',

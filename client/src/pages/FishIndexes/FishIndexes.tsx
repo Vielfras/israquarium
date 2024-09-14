@@ -13,6 +13,7 @@ import Spinner from '../../components/Misc/Spinner/Spinner';
 import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import FishIndexCard from '../../components/Fish/FishIndexCard/FishIndexCard';
 import { doGetFishByIndexAndLetter } from '../../services/FishServices';
+import UseMediaQuery from '../../hooks/UseMediaQuery';
 
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
 
@@ -29,6 +30,13 @@ export default function FishIndexes() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const currentLang = (i18n.language as 'en' | 'he' | 'ru') || 'en';
+
+  const isSmallScreen = UseMediaQuery('(max-width: 640px)');
+  useEffect(() => {
+    if (!isSmallScreen) {
+      setIsIndexCollapsed(false);
+    }
+  }, [isSmallScreen]);
 
   useEffect(() => {
     const fetchFishIndexData = async () => {
@@ -119,7 +127,6 @@ export default function FishIndexes() {
     fetchFishDataByLetter();
   }, [selectedLetter, selectedIndex, t]);
 
-
   const sortedFishIndexData = fishIndexData
     ? [...fishIndexData].sort((a, b) => {
       const nameA =
@@ -148,23 +155,23 @@ export default function FishIndexes() {
       {!loading && !error && sortedFishIndexData && (
         <div className="w-full">
           {/* Collapse/Expand Button for small screens */}
-          {selectedIndex &&
-            <div className="sm:hidden flex justify-center mb-2">
-              <button onClick={() => setIsIndexCollapsed(!isIndexCollapsed)}
+          {isSmallScreen && selectedIndex && (
+            <div className="flex justify-center mb-2">
+              <button
+                onClick={() => setIsIndexCollapsed(!isIndexCollapsed)}
                 className="px-4 py-2 bg-blue-500 text-white rounded"
               >
                 {isIndexCollapsed ? t('FishPage.showIndexes') : t('FishPage.hideIndexes')}
               </button>
             </div>
-          }
+          )}
 
           {/* Index Buttons */}
           <div
-            className={`${isIndexCollapsed ? 'hidden' :
-                selectedIndex
-                  ? 'flex flex-row flex-wrap gap-2 pb-2 justify-center'
-                  : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4'
-
+            className={`${isIndexCollapsed && isSmallScreen ? 'hidden' : ''
+              } ${selectedIndex
+                ? 'flex flex-row flex-wrap gap-4 pb-2 justify-center'
+                : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4 justify-items-center'
               }`}
           >
             {sortedFishIndexData.map((index) => {
@@ -203,47 +210,47 @@ export default function FishIndexes() {
         <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick} />
       )}
 
-      {/* Loading and Error Handling */}
-      {loading && <Spinner message={t('FishPage.loadingMessage')} />}
-      {error && <div className="text-red-500">{error}</div>}
+      <DirectionProvider>
+        {/* Loading and Error Handling */}
+        {loading && <Spinner message={t('FishPage.loadingMessage')} />}
+        {error && <div className="text-red-500">{error}</div>}
 
-      {/* Fish Card or Mini Fish Cards */}
-      {!loading && selectedLetter && fishData && fishData.length > 0 && (
-        expandedFishId ? (
-          // Display only the FishCard of the selected fish
-          <>
-            {fishData.find(fish => fish._id === expandedFishId) && (
-              <DirectionProvider>
-                <FishCard fishData={fishData.find(fish => fish._id === expandedFishId)} />
-              </DirectionProvider>
-            )}
-          </>
-        ) : (
-          // Display the grid of FishMiniCards
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-            {fishData.map((fish) => (
-              <div key={fish._id}>
-                <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
-              </div>
-            ))}
-          </div>
-        )
-      )}
+        {/* Fish Card or Mini Fish Cards */}
+        {!loading && selectedLetter && fishData && fishData.length > 0 && (
+          expandedFishId ? (
+            // Display only the FishCard of the selected fish
+            <>
+              {fishData.find((fish) => fish._id === expandedFishId) && (
+                <FishCard fishData={fishData.find((fish) => fish._id === expandedFishId)} />
+              )}
+            </>
+          ) : (
+            // Display the grid of FishMiniCards
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+              {fishData.map((fish) => (
+                <div key={fish._id}>
+                  <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
+                </div>
+              ))}
+            </div>
+          )
+        )}
 
-      {/* No Fish Data Message */}
-      {!loading && selectedLetter && (!fishData || fishData.length === 0) && (
-        <p>{`${t('FishPage.letterEmpty')} '${selectedLetter}'.`}</p>
-      )}
+        {/* No Fish Data Message */}
+        {!loading && selectedLetter && (!fishData || fishData.length === 0) && (
+          <p>{`${t('FishPage.letterEmpty')} '${selectedLetter}'.`}</p>
+        )}
 
-      {/* Prompt to Select a Letter */}
-      {!selectedLetter && !loading && !error && selectedIndex && (
-        <h1 className="my-4 text-3xl font-extrabold text-center text-blue-600 dark:text-blue-400">
-          {t('FishPage.selectLetter')}
-        </h1>
-      )}
+        {/* Prompt to Select a Letter */}
+        {!selectedLetter && !loading && !error && selectedIndex && (
+          <h1 className="my-4 text-3xl font-extrabold text-center text-blue-600 dark:text-blue-400">
+            {t('FishPage.selectLetter')}
+          </h1>
+        )}
+      </DirectionProvider>
 
-      {/* Display FishIndexCard */}
-      {selectedIndex && !selectedLetter && <FishIndexCard fishIndexKey={selectedIndex.english} />}
+        {/* Display FishIndexCard */}
+        {selectedIndex && !selectedLetter && <FishIndexCard fishIndexKey={selectedIndex.english} />}
     </div>
   );
 }
