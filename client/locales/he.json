@@ -162,6 +162,8 @@
     "deleteWarning": "פעולה זו אינה ניתנת לשחזור. ברגע שהצמח נמחק, לא ניתן לשחזר אותו.",
     "confirmDelete": "כן, מחק",
     "cancelDelete": "בטל",
+    "deleteSuccess": "הצמח נמחק בהצלחה.",
+    "deleteFailure": "נכשל במחיקת הצמח.",
     "reportSuccess": "הדיווח נשלח בהצלחה.",
     "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב מאוחר יותר.",
     "favoriteError": "לא ניתן להגיע לצמח."

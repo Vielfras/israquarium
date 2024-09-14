@@ -44,6 +44,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   const handleDelete = async () => {
     setShowDeleteModal(true);
+    navigate('/plants');
   };
 
   const confirmDelete = async () => {
