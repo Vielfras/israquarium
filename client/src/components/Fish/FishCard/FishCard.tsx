@@ -150,7 +150,7 @@ export default function FishCard({ fishData }: IFishCard) {
         <tbody>
           {details.map((detail, index) => (
             <tr key={index} className={`${index % 2 !== 0 ? 'bg-blue-50' : 'bg-blue-100'}`}>
-              <td className="px-3 pr-0 py-2 font-semibold text-blue-900">{detail.label}</td>
+              <td className="px-3 py-2 font-semibold text-blue-900">{detail.label}</td>
               <td className="px-2 pl-0 text-stone-800">{detail.value}</td>
             </tr>
           ))}
