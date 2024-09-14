@@ -7,7 +7,7 @@ import { getToken } from "./UserServices";
 // ---------------------------------------------------------------------------------------------------------
 export const doGetRandomFish = async (): Promise<{ error: string | null; result: IFish | null }> => {
   try {
-    const response = await fetch(`${apiBase}/api/fish`, { method: 'GET' });
+    const response = await fetch(`${apiBase}/api/fish/random`, { method: 'GET' });
     const data = await response.json();
 
     if (!response.ok || !data.success) {
@@ -22,14 +22,37 @@ export const doGetRandomFish = async (): Promise<{ error: string | null; result:
 };
 
 // ---------------------------------------------------------------------------------------------------------
-export const doGetFishById = async (fishId: string, lang: string): Promise<{ error: string | null; result: IFish | null }> => {
+export const doGetFishByIndexAndLetter = async (indexId: string, letter: string): Promise<{ error: string | null; result: IFish[] | null }> => {
+  try {
+    const response = await fetch(`${apiBase}/api/fish?index=${indexId}&letter=${letter}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      return { error: data.message || 'Failed to fetch fish for this index and letter', result: null };
+    }
+
+    return { error: null, result: data.data };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: errMessage, result: null };
+  }
+};
+
+// ---------------------------------------------------------------------------------------------------------
+export const doGetFishById = async (fishId: string): Promise<{ error: string | null; result: IFish | null }> => {
   try {
     const response = await fetch(`${apiBase}/api/fish/${fishId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ lang })
+      // body: JSON.stringify({ lang })
     });
 
     const data = await response.json();

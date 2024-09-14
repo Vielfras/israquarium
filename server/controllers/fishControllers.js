@@ -8,7 +8,32 @@ const schemas = require("../schemas/fishSchemas");
 const Fish = require("../models/Fish");
 const FishIndex = require('../models/FishIndex');
 const Err = require("../utils/errorHandling");
+const { createLogger } = require('vite');
 
+
+const getFishByIndexAndLetter = async (req, res) => {
+  try {
+    const { index, letter } = req.query;
+
+    if (!index || !letter) {
+      return res.status(400).json({ success: false, message: 'Index and letter are required.' });
+    }
+
+    // Find fish that match the index and start with the given letter
+    const fish = await Fish.find({
+      fishIndices: index,
+      name: { $regex: `^${letter}`, $options: 'i' }  // Case-insensitive match
+    });
+
+    if (fish.length === 0) {
+      return res.status(404).json({ success: false, message: 'No fish found for this index and letter.' });
+    }
+
+    return res.status(200).json({ success: true, data: fish });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
+  }
+};
 
 const getRandomFish = async (req, res) => {
   try {
@@ -29,21 +54,22 @@ const getRandomFish = async (req, res) => {
 const getFishById = async (req, res) => {
   try {
     const { id } = req.params;
-    const { lang } = req.body;
+    // const { lang } = req.body;
 
-    const allowedLanguages = ['en', 'he', 'ru'];
-    if (!allowedLanguages.includes(lang)) {
-      return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
-    }
+    // const allowedLanguages = ['en', 'he', 'ru'];
+    // if (!allowedLanguages.includes(lang)) {
+    //   return res.status(400).json({ success: false, message: `Invalid language requested. Allowed languages are: ${allowedLanguages.join(', ')}.` });
+    // }
 
-    const projection = {};
-    allowedLanguages.forEach(language => {
-      if (language !== lang) {
-        projection[`languages.${language}`] = 0;
-      }
-    });
-
-    const fish = await Fish.findById(id, projection);
+    // const projection = {};
+    // allowedLanguages.forEach(language => {
+    //   if (language !== lang) {
+    //     projection[`languages.${language}`] = 0;
+    //   }
+    // });
+    console.log("Fish id");
+    
+    const fish = await Fish.findById(id);
     if (fish) {
       return res.status(200).json({ success: true, data: fish });
     }
@@ -228,6 +254,7 @@ const toggleFishLike = async (req, res) => {
 
 
 module.exports = {
+  getFishByIndexAndLetter,
   getRandomFish,
   getFishById,
   getFishImage,

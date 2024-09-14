@@ -125,11 +125,10 @@ export default function FishIndexes() {
       {/* Fish Index Buttons */}
       {!loading && !error && fishIndexData && (
         <div
-          className={`w-full ${
-            selectedIndex
+          className={`w-full ${selectedIndex
               ? 'flex flex-row flex-wrap gap-2 pb-2 justify-center'
               : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4'
-          }`}
+            }`}
         >
           {fishIndexData.map((index) => {
             const isSelected = selectedIndex && selectedIndex._id === index._id;
@@ -139,15 +138,14 @@ export default function FishIndexes() {
               currentLang === 'en'
                 ? index.english
                 : currentLang === 'he'
-                ? index.hebrew
-                : index.russian;
+                  ? index.hebrew
+                  : index.russian;
 
             return (
               <button
                 key={index._id}
-                className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${
-                  isSelected ? 'text-white' : 'text-gray-800 dark:text-white'
-                }`}
+                className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${isSelected ? 'text-white' : 'text-gray-800 dark:text-white'
+                  }`}
                 onClick={() => {
                   handleIndexClick(index);
                 }}
@@ -196,17 +194,18 @@ export default function FishIndexes() {
         <p>{`${t('FishPage.letterEmpty')} '${selectedLetter}'.`}</p>
       )}
 
+      {/* Prompt to Select a Letter */}
+      {!selectedLetter && !loading && !error && selectedIndex && (
+        <h1 className="my-4 text-3xl font-extrabold text-center text-blue-600 dark:text-blue-400">
+          {t('FishPage.selectLetter')}
+        </h1>
+      )}
+
       {/* Display FishIndexCard */}
       {selectedIndex && !selectedLetter && (
         <FishIndexCard fishIndexKey={selectedIndex.english} />
       )}
 
-      {/* Prompt to Select a Letter */}
-      {!selectedLetter && !loading && !error && selectedIndex && (
-        <h1 className="mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400">
-          {t('FishPage.selectLetter')}
-        </h1>
-      )}
     </div>
   );
 }
