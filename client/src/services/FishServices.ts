@@ -150,3 +150,68 @@ export const doDeleteFish = async (fishId: string): Promise<{ error: string | nu
   }
 };
 
+// ---------------------------------------------------------------------------------------------------------
+export const doToggleFishLike = async (fishId: string): Promise<{ error: string | null }> => {
+  const token = await getToken();
+  if (!token) {
+    return { error: 'Authentication required. No token found.' };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/fish/${fishId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      return { error: data.message || 'Failed to toggle fish like' };
+    }
+
+    return { error: null };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: errMessage };
+  }
+};
+
+// ---------------------------------------------------------------------------------------------------------
+export const doSubmitFishReport = async (
+  fishId: string,
+  reason: string,
+  message: string
+): Promise<{ error: string | null }> => {
+  const token = await getToken();
+  if (!token) {
+    return { error: `Can't read token from local storage` };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/reports`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+      body: JSON.stringify({
+        fishId,
+        reason,
+        message,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return { error: data.message || 'Report submission failed' };
+    }
+
+    return { error: null };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: `Error submitting report (${errMessage})` };
+  }
+};

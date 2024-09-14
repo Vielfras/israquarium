@@ -1,5 +1,14 @@
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { apiBase } from "../../../config";
 import { IFish } from "../../../interfaces/IFish";
 import { useTranslation } from 'react-i18next';
+import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
+import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
+import { doDeleteFish, doSubmitFishReport, doToggleFishLike } from '../../../services/FishServices';  // Assuming similar services exist for fish
+import Modal from '../../Misc/Modal/Modal';
+import ReportingModal from '../../Misc/Modal/ReportingModal';
+import { AuthContext } from '../../../context/AuthContext';
 
 interface IFishCard {
   fishData: IFish;
@@ -7,8 +16,74 @@ interface IFishCard {
 
 export default function FishCard({ fishData }: IFishCard) {
   const { t, i18n } = useTranslation();
-
   const langData = fishData.languages[i18n.language as keyof typeof fishData.languages];
+  const navigate = useNavigate();
+  const auth = useContext(AuthContext);
+
+  const [isFavorited, setIsFavorited] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showReportingModal, setShowReportingModal] = useState(false);
+
+  // Check if the fish is already favorited by the user
+  useEffect(() => {
+    if (auth?.userDetails && fishData.likes.includes(auth?.userDetails._id)) {
+      setIsFavorited(true);  // If the user's ID is in the likes array, set the fish as favorited
+    }
+  }, [auth, fishData.likes]);
+
+  const handleEdit = () => {
+    navigate(`/edit-fish/${fishData._id}`);
+  };
+
+  const handleDelete = async () => {
+    setShowDeleteModal(true);
+  };
+
+  const confirmDelete = async () => {
+    const { error } = await doDeleteFish(fishData._id);
+
+    if (error) {
+      alert(t('FishCard.deleteFailure'));
+    } else {
+      alert(t('FishCard.deleteSuccess'));
+      navigate('/fish');
+    }
+
+    setShowDeleteModal(false);
+  };
+
+  const cancelDelete = () => {
+    setShowDeleteModal(false);
+  };
+
+  const handleReport = () => {
+    setShowReportingModal(true);
+  };
+
+  const handleReportConfirm = async (reason: string, message: string) => {
+    const { error } = await doSubmitFishReport(fishData._id, reason, message);
+
+    if (error) {
+      alert(t('FishCard.reportFailure'));
+    } else {
+      alert(t('FishCard.reportSuccess'));
+    }
+
+    setShowReportingModal(false);
+  };
+
+  const handleReportCancel = () => {
+    setShowReportingModal(false);
+  };
+
+  const handleFavoriteToggle = async (favorited: boolean) => {
+    const { error } = await doToggleFishLike(fishData._id);
+    if (error) {
+      alert(`${t('FishCard.favoriteError')}\n${error}`);
+    } else {
+      setIsFavorited(favorited);
+    }
+  };
 
   const details = [
     { label: t('FishCard.subclass'), value: langData.subclass },
@@ -39,16 +114,26 @@ export default function FishCard({ fishData }: IFishCard) {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-bold text-center text-blue-900 mb-4">{fishData.name}</h1>
+    <div className="relative max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
+      <div className="flex justify-between items-center mb-4">
+        {/* Favorite icon - Toggled based on the state */}
+        <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
+
+        <h1 className="text-3xl font-bold text-center text-blue-900 mx-auto">
+          {fishData.name}
+        </h1>
+
+        {/* Kebab Menu for Edit/Delete/Report */}
+        <KebabMenu onEdit={handleEdit} onDelete={handleDelete} onReport={handleReport} />
+      </div>
 
       {/* Image Section */}
       <div className="grid grid-cols-2 gap-4">
         {fishData.images.map((image, index) => (
           <div key={index} className="flex justify-center">
-            <a href={`http://127.0.0.1:3000/api/fish/image/${fishData._id}/${image.src}`} target="_blank" rel="noopener noreferrer">
+            <a href={`${apiBase}/api/fish/image/${fishData._id}/${image.src}`} target="_blank" rel="noopener noreferrer">
               <img
-                src={`http://127.0.0.1:3000/api/fish/image/${fishData._id}/${image.src}`}
+                src={`${apiBase}/api/fish/image/${fishData._id}/${image.src}`}
                 alt={image.alt}
                 className="w-full h-48 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
               />
@@ -66,12 +151,31 @@ export default function FishCard({ fishData }: IFishCard) {
         <tbody>
           {details.map((detail, index) => (
             <tr key={index} className={`${index % 2 !== 0 ? 'bg-blue-50' : 'bg-blue-100'}`}>
-              <td className="px-3  pr-0 py-2 font-semibold text-blue-900 ">{detail.label}</td>
+              <td className="px-3 pr-0 py-2 font-semibold text-blue-900">{detail.label}</td>
               <td className="px-2 pl-0 text-stone-800">{detail.value}</td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && (
+        <Modal
+          title={t('FishCard.deleteConfirmation')}
+          message={t('FishCard.deleteWarning')}
+          confirmText={t('FishCard.confirmDelete')}
+          cancelText={t('FishCard.cancelDelete')}
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
+        />
+      )}
+
+      {/* Reporting Modal */}
+      <ReportingModal
+        onConfirm={handleReportConfirm}
+        onCancel={handleReportCancel}
+        show={showReportingModal}
+      />
     </div>
   );
 }

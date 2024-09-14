@@ -45,6 +45,7 @@ export interface IFish {
     he: ILanguage;
     ru: ILanguage;
   };
+  likes: string[];
 }
 
 export interface IFishIndex {
