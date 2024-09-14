@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import FishIndexCard from '../../components/Fish/FishIndexCard/FishIndexCard';
+import { doGetFishByIndexAndLetter } from '../../services/FishServices';
 
 const apiFishCall = `${apiBase}/api/fish`;
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
@@ -68,9 +69,11 @@ export default function FishIndexes() {
     setSelectedIndex(index);
     setSelectedLetter(null);
     setExpandedFishId(null);
-    navigate(`/fish-index/${encodeURIComponent(
-      currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian
-    )}`);
+    navigate(
+      `/fish-index/${encodeURIComponent(
+        currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian
+      )}`
+    );
   };
 
   const handleLetterClick = (letter: string) => {
@@ -79,7 +82,7 @@ export default function FishIndexes() {
   };
 
   const handleFishCardClick = (fishId: string) => {
-    setExpandedFishId(fishId === expandedFishId ? null : fishId);
+    setExpandedFishId(fishId);
   };
 
   useEffect(() => {
@@ -91,13 +94,17 @@ export default function FishIndexes() {
       setFishData([]);
 
       try {
-        const response = await fetch(`${apiFishCall}?index=${selectedIndex._id}&letter=${selectedLetter}`);
-        if (!response.ok) {
-          throw new Error(t('FishPage.errorFetchingData'));
+        const { error: fetchError, result } = await doGetFishByIndexAndLetter(
+          selectedIndex._id,
+          selectedLetter
+        );
+
+        if (fetchError) {
+          throw new Error(fetchError);
         }
-        const data = await response.json();
-        if (data.data && data.data.length > 0) {
-          setFishData(data.data);
+
+        if (result && result.length > 0) {
+          setFishData(result);
         } else {
           setError(`${t('FishPage.letterEmpty')} '${selectedLetter}'.`);
         }
@@ -116,19 +123,16 @@ export default function FishIndexes() {
     <div className="flex flex-col items-center">
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
 
-      {error && (
-        <div className="text-red-500">
-          {error}
-        </div>
-      )}
+      {error && <div className="text-red-500">{error}</div>}
 
       {/* Fish Index Buttons */}
       {!loading && !error && fishIndexData && (
         <div
-          className={`w-full ${selectedIndex
+          className={`w-full ${
+            selectedIndex
               ? 'flex flex-row flex-wrap gap-2 pb-2 justify-center'
               : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4'
-            }`}
+          }`}
         >
           {fishIndexData.map((index) => {
             const isSelected = selectedIndex && selectedIndex._id === index._id;
@@ -138,22 +142,21 @@ export default function FishIndexes() {
               currentLang === 'en'
                 ? index.english
                 : currentLang === 'he'
-                  ? index.hebrew
-                  : index.russian;
+                ? index.hebrew
+                : index.russian;
 
             return (
               <button
                 key={index._id}
-                className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${isSelected ? 'text-white' : 'text-gray-800 dark:text-white'
-                  }`}
+                className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${
+                  isSelected ? 'text-white' : 'text-gray-800 dark:text-white'
+                }`}
                 onClick={() => {
                   handleIndexClick(index);
                 }}
               >
                 <FishIndex fishIndex={index} size={imageSize} />
-                <div className="text-center mt-1 text-sm">
-                  {displayName}
-                </div>
+                <div className="text-center mt-1 text-sm">{displayName}</div>
               </button>
             );
           })}
@@ -167,26 +170,29 @@ export default function FishIndexes() {
 
       {/* Loading and Error Handling */}
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
-      {error && (
-        <div className="text-red-500">
-          {error}
-        </div>
-      )}
+      {error && <div className="text-red-500">{error}</div>}
 
-      {/* Mini Fish Cards */}
+      {/* Fish Card or Mini Fish Cards */}
       {!loading && selectedLetter && fishData && fishData.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-          {fishData.map((fish) => (
-            <div key={fish._id}>
-              <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
-              {expandedFishId === fish._id && (
-                <DirectionProvider>
-                  <FishCard fishData={fish} />
-                </DirectionProvider>
-              )}
-            </div>
-          ))}
-        </div>
+        expandedFishId ? (
+          // Display only the FishCard of the selected fish
+          <>
+            {fishData.find(fish => fish._id === expandedFishId) && (
+              <DirectionProvider>
+                <FishCard fishData={fishData.find(fish => fish._id === expandedFishId)} />
+              </DirectionProvider>
+            )}
+          </>
+        ) : (
+          // Display the grid of FishMiniCards
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+            {fishData.map((fish) => (
+              <div key={fish._id}>
+                <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
+              </div>
+            ))}
+          </div>
+        )
       )}
 
       {/* No Fish Data Message */}
@@ -202,10 +208,7 @@ export default function FishIndexes() {
       )}
 
       {/* Display FishIndexCard */}
-      {selectedIndex && !selectedLetter && (
-        <FishIndexCard fishIndexKey={selectedIndex.english} />
-      )}
-
+      {selectedIndex && !selectedLetter && <FishIndexCard fishIndexKey={selectedIndex.english} />}
     </div>
   );
 }
