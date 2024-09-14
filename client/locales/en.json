@@ -57,7 +57,7 @@
     "favoriteError": "Fish unreachable."
   },
   "CreateFish": {
-    "submitFishTitle": "Submit a New Fish",
+    "submitFishTitle": "New Fish",
     "fishNameLabel": "Fish Name",
     "fishNamePlaceholder": "Enter the common name of the fish",
     "latinNameLabel": "Latin Name",
@@ -196,7 +196,7 @@
     "submit": "Submit"
   },
     "CreatePlant": {
-    "submitPlantTitle": "Submit a New Plant",
+    "submitPlantTitle": "New Plant",
     "plantNameLabel": "Plant Name",
     "plantNamePlaceholder": "Enter the common name of the plant",
     "latinNameLabel": "Latin Name",

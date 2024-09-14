@@ -57,7 +57,7 @@
     "favoriteError": "לא ניתן להגיע לדג."
   },
   "CreateFish": {
-    "submitFishTitle": "הוסף דג חדש",
+    "submitFishTitle": "דג חדש",
     "fishNameLabel": "שם הדג",
     "fishNamePlaceholder": "הכנס את השם הנפוץ של הדג",
     "latinNameLabel": "שם לטיני",

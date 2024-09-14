@@ -11,14 +11,11 @@ interface IFormField {
   regex?: RegExp;
   validationMessage?: string;
   isValid?: boolean;
-  isLtrRtlResponsive?: boolean; // New prop
+  isLtrRtlResponsive?: boolean; 
 }
 
 // TODO - Rename to ValidatingFormField
-export default function FormField({
-  isLtrRtlResponsive = true, // Default value set to true
-  ...formData
-}: IFormField) {
+export default function FormField({ isLtrRtlResponsive = true, ...formData}: IFormField) {
   const [isValid, setIsValid] = useState(true);
 
   const handleValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,18 +27,12 @@ export default function FormField({
 
   const formContent = (
     <>
-      <label
-        htmlFor={formData.controlId}
-        className="block text-sm font-medium text-gray-900 dark:text-gray-50"
-      >
+      <label htmlFor={formData.controlId}
+        className="block text-sm font-medium text-gray-900 dark:text-gray-50">
         {formData.label}
       </label>
-      <input
-        name={formData.controlId}
-        id={formData.controlId}
-        type={formData.type}
-        placeholder={formData.placeholder}
-        value={formData.value}
+      <input name={formData.controlId} id={formData.controlId} type={formData.type}
+        placeholder={formData.placeholder} value={formData.value}
         onChange={handleValidation}
         className={`mt-1 block w-full px-3 py-2 border text-gray-900 ${
           isValid ? "border-gray-300" : "border-red-500 text-red-900"

@@ -124,8 +124,7 @@ export default function CreateFish() {
     e.preventDefault();
     setIsBusy(true);
 
-    // Basic validation before submission
-    if (!name || !latinName || !sources || !tankVolume) {
+    if (!name) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), t('CreateFish.errorMessage'), 'danger');
       setIsBusy(false);
       return;
@@ -149,8 +148,7 @@ export default function CreateFish() {
       likes: [],
     };
 
-    // Mocking an API call here, replace with actual call
-    const error = null; // Replace with actual error handling
+    const error = null; // TODO - Replace with actual error handling
     if (error) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), error, 'danger');
     } else {
@@ -167,16 +165,14 @@ export default function CreateFish() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
+      <div className="bg-blue-50 dark:bg-sky-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('CreateFish.submitFishTitle')}</h3>
 
         <DirectionProvider>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridFishName"
-                type="text"
+              <FormField controlId="formGridFishName" type="text"
                 label={t('CreateFish.fishNameLabel')}
                 placeholder={t('CreateFish.fishNamePlaceholder')}
                 value={name}
@@ -185,9 +181,7 @@ export default function CreateFish() {
                 isValid={nameRegex.test(name)}
                 validationMessage={t('CreateFish.validation.fishName')}
               />
-              <FormField
-                controlId="formGridLatinName"
-                type="text"
+              <FormField controlId="formGridLatinName" type="text"
                 label={t('CreateFish.latinNameLabel')}
                 placeholder={t('CreateFish.latinNamePlaceholder')}
                 value={latinName}
@@ -200,17 +194,13 @@ export default function CreateFish() {
 
             {/* Additional General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridFirstDescription"
-                type="text"
+              <FormField controlId="formGridFirstDescription" type="text"
                 label={t('CreateFish.firstDescriptionLabel')}
                 placeholder={t('CreateFish.firstDescriptionPlaceholder')}
                 value={firstDescription}
                 onChange={(e) => setFirstDescription(e.target.value)}
               />
-              <FormField
-                controlId="formGridTribe"
-                type="text"
+              <FormField controlId="formGridTribe" type="text"
                 label={t('CreateFish.tribeLabel')}
                 placeholder={t('CreateFish.tribePlaceholder')}
                 value={tribe}
@@ -220,9 +210,7 @@ export default function CreateFish() {
 
             {/* Tank Volume and Fish Size */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridTankVolume"
-                type="text"
+              <FormField controlId="formGridTankVolume" type="text"
                 label={t('CreateFish.tankVolumeLabel')}
                 placeholder={t('CreateFish.tankVolumePlaceholder')}
                 value={tankVolume}
@@ -231,9 +219,7 @@ export default function CreateFish() {
                 isValid={numberRegex.test(tankVolume)}
                 validationMessage={t('CreateFish.validation.tankVolume')}
               />
-              <FormField
-                controlId="formGridFishSize"
-                type="text"
+              <FormField controlId="formGridFishSize" type="text"
                 label={t('CreateFish.fishSizeLabel')}
                 placeholder={t('CreateFish.fishSizePlaceholder')}
                 value={fishSize}
@@ -243,9 +229,7 @@ export default function CreateFish() {
 
             {/* Max/Min Temp, PH, and dGH */}
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
-              <FormField
-                controlId="formGridMaxTemp"
-                type="text"
+              <FormField controlId="formGridMaxTemp" type="text"
                 label={t('CreateFish.maxTempLabel')}
                 placeholder={t('CreateFish.maxTempPlaceholder')}
                 value={maxTemp}
@@ -254,9 +238,7 @@ export default function CreateFish() {
                 isValid={numberRegex.test(maxTemp)}
                 validationMessage={t('CreateFish.validation.maxTemp')}
               />
-              <FormField
-                controlId="formGridMinTemp"
-                type="text"
+              <FormField controlId="formGridMinTemp" type="text"
                 label={t('CreateFish.minTempLabel')}
                 placeholder={t('CreateFish.minTempPlaceholder')}
                 value={minTemp}
@@ -265,9 +247,7 @@ export default function CreateFish() {
                 isValid={numberRegex.test(minTemp)}
                 validationMessage={t('CreateFish.validation.minTemp')}
               />
-              <FormField
-                controlId="formGridPH"
-                type="text"
+              <FormField controlId="formGridPH" type="text"
                 label={t('CreateFish.phLabel')}
                 placeholder={t('CreateFish.phPlaceholder')}
                 value={ph}
@@ -276,9 +256,7 @@ export default function CreateFish() {
                 isValid={numberRegex.test(ph)}
                 validationMessage={t('CreateFish.validation.ph')}
               />
-              <FormField
-                controlId="formGriddGH"
-                type="text"
+              <FormField controlId="formGriddGH" type="text"
                 label={t('CreateFish.dGHLabel')}
                 placeholder={t('CreateFish.dGHPlaceholder')}
                 value={dGH}
@@ -294,12 +272,11 @@ export default function CreateFish() {
               <div className="flex my-4 mt-12 space-x-4 justify-center">
                 {(['en', 'he', 'ru'] as LanguageCode[]).map((lang) => (
                   <button
-                    key={lang}
-                    type="button"
+                    key={lang} type="button"
                     className={`px-4 py-2 rounded-lg transition ${
                       activeLangTab === lang
-                        ? 'bg-blue-600 text-white shadow-lg'
-                        : 'bg-gray-200 text-blue-900 hover:bg-gray-300'
+                        ? 'bg-blue-600 text-white font-bold shadow-lg'
+                        : 'bg-gray-50 text-blue-900 hover:bg-blue-100'
                     }`}
                     onClick={() => setActiveLangTab(lang)}
                   >
@@ -317,14 +294,12 @@ export default function CreateFish() {
                     'sexualDimorphism', 'breeding', 'additionalInformation',
                   ] as const
                 ).map((field) => (
-                    <FormField
-                      controlId={`formGrid${field}`}
-                      isLtrRtlResponsive={false}
-                      type="text"
-                      label={localT(`CreateFish.${field}Label`)}
-                      placeholder={localT(`CreateFish.${field}Placeholder`)}
-                      value={languageData[activeLangTab][field]}
-                      onChange={(e) => handleLanguageChange(field, e.target.value)}
+                    <FormField controlId={`formGrid${field}`} type="text"
+                    label={localT(`CreateFish.${field}Label`)}
+                    placeholder={localT(`CreateFish.${field}Placeholder`)}
+                    value={languageData[activeLangTab][field]}
+                    onChange={(e) => handleLanguageChange(field, e.target.value)}
+                    isLtrRtlResponsive={false} 
                     />
                 ))}
               </div>

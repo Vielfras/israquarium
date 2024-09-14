@@ -129,7 +129,7 @@ export default function CreatePlant() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
+      <div className="text-emerald-900 dark:text-green-50 bg-green-50 dark:bg-emerald-900 p-8 rounded-lg">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('CreatePlant.submitPlantTitle')}</h3>
 
         <DirectionProvider>
@@ -257,12 +257,10 @@ export default function CreatePlant() {
             <div className="mt-8">
               <div className="flex my-4 mt-12 space-x-4 justify-center">
                 {(['en', 'he', 'ru'] as LanguageCode[]).map((lang) => (
-                  <button
-                    key={lang}
-                    type="button"
+                  <button key={lang} type="button"
                     className={`px-4 py-2 rounded-lg transition ${activeLangTab === lang
-                      ? 'bg-green-600 text-white shadow-lg'
-                      : 'bg-gray-200 text-green-900 hover:bg-gray-300'
+                      ? 'dark:bg-green-400 bg-green-600 text-white dark:text-emerald-900 font-bold shadow-lg'
+                      : 'bg-gray-200 text-green-900 hover:bg-green-200'
                       }`}
                     onClick={() => setActiveLangTab(lang)}
                   >
