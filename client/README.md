@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-- [ ] When token runs out and auth fails, need to notifu user and handle problem
+- [ ] When token runs out and auth fails, need to notify user and handle problem
 
 
 ## Version 0.2.0 - Visuals
@@ -21,7 +21,7 @@
     - [X] Home 
     - [X] Registration
     - [X] Login
-    - [ ] Admin 
+    - [X] Admin 
     - [X] User
     - [X] Logout
     - [X] Shops 
@@ -32,7 +32,7 @@
     - [X] Create Fish
     - [X] Create Plant
     - [X] Create shop
-    - [ ] Edit Fish 
+    - [X] Edit Fish 
     - [X] Edit Plant
     - [ ] Edit Shop
     - [X] Publications
@@ -50,25 +50,26 @@
     - [X] Login/Logout
     - [X] Registration
     - [X] User Profile when logged in
+- [ ] Watchdog for sighout on inactivity.
 - [ ] Toggle likes:
-    - [ ] Plants
-    - [ ] Fish
+    - [X] Plants
+    - [X] Fish
     - [ ] Shops
-- [ ] Services.ts
+- [X] Services.ts
     - [X] FishService.ts
     - [X] PlantServices.ts
     - [X] BusinessCardServices.ts
 - [ ] Dispaly Data:
     - [X] FishIndices
-    - [ ] Fish
+    - [X] Fish
     - [X] Plant
     - [ ] Shop
 - [ ] Create Data:
-    - [ ] Fish
-    - [ ] Plant
+    - [X] Fish
+    - [X] Plant
     - [ ] Shop
 - [ ] Edit Data:
-    - [ ] Fish
+    - [X] Fish
     - [X] Plant
     - [ ] Shop
 - [ ] Improve the error shown when content from server is loading or inaccecible:

@@ -12,22 +12,23 @@ This project involves developing a web application with both client-side and ser
 - [X] **Use React** for building the client-side application.
 - [X] Ensure the site is responsive and adapts to various screen sizes.
 - [ ] Clean and well-organized code: remove `console.log` statements and other commented-out code snippets.
-- [ ] Adhere to coding conventions and ensure your code is readable and maintainable.
-- [ ] Design is a crucial aspect: maintain a clean and attractive design that works across different devices.
+- [X] Adhere to coding conventions and ensure your code is readable and maintainable.
+- [X] Design is a crucial aspect: maintain a clean and attractive design that works across different devices.
 
 ### Specific Requirements
 1. **Main Page**
-   - [ ] Create a main content display page for viewing fish data.
-   - [ ] Include a responsive design using a library like Bootstrap or Material Design.
-   - [ ] Display a list or gallery of fish with images and basic details.
+   - [X] Create a main content display page for viewing fish data.
+   - [X] Include a responsive design using a library like Bootstrap or Material Design.
+      - I chose to go with Tailwind.
+   - [X] Display a list or gallery of fish and plants with images and basic details.
 
 2. **Login System**
-   - [ ] Implement a login page with access to the site management interface.
-   - [ ] Use strong password policies and validation using regex.
+   - [X] Implement a login page with access to the site management interface.
+   - [X] Use strong password policies and validation using regex.
 
 3. **Content Management**
-   - [ ] Allow adding, editing, and deleting fish data through an admin interface.
-   - [ ] Ensure content is stored on the server.
+   - [X] Allow adding, editing, and deleting fish/plant data through an admin interface.
+   - [X] Ensure content is stored on the server.
    - [ ] Allow fish shops to add their business cards, including contact details and a brief description.
 
 4. **Navigation**
@@ -35,15 +36,15 @@ This project involves developing a web application with both client-side and ser
    - [X] Include a footer with logo, copyright, contact methods, and social media links.
 
 5. **Accessibility and SEO**
-   - [ ] Include `alt` attributes for all images.
-   - [ ] Use meaningful `title` tags.
+   - [X] Include `alt` attributes for all images.
+   - [X] Use meaningful `title` tags.
 
 6. **Forms and Validation**
-   - [ ] Ensure consistency in form design and include visual feedback for validation errors.
-   - [ ] Enable form submission only when all required fields are filled out.
+   - [X] Ensure consistency in form design and include visual feedback for validation errors.
+   - [X] Enable form submission only when all required fields are filled out.
 
 7. **User Profile and Preferences**
-   - [ ] Allow users to mark fish data as favorites and maintain these preferences across sessions and devices.
+   - [X] Allow users to mark fish data as favorites and maintain these preferences across sessions and devices.
    - [ ] Provide a profile page where users can update their details and upload a profile picture.
 
 8. **Business Card Management**
@@ -70,7 +71,7 @@ This project involves developing a web application with both client-side and ser
 ### Specific Requirements
 1. **Setup**
    - [X] Include `nodemon` in `devDependencies` and set up a `package.json` file with a `main` entry point.
-   - [ ] Ensure proper folder structure with separate modules for routes, models, and controllers.
+   - [X] Ensure proper folder structure with separate modules for routes, models, and controllers.
 
 2. **API Development**
    - [X] Develop a RESTful API for handling CRUD operations.
@@ -78,7 +79,7 @@ This project involves developing a web application with both client-side and ser
 
 3. **Authentication and Authorization**
    - [X] Implement authentication to verify user identity.
-   - [ ] Ensure that only admin users can add, edit, or delete content.
+   - [X] Ensure that only admin users can add, edit, or delete content.
 
 4. **Database Management**
    - [X] Store application data in MongoDB.
