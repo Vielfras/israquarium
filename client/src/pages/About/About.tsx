@@ -7,11 +7,11 @@ export default function About() {
   return (
     <div className="flex justify-center items-center py-4">
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-4xl w-full">
-        <h1 className="text-5xl font-extrabold text-center text-blue-600 dark:text-blue-400 mb-8">
-          {t('AboutPage.title')}
-        </h1>
-
         <DirectionProvider>
+          <h1 className="text-5xl font-extrabold text-center text-blue-600 dark:text-blue-400 mb-8">
+            {t('AboutPage.title')}
+          </h1>
+
           <div className="space-y-8">
             <section>
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
