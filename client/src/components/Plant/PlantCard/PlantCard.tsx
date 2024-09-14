@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiBase } from "../../../config";
 import { DirectionProvider } from "../../../context/ReadingDirectionContext";
@@ -6,9 +6,10 @@ import { IPlant } from "../../../interfaces/IPlant";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
-import { doDeletePlant, doSubmitPlantReport } from '../../../services/PlantServices';
+import { doDeletePlant, doSubmitPlantReport, togglePlantLike } from '../../../services/PlantServices';
 import Modal from '../../Misc/Modal/Modal';
 import ReportingModal from '../../Misc/Modal/ReportingModal';
+import { AuthContext } from '../../../context/AuthContext';
 
 interface IPlantCard {
   plantData: IPlant;
@@ -22,9 +23,18 @@ export default function PlantCard({ plantData }: IPlantCard) {
   const langData = plantData.languages[language];
   const navigate = useNavigate();
 
+  const auth = useContext(AuthContext);
   const [isFavorited, setIsFavorited] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showReportingModal, setShowReportingModal] = useState(false);
+
+
+  useEffect(() => {
+    if (auth?.userDetails && plantData.likes.includes(auth?.userDetails._id)) {
+      setIsFavorited(true);  // If the user's ID is in the likes array, set the plant as favorited
+    }
+  }, [auth, plantData.likes]);
+
 
   const handleEdit = () => {
     navigate(`/edit-plant/${plantData._id}`);
@@ -71,8 +81,13 @@ export default function PlantCard({ plantData }: IPlantCard) {
     setShowReportingModal(false);
   };
 
-  const handleFavoriteToggle = (favorited: boolean) => {
-    setIsFavorited(favorited);
+  const handleFavoriteToggle = async (favorited: boolean) => {
+    const { error } = await togglePlantLike(plantData._id);
+    if (error) {
+      alert(`${t('PlantCard.favoriteError')}\n${error}`);
+    } else {
+      setIsFavorited(favorited);
+    }
   };
 
   const details = [
@@ -97,7 +112,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   return (
     <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
-      {/* Plant Name, Heart Icon, and Kebab Menu */}
       <div className="flex justify-between items-center mb-4">
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 
@@ -108,7 +122,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
         <KebabMenu onEdit={handleEdit} onDelete={handleDelete} onReport={handleReport} />
       </div>
 
-      {/* Plant Image */}
       <div>
         {plantData.images.map((image, index) => (
           <img key={index} className="w-full rounded"
@@ -118,9 +131,8 @@ export default function PlantCard({ plantData }: IPlantCard) {
         ))}
       </div>
 
-      {/* Plant Details */}
       <DirectionProvider>
-      <table className="mt-4">
+        <table className="mt-4">
           <tbody>
             {details.map((detail, index) => (
               <tr key={index} className={index % 2 === 0 ? 'bg-green-50' : 'bg-white'}>
@@ -132,7 +144,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
         </table>
       </DirectionProvider>
 
-      {/* Delete Confirmation Modal */}
       {showDeleteModal && (
         <Modal title={t('PlantCard.deleteConfirmation')}
           message={t('PlantCard.deleteWarning')}
@@ -143,7 +154,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
         />
       )}
 
-      {/* Reporting Modal */}
       <ReportingModal
         onConfirm={handleReportConfirm}
         onCancel={handleReportCancel}

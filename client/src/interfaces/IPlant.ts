@@ -37,5 +37,5 @@ export interface IPlant {
     he: ILanguage;
     ru: ILanguage;
   };
-  plantIndices: string[];
+  likes: string[];
 }

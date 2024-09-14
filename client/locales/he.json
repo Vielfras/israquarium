@@ -80,7 +80,8 @@
     "confirmDelete": "כן, מחק",
     "cancelDelete": "בטל",
     "reportSuccess": "הדיווח נשלח בהצלחה.",
-    "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב מאוחר יותר."
+    "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב מאוחר יותר.",
+    "favoriteError": "לא ניתן להגיע לצמח."
   },
   "EditPlant": {
     "title": "ערוך צמח",

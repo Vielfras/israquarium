@@ -177,6 +177,34 @@ export const doDeletePlant = async (plantId: string): Promise<{ error: string | 
 };
 
 // ---------------------------------------------------------------------------------------------------------
+export const togglePlantLike = async (plantId: string): Promise<{ error: string | null }> => {
+  const token = await getToken();
+  if (!token) {
+    return { error: 'Authentication required. No token found.' };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/plant/${plantId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      return { error: data.message || 'Failed to toggle plant like' };
+    }
+
+    return { error: null };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: errMessage };
+  }
+};
+
+// ---------------------------------------------------------------------------------------------------------
 export const doSubmitPlantReport = async (plantId: string,
   reason: string,
   message: string

@@ -82,7 +82,8 @@
     "deleteSuccess": "Plant successfully deleted.",
     "deleteFailure": "Failed to delete the plant.",
     "reportSuccess": "Report sent successfuly.",
-    "reportFailure": "Reporting failed. Please try again later."
+    "reportFailure": "Reporting failed. Please try again later.",
+    "favoriteError": "Plant unreachable."
   },
   "EditPlant": {
     "title": "Edit Plant",
