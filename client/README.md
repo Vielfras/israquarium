@@ -4,7 +4,7 @@
 
 
 ### Bridge:
-- Move CreateFish and CreatePlant to Admin Dashboard
+- Stylise CreatePlant and CreateFish to better fit the motif of what they do.
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar

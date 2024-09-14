@@ -1,3 +1,5 @@
+// FishCard.tsx
+
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiBase } from "../../../config";
