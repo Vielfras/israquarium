@@ -25,7 +25,9 @@
     "errorFetchingIndex": "Error fetching fish indexes.",
     "errorFetchingData": "Error fetching fish data.",
     "letterEmpty": "No fish found for the letter",
-    "selectLetter": "Select a letter to see the fish in this index."
+    "selectLetter": "Select a letter to see the fish in this index.",
+    "showIndexes": "Show Indexes",
+    "hideIndexes": "Hide Indexes"
   },
   "FishCard": {
     "subclass": "Subclass",

@@ -25,7 +25,9 @@
     "errorFetchingIndex": "שגיאה בטעינת אינדקסי הדגים.",
     "errorFetchingData": "שגיאה בטעינת נתוני הדגים.",
     "letterEmpty": "לא נמצאו דגים עבור האות",
-    "selectLetter": "בחר אות כדי לראות את הדגים באינדקס זה."
+    "selectLetter": "בחר אות כדי לראות את הדגים באינדקס זה.",
+    "showIndexes": "הצג אינדקסים",
+    "hideIndexes": "הסתר אינדקסים"
   },
   "FishCard": {
     "subclass": "תת-מחלקה",
