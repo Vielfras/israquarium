@@ -33,7 +33,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   useEffect(() => {
     if (auth?.userDetails && plantData.likes.includes(auth?.userDetails._id)) {
-      setIsFavorited(true);  // If the user's ID is in the likes array, set the plant as favorited
+      setIsFavorited(true);  
     }
   }, [auth, plantData.likes]);
 
@@ -83,12 +83,12 @@ export default function PlantCard({ plantData }: IPlantCard) {
     setShowReportingModal(false);
   };
 
-  const handleFavoriteToggle = async (favorited: boolean) => {
+  const handleFavoriteToggle = async () => {
     const { error } = await doTogglePlantLike(plantData._id);
     if (error) {
       alert(`${t('PlantCard.favoriteError')}\n${error}`);
     } else {
-      setIsFavorited(favorited);
+      setIsFavorited(!isFavorited);
     }
   };
 

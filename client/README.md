@@ -4,6 +4,8 @@
 
 
 ### Bridge:
+- Add backend functionality for liking and reporting Fish
+ 
 - Move CreateFish and CreatePlant to Admin Dashboard
 
 ## Version 0.2.0 - Visuals

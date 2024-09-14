@@ -24,10 +24,9 @@ export default function FishCard({ fishData }: IFishCard) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showReportingModal, setShowReportingModal] = useState(false);
 
-  // Check if the fish is already favorited by the user
   useEffect(() => {
     if (auth?.userDetails && fishData.likes.includes(auth?.userDetails._id)) {
-      setIsFavorited(true);  // If the user's ID is in the likes array, set the fish as favorited
+      setIsFavorited(true);  
     }
   }, [auth, fishData.likes]);
 
@@ -76,12 +75,12 @@ export default function FishCard({ fishData }: IFishCard) {
     setShowReportingModal(false);
   };
 
-  const handleFavoriteToggle = async (favorited: boolean) => {
+  const handleFavoriteToggle = async () => {
     const { error } = await doToggleFishLike(fishData._id);
     if (error) {
       alert(`${t('FishCard.favoriteError')}\n${error}`);
     } else {
-      setIsFavorited(favorited);
+      setIsFavorited(!isFavorited);
     }
   };
 
@@ -116,14 +115,12 @@ export default function FishCard({ fishData }: IFishCard) {
   return (
     <div className="relative max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-4">
-        {/* Favorite icon - Toggled based on the state */}
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 
         <h1 className="text-3xl font-bold text-center text-blue-900 mx-auto">
           {fishData.name}
         </h1>
 
-        {/* Kebab Menu for Edit/Delete/Report */}
         <KebabMenu onEdit={handleEdit} onDelete={handleDelete} onReport={handleReport} />
       </div>
 

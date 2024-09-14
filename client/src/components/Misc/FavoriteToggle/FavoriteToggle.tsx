@@ -1,19 +1,11 @@
 // FavoriteToggle.tsx
 
 interface FavoriteIconProps {
-  isFavorited: boolean;        // To set initial favorite state
-  onToggle: (favorite: boolean) => void;  // Callback to notify parent of state change
+  isFavorited: boolean;       
+  onToggle: () => void; 
 }
 
 export default function FavoriteIcon({ isFavorited, onToggle }: FavoriteIconProps) {
-  // const [favorited, setFavorited] = useState(isFavorited);
-
-  // const handleToggleFavorite = () => {
-    // const newFavoritedState = !favorited;
-    // setFavorited(newFavoritedState);  // Toggle the local state
-    // onToggle(newFavoritedState);      // Notify parent of the change
-  // };
-
   return (
     <button onClick={onToggle} className="text-red-500 hover:text-red-600 transition duration-300">
       {isFavorited ? (
