@@ -192,6 +192,35 @@ const updateAPlant = async (req, res) => {
   }
 };
 
+const togglePlantLike = async (req, res) => {
+  const { id } = req.params; 
+  const userId = req.user.id; 
+
+  try {
+    const plant = await Plant.findById(id);
+    if (!plant) {
+      return res.status(404).json({ success: false, message: `Plant with id '${id}' not found.` });
+    }
+
+    const userIndex = plant.likes.indexOf(userId);
+
+    if (userIndex === -1) {
+      plant.likes.push(userId);
+    } else {
+      
+      plant.likes.splice(userIndex, 1);
+    }
+
+    await plant.save();
+
+    return res.status(200).json({
+      success: true,
+      likes: plant.likes,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: `Failed to toggle like due to: ${err.message}` });
+  }
+};
 
 
 module.exports = {
@@ -202,4 +231,5 @@ module.exports = {
   createPlant,
   deletePlant,
   updateAPlant,
+  togglePlantLike
 };

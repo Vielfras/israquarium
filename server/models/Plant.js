@@ -29,7 +29,7 @@ const plantSchema = new mongoose.Schema({
         he: languageSchema,
         ru: languageSchema,
     },
-    plantIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PlantIndex', required: true }]
+    likes: [mongoose.SchemaTypes.ObjectId],
 }, {
     timestamps: true,
 });

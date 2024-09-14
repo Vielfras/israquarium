@@ -1,3 +1,5 @@
+// FavoriteToggle.tsx
+
 import { useState } from 'react';
 
 interface FavoriteIconProps {
