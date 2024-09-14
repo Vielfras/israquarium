@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../../context/AuthContext';
 import { IUserDetails } from '../../../interfaces/IUser';
+import { Link } from 'react-router-dom';
 
 interface IUserCardProps {
     userDetails: IUserDetails;
@@ -38,13 +39,20 @@ export default function UserCard({ userDetails }: IUserCardProps) {
             </div>
 
             {/* Sign out button */}
-            <div>
+            <div className='flex gap-8 justify-center'>
                 <button type="button" className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500"
-                    onClick={handleSignOut}
-                >
+                    onClick={handleSignOut}>
                     {t('UserProfile.signOut')}
                 </button>
+
+                {auth?.userDetails?.isAdmin && (
+                    <Link to="admin-profile" type="button" className="bg-blue-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-red-500"
+                        onClick={handleSignOut}>
+                        {t('UserProfile.adminDashboard')}
+                    </Link>
+                )}
             </div>
+
         </div>
     );
 }

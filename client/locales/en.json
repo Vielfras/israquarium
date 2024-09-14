@@ -188,6 +188,8 @@
   },
   "AdminProfile": {
     "title": "Admin Profile",
+    "signInRequired" : "Only Administrators can view this page.",
+    "signIn" : "Sign-in",
     "websiteStats": "Website Statistics",
     "totalUsers": "Total Users",
     "totalFish": "Total Fish",
@@ -208,6 +210,7 @@
     "email": "Email",
     "name": "Name",
     "phone": "Phone",
+    "adminDashboard" : "Dashboard",
     "signOut": "Sign Out",
     "signInRequired": "You have to be signed-in as a User, Business, or Admin to view this page!",
     "signIn": "Sign-in",

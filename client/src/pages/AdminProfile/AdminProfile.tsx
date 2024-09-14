@@ -39,16 +39,6 @@ export default function AdminProfile() {
     }
   };
 
-  // Ensure only admins can access this page
-  if (!auth?.userDetails?.isAdmin) {
-    return (
-      <div className="AdminProfile Page flex justify-center">
-        <p>{t('UserProfile.signInRequired')}</p>
-        <Link to="/sign-in">{t('UserProfile.signIn')}</Link>
-      </div>
-    );
-  }
-
   return (
     <div className="AdminProfile Page flex justify-center">
       <div className="p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg text-center text-gray-700 dark:text-gray-300 mb-4">
@@ -57,9 +47,18 @@ export default function AdminProfile() {
         </h3>
 
         <DirectionProvider>
-          {/* Admin Card */}
-          <AdminCard websiteStats={websiteStats} users={users} handleSignOut={handleSignOut}
-          />
+          {auth?.userDetails?.isAdmin ? (
+            <AdminCard websiteStats={websiteStats} users={users} handleSignOut={handleSignOut} />
+          ) : (
+            <>
+              <p className="text-lg">{t('AdminProfile.signInRequired')}</p>
+              <p className="text-xl mt-8 mb-2">
+                <Link to="/sign-in" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  {t('AdminProfile.signIn')}
+                </Link>{' '}
+              </p>
+            </>
+          )}
         </DirectionProvider>
       </div>
     </div>

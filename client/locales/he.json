@@ -197,6 +197,8 @@
   },
   "AdminProfile": {
     "title": "פרופיל מנהל",
+    "signInRequired": "רק למנהלים יש גישה לדף זה.",
+    "signIn": "התחברות",
     "websiteStats": "סטטיסטיקות אתר",
     "totalUsers": "סך המשתמשים",
     "totalFish": "סך הדגים",
@@ -409,7 +411,6 @@
     "reportFailure": "שליחת הדיווח נכשלה. אנא נסה שוב.",
     "reportSuccess": "הדיווח נשלח בהצלחה. תודה על המשוב שלך."
   },
-
   "FishIndex": {
     "Corydoras": {
       "title": "קורידורס",
