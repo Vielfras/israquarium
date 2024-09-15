@@ -36,8 +36,7 @@
     - [X] Edit Plant
     - [ ] Edit Shop
     - [X] Publications
-    - [ ] Error Page
-    - [ ] Page Not found
+    - [X] Page Not found
     - [X] Favorite Icon
 
 
@@ -89,6 +88,7 @@
 - [ ] Refactor IFishImage and IPlantImage to be a single IImage interface
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
 - [ ] Add a toast for many actions.
+- [ ] Better looking fetch error instead of just "Failed to fetch" in red.
 
 --- 
 
