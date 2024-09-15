@@ -34,12 +34,12 @@ export default function NotFound() {
       const direction = randomChoice(['left', 'right'] as const);
       return {
         id: index,
-        size: randomFloat(0.8, 1.2),
-        initialX: randomInt(0, 100),
-        initialY: randomInt(10, 90),
         direction,
+        size: randomFloat(0.8, 1.2),
+        initialX: randomInt(-10, 110),
+        initialY: randomInt(10, 90),
         duration: randomFloat(15, 25),
-        delay: randomFloat(1, 5),
+        delay: randomFloat(0, 1),
       };
     });
   }, [NUM_FISH]);
@@ -71,7 +71,7 @@ export default function NotFound() {
             animationDelay: `${fish.delay}s`,
           }}
         >
-          <FishSVG className="hover:scale-110 transition-transform duration-300" />
+          <FishSVG direction={fish.direction} className="hover:scale-110" />
         </div>
       ))}
 

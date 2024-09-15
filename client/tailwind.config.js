@@ -14,11 +14,11 @@ export default {
         },
         swim: {
           '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(110%)' }, 
         },
         'swim-reverse': {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '0%': { transform: 'translateX(110%)' }, 
+          '100%': { transform: 'translateX(-110%)' }, 
         },
         bubble: {
           '0%': { transform: 'translateY(0)', opacity: 0.7 },
@@ -28,7 +28,7 @@ export default {
       animation: {
         float: 'float 3s ease-in-out infinite',
         swim: 'swim 20s linear infinite',
-        'swim-reverse': 'swim-reverse 20s linear infinite',
+              'swim-reverse': 'swim-reverse 20s linear infinite',
         bubble: 'bubble 5s linear infinite',
       },
     },

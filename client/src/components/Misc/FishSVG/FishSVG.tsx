@@ -1,8 +1,10 @@
 interface IFishSVGProps {
     className?: string;
+    direction?: 'left' | 'right'; 
 }
 
-export default function FishSVG({ className }: IFishSVGProps) {
+export default function FishSVG({ className, direction = 'right' }: IFishSVGProps) {
+    const isLeftDirection = direction === 'right';
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +13,9 @@ export default function FishSVG({ className }: IFishSVGProps) {
             width="120"
             height="60"
             aria-hidden="true"
+            style={{
+                transform: isLeftDirection ? 'scaleX(-1)' : 'none',
+            }}
         >
             {/* Fish body */}
             <ellipse cx="60" cy="30" rx="45" ry="20" fill="url(#fishBodyGradient)" stroke="#2980b9" strokeWidth="2" />
@@ -70,7 +75,7 @@ export default function FishSVG({ className }: IFishSVGProps) {
                     <stop offset="100%" style={{ stopColor: "#0288d1", stopOpacity: 1 }} />
                 </linearGradient>
 
-                <linearGradient id="finGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="finGradient" x1="0%" y1="0%" x2="100%">
                     <stop offset="0%" style={{ stopColor: "#4db6ac", stopOpacity: 1 }} />
                     <stop offset="100%" style={{ stopColor: "#00796b", stopOpacity: 1 }} />
                 </linearGradient>
