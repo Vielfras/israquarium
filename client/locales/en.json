@@ -4,6 +4,10 @@
     "ru": "Russian",
     "he": "Hebrew"
   },
+  "NotFound" : {
+    "message" : "Aquarium not found.",
+    "goHome" : "Go Home"
+  },
   "NavList": {
     "openMenu": "Open main menu",
     "home": "Home",
