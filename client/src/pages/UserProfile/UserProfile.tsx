@@ -18,8 +18,7 @@ export default function UserProfile() {
   const handleSignOut = async () => {
     if (auth) {
       await auth.signOut();
-      // Optionally navigate to sign-in page after sign out
-      navigate('/sign-in');
+      navigate('/home');
     }
   };
 

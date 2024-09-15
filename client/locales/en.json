@@ -332,6 +332,15 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone"
   },
+  "UserMenu": {
+    "defaultAltText": "User Profile",
+    "guest": "Guest",
+    "myAquarium": "My Aquarium",
+    "myProfile": "My Profile",
+    "signOut": "Sign out",
+    "signIn": "Sign In",
+    "register": "Register"
+  },
   "AdminProfile": {
     "title": "Admin Profile",
     "signInRequired": "Only Administrators can view this page.",

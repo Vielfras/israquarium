@@ -19,8 +19,8 @@ export default function UserMenu() {
 
   const handleSignOut = async () => {
     if (auth?.signOut) {
-      await auth.signOut(); 
-      closeDropdown(); 
+      await auth.signOut();
+      closeDropdown();
       window.location.reload();
     }
   };
@@ -30,10 +30,10 @@ export default function UserMenu() {
       <button type="button" onClick={toggleDropdown} id="user-menu-button"
         className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
         aria-expanded={isDropdownOpen ? "true" : "false"} aria-controls="user-dropdown">
-        <span className="sr-only">Open user menu</span>
+        <span className="sr-only">{t('UserMenu.defaultAltText')}</span>
         <img className="w-8 h-8 rounded-full"
-          src={auth?.userDetails?.image?.src || '/images/default_profile_svg.svg'} 
-          alt={auth?.userDetails?.image?.alt || t('UserProfile.defaultAltText')} />
+          src={auth?.userDetails?.image?.src || '/images/default_profile_svg.svg'}
+          alt={auth?.userDetails?.image?.alt || t('UserMenu.defaultAltText')} />
       </button>
 
       {isDropdownOpen && (
@@ -53,7 +53,7 @@ export default function UserMenu() {
               </>
             ) : (
               <span className="block text-sm text-gray-900 dark:text-white">
-                Guest
+                {t('UserMenu.guest')}
               </span>
             )}
           </div>
@@ -61,17 +61,24 @@ export default function UserMenu() {
             {auth?.userDetails ? (
               <>
                 <li>
+                  <Link to="/my-aquarium" onClick={closeDropdown}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem">
+                    {t('UserMenu.myAquarium')}
+                  </Link>
+                </li>
+                <li>
                   <Link to="/user-profile" onClick={closeDropdown}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">
-                    My Profile
+                    {t('UserMenu.myProfile')}
                   </Link>
                 </li>
                 <li>
                   <button onClick={handleSignOut}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">
-                    Sign out
+                    {t('UserMenu.signOut')}
                   </button>
                 </li>
               </>
@@ -81,14 +88,14 @@ export default function UserMenu() {
                   <Link to="/sign-in" onClick={closeDropdown}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">
-                    Sign In
+                    {t('UserMenu.signIn')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/sign-up" onClick={closeDropdown}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">
-                    Register
+                    {t('UserMenu.register')}
                   </Link>
                 </li>
               </>

@@ -329,6 +329,15 @@
     "emailLabel": "דוא\"ל",
     "phoneLabel": "טלפון"
   },
+  "UserMenu": {
+    "defaultAltText": "פרופיל משתמש",
+    "guest": "אורח",
+    "myAquarium": "האקווריום שלי",
+    "myProfile": "הפרופיל שלי",
+    "signOut": "יציאה",
+    "signIn": "התחברות",
+    "register": "הרשמה"
+  },
   "UserProfile": {
     "title": "פרופיל משתמש",
     "defaultAltText": "תמונת פרופיל משתמש ברירת מחדל",

@@ -329,6 +329,15 @@
     "emailLabel": "Электронная почта",
     "phoneLabel": "Телефон"
   },
+  "UserMenu": {
+    "defaultAltText": "Профиль пользователя",
+    "guest": "Гость",
+    "myAquarium": "Мой аквариум",
+    "myProfile": "Мой профиль",
+    "signOut": "Выйти",
+    "signIn": "Войти",
+    "register": "Регистрация"
+  },
   "UserProfile": {
     "title": "Профиль пользователя",
     "defaultAltText": "Изображение профиля пользователя по умолчанию",
