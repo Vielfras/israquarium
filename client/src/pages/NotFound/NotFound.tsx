@@ -60,8 +60,7 @@ export default function NotFound() {
 
       {/* Dynamic Fish Animations */}
       {fishData.map(fish => (
-        <div
-          key={fish.id}
+        <div key={fish.id}
           className={`absolute ${fish.direction === 'left' ? 'animate-swim' : 'animate-swim-reverse'}`}
           style={{
             left: `${fish.initialX}%`,
@@ -94,8 +93,7 @@ export default function NotFound() {
 
       {/* Dynamic Bubble Animations */}
       {bubbleData.map(bubble => (
-        <div
-          key={bubble.id}
+        <div key={bubble.id}
           className="absolute animate-bubble"
           style={{
             left: `${bubble.initialX}%`,
