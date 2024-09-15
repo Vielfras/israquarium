@@ -1,20 +1,22 @@
-// src/pages/EditUser/EditUser.tsx
+// EditUser.tsx
 
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
-import { fetchUserDetails, fetchUserById, updateUser } from '../../services/UserServices';
+import { fetchUserDetails, updateUser } from '../../services/UserServices'; 
 import { IUserDetails } from '../../interfaces/IUser';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function EditUser() {
   const { t } = useTranslation();
-  const { userId } = useParams<{ userId: string }>();
   
-  // State variables for user details
+  const auth = useContext(AuthContext);
+  const toasts = useContext(ToastsContext);
+  const navigate = useNavigate();
+
   const [firstName, setFirstName] = useState<string>('');
   const [middleName, setMiddleName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
@@ -28,57 +30,24 @@ export default function EditUser() {
   const [isBusiness, setIsBusiness] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>('');
   const [imageAlt, setImageAlt] = useState<string>('');
-  const [isAdmin, setIsAdmin] = useState<boolean>(false); // New state for isAdmin
   const [isBusy, setIsBusy] = useState<boolean>(false);
-
-  const auth = useContext(AuthContext);
-  const toasts = useContext(ToastsContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const loadUserData = async () => {
-      // Ensure the user is authenticated
       if (!auth?.userDetails) {
         toasts?.addToast('Error', t('EditUser.notAuthenticated'), t('EditUser.mustBeLoggedIn'), 'danger');
         navigate('/sign-in');
         return;
       }
 
-      let targetUserId = userId;
-
-      // If no userId is provided, default to current user
-      if (!targetUserId) {
-        targetUserId = auth.userDetails._id;
-      }
-
-      // If editing another user's profile, ensure the current user is admin
-      if (targetUserId !== auth.userDetails._id && !auth.userDetails.isAdmin) {
-        toasts?.addToast('Error', t('EditUser.permissionDenied'), t('EditUser.noPermission'), 'danger');
-        navigate(`/profile/${auth.userDetails._id}`);
-        return;
-      }
-
       try {
-        let userData: IUserDetails | undefined;
-
-        if (targetUserId === auth.userDetails._id) {
-          // Fetch current user's details
-          const { error, result } = await fetchUserDetails();
-          if (error) {
-            toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
-            return;
-          }
-          userData = result;
-        } else if (auth.userDetails.isAdmin && targetUserId) {
-          // Fetch another user's details (admin)
-          const { error, result } = await fetchUserById(targetUserId);
-          if (error) {
-            toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
-            return;
-          }
-          userData = result;
+        const { error, result } = await fetchUserDetails(); 
+        if (error) {
+          toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
+          return;
         }
 
+        const userData = result;
         if (userData) {
           setFirstName(userData.name.first);
           setMiddleName(userData.name.middle || '');
@@ -91,9 +60,8 @@ export default function EditUser() {
           setHouseNumber(userData.address.houseNumber.toString());
           setZipCode(userData.address.zip || '');
           setIsBusiness(userData.isBusiness);
-          setImageSrc(userData.image.src || '');
-          setImageAlt(userData.image.alt || 'Profile image');
-          setIsAdmin(userData.isAdmin); // Set isAdmin state
+          setImageSrc(userData.image?.src || '');
+          setImageAlt(userData.image?.alt || 'Profile image');
         }
       } catch (err) {
         const errMessage = (err as Error).message;
@@ -102,7 +70,7 @@ export default function EditUser() {
     };
 
     loadUserData();
-  }, [userId, auth, toasts, navigate, t]);
+  }, [auth, toasts, navigate, t]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -128,16 +96,15 @@ export default function EditUser() {
         zip: zipCode || '',
       },
       isBusiness,
-      // Exclude fields like password, isAdmin, createdAt, etc.
     };
 
     try {
-      const { error } = await updateUser(userId!, updatedUserData);
+      const { error } = await updateUser(auth?.userDetails?._id!, updatedUserData); 
       if (error) {
         toasts?.addToast('Error', t('EditUser.updateError'), error, 'danger');
       } else {
         toasts?.addToast('Success', t('EditUser.updateSuccessTitle'), t('EditUser.updateSuccessMessage'), 'success');
-        navigate(`/profile/${userId}`);
+        navigate("/user-profile");
       }
     } catch (err) {
       const errMessage = (err as Error).message;
@@ -146,9 +113,8 @@ export default function EditUser() {
       setIsBusy(false);
     }
   };
-
-  // Determine if the user can upgrade to business
-  const canUpgradeToBusiness = !isBusiness && !isAdmin;
+  
+  const canUpgradeToBusiness = !auth?.userDetails?.isBusiness && !auth?.userDetails?.isAdmin;
 
   return (
     <div className="flex justify-center items-center">
@@ -263,7 +229,7 @@ export default function EditUser() {
               />
             </div>
 
-            {/* Image Fields */}
+            {/* Image Fields
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FormField
                 controlId="formGridImageSrc"
@@ -281,7 +247,7 @@ export default function EditUser() {
                 value={imageAlt}
                 onChange={(e) => setImageAlt(e.target.value)}
               />
-            </div>
+            </div> */}
 
 
             {/* Upgrade to Business Checkbox */}

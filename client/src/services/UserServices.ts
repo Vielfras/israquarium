@@ -96,6 +96,10 @@ export const fetchUserDetails = async (): Promise<{ error: string | null, result
 };
 
 export const updateUser = async (userId: string, updatedData: Partial<IUserDetails>) => {
+  if (!userId || typeof userId !== 'string') {
+    return { error: 'Invalid user ID' };
+  }
+
   const token = await getToken();
   if (!token) {
     return { error: "Unauthorized" };
@@ -122,6 +126,7 @@ export const updateUser = async (userId: string, updatedData: Partial<IUserDetai
     return { error: (err as Error).message };
   }
 };
+
 
 // ADMIN ONLY - Fetch user by ID 
 export const fetchUserById = async (userId: string): Promise<{
