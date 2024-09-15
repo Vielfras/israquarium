@@ -34,6 +34,7 @@
     - [X] Create shop
     - [X] Edit Fish 
     - [X] Edit Plant
+    - [ ] Edit User
     - [ ] Edit Shop
     - [X] Publications
     - [X] Page Not found
@@ -70,6 +71,7 @@
 - [ ] Edit Data:
     - [X] Fish
     - [X] Plant
+    - [ ] User
     - [ ] Shop
 - [ ] Improve the error shown when content from server is loading or inaccecible:
     - Currently its a simple text "Error: Failed to fetch" with no CSS

@@ -39,7 +39,7 @@ export default function NotFound() {
         initialY: randomInt(10, 90),
         direction,
         duration: randomFloat(15, 25),
-        delay: randomFloat(0, 5),
+        delay: randomFloat(1, 5),
       };
     });
   }, [NUM_FISH]);
@@ -48,10 +48,10 @@ export default function NotFound() {
     return Array.from({ length: NUM_BUBBLES }, (_, index) => ({
       id: index,
       size: randomInt(5, 15),
-      initialX: randomInt(0, 100),
-      initialY: randomInt(0, 100),
+      initialX: randomInt(1, 100),
+      initialY: randomInt(1, 100),
       duration: randomFloat(4, 8),
-      delay: randomFloat(0, 8),
+      delay: randomFloat(1, 8),
     }));
   }, [NUM_BUBBLES]);
 
@@ -60,12 +60,14 @@ export default function NotFound() {
 
       {/* Dynamic Fish Animations */}
       {fishData.map(fish => (
-        <div key={fish.id} className="absolute"
+        <div
+          key={fish.id}
+          className={`absolute ${fish.direction === 'left' ? 'animate-swim' : 'animate-swim-reverse'}`}
           style={{
-            left: `${fish.direction === 'left' ? -10 : fish.initialX}%`,
+            left: `${fish.initialX}%`,
             bottom: `${fish.initialY}%`,
             transform: `scale(${fish.size})`,
-            animation: `${fish.direction === 'left' ? 'swim' : 'swim-reverse'} ${fish.duration}s linear infinite`,
+            animationDuration: `${fish.duration}s`,
             animationDelay: `${fish.delay}s`,
           }}
         >
@@ -90,10 +92,11 @@ export default function NotFound() {
         </DirectionProvider>
       </div>
 
-
       {/* Dynamic Bubble Animations */}
       {bubbleData.map(bubble => (
-        <div key={bubble.id} className="absolute"
+        <div
+          key={bubble.id}
+          className="absolute animate-bubble"
           style={{
             left: `${bubble.initialX}%`,
             bottom: `${bubble.initialY}%`,
@@ -101,7 +104,7 @@ export default function NotFound() {
             height: `${bubble.size}px`,
             backgroundColor: 'rgba(255, 255, 255, 0.6)',
             borderRadius: '50%',
-            animation: `bubble ${bubble.duration}s linear infinite`,
+            animationDuration: `${bubble.duration}s`,
             animationDelay: `${bubble.delay}s`,
           }}
         ></div>
