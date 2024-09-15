@@ -32,7 +32,7 @@
     - [X] Create Fish
     - [X] Create Plant
     - [X] Create shop
-    - [X] Edit Fish 
+    - [ ] Edit Fish 
     - [X] Edit Plant
     - [ ] Edit User
     - [ ] Edit Shop
@@ -69,7 +69,7 @@
     - [X] Plant
     - [ ] Shop
 - [ ] Edit Data:
-    - [X] Fish
+    - [ ] Fish
     - [X] Plant
     - [ ] User
     - [ ] Shop

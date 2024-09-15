@@ -26,6 +26,7 @@ import CreateFish from '../../pages/CreateFish/CreateFish'
 import Publications from '../../pages/Publications/Publications'
 import AdminProfile from '../../pages/AdminProfile/AdminProfile'
 import EditPlant from '../../pages/EditPlant/EditPlant'
+import EditUser from '../../pages/EditUser/EditUser'
 
 export default function Default() {
   return (
@@ -44,8 +45,9 @@ export default function Default() {
           
           <Route path='/sign-in' element={<SignIn/>}/>
           <Route path='/sign-up' element={<SignUp/>}/>
-          <Route path='/user-profile' element={<UserProfile/>}/>
           <Route path='/admin-profile' element={<AdminProfile/>}/>
+          <Route path='/user-profile' element={<UserProfile/>}/>
+          <Route path='/edit-profile' element={<EditUser/>}/>
 
           <Route path='/shops' element={<Shops />} />
           <Route path='/plants' element={<Plants />} />

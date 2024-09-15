@@ -94,3 +94,31 @@ export const fetchUserDetails = async (): Promise<{ error: string | null, result
     return { error: `Error fetching the user's details (${errMessage})` };
   }
 };
+
+export const updateUser = async (userId: string, updatedData: Partial<IUserDetails>) => {
+  const token = await getToken();
+  if (!token) {
+    return { error: "Unauthorized" };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/users/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+      body: JSON.stringify(updatedData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return { error: data.message || 'Failed to update user' };
+    }
+
+    return { error: null, updated: data.updated };
+  } catch (err) {
+    return { error: (err as Error).message };
+  }
+};

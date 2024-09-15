@@ -38,18 +38,25 @@ export default function UserCard({ userDetails }: IUserCardProps) {
                 />
             </div>
 
+
             {/* Sign out button */}
             <div className='flex gap-8 justify-center'>
-                <button type="button" className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700"
-                    onClick={handleSignOut}>
-                    {t('UserProfile.signOut')}
-                </button>
+
+                <Link to="/edit-profile" type="button" className="bg-blue-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-blue-700">
+                    Update Profile
+                </Link>
 
                 {auth?.userDetails?.isAdmin && (
                     <Link to="/admin-profile" type="button" className="bg-blue-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-blue-700">
                         {t('UserProfile.adminDashboard')}
                     </Link>
                 )}
+            </div>
+            <div className='mt-4'>
+                <button type="button" className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700"
+                    onClick={handleSignOut}>
+                    {t('UserProfile.signOut')}
+                </button>
             </div>
 
         </div>
