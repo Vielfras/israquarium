@@ -2,13 +2,76 @@
 
 import { useTranslation } from 'react-i18next';
 import FishSVG from '../../components/Misc/FishSVG/FishSVG';
+import UseMediaQuery from '../../hooks/UseMediaQuery';
+import { BubbleAnimation, FishAnimation } from '../../interfaces/IAnimations';
+import { useMemo } from 'react';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
+import { Link } from 'react-router-dom';
+
+function randomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomFloat(min: number, max: number): number {
+  return Math.random() * (max - min) + min;
+}
+
+function randomChoice<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
 export default function NotFound() {
   const { t } = useTranslation();
 
+  const isLargeScreen = UseMediaQuery('(min-width: 1024px)');
+  const isMediumScreen = UseMediaQuery('(min-width: 640px) and (max-width: 1023px)');
+
+  const NUM_FISH = isLargeScreen ? 6 : isMediumScreen ? 4 : 2;
+  const NUM_BUBBLES = isLargeScreen ? 25 : isMediumScreen ? 15 : 10;
+
+  const fishData: FishAnimation[] = useMemo(() => {
+    return Array.from({ length: NUM_FISH }, (_, index) => {
+      const direction = randomChoice(['left', 'right'] as const);
+      return {
+        id: index,
+        size: randomFloat(0.8, 1.2),
+        initialX: randomInt(0, 100),
+        initialY: randomInt(10, 90),
+        direction,
+        duration: randomFloat(15, 25),
+        delay: randomFloat(0, 5),
+      };
+    });
+  }, [NUM_FISH]);
+
+  const bubbleData: BubbleAnimation[] = useMemo(() => {
+    return Array.from({ length: NUM_BUBBLES }, (_, index) => ({
+      id: index,
+      size: randomInt(5, 15),
+      initialX: randomInt(0, 100),
+      initialY: randomInt(0, 100),
+      duration: randomFloat(4, 8),
+      delay: randomFloat(0, 8),
+    }));
+  }, [NUM_BUBBLES]);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden ">
+
+      {/* Dynamic Fish Animations */}
+      {fishData.map(fish => (
+        <div key={fish.id} className="absolute"
+          style={{
+            left: `${fish.direction === 'left' ? -10 : fish.initialX}%`,
+            bottom: `${fish.initialY}%`,
+            transform: `scale(${fish.size})`,
+            animation: `${fish.direction === 'left' ? 'swim' : 'swim-reverse'} ${fish.duration}s linear infinite`,
+            animationDelay: `${fish.delay}s`,
+          }}
+        >
+          <FishSVG className="hover:scale-110 transition-transform duration-300" />
+        </div>
+      ))}
 
       {/* Floating Text */}
       <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center">
@@ -16,44 +79,33 @@ export default function NotFound() {
           404
         </h1>
         <DirectionProvider>
-
           <p className="text-xl mt-4 text-gray-700 dark:text-gray-300 animate-float">
             {t('NotFound.message')}
           </p>
-          <a
-            href="/"
-            className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-colors animate-float"
+          <Link to="/"
+            className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full animate-float"
           >
             {t('NotFound.goHome')}
-          </a>
+          </Link>
         </DirectionProvider>
       </div>
 
-      {/* Swimming Fish 1 */}
-      <div className="absolute bottom-0 left-0 w-24 h-auto animate-swim">
-        <FishSVG />
-      </div>
 
-      {/* Swimming Fish 2 */}
-      <div className="absolute bottom-20 left-1/3 w-16 h-auto animate-swim-reverse">
-        <FishSVG />
-      </div>
-
-      {/* Swimming Fish 3 */}
-      <div className="absolute bottom-10 right-0 w-24 h-auto animate-swim">
-        <FishSVG />
-      </div>
-
-      {/* Swimming Fish 4 */}
-      <div className="absolute bottom-30 right-1/4 w-16 h-auto animate-swim-reverse">
-        <FishSVG />
-      </div>
-
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <div className="w-4 h-4 bg-white bg-opacity-50 rounded-full mb-2 animate-bubble"></div>
-        <div className="w-3 h-3 bg-white bg-opacity-50 rounded-full mb-2 animate-bubble delay-1s"></div>
-        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full mb-2 animate-bubble delay-2s"></div>
-      </div>
+      {/* Dynamic Bubble Animations */}
+      {bubbleData.map(bubble => (
+        <div key={bubble.id} className="absolute"
+          style={{
+            left: `${bubble.initialX}%`,
+            bottom: `${bubble.initialY}%`,
+            width: `${bubble.size}px`,
+            height: `${bubble.size}px`,
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            borderRadius: '50%',
+            animation: `bubble ${bubble.duration}s linear infinite`,
+            animationDelay: `${bubble.delay}s`,
+          }}
+        ></div>
+      ))}
     </div>
   );
 }
