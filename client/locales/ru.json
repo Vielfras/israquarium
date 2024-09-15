@@ -384,9 +384,21 @@
     "houseNumberPlaceholder": "Введите номер дома",
     "zipCodeLabel": "Почтовый индекс",
     "zipCodePlaceholder": "Введите почтовый индекс",
-    "businessSignupLabel": "Вы регистрируетесь как бизнес?",
+    "imageSrcLabel": "URL изображения профиля",
+    "imageSrcPlaceholder": "Введите URL изображения",
+    "imageAltLabel": "Описание изображения",
+    "imageAltPlaceholder": "Введите описание изображения",
+    "upgradeToBusinessLabel": "Перейти на бизнес",
     "yesLabel": "Да",
-    "submitButton": "Сохранить изменения"
+    "submitButton": "Сохранить изменения",
+    "fetchError": "Не удалось получить данные пользователя",
+    "updateError": "Не удалось обновить данные пользователя",
+    "updateSuccessTitle": "Успех",
+    "updateSuccessMessage": "Данные пользователя успешно обновлены",
+    "notAuthenticated": "Не аутентифицирован",
+    "permissionDenied": "Отказано в доступе",
+    "mustBeLoggedIn": "Вы должны войти в систему, чтобы редактировать данные пользователя.",
+    "noPermission": "У вас нет прав редактировать этого пользователя."
   },
   "SignInPage": {
     "title": "Войти",

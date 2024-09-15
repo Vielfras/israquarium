@@ -365,7 +365,7 @@
     "signUp": "Sign-up",
     "defaultAltText": "Default Image"
   },
-  "EditUser": {
+"EditUser": {
     "editUserTitle": "Edit User",
     "firstNameLabel": "First Name",
     "firstNamePlaceholder": "Enter first name",
@@ -387,9 +387,21 @@
     "houseNumberPlaceholder": "Enter house number",
     "zipCodeLabel": "Zip Code",
     "zipCodePlaceholder": "Enter zip code",
-    "businessSignupLabel": "Are you signing up as a business?",
+    "imageSrcLabel": "Profile Image URL",
+    "imageSrcPlaceholder": "Enter image URL",
+    "imageAltLabel": "Image Description",
+    "imageAltPlaceholder": "Enter image description",
+    "upgradeToBusinessLabel": "Upgrade to Business",
     "yesLabel": "Yes",
-    "submitButton": "Save Changes"
+    "submitButton": "Save Changes",
+    "fetchError": "Failed to fetch user details",
+    "updateError": "Failed to update user details",
+    "updateSuccessTitle": "Success",
+    "updateSuccessMessage": "User details updated successfully",
+    "notAuthenticated": "Not Authenticated",
+    "permissionDenied": "Permission Denied",
+    "mustBeLoggedIn": "You must be logged in to edit user details.",
+    "noPermission": "You do not have permission to edit this user."
   },
   "SignInPage": {
     "title": "Sign In",

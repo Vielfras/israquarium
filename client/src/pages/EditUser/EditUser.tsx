@@ -13,6 +13,8 @@ import { DirectionProvider } from '../../context/ReadingDirectionContext';
 export default function EditUser() {
   const { t } = useTranslation();
   const { userId } = useParams<{ userId: string }>();
+  
+  // State variables for user details
   const [firstName, setFirstName] = useState<string>('');
   const [middleName, setMiddleName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
@@ -26,6 +28,7 @@ export default function EditUser() {
   const [isBusiness, setIsBusiness] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>('');
   const [imageAlt, setImageAlt] = useState<string>('');
+  const [isAdmin, setIsAdmin] = useState<boolean>(false); // New state for isAdmin
   const [isBusy, setIsBusy] = useState<boolean>(false);
 
   const auth = useContext(AuthContext);
@@ -34,8 +37,9 @@ export default function EditUser() {
 
   useEffect(() => {
     const loadUserData = async () => {
+      // Ensure the user is authenticated
       if (!auth?.userDetails) {
-        toasts?.addToast('Error', t('EditUser.notAuthenticated'), 'You must be logged in to edit user details.', 'danger');
+        toasts?.addToast('Error', t('EditUser.notAuthenticated'), t('EditUser.mustBeLoggedIn'), 'danger');
         navigate('/sign-in');
         return;
       }
@@ -49,13 +53,14 @@ export default function EditUser() {
 
       // If editing another user's profile, ensure the current user is admin
       if (targetUserId !== auth.userDetails._id && !auth.userDetails.isAdmin) {
-        toasts?.addToast('Error', t('EditUser.permissionDenied'), 'You do not have permission to edit this user.', 'danger');
+        toasts?.addToast('Error', t('EditUser.permissionDenied'), t('EditUser.noPermission'), 'danger');
         navigate(`/profile/${auth.userDetails._id}`);
         return;
       }
 
       try {
         let userData: IUserDetails | undefined;
+
         if (targetUserId === auth.userDetails._id) {
           // Fetch current user's details
           const { error, result } = await fetchUserDetails();
@@ -65,6 +70,7 @@ export default function EditUser() {
           }
           userData = result;
         } else if (auth.userDetails.isAdmin && targetUserId) {
+          // Fetch another user's details (admin)
           const { error, result } = await fetchUserById(targetUserId);
           if (error) {
             toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
@@ -87,6 +93,7 @@ export default function EditUser() {
           setIsBusiness(userData.isBusiness);
           setImageSrc(userData.image.src || '');
           setImageAlt(userData.image.alt || 'Profile image');
+          setIsAdmin(userData.isAdmin); // Set isAdmin state
         }
       } catch (err) {
         const errMessage = (err as Error).message;
@@ -121,6 +128,7 @@ export default function EditUser() {
         zip: zipCode || '',
       },
       isBusiness,
+      // Exclude fields like password, isAdmin, createdAt, etc.
     };
 
     try {
@@ -139,8 +147,11 @@ export default function EditUser() {
     }
   };
 
+  // Determine if the user can upgrade to business
+  const canUpgradeToBusiness = !isBusiness && !isAdmin;
+
   return (
-    <div className="EditUser Page flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center">
       <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg text-gray-900 dark:text-gray-50 max-w-4xl w-full">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('EditUser.editUserTitle')}</h3>
 
@@ -155,6 +166,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.firstNamePlaceholder')}
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               <FormField
                 controlId="formGridMiddleName"
@@ -171,6 +183,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.lastNamePlaceholder')}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
+                required
               />
             </div>
 
@@ -183,6 +196,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.phonePlaceholder')}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                required
               />
               <FormField
                 controlId="formGridEmail"
@@ -191,6 +205,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
 
@@ -205,6 +220,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.countryPlaceholder')}
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
+                required
               />
               <FormField
                 controlId="formGridCity"
@@ -213,6 +229,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.cityPlaceholder')}
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
+                required
               />
             </div>
 
@@ -224,6 +241,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.streetPlaceholder')}
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
+                required
               />
               <FormField
                 controlId="formGridHouseNumber"
@@ -232,6 +250,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.houseNumberPlaceholder')}
                 value={houseNumber}
                 onChange={(e) => setHouseNumber(e.target.value)}
+                required
               />
               <FormField
                 controlId="formGridZipCode"
@@ -240,6 +259,7 @@ export default function EditUser() {
                 placeholder={t('EditUser.zipCodePlaceholder')}
                 value={zipCode}
                 onChange={(e) => setZipCode(e.target.value)}
+                required
               />
             </div>
 
@@ -263,25 +283,29 @@ export default function EditUser() {
               />
             </div>
 
-            <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-            {/* Business Checkbox */}
-            <div className="text-center">
-              <label className="block text-lg font-medium mb-3">{t('EditUser.businessSignupLabel')}</label>
-              <div className="flex justify-center">
-                <label htmlFor="isBusinessCheckBox" className="inline-flex items-center">
-                  <input
-                    id="isBusinessCheckBox"
-                    name="isBusinessCheckBox"
-                    type="checkbox"
-                    className="form-checkbox"
-                    checked={isBusiness}
-                    onChange={(e) => setIsBusiness(e.target.checked)}
-                  />
-                  <span className="ml-2">{t('EditUser.yesLabel')}</span>
-                </label>
+            {/* Upgrade to Business Checkbox */}
+            {canUpgradeToBusiness && (
+            <>
+                <hr className="my-6 border-gray-300 dark:border-gray-700" />
+                <div className="text-center">
+                <label className="block text-lg font-medium mb-3">{t('EditUser.upgradeToBusinessLabel')}</label>
+                <div className="flex justify-center">
+                  <label htmlFor="upgradeBusinessCheckBox" className="inline-flex items-center">
+                    <input
+                      id="upgradeBusinessCheckBox"
+                      name="upgradeBusinessCheckBox"
+                      type="checkbox"
+                      className="form-checkbox"
+                      checked={isBusiness}
+                      onChange={(e) => setIsBusiness(e.target.checked)}
+                    />
+                    <span className="ml-2">{t('EditUser.yesLabel')}</span>
+                  </label>
+                </div>
               </div>
-            </div>
+            </>
+            )}
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 

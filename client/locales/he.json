@@ -384,9 +384,21 @@
     "houseNumberPlaceholder": "הכנס מספר בית",
     "zipCodeLabel": "מיקוד",
     "zipCodePlaceholder": "הכנס מיקוד",
-    "businessSignupLabel": "האם נרשמת כעסק?",
+    "imageSrcLabel": "כתובת תמונת פרופיל",
+    "imageSrcPlaceholder": "הכנס כתובת תמונה",
+    "imageAltLabel": "תיאור התמונה",
+    "imageAltPlaceholder": "הכנס תיאור התמונה",
+    "upgradeToBusinessLabel": "שדרג לעסק",
     "yesLabel": "כן",
-    "submitButton": "שמור שינויים"
+    "submitButton": "שמור שינויים",
+    "fetchError": "נכשל בשליפת פרטי המשתמש",
+    "updateError": "נכשל בעדכון פרטי המשתמש",
+    "updateSuccessTitle": "הצלחה",
+    "updateSuccessMessage": "פרטי המשתמש עודכנו בהצלחה",
+    "notAuthenticated": "לא מאומת",
+    "permissionDenied": "ההרשאה נדחתה",
+    "mustBeLoggedIn": "עליך להיות מחובר כדי לערוך פרטי משתמש.",
+    "noPermission": "אין לך הרשאה לערוך משתמש זה."
   },
   "SignInPage": {
     "title": "התחברות",
