@@ -122,3 +122,35 @@ export const updateUser = async (userId: string, updatedData: Partial<IUserDetai
     return { error: (err as Error).message };
   }
 };
+
+// ADMIN ONLY - Fetch user by ID 
+export const fetchUserById = async (userId: string): Promise<{
+  error: string | null;
+  result?: IUserDetails;
+}> => {
+  const token = await getToken();
+  if (!token) {
+    return { error: "Unauthorized" };
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/users/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token,
+      },
+    });
+
+    if (!response.ok) {
+      return { error: `Error fetching the user's details (${response.statusText})` };
+    }
+
+    const result = await response.json();
+
+    return { error: null, result: result.data };
+  } catch (err) {
+    const errMessage = (err as Error).message;
+    return { error: `Error fetching the user's details (${errMessage})` };
+  }
+};

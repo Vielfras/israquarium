@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
 export default function SignUp() {
-  const { t } = useTranslation(); // i18next hook for translations
+  const { t } = useTranslation();
   const [firstName, setFirstName] = useState<string>('');
   const [middleName, setMiddleName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');

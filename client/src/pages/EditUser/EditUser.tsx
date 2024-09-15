@@ -1,10 +1,12 @@
+// src/pages/EditUser/EditUser.tsx
+
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
-import { fetchUserDetails, updateUser } from '../../services/UserServices';
+import { fetchUserDetails, fetchUserById, updateUser } from '../../services/UserServices';
 import { IUserDetails } from '../../interfaces/IUser';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 
@@ -22,6 +24,8 @@ export default function EditUser() {
   const [houseNumber, setHouseNumber] = useState<string>('');
   const [zipCode, setZipCode] = useState<string>('');
   const [isBusiness, setIsBusiness] = useState<boolean>(false);
+  const [imageSrc, setImageSrc] = useState<string>('');
+  const [imageAlt, setImageAlt] = useState<string>('');
   const [isBusy, setIsBusy] = useState<boolean>(false);
 
   const auth = useContext(AuthContext);
@@ -30,35 +34,74 @@ export default function EditUser() {
 
   useEffect(() => {
     const loadUserData = async () => {
-      if (userId) {
-        const { error, result } = await fetchUserDetails();
-        if (error) {
-          toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
-        } else if (result) {
-          setFirstName(result.name.first);
-          setMiddleName(result.name.middle || '');
-          setLastName(result.name.last);
-          setPhone(result.phone || '');
-          setEmail(result.email || '');
-          setCountry(result.address.country || '');
-          setCity(result.address.city || '');
-          setStreet(result.address.street || '');
-          setHouseNumber(result.address.houseNumber.toString());
-          setZipCode(result.address.zip || '');
-          setIsBusiness(result.isBusiness);
+      if (!auth?.userDetails) {
+        toasts?.addToast('Error', t('EditUser.notAuthenticated'), 'You must be logged in to edit user details.', 'danger');
+        navigate('/sign-in');
+        return;
+      }
+
+      let targetUserId = userId;
+
+      // If no userId is provided, default to current user
+      if (!targetUserId) {
+        targetUserId = auth.userDetails._id;
+      }
+
+      // If editing another user's profile, ensure the current user is admin
+      if (targetUserId !== auth.userDetails._id && !auth.userDetails.isAdmin) {
+        toasts?.addToast('Error', t('EditUser.permissionDenied'), 'You do not have permission to edit this user.', 'danger');
+        navigate(`/profile/${auth.userDetails._id}`);
+        return;
+      }
+
+      try {
+        let userData: IUserDetails | undefined;
+        if (targetUserId === auth.userDetails._id) {
+          // Fetch current user's details
+          const { error, result } = await fetchUserDetails();
+          if (error) {
+            toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
+            return;
+          }
+          userData = result;
+        } else if (auth.userDetails.isAdmin && targetUserId) {
+          const { error, result } = await fetchUserById(targetUserId);
+          if (error) {
+            toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
+            return;
+          }
+          userData = result;
         }
+
+        if (userData) {
+          setFirstName(userData.name.first);
+          setMiddleName(userData.name.middle || '');
+          setLastName(userData.name.last);
+          setPhone(userData.phone || '');
+          setEmail(userData.email || '');
+          setCountry(userData.address.country || '');
+          setCity(userData.address.city || '');
+          setStreet(userData.address.street || '');
+          setHouseNumber(userData.address.houseNumber.toString());
+          setZipCode(userData.address.zip || '');
+          setIsBusiness(userData.isBusiness);
+          setImageSrc(userData.image.src || '');
+          setImageAlt(userData.image.alt || 'Profile image');
+        }
+      } catch (err) {
+        const errMessage = (err as Error).message;
+        toasts?.addToast('Error', t('EditUser.fetchError'), errMessage, 'danger');
       }
     };
 
     loadUserData();
-  }, [userId, toasts, t]);
+  }, [userId, auth, toasts, navigate, t]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsBusy(true);
 
-    const updatedUserData: IUserDetails = {
-      _id: userId || '',
+    const updatedUserData: Partial<IUserDetails> = {
       name: {
         first: firstName,
         middle: middleName || '',
@@ -66,7 +109,10 @@ export default function EditUser() {
       },
       phone: phone || '',
       email: email,
-      password: '', // Assume password change handled elsewhere if needed
+      image: {
+        src: imageSrc,
+        alt: imageAlt,
+      },
       address: {
         country: country || '',
         city: city || '',
@@ -74,29 +120,33 @@ export default function EditUser() {
         houseNumber: houseNumber ? Number(houseNumber) : 0,
         zip: zipCode || '',
       },
-      isAdmin: false, // Set according to user rights
       isBusiness,
-      createdAt: '', // Assume backend handles this
     };
 
-    const { error } = await updateUser(userId!, updatedUserData);
-    if (error) {
-      toasts?.addToast('Error', t('EditUser.updateError'), error, 'danger');
-    } else {
-      toasts?.addToast('Success', t('EditUser.updateSuccessTitle'), t('EditUser.updateSuccessMessage'), 'success');
-      navigate(`/profile/${userId}`);
+    try {
+      const { error } = await updateUser(userId!, updatedUserData);
+      if (error) {
+        toasts?.addToast('Error', t('EditUser.updateError'), error, 'danger');
+      } else {
+        toasts?.addToast('Success', t('EditUser.updateSuccessTitle'), t('EditUser.updateSuccessMessage'), 'success');
+        navigate(`/profile/${userId}`);
+      }
+    } catch (err) {
+      const errMessage = (err as Error).message;
+      toasts?.addToast('Error', t('EditUser.updateError'), errMessage, 'danger');
+    } finally {
+      setIsBusy(false);
     }
-
-    setIsBusy(false);
   };
 
   return (
-    <div className="EditUser Page flex justify-center items-center">
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg text-gray-900 dark:text-gray-50">
+    <div className="EditUser Page flex justify-center items-center min-h-screen">
+      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg text-gray-900 dark:text-gray-50 max-w-4xl w-full">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('EditUser.editUserTitle')}</h3>
 
         <DirectionProvider>
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <FormField
                 controlId="formGridFirstName"
@@ -146,7 +196,7 @@ export default function EditUser() {
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-            {/* Address */}
+            {/* Address Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FormField
                 controlId="formGridCountry"
@@ -177,7 +227,7 @@ export default function EditUser() {
               />
               <FormField
                 controlId="formGridHouseNumber"
-                type="text"
+                type="number"
                 label={t('EditUser.houseNumberLabel')}
                 placeholder={t('EditUser.houseNumberPlaceholder')}
                 value={houseNumber}
@@ -193,9 +243,29 @@ export default function EditUser() {
               />
             </div>
 
+            {/* Image Fields */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <FormField
+                controlId="formGridImageSrc"
+                type="url"
+                label={t('EditUser.imageSrcLabel')}
+                placeholder={t('EditUser.imageSrcPlaceholder')}
+                value={imageSrc}
+                onChange={(e) => setImageSrc(e.target.value)}
+              />
+              <FormField
+                controlId="formGridImageAlt"
+                type="text"
+                label={t('EditUser.imageAltLabel')}
+                placeholder={t('EditUser.imageAltPlaceholder')}
+                value={imageAlt}
+                onChange={(e) => setImageAlt(e.target.value)}
+              />
+            </div>
+
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-            {/* Business */}
+            {/* Business Checkbox */}
             <div className="text-center">
               <label className="block text-lg font-medium mb-3">{t('EditUser.businessSignupLabel')}</label>
               <div className="flex justify-center">
@@ -215,11 +285,12 @@ export default function EditUser() {
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
+            {/* Submit Button */}
             <div className="text-center">
               <button
                 type="submit"
                 className={`bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                  isBusy ? 'opacity-50' : ''
+                  isBusy ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
                 disabled={isBusy}
               >
