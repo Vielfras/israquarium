@@ -4,9 +4,9 @@
     "ru": "Russian",
     "he": "Hebrew"
   },
-  "NotFound" : {
-    "message" : "Aquarium not found.",
-    "goHome" : "Go Home"
+  "NotFound": {
+    "message": "Aquarium not found.",
+    "goHome": "Go Home"
   },
   "NavList": {
     "openMenu": "Open main menu",
@@ -355,17 +355,26 @@
   },
   "UserProfile": {
     "title": "User Profile",
-    "email": "Email",
-    "name": "Name",
-    "phone": "Phone",
-    "adminDashboard": "Dashboard",
+    "defaultAltText": "Default User Profile Image",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone Number",
+    "addressLabel": "Address",
+    "businessStatusLabel": "Business Account",
+    "businessYes": "Yes",
+    "businessNo": "No",
+    "adminStatusLabel": "Admin Status",
+    "adminYes": "Yes",
+    "adminNo": "No",
+    "createdAtLabel": "Account Created On",
+    "updateProfileButton": "Update Profile",
+    "adminDashboard": "Admin Dashboard",
     "signOut": "Sign Out",
-    "signInRequired": "You have to be signed-in as a User, Business, or Admin to view this page!",
-    "signIn": "Sign-in",
-    "signUp": "Sign-up",
-    "defaultAltText": "Default Image"
+    "signInRequired": "You need to sign in to view your profile.",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "notProvided": "Not Provided"
   },
-"EditUser": {
+  "EditUser": {
     "editUserTitle": "Edit User",
     "firstNameLabel": "First Name",
     "firstNamePlaceholder": "Enter first name",
