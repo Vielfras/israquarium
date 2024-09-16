@@ -83,6 +83,7 @@
 
 ### Version 0.5.0 - Polish
 - [ ] Replace the login alert with a toast.
+- [ ] Add the favorite icon to Plant/FishMinicards
 - [ ] When token runs out and auth fails, need to notify user and handle problem
 - [ ] Refactor form field to accept styles as props. 
 - [ ] Rename all CardServices.ts functions to work with businessCard convention

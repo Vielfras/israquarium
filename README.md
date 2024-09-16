@@ -52,7 +52,7 @@ This project involves developing a web application with both client-side and ser
    - [ ] Display business cards in a dedicated section accessible to users.
 
 ### Optional (Bonus) Features
-- [ ] Implement a logout feature that automatically logs out users after a set period of inactivity.
+- [X] Implement a logout feature that automatically logs out users after a set period of inactivity.
 - [ ] Limit the number of server requests a user can make in a given timeframe to protect against potential abuse.
 - [ ] Create a user management page for admins to view and manage user details and permissions.
 
@@ -65,7 +65,7 @@ This project involves developing a web application with both client-side and ser
 ### General Requirements
 - [X] **Use Node.js** with Express for the server-side.
 - [X] **Use MongoDB** as the database.
-- [] Clean and well-organized code: ensure code readability and maintainability.
+- [X] Clean and well-organized code: ensure code readability and maintainability.
 - [ ] Include meaningful comments and documentation.
 
 ### Specific Requirements
