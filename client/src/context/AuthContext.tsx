@@ -27,7 +27,6 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
   }, []);
 
   const signIn = async (email: string, password: string): Promise<{ error: string | null }> => {
-    console.log("Signing in with email:", email);
     const { error, result } = await doSignIn(email, password);
 
     if (error) {

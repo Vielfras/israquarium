@@ -4,7 +4,9 @@
 
 
 ### Bridge:
-- [ ] When token runs out and auth fails, need to notify user and handle problem
+- Add a watchdog that signs user out due to inactivity
+- Incorrect form field validation causes the size of the parent container to increase suddenly
+
 
 
 ## Version 0.2.0 - Visuals
@@ -34,7 +36,7 @@
     - [X] Create shop
     - [ ] Edit Fish 
     - [X] Edit Plant
-    - [ ] Edit User
+    - [X] Edit User
     - [ ] Edit Shop
     - [X] Publications
     - [X] Page Not found
@@ -42,15 +44,13 @@
 
 
 ### Issues
-- [ ] Incorrect form field validation causes the size of the parent container to increase suddenly
-- [ ] Replace the login alert with a toast.
 
 ### Version 0.3.0 - Functionality
 - [X] Authorization 
     - [X] Login/Logout
     - [X] Registration
     - [X] User Profile when logged in
-- [ ] Watchdog for sighout on inactivity.
+- [ ] Watchdog for signout on inactivity.
 - [ ] Toggle likes:
     - [X] Plants
     - [X] Fish
@@ -69,9 +69,9 @@
     - [X] Plant
     - [ ] Shop
 - [ ] Edit Data:
-    - [ ] Fish
+    - [X] Fish
     - [X] Plant
-    - [ ] User
+    - [X] User
     - [ ] Shop
 - [ ] Improve the error shown when content from server is loading or inaccecible:
     - Currently its a simple text "Error: Failed to fetch" with no CSS
@@ -82,6 +82,8 @@
 - [ ] Add Accessibility
 
 ### Version 0.5.0 - Polish
+- [ ] Replace the login alert with a toast.
+- [ ] When token runs out and auth fails, need to notify user and handle problem
 - [ ] Refactor form field to accept styles as props. 
 - [ ] Rename all CardServices.ts functions to work with businessCard convention
 - [ ] Add a "Back to XXXX" button for the fish, plants and shops.
@@ -91,6 +93,7 @@
 - [ ] Pressing outside of dropdown menus should close the dropdown menu.
 - [ ] Add a toast for many actions.
 - [ ] Better looking fetch error instead of just "Failed to fetch" in red.
+- [ ] Make 404 not found text and button float independantly of each other
 
 --- 
 
