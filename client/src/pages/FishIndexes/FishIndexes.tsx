@@ -1,46 +1,109 @@
 // FishIndexes.tsx
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { apiBase } from '../../config';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import FishCard from '../../components/Fish/FishCard/FishCard';
 import FishMiniCard from '../../components/Fish/FishMiniCard/FishMiniCard';
 import FishIndex from '../../components/Fish/FishIndex/FishIndex';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Spinner from '../../components/Misc/Spinner/Spinner';
 import AlphabetRow from '../../components/Misc/AlphabetRow/AlphabetRow';
 import FishIndexCard from '../../components/Fish/FishIndexCard/FishIndexCard';
-import { doGetFishByIndexAndLetter } from '../../services/FishServices';
+import { doGetFishByIndexAndLetter, doGetFishById } from '../../services/FishServices';
 import UseMediaQuery from '../../hooks/UseMediaQuery';
 
 const apiFishIndexCall = `${apiBase}/api/fishIndex`;
 
 export default function FishIndexes() {
   const { fishIndexName } = useParams<{ fishIndexName?: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+  const currentLang = (i18n.language as 'en' | 'he' | 'ru') || 'en';
+
   const [fishIndexData, setFishIndexData] = useState<IFishIndex[] | null>(null);
   const [fishData, setFishData] = useState<IFish[] | null>(null);
-  const [loading, setLoading] = useState(false); // Set initial loading to false
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isIndexCollapsed, setIsIndexCollapsed] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<IFishIndex | null>(null);
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [expandedFishId, setExpandedFishId] = useState<string | null>(null);
-  const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
-  const currentLang = (i18n.language as 'en' | 'he' | 'ru') || 'en';
 
   const isSmallScreen = UseMediaQuery('(max-width: 640px)');
+
+  // Parse fishId from query parameters
+  const queryParams = new URLSearchParams(location.search);
+  const fishIdFromURL = queryParams.get('fishId');
+
+  /**
+   * Handler to select a fish index.
+   * Navigates to the selected index without any fishId.
+   */
+  const handleIndexClick = useCallback(
+    (index: IFishIndex) => {
+      setSelectedIndex(index);
+      setSelectedLetter(null);
+      setExpandedFishId(null);
+      // Navigate to the selected index without fishId
+      navigate(
+        `/fish-index/${encodeURIComponent(
+          currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian
+        )}`
+      );
+    },
+    [currentLang, navigate]
+  );
+
+  /**
+   * Handler to select a letter.
+   */
+  const handleLetterClick = useCallback(
+    (letter: string) => {
+      setSelectedLetter(letter);
+      setExpandedFishId(null);
+    },
+    []
+  );
+
+  /**
+   * Handler to select a fish.
+   * Navigates to the current index with the selected fishId.
+   */
+  const handleFishCardClick = useCallback(
+    (fishId: string) => {
+      setExpandedFishId(fishId);
+      // Navigate to the current index with the new fishId
+      if (selectedIndex) {
+        navigate(
+          `/fish-index/${encodeURIComponent(
+            currentLang === 'en' ? selectedIndex.english : currentLang === 'he' ? selectedIndex.hebrew : selectedIndex.russian
+          )}?fishId=${fishId}`
+        );
+      }
+    },
+    [navigate, selectedIndex, currentLang]
+  );
+
+  /**
+   * Effect to handle screen size changes.
+   * Collapses the index if the screen is small.
+   */
   useEffect(() => {
     if (!isSmallScreen) {
       setIsIndexCollapsed(false);
     }
   }, [isSmallScreen]);
 
+  /**
+   * Effect to fetch fish index data on component mount.
+   */
   useEffect(() => {
     const fetchFishIndexData = async () => {
-      setLoading(true); 
+      setLoading(true);
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
@@ -52,13 +115,17 @@ export default function FishIndexes() {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
         setError(errorMessage);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     fetchFishIndexData();
   }, [t]);
 
+  /**
+   * Effect to handle fishIndexName from URL.
+   * Selects the corresponding index.
+   */
   useEffect(() => {
     if (fishIndexData && fishIndexName) {
       const index = fishIndexData.find(
@@ -68,31 +135,77 @@ export default function FishIndexes() {
           i.russian.toLowerCase() === fishIndexName.toLowerCase()
       );
       if (index) {
-        handleIndexClick(index);
+        setSelectedIndex(index);
+      } else {
+        setError(t('FishPage.invalidIndex'));
       }
     }
-  }, [fishIndexData, fishIndexName]);
+  }, [fishIndexData, fishIndexName, t]);
 
-  const handleIndexClick = (index: IFishIndex) => {
-    setSelectedIndex(index);
-    setSelectedLetter(null);
-    setExpandedFishId(null);
-    navigate(
-      `/fish-index/${encodeURIComponent(
-        currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian
-      )}`
-    );
-  };
+  /**
+   * Effect to handle fishId from URL.
+   * Loads the specified fish and updates the state accordingly.
+   */
+  useEffect(() => {
+    const loadFishById = async (fishId: string) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const { error, result } = await doGetFishById(fishId);
+        if (error || !result) {
+          throw new Error(t('FishPage.invalidFishId'));
+        }
 
-  const handleLetterClick = (letter: string) => {
-    setSelectedLetter(letter);
-    setExpandedFishId(null);
-  };
+        // Determine the index based on the fishIndices array
+        const fishIndex = fishIndexData?.find((index) => result.fishIndices.includes(index._id));
 
-  const handleFishCardClick = (fishId: string) => {
-    setExpandedFishId(fishId);
-  };
+        if (!fishIndex) {
+          throw new Error(t('FishPage.indexNotFound'));
+        }
 
+        // If the current selectedIndex is not the fish's index, set it
+        if (!selectedIndex || selectedIndex._id !== fishIndex._id) {
+          setSelectedIndex(fishIndex);
+          // Note: Do NOT navigate here to preserve fishId in URL
+        }
+
+        // Determine the first letter of the fish's name based on current language
+        const fishName =
+          currentLang === 'en'
+            ? result.name
+            : currentLang === 'he'
+              ? result.languages.hebrew.name // Adjust based on your data structure
+              : result.languages.russian.name; // Adjust based on your data structure
+
+        const firstLetter = fishName.charAt(0).toUpperCase();
+
+        // Set the selected letter
+        setSelectedLetter(firstLetter);
+
+        // Set the expanded fish ID to display its details
+        setExpandedFishId(fishId);
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
+        setError(errorMessage);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (fishIdFromURL && fishIndexData) {
+      loadFishById(fishIdFromURL);
+    }
+  }, [
+    fishIdFromURL,
+    fishIndexData,
+    t,
+    currentLang,
+    selectedIndex,
+  ]);
+
+  /**
+   * Effect to fetch fish data based on selected letter and index.
+   */
   useEffect(() => {
     if (!selectedLetter || !selectedIndex) return;
 
@@ -127,22 +240,25 @@ export default function FishIndexes() {
     fetchFishDataByLetter();
   }, [selectedLetter, selectedIndex, t]);
 
+  /**
+   * Sort fish index data based on the current language.
+   */
   const sortedFishIndexData = fishIndexData
     ? [...fishIndexData].sort((a, b) => {
-      const nameA =
-        currentLang === 'en'
-          ? a.english
-          : currentLang === 'he'
-            ? a.hebrew
-            : a.russian;
-      const nameB =
-        currentLang === 'en'
-          ? b.english
-          : currentLang === 'he'
-            ? b.hebrew
-            : b.russian;
-      return nameA.localeCompare(nameB);
-    })
+        const nameA =
+          currentLang === 'en'
+            ? a.english
+            : currentLang === 'he'
+              ? a.hebrew
+              : a.russian;
+        const nameB =
+          currentLang === 'en'
+            ? b.english
+            : currentLang === 'he'
+              ? b.hebrew
+              : b.russian;
+        return nameA.localeCompare(nameB);
+      })
     : null;
 
   return (
@@ -189,8 +305,8 @@ export default function FishIndexes() {
                 <button
                   key={index._id}
                   className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${isSelected
-                      ? 'bg-blue-500 text-white'
-                      : 'text-gray-800 dark:text-white'
+                    ? 'bg-blue-500 text-white'
+                    : 'text-gray-800 dark:text-white'
                     }`}
                   onClick={() => {
                     handleIndexClick(index);
@@ -221,7 +337,7 @@ export default function FishIndexes() {
             // Display only the FishCard of the selected fish
             <>
               {fishData.find((fish) => fish._id === expandedFishId) && (
-                <FishCard fishData={fishData.find((fish) => fish._id === expandedFishId)} />
+                <FishCard fishData={fishData.find((fish) => fish._id === expandedFishId)!} />
               )}
             </>
           ) : (
@@ -249,8 +365,8 @@ export default function FishIndexes() {
         )}
       </DirectionProvider>
 
-        {/* Display FishIndexCard */}
-        {selectedIndex && !selectedLetter && <FishIndexCard fishIndexKey={selectedIndex.english} />}
+      {/* Display FishIndexCard */}
+      {selectedIndex && !selectedLetter && <FishIndexCard fishIndexKey={selectedIndex.english} />}
     </div>
   );
 }

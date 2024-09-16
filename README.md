@@ -45,9 +45,17 @@ This project involves developing a web application with both client-side and ser
 
 7. **User Profile and Preferences**
    - [X] Allow users to mark fish data as favorites and maintain these preferences across sessions and devices.
-   - [ ] Provide a profile page where users can update their details and upload a profile picture.
+   - [X] Provide a profile page where users can update their details and upload a profile picture.
 
-8. **Business Card Management**
+8. **Fresh Water Fish Management**
+   - [X] Allow fish to be created and managed their business cards.
+   - [X] Display fish to cards in a dedicated section accessible to users.
+
+9. **Fresh Water Plant Management**
+   - [X] Allow plant to be created and managed their business cards.
+   - [X] Display plant to cards in a dedicated section accessible to users.
+
+10. **Business Card Management**
    - [ ] Allow fish shops to create and manage their business cards.
    - [ ] Display business cards in a dedicated section accessible to users.
 
