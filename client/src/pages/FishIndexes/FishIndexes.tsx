@@ -27,7 +27,11 @@ export default function FishIndexes() {
   const [fishIndexData, setFishIndexData] = useState<IFishIndex[] | null>(null);
   const [fishData, setFishData] = useState<IFish[] | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+
+  // Separate error states
+  const [errorFishIndex, setErrorFishIndex] = useState<string | null>(null);
+  const [errorFishData, setErrorFishData] = useState<string | null>(null);
+
   const [isIndexCollapsed, setIsIndexCollapsed] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<IFishIndex | null>(null);
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
@@ -48,6 +52,8 @@ export default function FishIndexes() {
       setSelectedIndex(index);
       setSelectedLetter(null);
       setExpandedFishId(null);
+      setErrorFishData(null); // Clear fish data errors when changing index
+
       // Navigate to the selected index without fishId
       navigate(
         `/fish-index/${encodeURIComponent(
@@ -65,6 +71,7 @@ export default function FishIndexes() {
     (letter: string) => {
       setSelectedLetter(letter);
       setExpandedFishId(null);
+      setErrorFishData(null); // Clear fish data errors when changing letter
     },
     []
   );
@@ -76,6 +83,8 @@ export default function FishIndexes() {
   const handleFishCardClick = useCallback(
     (fishId: string) => {
       setExpandedFishId(fishId);
+      setErrorFishData(null); // Clear fish data errors when selecting a fish
+
       // Navigate to the current index with the new fishId
       if (selectedIndex) {
         navigate(
@@ -104,6 +113,7 @@ export default function FishIndexes() {
   useEffect(() => {
     const fetchFishIndexData = async () => {
       setLoading(true);
+      setErrorFishIndex(null); // Clear previous errors
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
@@ -113,7 +123,7 @@ export default function FishIndexes() {
         setFishIndexData(data.data);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
-        setError(errorMessage);
+        setErrorFishIndex(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -135,12 +145,12 @@ export default function FishIndexes() {
           i.russian.toLowerCase() === fishIndexName.toLowerCase()
       );
       if (index) {
-        setSelectedIndex(index);
+        handleIndexClick(index);
       } else {
-        setError(t('FishPage.invalidIndex'));
+        setErrorFishIndex(t('FishPage.invalidIndex'));
       }
     }
-  }, [fishIndexData, fishIndexName, t]);
+  }, [fishIndexData, fishIndexName, t, handleIndexClick]);
 
   /**
    * Effect to handle fishId from URL.
@@ -149,7 +159,7 @@ export default function FishIndexes() {
   useEffect(() => {
     const loadFishById = async (fishId: string) => {
       setLoading(true);
-      setError(null);
+      setErrorFishData(null); // Clear previous fish data errors
       try {
         const { error, result } = await doGetFishById(fishId);
         if (error || !result) {
@@ -174,8 +184,8 @@ export default function FishIndexes() {
           currentLang === 'en'
             ? result.name
             : currentLang === 'he'
-              ? result.languages.hebrew.name // Adjust based on your data structure
-              : result.languages.russian.name; // Adjust based on your data structure
+              ? result.hebrewName // Adjust based on your data structure
+              : result.russianName; // Adjust based on your data structure
 
         const firstLetter = fishName.charAt(0).toUpperCase();
 
@@ -186,7 +196,7 @@ export default function FishIndexes() {
         setExpandedFishId(fishId);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
-        setError(errorMessage);
+        setErrorFishData(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -211,7 +221,7 @@ export default function FishIndexes() {
 
     const fetchFishDataByLetter = async () => {
       setLoading(true);
-      setError(null);
+      setErrorFishData(null); // Clear previous fish data errors
       setFishData([]);
 
       try {
@@ -227,11 +237,11 @@ export default function FishIndexes() {
         if (result && result.length > 0) {
           setFishData(result);
         } else {
-          setError(`${t('FishPage.letterEmpty')} '${selectedLetter}'.`);
+          throw new Error(`${t('FishPage.letterEmpty')} '${selectedLetter}'.`);
         }
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
-        setError(errorMessage);
+        setErrorFishData(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -263,12 +273,14 @@ export default function FishIndexes() {
 
   return (
     <div className="flex flex-col items-center">
+      {/* Loading Spinner */}
       {loading && <Spinner message={t('FishPage.loadingMessage')} />}
 
-      {error && <div className="text-red-500">{error}</div>}
+      {/* Error Message for Fish Index */}
+      {errorFishIndex && <div className="text-red-500">{errorFishIndex}</div>}
 
       {/* Fish Index Buttons */}
-      {!loading && !error && sortedFishIndexData && (
+      {!loading && !errorFishIndex && sortedFishIndexData && (
         <div className="w-full">
           {/* Collapse/Expand Button for small screens */}
           {isSmallScreen && selectedIndex && (
@@ -327,9 +339,8 @@ export default function FishIndexes() {
       )}
 
       <DirectionProvider>
-        {/* Loading and Error Handling */}
-        {loading && <Spinner message={t('FishPage.loadingMessage')} />}
-        {error && <div className="text-red-500">{error}</div>}
+        {/* Error Message for Fish Data */}
+        {errorFishData && <div className="text-red-500">{errorFishData}</div>}
 
         {/* Fish Card or Mini Fish Cards */}
         {!loading && selectedLetter && fishData && fishData.length > 0 && (
@@ -353,12 +364,12 @@ export default function FishIndexes() {
         )}
 
         {/* No Fish Data Message */}
-        {!loading && selectedLetter && (!fishData || fishData.length === 0) && (
+        {!loading && selectedLetter && (!fishData || fishData.length === 0) && !errorFishData && (
           <p>{`${t('FishPage.letterEmpty')} '${selectedLetter}'.`}</p>
         )}
 
         {/* Prompt to Select a Letter */}
-        {!selectedLetter && !loading && !error && selectedIndex && (
+        {!selectedLetter && !loading && !errorFishIndex && selectedIndex && (
           <h1 className="my-4 text-3xl font-extrabold text-center text-blue-600 dark:text-blue-400">
             {t('FishPage.selectLetter')}
           </h1>
