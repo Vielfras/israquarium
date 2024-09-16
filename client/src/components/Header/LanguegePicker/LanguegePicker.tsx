@@ -1,24 +1,29 @@
-import { useState } from 'react';
+// LanguagePicker.tsx
+
+import { useState, useRef } from 'react';
 import { US, RU, IL } from 'country-flag-icons/react/3x2';
 import { FiChevronDown } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
+import useClickOutside from '../../../hooks/useClickOutside';
 
-export default function LanguegePicker() {
+export default function LanguagePicker() {
     const { i18n } = useTranslation();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-    const ToggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(prev => !prev);
     };
 
-    const ChangeLanguage = (lng: string) => {
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         setSelectedLanguage(lng);
         setIsDropdownOpen(false);
     };
 
-    const RenderFlag = (language: string) => {
+    const renderFlag = (language: string) => {
         switch (language) {
             case 'ru':
                 return <RU className="w-5 h-5" />;
@@ -29,14 +34,20 @@ export default function LanguegePicker() {
         }
     };
 
+    useClickOutside(containerRef, () => {
+        if (isDropdownOpen) {
+            setIsDropdownOpen(false);
+        }
+    });
+
     return (
-        <div className="relative">
+        <div className="relative" ref={containerRef}>
             <button
                 type="button"
-                onClick={ToggleDropdown}
+                onClick={toggleDropdown}
                 className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
             >
-                {RenderFlag(selectedLanguage)}
+                {renderFlag(selectedLanguage)}
                 <FiChevronDown className="ml-2" />
             </button>
             {isDropdownOpen && (
@@ -46,7 +57,7 @@ export default function LanguegePicker() {
                     <ul className="py-2 font-medium" role="none">
                         <li>
                             <button
-                                onClick={() => ChangeLanguage('en')}
+                                onClick={() => changeLanguage('en')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
@@ -58,7 +69,7 @@ export default function LanguegePicker() {
                         </li>
                         <li>
                             <button
-                                onClick={() => ChangeLanguage('ru')}
+                                onClick={() => changeLanguage('ru')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
@@ -70,7 +81,7 @@ export default function LanguegePicker() {
                         </li>
                         <li>
                             <button
-                                onClick={() => ChangeLanguage('he')}
+                                onClick={() => changeLanguage('he')}
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                                 role="menuitem"
                             >
