@@ -27,7 +27,7 @@ import Publications from '../../pages/Publications/Publications'
 import AdminProfile from '../../pages/AdminProfile/AdminProfile'
 import EditPlant from '../../pages/EditPlant/EditPlant'
 import EditUser from '../../pages/EditUser/EditUser'
-import ProtectedRoute from '../../components/Access/ProtectedRoute/ProtectedRoute'
+import ProtectedRoute from '../../components/Access/ProtectedRoute'
 
 export default function Default() {
   return (

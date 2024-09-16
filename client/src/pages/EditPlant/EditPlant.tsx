@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { doGetPlantById, doUpdatePlant } from '../../services/PlantServices';
 import { IPlant } from '../../interfaces/IPlant';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
-import InactivityWatchdog from '../../hooks/UseInactivityWatchdog';
+import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 export default function EditPlant() {
   const { plantId } = useParams<{ plantId: string }>();
@@ -83,11 +83,11 @@ export default function EditPlant() {
   const onSignOut = () => {
     console.log('User signed out');
   };
-  
+
   return (
     formData && (
       <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
-  
+
         <InactivityWatchdog timeoutDuration={3 * 60 * 1000} onSignOut={onSignOut} />
 
         <h1 className="text-4xl font-bold text-center text-green-900 mb-6">{t('EditPlant.title')}</h1>
