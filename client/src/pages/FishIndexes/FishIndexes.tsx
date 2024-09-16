@@ -52,14 +52,11 @@ export default function FishIndexes() {
       setExpandedFishId(null);
       setErrorFishData(null);
 
-      // Navigate to the selected index without fishId
-      navigate(
-        `/fish-index/${encodeURIComponent(
-          currentLang === 'en' ? index.english : currentLang === 'he' ? index.hebrew : index.russian
-        )}`
-      );
+      const newSearchParams = new URLSearchParams(location.search);
+      newSearchParams.delete('fishId'); 
+      navigate(`/fish-index/${encodeURIComponent(index.english)}?${newSearchParams.toString()}`);
     },
-    [currentLang, navigate]
+    [navigate, location.search]
   );
 
   /**
@@ -69,7 +66,7 @@ export default function FishIndexes() {
     (letter: string) => {
       setSelectedLetter(letter);
       setExpandedFishId(null);
-      setErrorFishData(null); 
+      setErrorFishData(null);
     },
     []
   );
@@ -81,17 +78,13 @@ export default function FishIndexes() {
   const handleFishCardClick = useCallback(
     (fishId: string) => {
       setExpandedFishId(fishId);
-      setErrorFishData(null); 
+      setErrorFishData(null);
 
       if (selectedIndex) {
-        navigate(
-          `/fish-index/${encodeURIComponent(
-            currentLang === 'en' ? selectedIndex.english : currentLang === 'he' ? selectedIndex.hebrew : selectedIndex.russian
-          )}?fishId=${fishId}`
-        );
+        navigate(`/fish-index/${encodeURIComponent(selectedIndex.english)}?fishId=${fishId}`);
       }
     },
-    [navigate, selectedIndex, currentLang]
+    [navigate, selectedIndex]
   );
 
   /**
@@ -110,7 +103,7 @@ export default function FishIndexes() {
   useEffect(() => {
     const fetchFishIndexData = async () => {
       setLoading(true);
-      setErrorFishIndex(null); // Clear previous errors
+      setErrorFishIndex(null); 
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
@@ -130,8 +123,8 @@ export default function FishIndexes() {
   }, [t]);
 
   /**
-   * Effect to handle fishIndexName from URL.
-   * Selects the corresponding index.
+   * Effect to handle fishIndexName and preserve fishId if present.
+   * Selects the corresponding index without navigating if fishId is present.
    */
   useEffect(() => {
     if (fishIndexData && fishIndexName) {
@@ -142,12 +135,27 @@ export default function FishIndexes() {
           i.russian.toLowerCase() === fishIndexName.toLowerCase()
       );
       if (index) {
-        handleIndexClick(index);
+        if (!selectedIndex || selectedIndex._id !== index._id) {
+          if (!fishIdFromURL) {
+            handleIndexClick(index);
+          } else {
+            setSelectedIndex(index);
+            setSelectedLetter(null);
+            setExpandedFishId(null);
+          }
+        }
       } else {
         setErrorFishIndex(t('FishPage.invalidIndex'));
       }
     }
-  }, [fishIndexData, fishIndexName, t, handleIndexClick]);
+  }, [
+    fishIndexData,
+    fishIndexName,
+    t,
+    handleIndexClick,
+    selectedIndex,
+    fishIdFromURL, 
+  ]);
 
   /**
    * Effect to handle fishId from URL.
@@ -156,14 +164,13 @@ export default function FishIndexes() {
   useEffect(() => {
     const loadFishById = async (fishId: string) => {
       setLoading(true);
-      setErrorFishData(null); // Clear previous fish data errors
+      setErrorFishData(null); 
       try {
         const { error, result } = await doGetFishById(fishId);
         if (error || !result) {
           throw new Error(t('FishPage.invalidFishId'));
         }
 
-        // Determine the index based on the fishIndices array
         const fishIndex = fishIndexData?.find((index) => result.fishIndices.includes(index._id));
 
         if (!fishIndex) {
@@ -174,14 +181,12 @@ export default function FishIndexes() {
           setSelectedIndex(fishIndex);
         }
 
-        const fishName = result.name
+        const fishName = result.name;
 
         const firstLetter = fishName.charAt(0).toUpperCase();
 
-        // Set the selected letter
         setSelectedLetter(firstLetter);
 
-        // Set the expanded fish ID to display its details
         setExpandedFishId(fishId);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
@@ -198,7 +203,6 @@ export default function FishIndexes() {
     fishIdFromURL,
     fishIndexData,
     t,
-    currentLang,
     selectedIndex,
   ]);
 
@@ -210,7 +214,7 @@ export default function FishIndexes() {
 
     const fetchFishDataByLetter = async () => {
       setLoading(true);
-      setErrorFishData(null); 
+      setErrorFishData(null);
       setFishData([]);
 
       try {
@@ -239,9 +243,6 @@ export default function FishIndexes() {
     fetchFishDataByLetter();
   }, [selectedLetter, selectedIndex, t]);
 
-  /**
-   * Sort fish index data based on the current language.
-   */
   const sortedFishIndexData = fishIndexData
     ? [...fishIndexData].sort((a, b) => {
         const nameA =
