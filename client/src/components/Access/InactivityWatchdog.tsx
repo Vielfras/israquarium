@@ -4,19 +4,19 @@ import { AuthContext } from '../../context/AuthContext';
 
 interface InactivityWatchdogProps {
   timeoutDuration?: number; 
-  onSignOut: () => void; 
+  onSignOut?: () => void; 
 }
 
 const defaultTimeoutDuration: number = 10 * 60 * 1000; // 10 minutes
-
-export default function InactivityWatchdog({timeoutDuration = defaultTimeoutDuration, onSignOut}: InactivityWatchdogProps){
+const defaultOnSignOut = () => {}
+;
+export default function InactivityWatchdog({timeoutDuration=defaultTimeoutDuration, onSignOut=defaultOnSignOut}: InactivityWatchdogProps){
   const [inactivityTimer, setInactivityTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [warningTimer, setWarningTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
   const toastContext = useContext(ToastsContext);
   const auth = useContext(AuthContext);
 
   const handleSignOut = async () => {
-    console.log("Watchdog sign out");
     if (auth?.signOut) {
       await auth.signOut(); 
       onSignOut(); 
@@ -28,8 +28,6 @@ export default function InactivityWatchdog({timeoutDuration = defaultTimeoutDura
   };
 
   const resetInactivityTimeout = () => {
-    console.log("Watchdog set time out");
-
     if (inactivityTimer) clearTimeout(inactivityTimer); 
     if (warningTimer) clearTimeout(warningTimer); 
 
