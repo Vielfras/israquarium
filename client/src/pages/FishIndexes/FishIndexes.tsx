@@ -28,7 +28,6 @@ export default function FishIndexes() {
   const [fishData, setFishData] = useState<IFish[] | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Separate error states
   const [errorFishIndex, setErrorFishIndex] = useState<string | null>(null);
   const [errorFishData, setErrorFishData] = useState<string | null>(null);
 
@@ -39,7 +38,6 @@ export default function FishIndexes() {
 
   const isSmallScreen = UseMediaQuery('(max-width: 640px)');
 
-  // Parse fishId from query parameters
   const queryParams = new URLSearchParams(location.search);
   const fishIdFromURL = queryParams.get('fishId');
 
@@ -52,7 +50,7 @@ export default function FishIndexes() {
       setSelectedIndex(index);
       setSelectedLetter(null);
       setExpandedFishId(null);
-      setErrorFishData(null); // Clear fish data errors when changing index
+      setErrorFishData(null);
 
       // Navigate to the selected index without fishId
       navigate(
@@ -71,7 +69,7 @@ export default function FishIndexes() {
     (letter: string) => {
       setSelectedLetter(letter);
       setExpandedFishId(null);
-      setErrorFishData(null); // Clear fish data errors when changing letter
+      setErrorFishData(null); 
     },
     []
   );
@@ -83,9 +81,8 @@ export default function FishIndexes() {
   const handleFishCardClick = useCallback(
     (fishId: string) => {
       setExpandedFishId(fishId);
-      setErrorFishData(null); // Clear fish data errors when selecting a fish
+      setErrorFishData(null); 
 
-      // Navigate to the current index with the new fishId
       if (selectedIndex) {
         navigate(
           `/fish-index/${encodeURIComponent(
@@ -173,19 +170,11 @@ export default function FishIndexes() {
           throw new Error(t('FishPage.indexNotFound'));
         }
 
-        // If the current selectedIndex is not the fish's index, set it
         if (!selectedIndex || selectedIndex._id !== fishIndex._id) {
           setSelectedIndex(fishIndex);
-          // Note: Do NOT navigate here to preserve fishId in URL
         }
 
-        // Determine the first letter of the fish's name based on current language
-        const fishName =
-          currentLang === 'en'
-            ? result.name
-            : currentLang === 'he'
-              ? result.hebrewName // Adjust based on your data structure
-              : result.russianName; // Adjust based on your data structure
+        const fishName = result.name
 
         const firstLetter = fishName.charAt(0).toUpperCase();
 
@@ -221,7 +210,7 @@ export default function FishIndexes() {
 
     const fetchFishDataByLetter = async () => {
       setLoading(true);
-      setErrorFishData(null); // Clear previous fish data errors
+      setErrorFishData(null); 
       setFishData([]);
 
       try {
