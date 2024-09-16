@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ToastsContext } from '../../context/ToastsContext';
-import { AuthContext } from '../../context/AuthContext';
 import { IFish, IFishImage, ILanguage } from '../../interfaces/IFish';
 import { doGetFishById, doUpdateFish } from '../../services/FishServices';
 import FormField from '../../components/Form/FormField/FormField';
@@ -16,7 +15,6 @@ export default function EditFish() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const toasts = useContext(ToastsContext);
-    const auth = useContext(AuthContext);
 
     const [formData, setFormData] = useState<IFish | null>(null);
     const [loading, setLoading] = useState(true);
