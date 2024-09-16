@@ -6,6 +6,7 @@ import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import { IWebsiteStats } from '../../interfaces/IWebSite';
 import { IUserDetails } from '../../interfaces/IUser';
 import AdminCard from '../../components/User/AdminCard/AdminCard';
+import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 export default function AdminProfile() {
   const { t } = useTranslation();
@@ -39,6 +40,9 @@ export default function AdminProfile() {
 
   return (
     <div className="flex justify-center">
+
+      <InactivityWatchdog />
+
       <div className="p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg text-center text-gray-700 dark:text-gray-300 mb-4">
         <h3 className="text-center text-3xl font-bold mb-8 text-gray-800 dark:text-gray-100 tracking-wide">
           {t('AdminProfile.title')}
@@ -49,10 +53,10 @@ export default function AdminProfile() {
             <>
               <div className="flex justify-center rtl:space-x-reverse space-x-4 mb-6">
                 <Link to="/create-fish" className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">
-                    {t('AdminProfile.createFish')}
+                  {t('AdminProfile.createFish')}
                 </Link>
                 <Link to="/create-plant" className="bg-green-600 text-white py-2 px-4 rounded-lg shadow hover:bg-green-700">
-                    {t('AdminProfile.createPlant')}
+                  {t('AdminProfile.createPlant')}
                 </Link>
               </div>
 

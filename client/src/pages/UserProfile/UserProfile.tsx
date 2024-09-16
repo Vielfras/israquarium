@@ -6,13 +6,13 @@ import { AuthContext } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import UserCard from '../../components/User/UserCard/UserCard';
+import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 export default function UserProfile() {
   const { t } = useTranslation();
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Destructure userDetails for easier access
   const { userDetails } = auth || {};
 
   const handleSignOut = async () => {
@@ -23,7 +23,10 @@ export default function UserProfile() {
   };
 
   return (
-    <div className="Page flex justify-center p-4">
+    <div className="flex justify-center p-4">
+
+      <InactivityWatchdog />
+
       <div className="w-full max-w-4xl bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 text-gray-700 dark:text-gray-300">
         <h3 className="text-center text-3xl font-bold mb-8 text-gray-800 dark:text-gray-100">
           {t('UserProfile.title')}

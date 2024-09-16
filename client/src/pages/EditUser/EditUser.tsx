@@ -3,16 +3,17 @@
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
 import { useTranslation } from 'react-i18next';
-import { fetchUserDetails, updateUser } from '../../services/UserServices'; 
+import { fetchUserDetails, updateUser } from '../../services/UserServices';
 import { IUserDetails } from '../../interfaces/IUser';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
+import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 export default function EditUser() {
   const { t } = useTranslation();
-  
+
   const auth = useContext(AuthContext);
   const toasts = useContext(ToastsContext);
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export default function EditUser() {
       }
 
       try {
-        const { error, result } = await fetchUserDetails(); 
+        const { error, result } = await fetchUserDetails();
         if (error) {
           toasts?.addToast('Error', t('EditUser.fetchError'), error, 'danger');
           return;
@@ -99,7 +100,7 @@ export default function EditUser() {
     };
 
     try {
-      const { error } = await updateUser(auth?.userDetails?._id!, updatedUserData); 
+      const { error } = await updateUser(auth?.userDetails?._id!, updatedUserData);
       if (error) {
         toasts?.addToast('Error', t('EditUser.updateError'), error, 'danger');
       } else {
@@ -113,11 +114,14 @@ export default function EditUser() {
       setIsBusy(false);
     }
   };
-  
+
   const canUpgradeToBusiness = !auth?.userDetails?.isBusiness && !auth?.userDetails?.isAdmin;
 
   return (
     <div className="flex justify-center items-center">
+
+      <InactivityWatchdog />
+
       <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg text-gray-900 dark:text-gray-50 max-w-4xl w-full">
         <h3 className="text-3xl font-bold mb-6 text-center">{t('EditUser.editUserTitle')}</h3>
 
@@ -252,25 +256,25 @@ export default function EditUser() {
 
             {/* Upgrade to Business Checkbox */}
             {canUpgradeToBusiness && (
-            <>
+              <>
                 <hr className="my-6 border-gray-300 dark:border-gray-700" />
                 <div className="text-center">
-                <label className="block text-lg font-medium mb-3">{t('EditUser.upgradeToBusinessLabel')}</label>
-                <div className="flex justify-center">
-                  <label htmlFor="upgradeBusinessCheckBox" className="inline-flex items-center">
-                    <input
-                      id="upgradeBusinessCheckBox"
-                      name="upgradeBusinessCheckBox"
-                      type="checkbox"
-                      className="form-checkbox"
-                      checked={isBusiness}
-                      onChange={(e) => setIsBusiness(e.target.checked)}
-                    />
-                    <span className="ml-2">{t('EditUser.yesLabel')}</span>
-                  </label>
+                  <label className="block text-lg font-medium mb-3">{t('EditUser.upgradeToBusinessLabel')}</label>
+                  <div className="flex justify-center">
+                    <label htmlFor="upgradeBusinessCheckBox" className="inline-flex items-center">
+                      <input
+                        id="upgradeBusinessCheckBox"
+                        name="upgradeBusinessCheckBox"
+                        type="checkbox"
+                        className="form-checkbox"
+                        checked={isBusiness}
+                        onChange={(e) => setIsBusiness(e.target.checked)}
+                      />
+                      <span className="ml-2">{t('EditUser.yesLabel')}</span>
+                    </label>
+                  </div>
                 </div>
-              </div>
-            </>
+              </>
             )}
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
@@ -279,9 +283,8 @@ export default function EditUser() {
             <div className="text-center">
               <button
                 type="submit"
-                className={`bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                  isBusy ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
+                className={`bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${isBusy ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 disabled={isBusy}
               >
                 {isBusy ? (
