@@ -84,7 +84,7 @@ export default function EditPlant() {
     formData && (
       <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
 
-        <InactivityWatchdog timeoutDuration={3 * 60 * 1000}/>
+        <InactivityWatchdog/>
 
         <h1 className="text-4xl font-bold text-center text-green-900 mb-6">{t('EditPlant.title')}</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
