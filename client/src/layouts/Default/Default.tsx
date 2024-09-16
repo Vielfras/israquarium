@@ -28,6 +28,7 @@ import AdminProfile from '../../pages/AdminProfile/AdminProfile'
 import EditPlant from '../../pages/EditPlant/EditPlant'
 import EditUser from '../../pages/EditUser/EditUser'
 import ProtectedRoute from '../../components/Access/ProtectedRoute'
+import EditFish from '../../pages/EditFish/EditFish'
 
 export default function Default() {
   return (
@@ -65,6 +66,11 @@ export default function Default() {
           <Route path='/fish-index' element={<FishIndexes />} />
           <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />
           <Route path='/create-fish' element={<CreateFish />} />
+          <Route path="/edit-fish/:fishId" element={
+            <ProtectedRoute>
+              <EditFish />
+            </ProtectedRoute>} />
+
 
 
           <Route path='*' element={<NotFound />} />

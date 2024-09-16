@@ -40,7 +40,7 @@ export default function FishIndexes() {
 
   useEffect(() => {
     const fetchFishIndexData = async () => {
-      setLoading(true); // Start loading
+      setLoading(true); 
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
@@ -52,7 +52,7 @@ export default function FishIndexes() {
         const errorMessage = err instanceof Error ? err.message : t('FishPage.unknownError');
         setError(errorMessage);
       } finally {
-        setLoading(false); // End loading
+        setLoading(false); 
       }
     };
 

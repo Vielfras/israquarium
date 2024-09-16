@@ -48,11 +48,10 @@ export const doGetFishByIndexAndLetter = async (indexId: string, letter: string)
 export const doGetFishById = async (fishId: string): Promise<{ error: string | null; result: IFish | null }> => {
   try {
     const response = await fetch(`${apiBase}/api/fish/${fishId}`, {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      // body: JSON.stringify({ lang })
     });
 
     const data = await response.json();
