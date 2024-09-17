@@ -34,7 +34,7 @@
     - [X] Create Fish
     - [X] Create Plant
     - [X] Create shop
-    - [ ] Edit Fish 
+    - [X] Edit Fish 
     - [X] Edit Plant
     - [X] Edit User
     - [ ] Edit Shop
@@ -50,7 +50,7 @@
     - [X] Login/Logout
     - [X] Registration
     - [X] User Profile when logged in
-- [ ] Watchdog for signout on inactivity.
+- [X] Watchdog for signout on inactivity.
 - [ ] Toggle likes:
     - [X] Plants
     - [X] Fish
@@ -77,7 +77,7 @@
     - Currently its a simple text "Error: Failed to fetch" with no CSS
 
 ### Version 0.4.0 - Responsivity and Accessibility
-- [ ] Directional Support
+- [X] Directional Support
 - [ ] Finalise localisation
 - [ ] Add Accessibility
 
@@ -88,13 +88,12 @@
 - [ ] Refactor form field to accept styles as props. 
 - [ ] Rename all CardServices.ts functions to work with businessCard convention
 - [ ] Add a "Back to XXXX" button for the fish, plants and shops.
-- [ ] Add button at top of card to allow adding it to "My Aquarium"
 - [ ] Remove all empty scss files
 - [ ] Refactor IFishImage and IPlantImage to be a single IImage interface
-- [ ] Pressing outside of dropdown menus should close the dropdown menu.
-- [ ] Add a toast for many actions.
+- [X] Pressing outside of dropdown menus should close the dropdown menu.
+- [X] Add a toast for many actions.
 - [ ] Better looking fetch error instead of just "Failed to fetch" in red.
-- [ ] Make 404 not found text and button float independantly of each other
+- [] Make 404 not found text and button float independantly of each other
 
 --- 
 
