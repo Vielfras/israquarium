@@ -54,6 +54,8 @@ const getRandomFish = async (req, res) => {
 const getFishById = async (req, res) => {
   try {
     const { id } = req.params;
+
+    // TODO - Remove this comment once a getFishIdByLanguege is implemented
     // const { lang } = req.body;
 
     // const allowedLanguages = ['en', 'he', 'ru'];
