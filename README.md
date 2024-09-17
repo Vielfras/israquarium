@@ -115,12 +115,5 @@ For more detailed information about the frontend and backend components of Israq
 
 
 Happy Aquarizing! 🐟🌿
----
 
 
-## Project Submission
-- [X] Upload the project to a Git repository and share the link.
-- [ ] Include a `README.md` file explaining the project, its features, and setup instructions.
-- [X] Ensure that the project is free from any sensitive files like `node_modules` or configuration files containing secrets.
-
----
