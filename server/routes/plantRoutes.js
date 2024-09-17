@@ -10,9 +10,9 @@ const { getPlantsByLetter, getRandomPlant, getPlantById, getPlantImage, updateAP
 ============================================
 */
 router.get('/', getPlantsByLetter);
+router.get('/random', getRandomPlant);
 router.get('/:id', getPlantById);
 router.get('/image/:id/:imageName', getPlantImage);
-router.get('/random', getRandomPlant);
 
 router.post('/', mustLogin, allowedRoles(["admin"]), createPlant);
 router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAPlant);
