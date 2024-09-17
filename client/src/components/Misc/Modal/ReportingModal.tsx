@@ -1,3 +1,5 @@
+// ReportingModal.tsx
+
 import { useTranslation } from 'react-i18next';
 import Modal from './Modal';
 import { useState } from 'react';
@@ -27,8 +29,9 @@ export default function ReportingModal({ onConfirm, onCancel, show }: IReporting
 
   return (
     show && (
-      <Modal
-        title={t('ReportModal.reportIssue')}
+      <Modal title={t('ReportModal.reportIssue')}
+        confirmText={t('ReportModal.submitReport')} cancelText={t('ReportModal.cancelReport')}
+        onConfirm={handleConfirm} onCancel={handleCancel}
         message={
           <div>
             <div className="mb-4">
@@ -58,10 +61,6 @@ export default function ReportingModal({ onConfirm, onCancel, show }: IReporting
             </div>
           </div>
         }
-        confirmText={t('ReportModal.submitReport')}
-        cancelText={t('ReportModal.cancelReport')}
-        onConfirm={handleConfirm}
-        onCancel={handleCancel}
       />
     )
   );

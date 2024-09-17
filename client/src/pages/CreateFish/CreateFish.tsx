@@ -104,8 +104,6 @@ export default function CreateFish() {
     },
   });
 
-
-
   const auth = useContext(AuthContext);
   const toasts = useContext(ToastsContext);
   const navigate = useNavigate();
@@ -230,8 +228,7 @@ export default function CreateFish() {
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <FormField controlId="formGridFishName" type="text"
-                label={t('CreateFish.fishNameLabel')}
-                placeholder={t('CreateFish.fishNamePlaceholder')}
+                label={t('CreateFish.fishNameLabel')} placeholder={t('CreateFish.fishNamePlaceholder')}
                 value={name}
                 regex={nameRegex}
                 onChange={(e) => setName(e.target.value)}
@@ -239,8 +236,7 @@ export default function CreateFish() {
                 validationMessage={t('CreateFish.validation.fishName')}
               />
               <FormField controlId="formGridLatinName" type="text"
-                label={t('CreateFish.latinNameLabel')}
-                placeholder={t('CreateFish.latinNamePlaceholder')}
+                label={t('CreateFish.latinNameLabel')} placeholder={t('CreateFish.latinNamePlaceholder')}
                 value={latinName}
                 regex={nameRegex}
                 onChange={(e) => setLatinName(e.target.value)}

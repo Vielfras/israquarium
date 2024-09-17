@@ -1,3 +1,5 @@
+// ToastsContext.tsx
+
 import { createContext, useState, ReactNode } from "react";
 
 type ToastType = {
@@ -56,12 +58,10 @@ export default function ToastsProvider({ children }: ToastsProviderProps) {
 
       <div className="fixed top-5 right-5 z-50 flex flex-col gap-3">
         {toasts.map((toast) => (
-          <div
-            key={toast.id}
+          <div key={toast.id}
             className={`max-w-sm w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden`}
           >
-            <div
-              className={`p-4 flex justify-between ${
+            <div className={`p-4 flex justify-between ${
                 toast.headerBackground
                   ? toast.headerBackground
                   : "bg-indigo-500"

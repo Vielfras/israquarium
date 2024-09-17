@@ -14,8 +14,7 @@ export default function UserCard({ userDetails }: IUserCardProps) {
         <div className="py-4">
             {/* Profile Image */}
             <div className="flex justify-center mb-6">
-                <img
-                    className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
+                <img className="rounded-full border-2 border-gray-300 dark:border-gray-600 w-32 h-32 object-cover"
                     src={userDetails.image?.src || '/images/default_profile_svg.svg'}
                     alt={userDetails.image?.alt || t('UserProfile.defaultAltText')}
                 />

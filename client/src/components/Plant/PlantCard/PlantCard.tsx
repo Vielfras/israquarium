@@ -33,7 +33,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   useEffect(() => {
     if (auth?.userDetails && plantData.likes.includes(auth?.userDetails._id)) {
-      setIsFavorited(true);  
+      setIsFavorited(true);
     }
   }, [auth, plantData.likes]);
 
@@ -44,7 +44,6 @@ export default function PlantCard({ plantData }: IPlantCard) {
 
   const handleDelete = async () => {
     setShowDeleteModal(true);
-    // navigate('/plants');
   };
 
   const confirmDelete = async () => {
@@ -148,19 +147,14 @@ export default function PlantCard({ plantData }: IPlantCard) {
       </DirectionProvider>
 
       {showDeleteModal && (
-        <Modal title={t('PlantCard.deleteConfirmation')}
-          message={t('PlantCard.deleteWarning')}
-          confirmText={t('PlantCard.confirmDelete')}
-          cancelText={t('PlantCard.cancelDelete')}
-          onConfirm={confirmDelete}
-          onCancel={cancelDelete}
+        <Modal title={t('PlantCard.deleteConfirmation')} message={t('PlantCard.deleteWarning')}
+          confirmText={t('PlantCard.confirmDelete')} cancelText={t('PlantCard.cancelDelete')}
+          onConfirm={confirmDelete} onCancel={cancelDelete}
         />
       )}
 
-      <ReportingModal
-        onConfirm={handleReportConfirm}
-        onCancel={handleReportCancel}
-        show={showReportingModal}
+      <ReportingModal show={showReportingModal}
+        onConfirm={handleReportConfirm} onCancel={handleReportCancel}
       />
     </div>
   );

@@ -1,14 +1,16 @@
-import { IUserDetails } from '../../../interfaces/IUser'; 
+// AdminCard.tsx
+
+import { IUserDetails } from '../../../interfaces/IUser';
 import { useTranslation } from 'react-i18next';
 import { IWebsiteStats } from '../../../interfaces/IWebSite';
 
-interface AdminCardProps {
+interface IAdminCardProps {
   websiteStats: IWebsiteStats | null;
   users: IUserDetails[];
   handleSignOut: () => void;
 }
 
-export default function AdminCard({ websiteStats, users, handleSignOut }: AdminCardProps) {
+export default function AdminCard({ websiteStats, users, handleSignOut }: IAdminCardProps) {
   const { t } = useTranslation();
 
   return (
@@ -46,10 +48,8 @@ export default function AdminCard({ websiteStats, users, handleSignOut }: AdminC
 
       {/* Sign out button */}
       <div className="mt-6">
-        <button
-          type="button"
+        <button type="button" onClick={handleSignOut}
           className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500"
-          onClick={handleSignOut}
         >
           {t('UserProfile.signOut')}
         </button>

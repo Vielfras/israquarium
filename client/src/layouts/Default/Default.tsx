@@ -1,6 +1,5 @@
 // Default.tsx 
 
-import './Default.scss'
 import '../../pages/Page.scss'
 
 import { Route, Routes } from 'react-router-dom'
@@ -39,7 +38,6 @@ export default function Default() {
         <Routes>
           <Route path='/' element={<Home />} />
 
-
           <Route path='/publications' element={<Publications />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<ContactUs />} />
@@ -62,7 +60,6 @@ export default function Default() {
               <EditPlant />
             </ProtectedRoute>} />
 
-
           <Route path='/fish-index' element={<FishIndexes />} />
           <Route path='/fish-index/:fishIndexName' element={<FishIndexes />} />
           <Route path='/create-fish' element={<CreateFish />} />
@@ -70,8 +67,6 @@ export default function Default() {
             <ProtectedRoute>
               <EditFish />
             </ProtectedRoute>} />
-
-
 
           <Route path='*' element={<NotFound />} />
         </Routes>
