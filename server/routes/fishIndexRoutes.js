@@ -15,8 +15,8 @@ router.get('/', getFishIndexes);
 router.get('/:id', getIndexById);
 router.get('/image/:id/:imageName', getFishIndexImage);
 
-router.post('/', mustLogin, allowedRoles(["admin"]), createFishIndex);
-router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAFishIndex);
-router.delete('/:id', mustLogin, allowedRoles(["admin"]), deleteFishIndex);
+// router.post('/', mustLogin, allowedRoles(["admin"]), createFishIndex);
+// router.put('/:id', mustLogin, allowedRoles(["admin"]), updateAFishIndex);
+// router.delete('/:id', mustLogin, allowedRoles(["admin"]), deleteFishIndex);
 
 module.exports = router;
