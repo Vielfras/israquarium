@@ -7,7 +7,7 @@ import { IFish } from "../../../interfaces/IFish";
 import { useTranslation } from 'react-i18next';
 import FavoriteIcon from '../../Misc/FavoriteToggle/FavoriteToggle';
 import KebabMenu from '../../Misc/KebabMenu/KebabMenu';
-import { doDeleteFish, doSubmitFishReport, doToggleFishLike } from '../../../services/FishServices';  // Assuming similar services exist for fish
+import { doDeleteFish, doSubmitFishReport, doToggleFishLike } from '../../../services/FishServices'; 
 import Modal from '../../Misc/Modal/Modal';
 import ReportingModal from '../../Misc/Modal/ReportingModal';
 import { AuthContext } from '../../../context/AuthContext';
@@ -131,11 +131,9 @@ export default function FishCard({ fishData }: IFishCard) {
         {fishData.images.map((image, index) => (
           <div key={index} className="flex justify-center">
             <a href={`${apiBase}/api/fish/image/${fishData._id}/${image.src}`} target="_blank" rel="noopener noreferrer">
-              <img
+              <img className="w-full h-48 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
                 src={`${apiBase}/api/fish/image/${fishData._id}/${image.src}`}
-                alt={image.alt}
-                className="w-full h-48 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              />
+                alt={image.alt}/>
             </a>
           </div>
         ))}
@@ -144,8 +142,7 @@ export default function FishCard({ fishData }: IFishCard) {
       {/* Details Table Section */}
       <table className="w-full mt-6 table-auto border-collapse">
         <thead>
-          <tr className="bg-blue-200 text-blue-900">
-          </tr>
+          <tr className="bg-blue-200 text-blue-900"></tr>
         </thead>
         <tbody>
           {details.map((detail, index) => (
@@ -159,22 +156,14 @@ export default function FishCard({ fishData }: IFishCard) {
 
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <Modal
-          title={t('FishCard.deleteConfirmation')}
-          message={t('FishCard.deleteWarning')}
-          confirmText={t('FishCard.confirmDelete')}
-          cancelText={t('FishCard.cancelDelete')}
-          onConfirm={confirmDelete}
-          onCancel={cancelDelete}
+        <Modal title={t('FishCard.deleteConfirmation')} message={t('FishCard.deleteWarning')}
+          confirmText={t('FishCard.confirmDelete')} cancelText={t('FishCard.cancelDelete')}
+          onConfirm={confirmDelete} onCancel={cancelDelete}
         />
       )}
 
       {/* Reporting Modal */}
-      <ReportingModal
-        onConfirm={handleReportConfirm}
-        onCancel={handleReportCancel}
-        show={showReportingModal}
-      />
+      <ReportingModal onConfirm={handleReportConfirm} onCancel={handleReportCancel} show={showReportingModal}/>
     </div>
   );
 }

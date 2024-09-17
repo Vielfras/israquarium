@@ -1,3 +1,5 @@
+// FishSVG.tsx
+
 interface IFishSVGProps {
     className?: string;
     direction?: 'left' | 'right';
@@ -7,41 +9,30 @@ export default function FishSVG({ className, direction = 'right' }: IFishSVGProp
     const isLeftDirection = direction === 'right';
     return (
         <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 120 60"
-            width="120" height="60"
+            viewBox="0 0 120 60" width="120" height="60"
             aria-hidden="true"
-            className={className}
-            style={{
-                transform: isLeftDirection ? 'scaleX(-1)' : 'none',
-            }}
+            className={className} style={{transform: isLeftDirection ? 'scaleX(-1)' : 'none',}}
         >
             {/* Fish body */}
             <ellipse cx="60" cy="30" rx="45" ry="20" fill="url(#fishBodyGradient)" stroke="#2980b9" strokeWidth="2" />
 
             {/* Tail with animation */}
             <path className="animate-tail"
-                d="M15,30 L3,18 C7,25 7,35 3,42 L15,30 Z"
-                fill="url(#fishTailGradient)" stroke="#2980b9" strokeWidth="2"
+                d="M15,30 L3,18 C7,25 7,35 3,42 L15,30 Z" fill="url(#fishTailGradient)" stroke="#2980b9" strokeWidth="2"
             />
 
             {/* Fins with animation */}
             <path className="animate-fin"
-                d="M65,10 Q80,20 65,30"
-                fill="url(#finGradient)"
-                stroke="#2471a3" strokeWidth="2"
+                d="M65,10 Q80,20 65,30" fill="url(#finGradient)" stroke="#2471a3" strokeWidth="2"
             />
             <path className="animate-fin"
-                d="M35,25 Q30,10 25,25"
-                fill="url(#finGradient)"
-                stroke="#2471a3" strokeWidth="2"
+                d="M35,25 Q30,10 25,25"fill="url(#finGradient)" stroke="#2471a3" strokeWidth="2"
             />
 
             {/* Gills */}
-            <path d="M55,25 Q53,22 55,20"
-                stroke="#2c3e50" strokeWidth="2" fill="none"
+            <path d="M55,25 Q53,22 55,20" stroke="#2c3e50" strokeWidth="2" fill="none"
             />
-            <path d="M52,27 Q50,24 52,22"
-                stroke="#2c3e50" strokeWidth="1.5" fill="none"
+            <path d="M52,27 Q50,24 52,22" stroke="#2c3e50" strokeWidth="1.5" fill="none"
             />
 
             {/* Eye */}

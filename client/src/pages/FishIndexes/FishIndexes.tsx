@@ -5,7 +5,7 @@ import { apiBase } from '../../config';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import FishCard from '../../components/Fish/FishCard/FishCard';
 import FishMiniCard from '../../components/Fish/FishMiniCard/FishMiniCard';
-import FishIndex from '../../components/Fish/FishIndex/FishIndex';
+import FishIndexImage from '../../components/Fish/FishIndexImage/FishIndexImage';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -53,7 +53,7 @@ export default function FishIndexes() {
       setErrorFishData(null);
 
       const newSearchParams = new URLSearchParams(location.search);
-      newSearchParams.delete('fishId'); 
+      newSearchParams.delete('fishId');
       navigate(`/fish-index/${encodeURIComponent(index.english)}?${newSearchParams.toString()}`);
     },
     [navigate, location.search]
@@ -103,7 +103,7 @@ export default function FishIndexes() {
   useEffect(() => {
     const fetchFishIndexData = async () => {
       setLoading(true);
-      setErrorFishIndex(null); 
+      setErrorFishIndex(null);
       try {
         const response = await fetch(apiFishIndexCall);
         if (!response.ok) {
@@ -154,7 +154,7 @@ export default function FishIndexes() {
     t,
     handleIndexClick,
     selectedIndex,
-    fishIdFromURL, 
+    fishIdFromURL,
   ]);
 
   /**
@@ -164,7 +164,7 @@ export default function FishIndexes() {
   useEffect(() => {
     const loadFishById = async (fishId: string) => {
       setLoading(true);
-      setErrorFishData(null); 
+      setErrorFishData(null);
       try {
         const { error, result } = await doGetFishById(fishId);
         if (error || !result) {
@@ -245,20 +245,20 @@ export default function FishIndexes() {
 
   const sortedFishIndexData = fishIndexData
     ? [...fishIndexData].sort((a, b) => {
-        const nameA =
-          currentLang === 'en'
-            ? a.english
-            : currentLang === 'he'
-              ? a.hebrew
-              : a.russian;
-        const nameB =
-          currentLang === 'en'
-            ? b.english
-            : currentLang === 'he'
-              ? b.hebrew
-              : b.russian;
-        return nameA.localeCompare(nameB);
-      })
+      const nameA =
+        currentLang === 'en'
+          ? a.english
+          : currentLang === 'he'
+            ? a.hebrew
+            : a.russian;
+      const nameB =
+        currentLang === 'en'
+          ? b.english
+          : currentLang === 'he'
+            ? b.hebrew
+            : b.russian;
+      return nameA.localeCompare(nameB);
+    })
     : null;
 
   return (
@@ -275,9 +275,8 @@ export default function FishIndexes() {
           {/* Collapse/Expand Button for small screens */}
           {isSmallScreen && selectedIndex && (
             <div className="flex justify-center mb-2">
-              <button
+              <button className="px-4 py-2 bg-blue-500 text-white rounded"
                 onClick={() => setIsIndexCollapsed(!isIndexCollapsed)}
-                className="px-4 py-2 bg-blue-500 text-white rounded"
               >
                 {isIndexCollapsed ? t('FishPage.showIndexes') : t('FishPage.hideIndexes')}
               </button>
@@ -285,8 +284,7 @@ export default function FishIndexes() {
           )}
 
           {/* Index Buttons */}
-          <div
-            className={`${isIndexCollapsed && isSmallScreen ? 'hidden' : ''
+          <div className={`${isIndexCollapsed && isSmallScreen ? 'hidden' : ''
               } ${selectedIndex
                 ? 'flex flex-row flex-wrap gap-4 pb-2 justify-center'
                 : 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pb-4 justify-items-center'
@@ -304,17 +302,14 @@ export default function FishIndexes() {
                     : index.russian;
 
               return (
-                <button
-                  key={index._id}
+                <button key={index._id}
                   className={`${buttonSizeClass} flex flex-col items-center justify-center rounded-lg font-bold ${isSelected
                     ? 'bg-blue-500 text-white'
                     : 'text-gray-800 dark:text-white'
                     }`}
-                  onClick={() => {
-                    handleIndexClick(index);
-                  }}
-                >
-                  <FishIndex fishIndex={index} size={imageSize} />
+                  onClick={() => { handleIndexClick(index); }}
+                  >
+                  <FishIndexImage fishIndex={index} size={imageSize} />
                   <div className="text-center mt-1 text-sm">{displayName}</div>
                 </button>
               );

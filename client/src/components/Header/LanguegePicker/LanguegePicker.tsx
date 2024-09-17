@@ -56,10 +56,8 @@ export default function LanguagePicker() {
                 >
                     <ul className="py-2 font-medium" role="none">
                         <li>
-                            <button
-                                onClick={() => changeLanguage('en')}
+                            <button onClick={() => changeLanguage('en')} role="menuitem"
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                role="menuitem"
                             >
                                 <div className="inline-flex items-center">
                                     <US className="h-3.5 w-3.5 me-2" />
@@ -68,10 +66,8 @@ export default function LanguagePicker() {
                             </button>
                         </li>
                         <li>
-                            <button
-                                onClick={() => changeLanguage('ru')}
+                            <button onClick={() => changeLanguage('ru')} role="menuitem"
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                role="menuitem"
                             >
                                 <div className="inline-flex items-center">
                                     <RU className="h-3.5 w-3.5 me-2" />
@@ -80,10 +76,8 @@ export default function LanguagePicker() {
                             </button>
                         </li>
                         <li>
-                            <button
-                                onClick={() => changeLanguage('he')}
+                            <button onClick={() => changeLanguage('he')} role="menuitem"
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                role="menuitem"
                             >
                                 <div className="inline-flex items-center">
                                     <IL className="h-3.5 w-3.5 me-2" />

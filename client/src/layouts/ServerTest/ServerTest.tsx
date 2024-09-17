@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { IFish, IFishIndex } from '../../interfaces/IFish';
 import { IPlant } from '../../interfaces/IPlant';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
-import FishIndex from '../../components/Fish/FishIndex/FishIndex';
+import FishIndex from '../../components/Fish/FishIndexImage/FishIndexImage';
 import FishCard from '../../components/Fish/FishCard/FishCard';
 import PlantCard from '../../components/Plant/PlantCard/PlantCard';
 

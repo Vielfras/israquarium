@@ -1,3 +1,5 @@
+// NavList.tsx
+
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguegePicker from '../LanguegePicker/LanguegePicker';
@@ -51,4 +53,4 @@ export default function NavList() {
             </li>
         </ul>
     );
-};
+}

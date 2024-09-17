@@ -1,11 +1,11 @@
 // FavoriteToggle.tsx
 
-interface FavoriteIconProps {
+interface IFavoriteIconProps {
   isFavorited: boolean;       
   onToggle: () => void; 
 }
 
-export default function FavoriteIcon({ isFavorited, onToggle }: FavoriteIconProps) {
+export default function FavoriteIcon({ isFavorited, onToggle }: IFavoriteIconProps) {
   return (
     <button onClick={onToggle} className="text-red-500 hover:text-red-600 transition duration-300">
       {isFavorited ? (

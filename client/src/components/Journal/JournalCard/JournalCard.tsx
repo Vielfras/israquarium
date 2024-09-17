@@ -1,4 +1,6 @@
-interface JournalCardProps {
+// JournalCard.tsx
+
+interface IJournalCardProps {
     title: string;
     coverImage: string;
     issn: string;
@@ -16,7 +18,7 @@ export default function JournalCard({
     year,
     articles,
     pdfUrl,
-}: JournalCardProps) {
+}: IJournalCardProps) {
     return (
         <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden m-4">
             <img className="w-full h-64 object-cover" src={coverImage} alt={`${title} cover`} />

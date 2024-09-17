@@ -1,3 +1,5 @@
+// InactivityWatchdog.tsx
+
 import { useEffect, useContext, useState } from 'react';
 import { ToastsContext } from '../../context/ToastsContext';
 import { AuthContext } from '../../context/AuthContext';

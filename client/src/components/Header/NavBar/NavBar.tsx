@@ -1,17 +1,18 @@
-import './NavBar.scss';
+// NavBar.tsx
+
 import LanguegePicker from '../LanguegePicker/LanguegePicker';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
 import UserMenu from '../UserMenu/UserMenu';
 import DarkLightToggle from '../DarkLightToggle/DarkLightToggle';
-import { useTranslation } from 'react-i18next'; 
-import { DirectionProvider} from '../../../context/ReadingDirectionContext';
+import { useTranslation } from 'react-i18next';
+import { DirectionProvider } from '../../../context/ReadingDirectionContext';
 import NavList from '../NavList/NavList';
 import { Link } from 'react-router-dom';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { t } = useTranslation(); 
+    const { t } = useTranslation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -29,11 +30,9 @@ export default function NavBar() {
                 <div className="flex items-center md:hidden">
                     <DarkLightToggle />
                     <UserMenu />
-                    <button
-                        onClick={toggleMenu}
+                    <button onClick={toggleMenu}
                         className="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-menu"
-                        aria-expanded={isMenuOpen}
+                        aria-controls="navbar-menu" aria-expanded={isMenuOpen}
                     >
                         <span className="sr-only">{t('NavBar.openMenu')}</span>
                         {isMenuOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
@@ -41,7 +40,7 @@ export default function NavBar() {
                 </div>
                 <div className={`w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`} id="navbar-menu">
                     <DirectionProvider>
-                            <NavList />
+                        <NavList />
                     </DirectionProvider>
                 </div>
 

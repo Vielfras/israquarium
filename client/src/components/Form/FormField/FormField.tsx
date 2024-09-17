@@ -52,10 +52,8 @@ export default function FormField({
       </label>
       {type === 'textarea' ? (
         <textarea
-          name={formData.controlId}
-          id={formData.controlId}
-          placeholder={formData.placeholder}
-          value={formData.value}
+          name={formData.controlId} id={formData.controlId}
+          placeholder={formData.placeholder} value={formData.value}
           onChange={handleValidation}
           required={required}
           onBlur={() => setTouched(true)}
@@ -64,12 +62,9 @@ export default function FormField({
           } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-800 dark:text-gray-100`}
         />
       ) : (
-        <input
-          name={formData.controlId}
-          id={formData.controlId}
-          type={type}
-          placeholder={formData.placeholder}
-          value={formData.value}
+        <input type={type}
+          name={formData.controlId} id={formData.controlId}
+          placeholder={formData.placeholder} value={formData.value}
           onChange={handleValidation}
           required={required}
           onBlur={() => setTouched(true)}

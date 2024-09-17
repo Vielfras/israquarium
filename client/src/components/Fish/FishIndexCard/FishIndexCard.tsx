@@ -3,11 +3,11 @@
 import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../../context/ReadingDirectionContext';
 
-interface FishIndexCardProps {
+interface IFishIndexCardProps {
   fishIndexKey: string;
 }
 
-export default function FishIndexCard({ fishIndexKey }: FishIndexCardProps) {
+export default function FishIndexCard({ fishIndexKey }: IFishIndexCardProps) {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'en' | 'he' | 'ru';
 
@@ -49,7 +49,6 @@ export default function FishIndexCard({ fishIndexKey }: FishIndexCardProps) {
 }
 
 function parseContent(content: string) {
-  // Split content into sections based on headings
   const lines = content.split('\n');
   const sections = [];
   let currentSection = { heading: '', content: '' };
@@ -57,14 +56,11 @@ function parseContent(content: string) {
   lines.forEach((line) => {
     line = line.trim();
     if (line.endsWith(':')) {
-      // Save previous section
       if (currentSection.content) {
         sections.push({ ...currentSection });
       }
-      // Start new section
       currentSection = { heading: line.slice(0, -1), content: '' };
     } else if (line) {
-      // Append to current section content
       currentSection.content += line + '\n';
     }
   });
