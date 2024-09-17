@@ -27,7 +27,6 @@ const getUserDetails = async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    // TODO - Change this to work the same as the rest of the API, with success and data
     res.status(200).json({
       success: true,
       data: user,
@@ -112,8 +111,6 @@ const updateUser = async (req, res) => {
     return res.status(500).json({ success: false, message: `Failed to update user: ${err}` });
   }
 };
-
-
 
 const updateUserBusinessStatus = async (req, res) => {
   const { error, value } = schemas.updateUserBusinessStatus.validate(req.body);

@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 
 const schemas = require("../schemas/fishSchemas");
-// const User = require("../models/User");
 const Fish = require("../models/Fish");
 const FishIndex = require('../models/FishIndex');
 const Err = require("../utils/errorHandling");
@@ -19,7 +18,6 @@ const getFishByIndexAndLetter = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Index and letter are required.' });
     }
 
-    // Find fish that match the index and start with the given letter
     const fish = await Fish.find({
       fishIndices: index,
       name: { $regex: `^${letter}`, $options: 'i' }  // Case-insensitive match
@@ -116,22 +114,6 @@ const getFishImage = async (req, res) => {
   }
 };
 
-// const createFish = async (req, res) => {
-//   try {
-//     const { error, value } = schemas.createFish.validate(req.body);
-//     if (error) {
-//       return res.status(400).json(Err.multipleErrToString(error));
-//     }
-
-//     const newFish = new Fish(value);
-//     await newFish.save();
-
-//     return res.status(201).json({ success: true, data: newFish });
-//   } catch (err) {
-//     return res.status(400).json({ success: false, message: err.message });
-//   }
-// };
-
 const createFish = async (req, res) => {
   try {
     const { fishIndices } = req.body;
@@ -148,27 +130,22 @@ const createFish = async (req, res) => {
     //   }
     // }
 
-    // Fetch all FishIndex documents matching the IDs in fishIndices
     const fishIndexDocs = await FishIndex.find({ _id: { $in: fishIndices } });
 
-    // Check if all IDs exist
     if (fishIndexDocs.length !== fishIndices.length) {
       const existingIds = fishIndexDocs.map(doc => doc._id.toString());
       const missingIds = fishIndices.filter(id => !existingIds.includes(id));
       return res.status(404).json({ success: false, message: `Fish index IDs not found: ${missingIds.join(', ')}.` });
     }
 
-    // Validate the rest of the fish data using your schema
     const { error, value } = schemas.fishSchema.validate(req.body);
     if (error) {
       return res.status(400).json({ success: false, message: error.details.map(d => d.message).join(', ') });
     }
 
-    // Create the new fish
     const newFish = new Fish(value);
     await newFish.save();
 
-    // Update each FishIndex by adding the new fish's ID to its fishes array
     for (const fishIndex of fishIndexDocs) {
       fishIndex.fishes.push(newFish._id);
       await fishIndex.save();
@@ -188,8 +165,8 @@ const deleteFish = async (req, res) => {
       return res.status(200).json({ success: true, message: `Fish id '${id}' deleted successfully.` });
     }
 
-    // TODO - removed the fish id from its fishIndex
-    
+    // TODO - remove the fish id from its fishIndex
+
     return res.status(404).json({
       success: false,
       message: `Fish id '${id}' not found.`
@@ -202,6 +179,7 @@ const deleteFish = async (req, res) => {
 const updateAFish = async (req, res) => {
   try {
     // TODO - Remove fields that aren't allowed to be updated, like _id, __v, createdAt, updatedAt, etc... 
+
     const { error, value } = schemas.updateFishSchema.validate(req.body);
     if (error) {
       return res.status(400).json(Err.multipleErrToString(error));
@@ -251,9 +229,6 @@ const toggleFishLike = async (req, res) => {
     return res.status(500).json({ success: false, message: `Failed to toggle like due to: ${err.message}` });
   }
 };
-
-
-
 
 module.exports = {
   getFishByIndexAndLetter,

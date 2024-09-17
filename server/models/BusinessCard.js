@@ -1,4 +1,4 @@
-// Cards.js
+// BusinessCards.js
 
 const mongoose = require("mongoose");
 const { addressSchema, imageSchema } = require("./common");

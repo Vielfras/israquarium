@@ -98,7 +98,7 @@ const allowedRoles = (allowedRoles) => {
     if (!Array.isArray(allowedRoles)) {
       throw new Error('Error: allowedRoles must be an array.');
     }
-    // check if allowedRoles has at-least one element
+
     if (allowedRoles.length === 0) {
       throw new Error('Error: allowedRoles must contain at-least one element.');
     }
