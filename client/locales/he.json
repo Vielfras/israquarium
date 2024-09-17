@@ -401,6 +401,30 @@
     "emailLabel": "דוא\"ל",
     "phoneLabel": "טלפון"
   },
+  "ContactUs": {
+    "title": "צור קשר",
+    "form": {
+      "name": "שם",
+      "email": "אימייל",
+      "subject": "נושא",
+      "message": "הודעה",
+      "namePlaceholder": "הזן את שמך",
+      "emailPlaceholder": "הזן את האימייל שלך",
+      "subjectPlaceholder": "הזן את הנושא",
+      "messagePlaceholder": "הזן את ההודעה שלך",
+      "submit": "שלח",
+      "submitting": "שולח..."
+    },
+    "errors": {
+      "nameRequired": "השם הינו שדה חובה.",
+      "emailRequired": "האימייל הינו שדה חובה.",
+      "emailInvalid": "אנא הכנס כתובת אימייל חוקית.",
+      "subjectRequired": "הנושא הינו שדה חובה.",
+      "messageRequired": "ההודעה הינה שדה חובה."
+    },
+    "successMessage": "ההודעה שלך נשלחה בהצלחה!",
+    "errorMessage": "אירעה שגיאה בשליחת ההודעה שלך. אנא נסה שוב מאוחר יותר."
+  },
   "UserMenu": {
     "defaultAltText": "פרופיל משתמש",
     "guest": "אורח",

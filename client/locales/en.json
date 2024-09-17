@@ -401,6 +401,30 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone"
   },
+  "ContactUs": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Enter your name",
+      "emailPlaceholder": "Enter your email",
+      "subjectPlaceholder": "Enter the subject",
+      "messagePlaceholder": "Enter your message",
+      "submit": "Submit",
+      "submitting": "Submitting..."
+    },
+    "errors": {
+      "nameRequired": "Name is required.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "subjectRequired": "Subject is required.",
+      "messageRequired": "Message is required."
+    },
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "There was an error sending your message. Please try again later."
+  },
   "UserMenu": {
     "defaultAltText": "User Profile",
     "guest": "Guest",

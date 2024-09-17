@@ -401,6 +401,30 @@
     "emailLabel": "Электронная почта",
     "phoneLabel": "Телефон"
   },
+  "ContactUs": {
+    "title": "Свяжитесь с нами",
+    "form": {
+      "name": "Имя",
+      "email": "Электронная почта",
+      "subject": "Тема",
+      "message": "Сообщение",
+      "namePlaceholder": "Введите ваше имя",
+      "emailPlaceholder": "Введите вашу электронную почту",
+      "subjectPlaceholder": "Введите тему",
+      "messagePlaceholder": "Введите ваше сообщение",
+      "submit": "Отправить",
+      "submitting": "Отправка..."
+    },
+    "errors": {
+      "nameRequired": "Имя обязательно.",
+      "emailRequired": "Электронная почта обязательна.",
+      "emailInvalid": "Пожалуйста, введите действительный адрес электронной почты.",
+      "subjectRequired": "Тема обязательна.",
+      "messageRequired": "Сообщение обязательно."
+    },
+    "successMessage": "Ваше сообщение успешно отправлено!",
+    "errorMessage": "Произошла ошибка при отправке вашего сообщения. Пожалуйста, попробуйте позже."
+  },
   "UserMenu": {
     "defaultAltText": "Профиль пользователя",
     "guest": "Гость",
