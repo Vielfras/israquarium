@@ -1,0 +1,1012 @@
+{
+	"info": {
+		"_postman_id": "9b2c061a-23ce-4b3c-92fe-49e324204c02",
+		"name": "Israquarium",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34990160"
+	},
+	"item": [
+		{
+			"name": "Fish",
+			"item": [
+				{
+					"name": "getFishByIndexAndLetter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/fish/?index=668acc05985732c151744bf4&letter=A",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								""
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "668acc05985732c151744bf4"
+								},
+								{
+									"key": "letter",
+									"value": "A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRandomFish",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/fish/random",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFishImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/fish/image/60d5ec49f1b2f9a7d1234561/Acanthicus_adonis.jpg",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								"image",
+								"60d5ec49f1b2f9a7d1234561",
+								"Acanthicus_adonis.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFishById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lang\" : \"he\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/fish/60d5ec49f1b2f9a7d1234561",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								"60d5ec49f1b2f9a7d1234561"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createFish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTYxNjcsImV4cCI6MTcyNjU5Njc2N30.a0V4HdqeEUXEbBh0fMw-fLvMYk4loN5Sqq5ygsZM4LQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"name\": \"XXXX\",\n        \"latinName\": \"Acanthicus adonis Isbrucker & Nijssen, 1988\",\n        \"synonyms\": \"Acanthicus adonis, Polka Dot Lyre Tail Pleco\",\n        \"etymology\": \"Acanthicus: akantha (Greek): thorn, adonis (Greek): beautiful\",\n        \"firstDescription\": \"Isbrucker, I. J. H. and Nijssen, H.\",\n        \"images\": [\n            {\n                \"src\": \"Acanthicus_adonis.jpg\",\n                \"alt\": \"Acanthicus adonis 1\",\n                \"_id\": \"6688f4305c9d2f0e3c7294cb\"\n            },\n            {\n                \"src\": \"Acanthicus_adonis1.jpg\",\n                \"alt\": \"Acanthicus adonis 2\",\n                \"_id\": \"6688f4305c9d2f0e3c7294cc\"\n            },\n            {\n                \"src\": \"Acanthicus_adonis2.jpg\",\n                \"alt\": \"Acanthicus adonis 3\",\n                \"_id\": \"6688f4305c9d2f0e3c7294cd\"\n            },\n            {\n                \"src\": \"Acanthicus_adonis4.jpg\",\n                \"alt\": \"Acanthicus adonis 4\",\n                \"_id\": \"6688f4305c9d2f0e3c7294ce\"\n            }\n        ],\n        \"subclass\": \"Ray-finned (Actinopterygii)\",\n        \"order\": \"Catfish-like (Siluriformes)\",\n        \"family\": \"Armored Catfish (Loricariidae)\",\n        \"subfamily\": \"Hypostomines (Hypostominae)\",\n        \"tribe\": \"Ancistrini\",\n        \"distribution\": \"Lower Amazon basin and Tocantins River (Tocantins), Brazil.\",\n        \"fishSize\": \"up to 100 cm (SL)\",\n        \"tankVolume\": \"from 500 liters\",\n        \"maxTemp\": 30,\n        \"minTemp\": 23,\n        \"ph\": 7,\n        \"dGH\": 10,\n        \"additionalRequirements\": \"N/A\",\n        \"aquariumSetup\": \"Shelters from driftwood, rocks, etc. are necessary.\",\n        \"intraspeciesCompatibility\": \"Expressed aggression towards individuals of its own species from a young age.\",\n        \"interspeciesCompatibility\": \"Aggressive towards other large plecos.\",\n        \"feeding\": \"Omnivorous. Eats frozen bloodworms, shrimp meat, mollusks, fish, dry food, vegetables.\",\n        \"sexualDimorphism\": \"Both males and females of this species have well-developed odontodes all over the body, but males have them more developed.\",\n        \"breeding\": \"Breeding in captivity is possible.\",\n        \"additionalInformation\": \"Albino specimens of this species are known.\",\n        \"sources\": \"FishBase, PlanetCatfish\",\n        \"fishIndices\": [\"668acc05985732c151744bf4\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/fish",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFish",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTY3ODAsImV4cCI6MTcyNjU5NzM4MH0.Bj2oZ4s42fWj4Nq6g5QSeWD49ZhKdUN8XplRZOswbaQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/fish/66e9c652053b655d8578df8f",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								"66e9c652053b655d8578df8f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFish",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTYxNjcsImV4cCI6MTcyNjU5Njc2N30.a0V4HdqeEUXEbBh0fMw-fLvMYk4loN5Sqq5ygsZM4LQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Acanthicus adonis\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/fish/60d5ec49f1b2f9a7d1234561",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fish",
+								"60d5ec49f1b2f9a7d1234561"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTYxNjcsImV4cCI6MTcyNjU5Njc2N30.a0V4HdqeEUXEbBh0fMw-fLvMYk4loN5Sqq5ygsZM4LQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/users/",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTYxNjcsImV4cCI6MTcyNjU5Njc2N30.a0V4HdqeEUXEbBh0fMw-fLvMYk4loN5Sqq5ygsZM4LQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/users/60d5ec49f1b2f9a7d1234561",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"60d5ec49f1b2f9a7d1234561"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserBusinessStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODFhNmMxZjQyOWM1NmQ4Y2FlYjYyYSIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzE5NzcyODY1LCJleHAiOjE3MTk3NzM0NjV9._gYsTi3wi-PSDT22tP-Bcv1E2OMSGFyvqTH2Xudd6RE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isBusiness\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/users/6681a6c1f429c56d8caeb62a",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"6681a6c1f429c56d8caeb62a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODFhNmMxZjQyOWM1NmQ4Y2FlYjYyYSIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzE5NzcyODY1LCJleHAiOjE3MTk3NzM0NjV9._gYsTi3wi-PSDT22tP-Bcv1E2OMSGFyvqTH2Xudd6RE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": {\n      \"first\": \"This\",\n      \"middle\": \"was\",\n      \"last\": \"Updated\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/users/6681a6c1f429c56d8caeb62a",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"6681a6c1f429c56d8caeb62a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODFhNmMxZjQyOWM1NmQ4Y2FlYjYyYSIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MTk3NzM0MjAsImV4cCI6MTcxOTc3NDAyMH0.sDmiyR7AKwMiBK-i2dhJV_SiIXqvW1J-x2EaK63GIgE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/users/6681a6c1f429c56d8caeb62a",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"6681a6c1f429c56d8caeb62a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerNewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": {\n            \"first\": \"Viel\",\n            \"middle\": \"the\",\n            \"last\": \"Fras\"\n        },\n        \"phone\": \"050-1234567\",\n        \"email\": \"viel@gmail.com\",\n        \"password\" : \"Viel123!\",\n        \"image\": {\n            \"url\": \"http://127.0.0.1:3000/images/profiles/user.svg\",\n            \"alt\": \"User Profile\"\n        },\n        \"address\": {\n            \"state\": \"Israel\",\n            \"country\": \"Israel\",\n            \"city\": \"Haifa\",\n            \"street\": \"Lotus\",\n            \"houseNumber\": 15,\n            \"zip\": \"111111\"\n        },\n        \"isAdmin\": false,\n        \"isBusiness\": false\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/users/",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"Admin123!\"\n}\n\n// {\n//     \"email\": \"biz@gmail.com\",\n//     \"password\": \"Biz123!\"\n// }\n\n\n// {\n//     \"email\": \"viel@gmail.com\",\n//     \"password\": \"Viel123!\"\n// }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/users/login",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjU5ODY4NTQsImV4cCI6MTcyNTk4NzQ1NH0.upzLVv-n2vDtuSwo9nS-KLLSM9g-Yw62ina5FLuYP7o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/users/me",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FishIndex",
+			"item": [
+				{
+					"name": "getFishIndexes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/fishIndex",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fishIndex"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFishIndexImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/fishIndex/image/668acc05985732c151744bf4/Loricariidae.jpg",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fishIndex",
+								"image",
+								"668acc05985732c151744bf4",
+								"Loricariidae.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plants",
+			"item": [
+				{
+					"name": "getRandomPlant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/plant/random",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlantById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lang\" : \"he\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/plant/66e9ca0c749674d1389e1418",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								"66e9ca0c749674d1389e1418"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTc2OTgsImV4cCI6MTcyNjU5ODI5OH0.AxdcHs-ACfXkH5KYzRaP5k9LMKfFa072AsDErxm1Nh8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/plant/66e9ca0c749674d1389e1418",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								"66e9ca0c749674d1389e1418"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPlant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTc0NDAsImV4cCI6MTcyNjU5ODA0MH0.0IvZfWE2PzpjWbPXC3oY2cWysQraRcMmjK92J4_3zlc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"languages\": {\n        \"en\": {\n            \"_id\": \"66e491da6c77d1f278630ea9\"\n        },\n        \"he\": {\n            \"family\": \"Scrophulariaceae\",\n            \"synonyms\": \"בקופה קרוליניאנה, Obolaria caroliniana, Walter, (1788), Monniera amplexicaulis, Michaux, Bacopa amplexicaulis, (Michaux) Wettstein\",\n            \"etymology\": \"Bacopa : כך קוראים לצמח תושבי גאיאנה caroliniana : מקרולינה\",\n            \"distribution\": \"דרום ומרכז ארצות הברית\",\n            \"notes\": \". צמח קל יחסית לגידול, אך דורש אור חזק . באור חזק מופיעים עלים בגוון צבע אדום .\\r\\t   אוהב מים רכים\",\n            \"propagation\": \"גיזום ושתילה מחדש. מספיק לחתוך כ-10 . ס\\\"מ\",\n            \"_id\": \"66e491da6c77d1f278630eaa\"\n        },\n        \"ru\": {\n            \"_id\": \"66e491da6c77d1f278630eab\"\n        }\n    },\n    \"likes\": [],\n    \"name\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx\",\n    \"latinName\": \"Bacopa caroliniana\",\n    \"images\": [\n        {\n            \"src\": \"Bacopa_caroliniana.jpg\",\n            \"alt\": \"Bacopa caroliniana 1\",\n            \"creatorName\": \"\",\n            \"originalSource\": \"\",\n            \"_id\": \"66e491da6c77d1f278630ea8\"\n        }\n    ],\n    \"firstDescription\": \"No specific description available\",\n    \"sources\": \"\",\n    \"height\": \"20 - 60 cm\",\n    \"width\": \"5 - 12 cm\",\n    \"temperature\": \"20 - 26°C\",\n    \"ph\": \"6.4  -  7.5\",\n    \"hardness\": \"2 - 10\",\n    \"light\": \"Strong to very strong\",\n    \"growthRate\": \"Moderate\",\n    \"placement\": \"קדמי , אמצעי\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/plant/",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePlant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MjY1OTcxMDAsImV4cCI6MTcyNjU5NzcwMH0.dSYiWvCxjQgYBiz7g06iLCLestz4djJZz4gJsrGDQSI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bacopa caroliniana\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/plant/66e491da6c77d1f278630ea7",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								"66e491da6c77d1f278630ea7"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlantByLetter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/plant/?letter=X",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plant",
+								""
+							],
+							"query": [
+								{
+									"key": "letter",
+									"value": "X"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BusinessCards",
+			"item": [
+				{
+					"name": "getAllCards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.01:3000/api/cards",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCardById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/cards/668016f4e923cfafe403674b",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"668016f4e923cfafe403674b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserCards",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTk3NzM3MDMsImV4cCI6MTcxOTc3NDMwM30.UwPcwD6VGEXvROMO5MT3AKXJhwedYEzl_X9Ys1e6Tzw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/cards/my_cards",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"my_cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNewCard",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTk3NzM3MDMsImV4cCI6MTcxOTc3NDMwM30.UwPcwD6VGEXvROMO5MT3AKXJhwedYEzl_X9Ys1e6Tzw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Business Card\",\n    \"subtitle\" : \"CEO\",\n    \"description\" : \"Business card description\",\n    \"phone\" : \"0501234567\",\n    \"email\" : \"business@example.com\",\n    \"web\" : \"http://example.com\",\n    \"image\" : { \"url\" : \"http://example.com/image.jpg\", \"alt\" : \"Business Image\" },\n    \"address\" : { \"state\" : \"CA\", \"country\" : \"USA\", \"city\" : \"Los Angeles\", \"street\" : \"Main\", \"houseNumber\" : 123, \"zip\" : \"90001\" }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/cards/",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCard",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTk3NzM3MDMsImV4cCI6MTcxOTc3NDMwM30.UwPcwD6VGEXvROMO5MT3AKXJhwedYEzl_X9Ys1e6Tzw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/cards/6681aa22f259c5d076deab04",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"6681aa22f259c5d076deab04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editCard",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MyIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTk3NzM3MDMsImV4cCI6MTcxOTc3NDMwM30.UwPcwD6VGEXvROMO5MT3AKXJhwedYEzl_X9Ys1e6Tzw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Edited Card\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.01:3000/api/cards/667eac7d25b4780d6c32949c",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"667eac7d25b4780d6c32949c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggleCardLike",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVlYzQ5ZjFiMmY5YTdkMTIzNDU2MiIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MTk3NzM4NjAsImV4cCI6MTcxOTc3NDQ2MH0.ImNWn_0dKNkkQUllkBA0wETFvbArfPhyDISE54WCxBE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.01:3000/api/cards/667eac7d25b4780d6c32949c",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"667eac7d25b4780d6c32949c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
