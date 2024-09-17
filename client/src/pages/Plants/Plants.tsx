@@ -28,7 +28,8 @@ export default function Plants() {
         setLoading(true);
         setError(null);
 
-        const result = await doGetPlantById(plantIdFromUrl, 'en'); // TODO - change this to be dynamic by language
+        // TODO - Remove the languege, as no longer needed for the API
+        const result = await doGetPlantById(plantIdFromUrl, 'en');
         if (result.error) {
           setError(result.error);
         } else if (result.result) {
@@ -81,13 +82,11 @@ export default function Plants() {
     <div className="w-full flex flex-col items-center">
       <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick} />
 
-      {/* Loading and Error Handling */}
       {loading && <Spinner message="Loading plants..." />}
       <DirectionProvider>
         {error && <div className="text-red-500">{error}</div>}
       </DirectionProvider>
 
-      {/* Display plant if found via query parameter */}
       {selectedPlant && (
         <div className="w-full mt-4">
           <PlantCard plantData={selectedPlant} />
@@ -111,7 +110,6 @@ export default function Plants() {
         </div>
       )}
 
-      {/* Message to prompt user to select a letter */}
       <DirectionProvider>
         {!selectedLetter && !loading && !selectedPlant &&
           <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>

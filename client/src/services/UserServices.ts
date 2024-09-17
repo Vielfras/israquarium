@@ -1,3 +1,5 @@
+// UserServices.tsx
+
 import { IUserDetails, IUserSignup } from '../interfaces/IUser';
 import { apiBase } from '../config';
 
@@ -17,13 +19,12 @@ export const doSignIn = async (email: string, password: string): Promise<{ error
 
     await saveToken(data.token);
 
-    // Fetch user details after logging in using the token
     const { error, result } = await fetchUserDetails();
     if (error) {
       return { error };
     }
 
-    return { error: null, result: result };  // Access the 'data' field
+    return { error: null, result: result };
   }
   catch (err) {
     const errMessage = (err as Error).message;
@@ -31,7 +32,7 @@ export const doSignIn = async (email: string, password: string): Promise<{ error
   }
 };
 
-
+// ---------------------------------------------------------------------------------------------------------
 export const doSignUp = async (userData: IUserSignup): Promise<{ error: string | undefined }> => {
   try {
     const response = await fetch(`${apiBase}/api/users`, {
@@ -54,6 +55,7 @@ export const doSignUp = async (userData: IUserSignup): Promise<{ error: string |
   }
 };
 
+// ---------------------------------------------------------------------------------------------------------
 const saveToken = async (token: string): Promise<void> => {
   localStorage.setItem('israquariumAuthToken', token);
 };
@@ -95,6 +97,7 @@ export const fetchUserDetails = async (): Promise<{ error: string | null, result
   }
 };
 
+// ---------------------------------------------------------------------------------------------------------
 export const updateUser = async (userId: string, updatedData: Partial<IUserDetails>) => {
   if (!userId || typeof userId !== 'string') {
     return { error: 'Invalid user ID' };
@@ -128,6 +131,7 @@ export const updateUser = async (userId: string, updatedData: Partial<IUserDetai
 };
 
 
+// ---------------------------------------------------------------------------------------------------------
 // ADMIN ONLY - Fetch user by ID 
 export const fetchUserById = async (userId: string): Promise<{
   error: string | null;

@@ -129,28 +129,19 @@ export default function EditUser() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridFirstName"
-                type="text"
-                label={t('EditUser.firstNameLabel')}
-                placeholder={t('EditUser.firstNamePlaceholder')}
+              <FormField type="text" controlId="formGridFirstName"
+                label={t('EditUser.firstNameLabel')} placeholder={t('EditUser.firstNamePlaceholder')}
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               />
-              <FormField
-                controlId="formGridMiddleName"
-                type="text"
-                label={t('EditUser.middleNameLabel')}
-                placeholder={t('EditUser.middleNamePlaceholder')}
+              <FormField type="text" controlId="formGridMiddleName"
+                label={t('EditUser.middleNameLabel')} placeholder={t('EditUser.middleNamePlaceholder')}
                 value={middleName}
                 onChange={(e) => setMiddleName(e.target.value)}
               />
-              <FormField
-                controlId="formGridLastName"
-                type="text"
-                label={t('EditUser.lastNameLabel')}
-                placeholder={t('EditUser.lastNamePlaceholder')}
+              <FormField type="text" controlId="formGridLastName"
+                label={t('EditUser.lastNameLabel')} placeholder={t('EditUser.lastNamePlaceholder')}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
@@ -159,20 +150,14 @@ export default function EditUser() {
 
             {/* Phone & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridPhone"
-                type="text"
-                label={t('EditUser.phoneLabel')}
-                placeholder={t('EditUser.phonePlaceholder')}
+              <FormField type="text" controlId="formGridPhone"
+                label={t('EditUser.phoneLabel')} placeholder={t('EditUser.phonePlaceholder')}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
               />
-              <FormField
-                controlId="formGridEmail"
-                type="email"
-                label={t('EditUser.emailLabel')}
-                placeholder={t('EditUser.emailPlaceholder')}
+              <FormField type="email" controlId="formGridEmail"
+                label={t('EditUser.emailLabel')} placeholder={t('EditUser.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -183,20 +168,14 @@ export default function EditUser() {
 
             {/* Address Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridCountry"
-                type="text"
-                label={t('EditUser.countryLabel')}
-                placeholder={t('EditUser.countryPlaceholder')}
+              <FormField type="text" controlId="formGridCountry"
+                label={t('EditUser.countryLabel')} placeholder={t('EditUser.countryPlaceholder')}
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 required
               />
-              <FormField
-                controlId="formGridCity"
-                type="text"
-                label={t('EditUser.cityLabel')}
-                placeholder={t('EditUser.cityPlaceholder')}
+              <FormField type="text" controlId="formGridCity"
+                label={t('EditUser.cityLabel')} placeholder={t('EditUser.cityPlaceholder')}
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 required
@@ -204,29 +183,20 @@ export default function EditUser() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField
-                controlId="formGridStreet"
-                type="text"
-                label={t('EditUser.streetLabel')}
-                placeholder={t('EditUser.streetPlaceholder')}
+              <FormField type="text" controlId="formGridStreet"
+                label={t('EditUser.streetLabel')} placeholder={t('EditUser.streetPlaceholder')}
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
                 required
               />
-              <FormField
-                controlId="formGridHouseNumber"
-                type="number"
-                label={t('EditUser.houseNumberLabel')}
-                placeholder={t('EditUser.houseNumberPlaceholder')}
+              <FormField type="number" controlId="formGridHouseNumber"
+                label={t('EditUser.houseNumberLabel')} placeholder={t('EditUser.houseNumberPlaceholder')}
                 value={houseNumber}
                 onChange={(e) => setHouseNumber(e.target.value)}
                 required
               />
-              <FormField
-                controlId="formGridZipCode"
-                type="text"
-                label={t('EditUser.zipCodeLabel')}
-                placeholder={t('EditUser.zipCodePlaceholder')}
+              <FormField type="text" controlId="formGridZipCode"
+                label={t('EditUser.zipCodeLabel')} placeholder={t('EditUser.zipCodePlaceholder')}
                 value={zipCode}
                 onChange={(e) => setZipCode(e.target.value)}
                 required
@@ -235,19 +205,13 @@ export default function EditUser() {
 
             {/* Image Fields
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField
-                controlId="formGridImageSrc"
-                type="url"
-                label={t('EditUser.imageSrcLabel')}
-                placeholder={t('EditUser.imageSrcPlaceholder')}
+              <FormField type="url" controlId="formGridImageSrc"
+                label={t('EditUser.imageSrcLabel')} placeholder={t('EditUser.imageSrcPlaceholder')}
                 value={imageSrc}
                 onChange={(e) => setImageSrc(e.target.value)}
               />
-              <FormField
-                controlId="formGridImageAlt"
-                type="text"
-                label={t('EditUser.imageAltLabel')}
-                placeholder={t('EditUser.imageAltPlaceholder')}
+              <FormField type="text" controlId="formGridImageAlt"
+                label={t('EditUser.imageAltLabel')} placeholder={t('EditUser.imageAltPlaceholder')}
                 value={imageAlt}
                 onChange={(e) => setImageAlt(e.target.value)}
               />
@@ -262,12 +226,9 @@ export default function EditUser() {
                   <label className="block text-lg font-medium mb-3">{t('EditUser.upgradeToBusinessLabel')}</label>
                   <div className="flex justify-center">
                     <label htmlFor="upgradeBusinessCheckBox" className="inline-flex items-center">
-                      <input
-                        id="upgradeBusinessCheckBox"
-                        name="upgradeBusinessCheckBox"
-                        type="checkbox"
+                      <input id="upgradeBusinessCheckBox" name="upgradeBusinessCheckBox"
+                        type="checkbox" checked={isBusiness}
                         className="form-checkbox"
-                        checked={isBusiness}
                         onChange={(e) => setIsBusiness(e.target.checked)}
                       />
                       <span className="ml-2">{t('EditUser.yesLabel')}</span>
@@ -288,6 +249,7 @@ export default function EditUser() {
                 disabled={isBusy}
               >
                 {isBusy ? (
+                  // TODO - Replace by Spinner component
                   <svg className="animate-spin h-5 w-5 mx-auto text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z"></path>

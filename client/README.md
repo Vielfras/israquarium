@@ -141,6 +141,7 @@
 - [ ] Add Accessibility
 
 ### Version 0.5.0 - Polish
+- [ ] Use Spinner component instead of copy pasted code
 - [ ] Replace the login alert with a toast.
 - [ ] Add the favorite icon to Plant/FishMinicards
 - [ ] When token runs out and auth fails, need to notify user and handle problem

@@ -1,9 +1,10 @@
+// CardServices.ts
+
 import { apiBase } from "../config";
 import { IBusinessCard } from "../interfaces/IBusinessCard";
 import { getToken } from "./UserServices";
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doGetCardById = async (cardId: string): Promise<{ error: string | null, result: IBusinessCard | null }> => {
   try {
     const response = await fetch(`${apiBase}/api/businessCard/${cardId}`, {
@@ -26,7 +27,6 @@ export const doGetCardById = async (cardId: string): Promise<{ error: string | n
 };
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doGetAllCards = async (): Promise<{ error: string | null, result: IBusinessCard[] | null }> => {
   try {
     const response = await fetch(`${apiBase}/api/businessCard`, {
@@ -45,7 +45,6 @@ export const doGetAllCards = async (): Promise<{ error: string | null, result: I
 };
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doGetMyCards = async (): Promise<{ error: string | undefined, result: IBusinessCard[] | undefined }> => {
   try {
     const token = await getToken();
@@ -70,7 +69,6 @@ export const doGetMyCards = async (): Promise<{ error: string | undefined, resul
 };
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doToggleCardLike = async (cardId: string): Promise<{ error: string | null, result: IBusinessCard | null }> => {
   try {
     const token = await getToken();
@@ -100,7 +98,6 @@ export const doToggleCardLike = async (cardId: string): Promise<{ error: string 
 };
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doDeleteCard = async (cardId: string, bizNumber: number): Promise<{ error: string | null, result: any | null }> => {
   try {
     const token = await getToken();
@@ -131,7 +128,6 @@ export const doDeleteCard = async (cardId: string, bizNumber: number): Promise<{
 };
 
 // ---------------------------------------------------------------------------------------------------------
-
 export const doUpdateCard = async (cardId: string, cardData: IBusinessCard): Promise<{ error: string | null; result: IBusinessCard | null }> => {
   try {
     const token = await getToken();
@@ -142,7 +138,6 @@ export const doUpdateCard = async (cardId: string, cardData: IBusinessCard): Pro
     // Deep copy cardData to avoid mutating the original object
     const cardDataCopy = JSON.parse(JSON.stringify(cardData));
 
-    // Remove _id from image and address if they exist
     if (cardDataCopy.image && '_id' in cardDataCopy.image) {
       delete cardDataCopy.image._id;
     }

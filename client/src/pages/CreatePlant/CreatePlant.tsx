@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import { IPlant } from '../../interfaces/IPlant';
 import { doCreatePlant } from '../../services/PlantServices';
+import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 type LanguageCode = 'en' | 'he' | 'ru';
 
@@ -135,20 +136,16 @@ export default function CreatePlant() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField controlId="formGridPlantName"
-                type="text"
-                label={t('CreatePlant.plantNameLabel')}
-                placeholder={t('CreatePlant.plantNamePlaceholder')}
+              <FormField type="text" controlId="formGridPlantName"
+                label={t('CreatePlant.plantNameLabel')} placeholder={t('CreatePlant.plantNamePlaceholder')}
                 value={name}
                 regex={nameRegex}
                 onChange={(e) => setName(e.target.value)}
                 isValid={nameRegex.test(name)}
                 validationMessage={t('CreatePlant.validation.plantName')}
               />
-              <FormField controlId="formGridLatinName"
-                type="text"
-                label={t('CreatePlant.latinNameLabel')}
-                placeholder={t('CreatePlant.latinNamePlaceholder')}
+              <FormField type="text" controlId="formGridLatinName"
+                label={t('CreatePlant.latinNameLabel')} placeholder={t('CreatePlant.latinNamePlaceholder')}
                 value={latinName}
                 regex={nameRegex}
                 onChange={(e) => setLatinName(e.target.value)}
@@ -159,26 +156,20 @@ export default function CreatePlant() {
 
             {/* Additional General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField controlId="formGridHeight"
-                type="text"
-                label={t('CreatePlant.heightLabel')}
-                placeholder={t('CreatePlant.heightPlaceholder')}
+              <FormField type="text" controlId="formGridHeight"
+                label={t('CreatePlant.heightLabel')} placeholder={t('CreatePlant.heightPlaceholder')}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 validationMessage={t('CreatePlant.validation.height')}
               />
-              <FormField controlId="formGridWidth"
-                type="text"
-                label={t('CreatePlant.widthLabel')}
-                placeholder={t('CreatePlant.widthPlaceholder')}
+              <FormField type="text" controlId="formGridWidth"
+                label={t('CreatePlant.widthLabel')} placeholder={t('CreatePlant.widthPlaceholder')}
                 value={width}
                 onChange={(e) => setWidth(e.target.value)}
                 validationMessage={t('CreatePlant.validation.width')}
               />
-              <FormField controlId="formGridTemperature"
-                type="text"
-                label={t('CreatePlant.temperatureLabel')}
-                placeholder={t('CreatePlant.temperaturePlaceholder')}
+              <FormField type="text" controlId="formGridTemperature"
+                label={t('CreatePlant.temperatureLabel')} placeholder={t('CreatePlant.temperaturePlaceholder')}
                 value={temperature}
                 onChange={(e) => setTemperature(e.target.value)}
                 validationMessage={t('CreatePlant.validation.temperature')}
@@ -187,26 +178,20 @@ export default function CreatePlant() {
 
             {/* More General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <FormField controlId="formGridPH"
-                type="text"
-                label={t('CreatePlant.phLabel')}
-                placeholder={t('CreatePlant.phPlaceholder')}
+              <FormField type="text" controlId="formGridPH"
+                label={t('CreatePlant.phLabel')} placeholder={t('CreatePlant.phPlaceholder')}
                 value={ph}
                 onChange={(e) => setPh(e.target.value)}
                 validationMessage={t('CreatePlant.validation.ph')}
               />
-              <FormField controlId="formGridHardness"
-                type="text"
-                label={t('CreatePlant.hardnessLabel')}
-                placeholder={t('CreatePlant.hardnessPlaceholder')}
+              <FormField type="text" controlId="formGridHardness"
+                label={t('CreatePlant.hardnessLabel')} placeholder={t('CreatePlant.hardnessPlaceholder')}
                 value={hardness}
                 onChange={(e) => setHardness(e.target.value)}
                 validationMessage={t('CreatePlant.validation.hardness')}
               />
-              <FormField controlId="formGridLight"
-                type="text"
-                label={t('CreatePlant.lightLabel')}
-                placeholder={t('CreatePlant.lightPlaceholder')}
+              <FormField type="text" controlId="formGridLight"
+                label={t('CreatePlant.lightLabel')} placeholder={t('CreatePlant.lightPlaceholder')}
                 value={light}
                 onChange={(e) => setLight(e.target.value)}
               />
@@ -214,17 +199,13 @@ export default function CreatePlant() {
 
             {/* Additional General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField controlId="formGridGrowthRate"
-                type="text"
-                label={t('CreatePlant.growthRateLabel')}
-                placeholder={t('CreatePlant.growthRatePlaceholder')}
+              <FormField type="text" controlId="formGridGrowthRate"
+                label={t('CreatePlant.growthRateLabel')} placeholder={t('CreatePlant.growthRatePlaceholder')}
                 value={growthRate}
                 onChange={(e) => setGrowthRate(e.target.value)}
               />
-              <FormField controlId="formGridPlacement"
-                type="text"
-                label={t('CreatePlant.placementLabel')}
-                placeholder={t('CreatePlant.placementPlaceholder')}
+              <FormField type="text" controlId="formGridPlacement"
+                label={t('CreatePlant.placementLabel')} placeholder={t('CreatePlant.placementPlaceholder')}
                 value={placement}
                 onChange={(e) => setPlacement(e.target.value)}
               />
@@ -232,10 +213,8 @@ export default function CreatePlant() {
 
             {/* Sources Field */}
             <div className="grid grid-cols-1">
-              <FormField controlId="formGridSources"
-                type="text"
-                label={t('CreatePlant.sourcesLabel')}
-                placeholder={t('CreatePlant.sourcesPlaceholder')}
+              <FormField type="text" controlId="formGridSources"
+                label={t('CreatePlant.sourcesLabel')} placeholder={t('CreatePlant.sourcesPlaceholder')}
                 value={sources}
                 onChange={(e) => setSources(e.target.value)}
               />
@@ -260,14 +239,14 @@ export default function CreatePlant() {
               {/* Fields for the active language */}
               <div dir={getDirection(activeLangTab)} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(['family', 'synonyms', 'etymology', 'distribution', 'notes', 'propagation'] as const).map((field) => (
-                    <FormField key={field} controlId={`formGrid${field}`}
-                      type="text"
-                      isLtrRtlResponsive={false}
-                      label={localT(`CreatePlant.${field}Label`)}
-                      placeholder={localT(`CreatePlant.${field}Placeholder`)}
-                      value={languageData[activeLangTab][field]}
-                      onChange={(e) => handleLanguageChange(field, e.target.value)}
-                    />
+                  <FormField key={field} controlId={`formGrid${field}`}
+                    type="text"
+                    isLtrRtlResponsive={false}
+                    label={localT(`CreatePlant.${field}Label`)}
+                    placeholder={localT(`CreatePlant.${field}Placeholder`)}
+                    value={languageData[activeLangTab][field]}
+                    onChange={(e) => handleLanguageChange(field, e.target.value)}
+                  />
                 ))}
               </div>
 
@@ -281,18 +260,12 @@ export default function CreatePlant() {
                 disabled={isBusy}
               >
                 {isBusy ? (
-                  <svg
-                    className="animate-spin h-5 w-5 mx-auto text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  // TODO - replace by Spinner component
+                  <svg className="animate-spin h-5 w-5 mx-auto text-white"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                   >
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z"
-                    ></path>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z"></path>
                   </svg>
                 ) : (
                   t('CreatePlant.submitButton')

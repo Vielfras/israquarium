@@ -35,7 +35,6 @@ export default function UserProfile() {
         <DirectionProvider>
           {userDetails ? (
             <>
-              {/* User Card */}
               <UserCard userDetails={userDetails} />
 
               {/* Action Buttons */}
@@ -55,10 +54,8 @@ export default function UserProfile() {
 
               {/* Sign Out Button */}
               <div className='mt-4 text-center'>
-                <button
-                  type="button"
+                <button type="button" onClick={handleSignOut}
                   className="bg-red-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-red-700"
-                  onClick={handleSignOut}
                 >
                   {t('UserProfile.signOut')}
                 </button>
@@ -66,7 +63,6 @@ export default function UserProfile() {
             </>
           ) : (
             <div className='text-center' >
-              {/* Display this if the user is not logged in */}
               <p className="text-lg">{t('UserProfile.signInRequired')}</p>
               <p className="text-xl mt-8 mb-2">
                 <Link to="/sign-in" className="text-blue-600 dark:text-blue-400 hover:underline">

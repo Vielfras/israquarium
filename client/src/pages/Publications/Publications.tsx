@@ -6,7 +6,7 @@ import JournalCard from '../../components/Journal/JournalCard/JournalCard';
 
 
 // TODO - Get these from the backend
-const myTropicalFishJournals = [
+const tempMyTropicalFishJournals = [
   {
     title: 'My Tropical Fish - Issue 1',
     coverImage: '/images/journal-issue-1.png',
@@ -38,9 +38,9 @@ const myTropicalFishJournals = [
 ];
 
 export default function Publications() {
-  const [selectedJournal, setSelectedJournal] = useState<typeof myTropicalFishJournals[0] | null>(null);
+  const [selectedJournal, setSelectedJournal] = useState<typeof tempMyTropicalFishJournals[0] | null>(null);
 
-  const handleJournalSelect = (journal: typeof myTropicalFishJournals[0]) => {
+  const handleJournalSelect = (journal: typeof tempMyTropicalFishJournals[0]) => {
     setSelectedJournal(journal); // Set the selected journal to display its details
   };
 
@@ -49,7 +49,7 @@ export default function Publications() {
       {/* Show JournalMiniCards if no journal is selected */}
       {!selectedJournal && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full max-w-6xl">
-          {myTropicalFishJournals.map((journal, index) => (
+          {tempMyTropicalFishJournals.map((journal, index) => (
             <JournalMiniCard key={index}
               title={journal.title} coverImage={journal.coverImage}
               onClick={() => handleJournalSelect(journal)} />
@@ -66,7 +66,6 @@ export default function Publications() {
           pdfUrl={selectedJournal.pdfUrl} />
       )}
 
-      {/* Back button to go back to journal list */}
       {selectedJournal && (
         <button onClick={() => setSelectedJournal(null)}
           className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"

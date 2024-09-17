@@ -1,3 +1,5 @@
+// EditFish.tsx
+
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -147,20 +149,14 @@ export default function EditFish() {
                     <DirectionProvider>
                         {/* General Information */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <FormField
-                                controlId="name"
-                                type="text"
-                                label={t('EditFish.nameLabel')}
-                                placeholder={t('EditFish.namePlaceholder')}
+                            <FormField controlId="name" type="text"
+                                label={t('EditFish.nameLabel')} placeholder={t('EditFish.namePlaceholder')}
                                 value={formData.name}
                                 onChange={handleInputChange}
                                 required
                             />
-                            <FormField
-                                controlId="latinName"
-                                type="text"
-                                label={t('EditFish.latinNameLabel')}
-                                placeholder={t('EditFish.latinNamePlaceholder')}
+                            <FormField controlId="latinName" type="text"
+                                label={t('EditFish.latinNameLabel')} placeholder={t('EditFish.latinNamePlaceholder')}
                                 value={formData.latinName}
                                 onChange={handleInputChange}
                                 required
@@ -169,46 +165,31 @@ export default function EditFish() {
 
                         {/* Environmental Parameters */}
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <FormField
-                                controlId="maxTemp"
-                                type="number"
-                                label={t('EditFish.maxTempLabel')}
-                                placeholder={t('EditFish.maxTempPlaceholder')}
+                            <FormField controlId="maxTemp" type="number"
+                                label={t('EditFish.maxTempLabel')} placeholder={t('EditFish.maxTempPlaceholder')}
                                 value={formData.maxTemp}
                                 onChange={handleInputChange}
                             />
-                            <FormField
-                                controlId="minTemp"
-                                type="number"
-                                label={t('EditFish.minTempLabel')}
-                                placeholder={t('EditFish.minTempPlaceholder')}
+                            <FormField controlId="minTemp" type="number"
+                                label={t('EditFish.minTempLabel')} placeholder={t('EditFish.minTempPlaceholder')}
                                 value={formData.minTemp}
                                 onChange={handleInputChange}
                             />
-                            <FormField
-                                controlId="ph"
-                                type="number"
-                                label={t('EditFish.phLabel')}
-                                placeholder={t('EditFish.phPlaceholder')}
+                            <FormField controlId="ph" type="number"
+                                label={t('EditFish.phLabel')} placeholder={t('EditFish.phPlaceholder')}
                                 value={formData.ph}
                                 onChange={handleInputChange}
                             />
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <FormField
-                                controlId="dGH"
-                                type="number"
-                                label={t('EditFish.dGHLabel')}
-                                placeholder={t('EditFish.dGHPlaceholder')}
+                            <FormField controlId="dGH" type="number"
+                                label={t('EditFish.dGHLabel')} placeholder={t('EditFish.dGHPlaceholder')}
                                 value={formData.dGH}
                                 onChange={handleInputChange}
                             />
-                            <FormField
-                                controlId="tankVolume"
-                                type="text"
-                                label={t('EditFish.tankVolumeLabel')}
-                                placeholder={t('EditFish.tankVolumePlaceholder')}
+                            <FormField controlId="tankVolume" type="text"
+                                label={t('EditFish.tankVolumeLabel')} placeholder={t('EditFish.tankVolumePlaceholder')}
                                 value={formData.tankVolume}
                                 onChange={handleInputChange}
                             />
@@ -220,16 +201,13 @@ export default function EditFish() {
                             <div className="flex flex-wrap justify-center gap-4">
                                 {formData.images.map((image) => (
                                     <div key={image._id || image.src} className="relative">
-                                        <img
+                                        <img className="w-32 h-32 object-cover rounded-lg shadow-md"
                                             src={`${apiBase}/api/fish/image/${formData._id}/${image.src}`}
                                             alt={image.alt}
-                                            className="w-32 h-32 object-cover rounded-lg shadow-md"
                                         />
-                                        <button
-                                            type="button"
-                                            onClick={() => handleDeleteImage(image._id)}
+                                        <button type="button" title={t('EditFish.deleteImage')}
                                             className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 hover:bg-red-600"
-                                            title={t('EditFish.deleteImage')}
+                                            onClick={() => handleDeleteImage(image._id)}
                                         >
                                             &times;
                                         </button>
@@ -242,9 +220,7 @@ export default function EditFish() {
                                     <label className="block text-lg font-medium text-gray-900 dark:text-blue-100 mb-2 text-center">
                                         {t('EditFish.addImageLabel')}
                                     </label>
-                                    <input
-                                        type="file"
-                                        accept="image/*"
+                                    <input type="file" accept="image/*"
                                         onChange={handleImageChange}
                                         className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
                                           file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
@@ -257,14 +233,11 @@ export default function EditFish() {
                         <div className="mt-8">
                             <div className="flex my-4 space-x-4 justify-center">
                                 {(['en', 'he', 'ru'] as const).map((lang) => (
-                                    <button
-                                        key={lang}
-                                        type="button"
-                                        className={`px-4 py-2 rounded-lg transition ${
-                                            activeLangTab === lang
+                                    <button type="button" key={lang}
+                                        className={`px-4 py-2 rounded-lg transition ${activeLangTab === lang
                                                 ? 'bg-blue-600 text-white shadow-lg'
                                                 : 'bg-gray-200 text-blue-900 hover:bg-gray-300'
-                                        }`}
+                                            }`}
                                         onClick={() => setActiveLangTab(lang)}
                                     >
                                         {t(`EditFish.languages.${lang}`)}
@@ -275,17 +248,13 @@ export default function EditFish() {
                             {/* Language-Specific Fields */}
                             <div dir={getDirection(activeLangTab)}>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="subclass"
-                                        type="text"
+                                    <FormField type="text" controlId="subclass"
                                         label={t('EditFish.subclassLabel')}
                                         placeholder={t('EditFish.subclassPlaceholder')}
                                         value={formData.languages[activeLangTab].subclass}
                                         onChange={(e) => handleLanguageChange('subclass', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="order"
-                                        type="text"
+                                    <FormField type="text" controlId="order"
                                         label={t('EditFish.orderLabel')}
                                         placeholder={t('EditFish.orderPlaceholder')}
                                         value={formData.languages[activeLangTab].order}
@@ -293,17 +262,13 @@ export default function EditFish() {
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="family"
-                                        type="text"
+                                    <FormField type="text" controlId="family"
                                         label={t('EditFish.familyLabel')}
                                         placeholder={t('EditFish.familyPlaceholder')}
                                         value={formData.languages[activeLangTab].family}
                                         onChange={(e) => handleLanguageChange('family', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="subfamily"
-                                        type="text"
+                                    <FormField type="text" controlId="subfamily"
                                         label={t('EditFish.subfamilyLabel')}
                                         placeholder={t('EditFish.subfamilyPlaceholder')}
                                         value={formData.languages[activeLangTab].subfamily}
@@ -311,17 +276,13 @@ export default function EditFish() {
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="synonyms"
-                                        type="text"
+                                    <FormField type="text" controlId="synonyms"
                                         label={t('EditFish.synonymsLabel')}
                                         placeholder={t('EditFish.synonymsPlaceholder')}
                                         value={formData.languages[activeLangTab].synonyms}
                                         onChange={(e) => handleLanguageChange('synonyms', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="etymology"
-                                        type="textarea"
+                                    <FormField type="textarea" controlId="etymology"
                                         label={t('EditFish.etymologyLabel')}
                                         placeholder={t('EditFish.etymologyPlaceholder')}
                                         value={formData.languages[activeLangTab].etymology}
@@ -329,17 +290,13 @@ export default function EditFish() {
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="distribution"
-                                        type="textarea"
+                                    <FormField type="textarea" controlId="distribution"
                                         label={t('EditFish.distributionLabel')}
                                         placeholder={t('EditFish.distributionPlaceholder')}
                                         value={formData.languages[activeLangTab].distribution}
                                         onChange={(e) => handleLanguageChange('distribution', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="additionalRequirements"
-                                        type="textarea"
+                                    <FormField type="textarea" controlId="additionalRequirements"
                                         label={t('EditFish.additionalRequirementsLabel')}
                                         placeholder={t('EditFish.additionalRequirementsPlaceholder')}
                                         value={formData.languages[activeLangTab].additionalRequirements}
@@ -347,93 +304,69 @@ export default function EditFish() {
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="aquariumSetup"
-                                        type="textarea"
-                                        label={t('EditFish.aquariumSetupLabel')}
-                                        placeholder={t('EditFish.aquariumSetupPlaceholder')}
+                                    <FormField type="textarea" controlId="aquariumSetup"
+                                        label={t('EditFish.aquariumSetupLabel')} placeholder={t('EditFish.aquariumSetupPlaceholder')}
                                         value={formData.languages[activeLangTab].aquariumSetup}
                                         onChange={(e) => handleLanguageChange('aquariumSetup', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="intraspeciesCompatibility"
-                                        type="textarea"
-                                        label={t('EditFish.intraspeciesCompatibilityLabel')}
-                                        placeholder={t('EditFish.intraspeciesCompatibilityPlaceholder')}
+                                    <FormField type="textarea" controlId="intraspeciesCompatibility"
+                                        label={t('EditFish.intraspeciesCompatibilityLabel')} placeholder={t('EditFish.intraspeciesCompatibilityPlaceholder')}
                                         value={formData.languages[activeLangTab].intraspeciesCompatibility}
                                         onChange={(e) => handleLanguageChange('intraspeciesCompatibility', e.target.value)}
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="interspeciesCompatibility"
-                                        type="textarea"
-                                        label={t('EditFish.interspeciesCompatibilityLabel')}
-                                        placeholder={t('EditFish.interspeciesCompatibilityPlaceholder')}
+                                    <FormField type="textarea" controlId="interspeciesCompatibility"
+                                        label={t('EditFish.interspeciesCompatibilityLabel')} placeholder={t('EditFish.interspeciesCompatibilityPlaceholder')}
                                         value={formData.languages[activeLangTab].interspeciesCompatibility}
                                         onChange={(e) => handleLanguageChange('interspeciesCompatibility', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="feeding"
-                                        type="textarea"
-                                        label={t('EditFish.feedingLabel')}
-                                        placeholder={t('EditFish.feedingPlaceholder')}
+                                    <FormField type="textarea" controlId="feeding"
+                                        label={t('EditFish.feedingLabel')} placeholder={t('EditFish.feedingPlaceholder')}
                                         value={formData.languages[activeLangTab].feeding}
                                         onChange={(e) => handleLanguageChange('feeding', e.target.value)}
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <FormField
-                                        controlId="breeding"
-                                        type="textarea"
-                                        label={t('EditFish.breedingLabel')}
-                                        placeholder={t('EditFish.breedingPlaceholder')}
+                                    <FormField type="textarea" controlId="breeding"
+                                        label={t('EditFish.breedingLabel')} placeholder={t('EditFish.breedingPlaceholder')}
                                         value={formData.languages[activeLangTab].breeding}
                                         onChange={(e) => handleLanguageChange('breeding', e.target.value)}
                                     />
-                                    <FormField
-                                        controlId="sexualDimorphism"
-                                        type="textarea"
-                                        label={t('EditFish.sexualDimorphismLabel')}
-                                        placeholder={t('EditFish.sexualDimorphismPlaceholder')}
+                                    <FormField type="textarea" controlId="sexualDimorphism"
+                                        label={t('EditFish.sexualDimorphismLabel')} placeholder={t('EditFish.sexualDimorphismPlaceholder')}
                                         value={formData.languages[activeLangTab].sexualDimorphism}
                                         onChange={(e) => handleLanguageChange('sexualDimorphism', e.target.value)}
                                     />
+                                </div>
                             </div>
                         </div>
-                                </div>
-                                <div className="gap-6">
-                                    <FormField
-                                        controlId="additionalInformation"
-                                        type="textarea"
-                                        label={t('EditFish.additionalInformationLabel')}
-                                        placeholder={t('EditFish.additionalInformationPlaceholder')}
-                                        value={formData.languages[activeLangTab].additionalInformation}
-                                        onChange={(e) => handleLanguageChange('additionalInformation', e.target.value)}
-                                    />
-                                </div>
+                        <div className="gap-6">
+                            <FormField type="textarea" controlId="additionalInformation"
+                                label={t('EditFish.additionalInformationLabel')} placeholder={t('EditFish.additionalInformationPlaceholder')}
+                                value={formData.languages[activeLangTab].additionalInformation}
+                                onChange={(e) => handleLanguageChange('additionalInformation', e.target.value)}
+                            />
+                        </div>
                     </DirectionProvider>
 
                     {/* Submit Button */}
                     <div className="flex justify-center mt-10">
-                        <button
-                            type="submit"
+                        <button type="submit"
                             className={`w-1/3 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold hover:bg-blue-700 shadow-lg transition ${isBusy ? 'opacity-50 cursor-not-allowed' : ''
                                 }`}
                             disabled={isBusy}
                         >
                             {isBusy ? (
+                                // TODO - Replace by Spinner component
                                 <svg
                                     className="animate-spin h-5 w-5 mx-auto text-white"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                 >
-                                    <circle
-                                        className="opacity-25"
-                                        cx="12"
-                                        cy="12"
-                                        r="10"
+                                    <circle className="opacity-25"
+                                        cx="12" cy="12" r="10"
                                         stroke="currentColor"
                                         strokeWidth="4"
                                     ></circle>
@@ -452,13 +385,9 @@ export default function EditFish() {
 
                 {/* Delete Image Confirmation Modal */}
                 {showImageModal && (
-                    <Modal
-                        title={t('EditFish.deleteImageConfirmation')}
-                        message={t('EditFish.deleteImageWarning')}
-                        confirmText={t('EditFish.confirmDelete')}
-                        cancelText={t('EditFish.cancelDelete')}
-                        onConfirm={confirmDeleteImage}
-                        onCancel={cancelDeleteImage}
+                    <Modal title={t('EditFish.deleteImageConfirmation')} message={t('EditFish.deleteImageWarning')}
+                        confirmText={t('EditFish.confirmDelete')} cancelText={t('EditFish.cancelDelete')}
+                        onConfirm={confirmDeleteImage} onCancel={cancelDeleteImage}
                     />
                 )}
             </div>

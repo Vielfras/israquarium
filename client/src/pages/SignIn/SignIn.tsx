@@ -1,3 +1,5 @@
+// SignIn.tsx
+
 import { useContext, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../context/AuthContext';
@@ -28,7 +30,7 @@ export default function SignIn() {
     if (signInResponse?.error) {
       alert(`Error Signing-In: ${signInResponse.error}`);
     } else {
-      setSignInSuccess(true); 
+      setSignInSuccess(true);
     }
 
     setIsBusy(false);
@@ -36,7 +38,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (signInSuccess && auth?.userDetails) {
-      navigate('/user-profile'); 
+      navigate('/user-profile');
     }
   }, [signInSuccess, auth?.userDetails, navigate]);
 
@@ -45,12 +47,12 @@ export default function SignIn() {
       <div className="w-full max-w-md bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
         <h3 className="text-center text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{t('SignInPage.title')}</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <FormField controlId="formBasicEmail"
-            label="" type="email" placeholder={t('SignInPage.enterEmail')}
+          <FormField type="email" controlId="formBasicEmail"
+            label="" placeholder={t('SignInPage.enterEmail')}
             value={email} onChange={(e) => setEmail(e.target.value)}
           />
-          <FormField controlId="formBasicPassword"
-            label="" type="password" placeholder={t('SignInPage.enterPassword')}
+          <FormField type="password" controlId="formBasicPassword"
+            label="" placeholder={t('SignInPage.enterPassword')}
             value={password} onChange={(e) => setPassword(e.target.value)}
           />
 
