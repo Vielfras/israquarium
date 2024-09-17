@@ -96,7 +96,7 @@ We welcome contributions from the community! To contribute:
 2. Create a Branch: Create a new branch for your feature or bugfix.
 3. Commit Your Changes: Make your changes and commit them with clear messages.
 4. Open a Pull Request: Submit a pull request detailing your changes.
-> Please read our CONTRIBUTING.md for more detailed guidelines.
+> Please read our [contribution guidlines](./CONTRIBUTING.md) for more detailed guidelines.
 
 
 ## License
