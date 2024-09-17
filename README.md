@@ -1,112 +1,122 @@
-# Final Project - WEB 2023
+# Israquarium
 
-## Project Overview
-This project involves developing a web application with both client-side and server-side components. The application should be fully functional, responsive, and include a content management system for site administrators to publish and manage content.
+Welcome to **Israquarium** – your comprehensive resource for freshwater fish and aquatic plants. Whether you're a beginner setting up your first aquarium or a seasoned aquarist looking to expand your knowledge, Israquarium provides the tools and information you need to create and maintain a thriving aquatic environment.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Languages Supported](#languages-supported)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Additional Information](#additional-information)
+
+## Introduction
+
+Israquarium is an open-source platform designed to offer detailed information on a wide variety of freshwater fish and aquatic plants. Our mission is to empower aquarium enthusiasts with the knowledge and tools necessary to maintain healthy and vibrant aquatic ecosystems. From species profiles and care guides to virtual aquarium management, Israquarium is your go-to destination for all things related to freshwater aquatics.
+
+## Features
+
+- **Comprehensive Species Profiles**: Detailed information on freshwater fish and aquatic plants, including taxonomy, habitat, care requirements, and more.
+- **Virtual Aquarium**: Create and manage your own virtual aquarium, tracking your fish and plants, feeding schedules, and maintenance routines.
+- **User Management**: Personalized user profiles with options for business accounts and administrative controls.
+- **Admin Dashboard**: Manage users, species, plants, shops, and view website statistics with ease.
+- **Multilingual Support**: Available in English (US), Russian, and Hebrew to cater to a global audience.
+- **Responsive Design**: Accessible on desktops, tablets, and mobile devices for convenience on the go.
+- **Community Engagement**: Connect with other aquarium enthusiasts, share tips, and participate in discussions.
+
+## Languages Supported
+
+Israquarium is available in the following languages:
+
+- **English (US)**
+- **Russian**
+- **Hebrew**
+
+## Screenshots
+
+![Home Page](./assets/screenshots/home-page.png)
+*Home Page showcasing featured fish and plants.*
+
+![Virtual Aquarium - In Development](./assets/screenshots/virtual-aquarium.png)
+*Manage your virtual aquarium with ease.*
+
+![Admin Dashboard - In Development](./assets/screenshots/admin-dashboard.png)
+*Comprehensive admin dashboard for managing the platform.*
+
+## Installation
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js** (v18 or higher)
+- **MongoDB** (v7 or higher)
+- **Git** installed on your machine
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/israquarium.git
+cd israquarium
+```
+
 
 ---
 
-## Front End Requirements
+### Backend Setup
+Navigate to the backend directory and follow the instructions in the [backend README](./server/README.md).
+```bash
+cd backend
+# Follow the backend README instructions
+```
+
+### Frontend Setup
+Navigate to the frontend directory and follow the instructions in the [frontend README](./client/README.md).
+```bash
+cd ../frontend
+# Follow the frontend README instructions
+```
+
+## Usage
+Once both the frontend and backend are set up:
+
+1. Start the Backend Server: Ensure your backend server is running by following the backend setup instructions.
+2. Start the Frontend Application: Launch the frontend application as per the frontend setup instructions.
+3. Explore Features: Navigate through the application to explore fish and plant profiles, manage your virtual aquarium, and utilize other features.
+
+## Contributing
+We welcome contributions from the community! To contribute:
+
+1. Fork the Repository: Click the "Fork" button at the top right of this page.
+2. Create a Branch: Create a new branch for your feature or bugfix.
+3. Commit Your Changes: Make your changes and commit them with clear messages.
+4. Open a Pull Request: Submit a pull request detailing your changes.
+> Please read our CONTRIBUTING.md for more detailed guidelines.
 
 
-### General Requirements
-- [X] **Use React** for building the client-side application.
-- [X] Ensure the site is responsive and adapts to various screen sizes.
-- [ ] Clean and well-organized code: remove `console.log` statements and other commented-out code snippets.
-- [X] Adhere to coding conventions and ensure your code is readable and maintainable.
-- [X] Design is a crucial aspect: maintain a clean and attractive design that works across different devices.
-
-### Specific Requirements
-1. **Main Page**
-   - [X] Create a main content display page for viewing fish data.
-   - [X] Include a responsive design using a library like Bootstrap or Material Design.
-      - I chose to go with Tailwind.
-   - [X] Display a list or gallery of fish and plants with images and basic details.
-
-2. **Login System**
-   - [X] Implement a login page with access to the site management interface.
-   - [X] Use strong password policies and validation using regex.
-
-3. **Content Management**
-   - [X] Allow adding, editing, and deleting fish/plant data through an admin interface.
-   - [X] Ensure content is stored on the server.
-   - [ ] Allow fish shops to add their business cards, including contact details and a brief description.
-
-4. **Navigation**
-   - [X] Implement a dynamic navigation menu common to all pages.
-   - [X] Include a footer with logo, copyright, contact methods, and social media links.
-
-5. **Accessibility and SEO**
-   - [X] Include `alt` attributes for all images.
-   - [X] Use meaningful `title` tags.
-
-6. **Forms and Validation**
-   - [X] Ensure consistency in form design and include visual feedback for validation errors.
-   - [X] Enable form submission only when all required fields are filled out.
-
-7. **User Profile and Preferences**
-   - [X] Allow users to mark fish data as favorites and maintain these preferences across sessions and devices.
-   - [X] Provide a profile page where users can update their details and upload a profile picture.
-
-8. **Fresh Water Fish Management**
-   - [X] Allow fish to be created and managed their business cards.
-   - [X] Display fish to cards in a dedicated section accessible to users.
-
-9. **Fresh Water Plant Management**
-   - [X] Allow plant to be created and managed their business cards.
-   - [X] Display plant to cards in a dedicated section accessible to users.
-
-10. **Business Card Management**
-   - [ ] Allow fish shops to create and manage their business cards.
-   - [ ] Display business cards in a dedicated section accessible to users.
-
-### Optional (Bonus) Features
-- [X] Implement a logout feature that automatically logs out users after a set period of inactivity.
-- [ ] Limit the number of server requests a user can make in a given timeframe to protect against potential abuse.
-- [ ] Create a user management page for admins to view and manage user details and permissions.
+## License
+Not yet decided.
+You are welcome to everything but the scrapper functionality.
 
 
+## Contact
+If you have any questions, suggestions, or need support, please reach out to us:
+
+- Email: support@israquarium.com
+- GitHub Issues: Open an Issue
+
+## Additional Information
+For more detailed information about the frontend and backend components of Israquarium, please refer to the respective README files located in the frontend and backend folders of this repository.
+
+
+Happy Aquarizing! 🐟🌿
 ---
 
-
-## Back End Requirements
-
-### General Requirements
-- [X] **Use Node.js** with Express for the server-side.
-- [X] **Use MongoDB** as the database.
-- [X] Clean and well-organized code: ensure code readability and maintainability.
-- [ ] Include meaningful comments and documentation.
-
-### Specific Requirements
-1. **Setup**
-   - [X] Include `nodemon` in `devDependencies` and set up a `package.json` file with a `main` entry point.
-   - [X] Ensure proper folder structure with separate modules for routes, models, and controllers.
-
-2. **API Development**
-   - [X] Develop a RESTful API for handling CRUD operations.
-   - [X] Use the Express library to handle HTTP requests.
-
-3. **Authentication and Authorization**
-   - [X] Implement authentication to verify user identity.
-   - [X] Ensure that only admin users can add, edit, or delete content.
-
-4. **Database Management**
-   - [X] Store application data in MongoDB.
-   - [X] Include validation logic using libraries like `joi` and `mongoose` to ensure data integrity.
-
-5. **Logging and Error Handling**
-   - [X] Use a logging library like `morgan` to log HTTP requests and errors.
-   - [X] Implement proper error handling to catch and respond to client and server-side errors.
-
-6. **Security**
-   - [X] Use JWT tokens for secure user authentication.
-   - [X] Store sensitive information securely and never include sensitive data in JWT tokens.
-
-### Optional (Bonus) Features
-- [ ] Develop a custom logging mechanism if needed.
-- [ ] Implement an admin dashboard for managing user orders, inventory, and preferences.
-- [ ] Create a feature for users to reset their passwords securely, including email verification.
-
----
 
 ## Project Submission
 - [X] Upload the project to a Git repository and share the link.
@@ -114,7 +124,3 @@ This project involves developing a web application with both client-side and ser
 - [X] Ensure that the project is free from any sensitive files like `node_modules` or configuration files containing secrets.
 
 ---
-
-### Notes
-- Remember to maintain clean and aesthetic code and design, as this project will be part of your portfolio and represent your skills to potential employers.
-- Test the application thoroughly to ensure all functionalities work as expected.

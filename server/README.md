@@ -1,7 +1,42 @@
-# Israquarium - Server
-A freshwater fish encyclopedia.
+# Israquarium - Backend
 
-## Back End Requirements
+
+### Key Technologies and Libraries
+- **Database**: MongoDB
+- **Framework**: Express.js
+- **Libraries**: mongoose, bcryptjs, joi, jsonwebtoken, config, morgan, cors, chalk
+
+## Getting Started
+1. Clone repo
+2. Run `npm install`
+3. Create a `logs` folder.
+4. Create an .env file with the following fields:
+```bash
+IP="<desired_ipv4>"
+#Port must be a number in range 1025 - 65535
+PORT = <desired_port> 
+
+LOG_FILE_PATH = "your_file_path"
+
+JWT_SECRET = "secret_here"
+JWT_EXPIRES_IN = "10m" 
+
+# Example:
+# MONGODB_URI_DEV = "mongodb://localhost:27017/bcards_01"
+MONGODB_URI_DEV = "mongodb://<path_to_your_db>"
+MONGODB_URI_PROD = "mongodb://<path_to_your_db>"
+```
+
+5. **[OPTIONAL]** Seed you project by running `node seed.js` with data found in `./data/data.js`
+   - This may require setting ENV VARIABLE manually or updating packages.json with seed.js instead of server.js and then running the next step.
+6. To start the server run:
+`npm run dev` for development environment or `npm run prod` for production environment.
+
+
+
+
+
+## Requirements
 
 ### General Requirements
 - [X] **Use Node.js** with Express for the server-side.
@@ -41,7 +76,17 @@ A freshwater fish encyclopedia.
 
 ---
 
+# Roadmap
+## Version 0.2.0   
+- [] API:
+   - [ ] Admin
 
+## Polish
+- [ ] Instead or returning JPG imgs return webp.
+- [ ] JWT Token should refresh on interactions before its timer runs out
+
+---
+# Archieved
 ## Version 0.1.0:
 - API's:
    - [X] Users
@@ -52,8 +97,5 @@ A freshwater fish encyclopedia.
 - [X] Seeding
 - [X] JWT
 - [X] Mongoose integration
-   
-## Polish
-- [ ] JWT Token should refresh on interactions before its timer runs out
 
 
