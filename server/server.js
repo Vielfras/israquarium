@@ -30,9 +30,16 @@ const accessLogStream = logToFile(path.join(__dirname, LOG_FILE_PATH));
 
 const app = express();
 
+const corsOptions = {
+  origin: 'https://new.israquarium.co.il',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'x-auth-token'], 
+  credentials: true, 
+};
 
 // --------------=====================  MIDDLEWARE  =====================--------------
-app.use(cors());
+// app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(morgan('combined', { stream: accessLogStream }));
