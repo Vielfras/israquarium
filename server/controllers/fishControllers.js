@@ -7,7 +7,7 @@ const schemas = require("../schemas/fishSchemas");
 const Fish = require("../models/Fish");
 const FishIndex = require('../models/FishIndex');
 const Err = require("../utils/errorHandling");
-const { createLogger } = require('vite');
+// const { createLogger } = require('vite');
 
 
 const getFishByIndexAndLetter = async (req, res) => {
