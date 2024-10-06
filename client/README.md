@@ -136,6 +136,7 @@
     - Currently its a simple text "Error: Failed to fetch" with no CSS
 
 ### Version 0.4.0 - Responsivity and Accessibility
+- [ ] Add an "eye" to toggle password display.
 - [X] Directional Support
 - [ ] Finalise localisation
 - [ ] Add Accessibility
