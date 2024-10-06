@@ -67,6 +67,8 @@
 ### Bridge:
 - Incorrect form field validation causes the size of the parent container to increase suddenly
 
+## Bugs 
+- [ ] FishIndex images is fetching with incorrect apiBase.
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
