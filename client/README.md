@@ -67,6 +67,8 @@
 ### Bridge:
 - Incorrect form field validation causes the size of the parent container to increase suddenly
 
+## Bugs 
+- [ ] FishIndex images is fetching with incorrect apiBase.
 
 ## Version 0.2.0 - Visuals
 - [X] NavBar
@@ -136,6 +138,7 @@
     - Currently its a simple text "Error: Failed to fetch" with no CSS
 
 ### Version 0.4.0 - Responsivity and Accessibility
+- [ ] Add an "eye" to toggle password display.
 - [X] Directional Support
 - [ ] Finalise localisation
 - [ ] Add Accessibility
