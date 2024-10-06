@@ -1,5 +1,6 @@
 // FishIndexImage.tsx
 
+import { apiBase } from "../../../config";
 import { IFishIndex } from "../../../interfaces/IFish";
 
 interface IFishIndexImageProps {
@@ -9,7 +10,7 @@ interface IFishIndexImageProps {
 
 
 export default function FishIndexImage({ fishIndex, size = 'medium' }: IFishIndexImageProps) {
-  const imageUrl = `http://127.0.0.1:3000/api/fishIndex/image/${fishIndex._id}/${fishIndex.image.src}`;
+  const imageUrl = `${apiBase}/api/fishIndex/image/${fishIndex._id}/${fishIndex.image.src}`;
 
   const imageSizeClass =
     size === 'small'
