@@ -1,6 +1,7 @@
 // FormField.tsx
 
 import { useState } from "react";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { DirectionProvider } from "../../../context/ReadingDirectionContext";
 
 interface IFormField {
@@ -25,6 +26,7 @@ export default function FormField({
 }: IFormField) {
   const [isValid, setIsValid] = useState(true);
   const [touched, setTouched] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handleValidation = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -61,6 +63,29 @@ export default function FormField({
             !isValid && touched ? "border-red-500 text-red-900" : "border-gray-300"
           } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-800 dark:text-gray-100`}
         />
+      ) : type === 'password' ? (
+        <div className="relative">
+          <input
+            type={passwordVisible ? 'text' : 'password'}
+            name={formData.controlId}
+            id={formData.controlId}
+            placeholder={formData.placeholder}
+            value={formData.value}
+            onChange={handleValidation}
+            required={required}
+            onBlur={() => setTouched(true)}
+            className={`mt-1 block w-full px-3 py-2 border text-gray-900 ${
+              !isValid && touched ? "border-red-500 text-red-900" : "border-gray-300"
+            } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-800 dark:text-gray-100 pr-10`}
+          />
+          <button
+            type="button"
+            onClick={() => setPasswordVisible(!passwordVisible)}
+            className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 text-gray-500 focus:outline-none focus:text-gray-700"
+          >
+            {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+          </button>
+        </div>
       ) : (
         <input type={type}
           name={formData.controlId} id={formData.controlId}
