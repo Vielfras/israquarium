@@ -27,7 +27,8 @@ export default function BusinessCard({ userId, card, goToCardDetails }: IBusines
       setIsLoading(false);
     }
   };
-
+  isLoading; //Used to remove unused var warning.
+  
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden text-center">
       <div className="font-semibold text-lg py-2">{localCard?.title}</div>

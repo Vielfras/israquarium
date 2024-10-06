@@ -1,7 +1,6 @@
 // CreateFish.tsx
 
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
 import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
@@ -104,7 +103,7 @@ export default function CreateFish() {
     },
   });
 
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const toasts = useContext(ToastsContext);
   const navigate = useNavigate();
 
@@ -168,7 +167,7 @@ export default function CreateFish() {
       fishIndices: [selectedFishIndex],
     };
 
-    const { error, result } = await doCreateFish(fishData);
+    const { error } = await doCreateFish(fishData);
     if (error) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), error, 'danger');
     } else {

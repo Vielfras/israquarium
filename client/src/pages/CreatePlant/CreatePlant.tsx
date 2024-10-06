@@ -1,7 +1,6 @@
 // CreatePlant.tsx
 
 import { useContext, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
 import { ToastsContext } from '../../context/ToastsContext';
 import { useNavigate } from 'react-router-dom';
 import FormField from '../../components/Form/FormField/FormField';
@@ -9,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
 import { IPlant } from '../../interfaces/IPlant';
 import { doCreatePlant } from '../../services/PlantServices';
-import InactivityWatchdog from '../../components/Access/InactivityWatchdog';
 
 type LanguageCode = 'en' | 'he' | 'ru';
 
@@ -67,7 +65,7 @@ export default function CreatePlant() {
 
   const localT = i18n.getFixedT(activeLangTab);
 
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const toasts = useContext(ToastsContext);
   const navigate = useNavigate();
 
@@ -112,7 +110,7 @@ export default function CreatePlant() {
       likes: [],
     };
 
-    const { error, result } = await doCreatePlant(plantData);
+    const { error } = await doCreatePlant(plantData);
     if (error) {
       toasts?.addToast('CreatePlant.⚠️', t('CreatePlant.errorTitle'), error, 'danger');
     } else {
