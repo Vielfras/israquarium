@@ -6,25 +6,25 @@ const fish = [
     name: 'Acanthicus adonis',
     images: [
       { 
-        src: 'Acanthicus_adonis.jpg', 
+        src: 'Acanthicus_adonis.webp', 
         alt: 'Acanthicus adonis 1',
         creatorName: 'John Doe',
         originalSource: 'http://example.com/image1',
       },
       { 
-        src: 'Acanthicus_adonis1.jpg', 
+        src: 'Acanthicus_adonis1.webp', 
         alt: 'Acanthicus adonis 2',
         creatorName: 'Jane Doe',
         originalSource: 'http://example.com/image2',
       },
       { 
-        src: 'Acanthicus_adonis2.jpg', 
+        src: 'Acanthicus_adonis2.webp', 
         alt: 'Acanthicus adonis 3',
         creatorName: 'John Doe',
         originalSource: 'http://example.com/image3',
       },
       { 
-        src: 'Acanthicus_adonis4.jpg', 
+        src: 'Acanthicus_adonis4.webp', 
         alt: 'Acanthicus adonis 4',
         creatorName: 'John Doe',
         originalSource: 'http://example.com/image4',
