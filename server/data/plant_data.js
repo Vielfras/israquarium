@@ -8,7 +8,7 @@ const plants = [
     name: 'Acorus gramineus',
     images: [
       { 
-        src: 'Acorus_gramineus.jpg', 
+        src: 'Acorus_gramineus.webp', 
         alt: 'Acorus gramineus 1',
         creatorName: 'John Doe',
         originalSource: 'http://example.com/image1',
@@ -57,7 +57,7 @@ const plants = [
     name: 'Bacopa caroliniana',
     images: [
       { 
-        src: 'Bacopa_caroliniana.jpg', 
+        src: 'Bacopa_caroliniana.webp', 
         alt: 'Bacopa caroliniana 1',
         creatorName: 'Yakov Oksman',
         originalSource: 'http://www.israquarium.co.il', 
@@ -106,7 +106,7 @@ const plants = [
     name: 'Bacopa lanigera',
     images: [
       { 
-        src: 'Bacopa_lanigera.jpg', 
+        src: 'Bacopa_lanigera.webp', 
         alt: 'Bacopa lanigera 1',
         creatorName: 'Yakov Oksman',
         originalSource: 'http://www.israquarium.co.il',

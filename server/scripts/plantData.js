@@ -9,7 +9,7 @@ const plants = [
     "latinName": "Acorus gramineus",
     "images": [
       {
-        "src": "Acorus_gramineus.jpg",
+        "src": "Acorus_gramineus.webp",
         "alt": "Acorus gramineus 1",
         "creatorName": "",
         "originalSource": ""
@@ -43,7 +43,7 @@ const plants = [
     "latinName": "Alternanthera ocipus",
     "images": [
       {
-        "src": "Alternanthera_ocipus.jpg",
+        "src": "Alternanthera_ocipus.webp",
         "alt": "Alternanthera ocipus 1",
         "creatorName": "",
         "originalSource": ""
@@ -77,7 +77,7 @@ const plants = [
     "latinName": "Ammannia auriculata",
     "images": [
       {
-        "src": "Ammannia_auriculata.jpg",
+        "src": "Ammannia_auriculata.webp",
         "alt": "Ammannia auriculata 1",
         "creatorName": "",
         "originalSource": ""
@@ -111,7 +111,7 @@ const plants = [
     "latinName": "Ammannia gracilis",
     "images": [
       {
-        "src": "Ammannia_gracilis.jpg",
+        "src": "Ammannia_gracilis.webp",
         "alt": "Ammannia gracilis 1",
         "creatorName": "",
         "originalSource": ""
@@ -145,7 +145,7 @@ const plants = [
     "latinName": "Ammannia senegalensis",
     "images": [
       {
-        "src": "Ammannia_senegalensis.jpg",
+        "src": "Ammannia_senegalensis.webp",
         "alt": "Ammannia senegalensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -179,7 +179,7 @@ const plants = [
     "latinName": "Anubias afzelii",
     "images": [
       {
-        "src": "Anubias_afzelii.jpg",
+        "src": "Anubias_afzelii.webp",
         "alt": "Anubias afzelii 1",
         "creatorName": "",
         "originalSource": ""
@@ -213,7 +213,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var_angustifolia.jpg",
+        "src": "Anubias_barteri_var_angustifolia.webp",
         "alt": "Anubias barteri var. angustifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -247,7 +247,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var_barteri.jpg",
+        "src": "Anubias_barteri_var_barteri.webp",
         "alt": "Anubias barteri var. barteri 1",
         "creatorName": "",
         "originalSource": ""
@@ -281,7 +281,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var_caladiifolia.jpg",
+        "src": "Anubias_barteri_var_caladiifolia.webp",
         "alt": "Anubias barteri var. caladiifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -315,7 +315,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var_glabra.jpg",
+        "src": "Anubias_barteri_var_glabra.webp",
         "alt": "Anubias barteri var. glabra 1",
         "creatorName": "",
         "originalSource": ""
@@ -349,7 +349,7 @@ const plants = [
     "latinName": "Anubias barteri",
     "images": [
       {
-        "src": "Anubias_barteri_var_nana.jpg",
+        "src": "Anubias_barteri_var_nana.webp",
         "alt": "Anubias barteri var. nana 1",
         "creatorName": "",
         "originalSource": ""
@@ -383,7 +383,7 @@ const plants = [
     "latinName": "Anubias gigantea",
     "images": [
       {
-      "src": "Anubias gigantea.jpg",
+      "src": "Anubias gigantea.webp",
       "alt": "Unavailabe",
       "creatorName": "",
       "originalSource": ""
@@ -417,7 +417,7 @@ const plants = [
     "latinName": "Anubias gilletii",
     "images": [
       {
-        "src": "Anubias_gilletii.jpg",
+        "src": "Anubias_gilletii.webp",
         "alt": "Anubias gilletii 1",
         "creatorName": "",
         "originalSource": ""
@@ -451,7 +451,7 @@ const plants = [
     "latinName": "Anubias gracilis",
     "images": [
       {
-        "src": "Anubias_gracilis.jpg",
+        "src": "Anubias_gracilis.webp",
         "alt": "Anubias gracilis 1",
         "creatorName": "",
         "originalSource": ""
@@ -485,7 +485,7 @@ const plants = [
     "latinName": "Aponogeton abyssinicus",
     "images": [
       {
-        "src": "Aponogeton_abyssinicus.jpg",
+        "src": "Aponogeton_abyssinicus.webp",
         "alt": "Aponogeton abyssinicus 1",
         "creatorName": "",
         "originalSource": ""
@@ -519,7 +519,7 @@ const plants = [
     "latinName": "Aponogeton boivinianus",
     "images": [
       {
-        "src": "Aponogeton_boivinianus.jpg",
+        "src": "Aponogeton_boivinianus.webp",
         "alt": "Aponogeton boivinianus 1",
         "creatorName": "",
         "originalSource": ""
@@ -553,7 +553,7 @@ const plants = [
     "latinName": "Aponogeton capuronii",
     "images": [
       {
-        "src": "Aponogeton_capuronii.jpg",
+        "src": "Aponogeton_capuronii.webp",
         "alt": "Aponogeton capuronii 1",
         "creatorName": "",
         "originalSource": ""
@@ -587,7 +587,7 @@ const plants = [
     "latinName": "Aponogeton crispus",
     "images": [
       {
-        "src": "Aponogeton_crispus.jpg",
+        "src": "Aponogeton_crispus.webp",
         "alt": "Aponogeton crispus 1",
         "creatorName": "",
         "originalSource": ""
@@ -621,7 +621,7 @@ const plants = [
     "latinName": "Aponogeton elongatus",
     "images": [
       {
-        "src": "Aponogeton_elongatus.jpg",
+        "src": "Aponogeton_elongatus.webp",
         "alt": "Aponogeton elongatus 1",
         "creatorName": "",
         "originalSource": ""
@@ -655,7 +655,7 @@ const plants = [
     "latinName": "Aponogeton longiplumulosus",
     "images": [
       {
-        "src": "Aponogeton_longiplumulosus.jpg",
+        "src": "Aponogeton_longiplumulosus.webp",
         "alt": "Aponogeton longiplumulosus 1",
         "creatorName": "",
         "originalSource": ""
@@ -689,7 +689,7 @@ const plants = [
     "latinName": "Aponogeton madagascariensis",
     "images": [
       {
-        "src": "Aponogeton_madagascariensis.jpg",
+        "src": "Aponogeton_madagascariensis.webp",
         "alt": "Aponogeton madagascariensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -723,7 +723,7 @@ const plants = [
     "latinName": "Aponogeton natans",
     "images": [
       {
-        "src": "Aponogeton_natans.jpg",
+        "src": "Aponogeton_natans.webp",
         "alt": "Aponogeton natans 1",
         "creatorName": "",
         "originalSource": ""
@@ -757,7 +757,7 @@ const plants = [
     "latinName": "Aponogeton rigidifolius",
     "images": [
       {
-        "src": "Aponogeton_rigidifolius.jpg",
+        "src": "Aponogeton_rigidifolius.webp",
         "alt": "Aponogeton rigidifolius 1",
         "creatorName": "",
         "originalSource": ""
@@ -791,7 +791,7 @@ const plants = [
     "latinName": "Aponogeton ulvaceus",
     "images": [
       {
-        "src": "Aponogeton_ulvaceus.jpg",
+        "src": "Aponogeton_ulvaceus.webp",
         "alt": "Aponogeton ulvaceus 1",
         "creatorName": "",
         "originalSource": ""
@@ -825,7 +825,7 @@ const plants = [
     "latinName": "Aponogeton undulatus",
     "images": [
       {
-        "src": "Aponogeton_undulatus.jpg",
+        "src": "Aponogeton_undulatus.webp",
         "alt": "Aponogeton undulatus 1",
         "creatorName": "",
         "originalSource": ""
@@ -859,7 +859,7 @@ const plants = [
     "latinName": "Bacopa caroliniana",
     "images": [
       {
-        "src": "Bacopa_caroliniana.jpg",
+        "src": "Bacopa_caroliniana.webp",
         "alt": "Bacopa caroliniana 1",
         "creatorName": "",
         "originalSource": ""
@@ -893,7 +893,7 @@ const plants = [
     "latinName": "Bacopa lanigera",
     "images": [
       {
-        "src": "Bacopa_lanigera.jpg",
+        "src": "Bacopa_lanigera.webp",
         "alt": "Bacopa lanigera 1",
         "creatorName": "",
         "originalSource": ""
@@ -927,7 +927,7 @@ const plants = [
     "latinName": "Bacopa madagascariensis",
     "images": [
       {
-        "src": "Bacopa_madagascariensis.jpg",
+        "src": "Bacopa_madagascariensis.webp",
         "alt": "Bacopa madagascariensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -961,7 +961,7 @@ const plants = [
     "latinName": "Bacopa monnieri",
     "images": [
       {
-        "src": "Bacopa_monnieri.jpg",
+        "src": "Bacopa_monnieri.webp",
         "alt": "Bacopa monnieri 1",
         "creatorName": "",
         "originalSource": ""
@@ -995,7 +995,7 @@ const plants = [
     "latinName": "Bacopa myriophylloides",
     "images": [
       {
-        "src": "Bacopa_myriophylloides.jpg",
+        "src": "Bacopa_myriophylloides.webp",
         "alt": "Bacopa myriophylloides 1",
         "creatorName": "",
         "originalSource": ""
@@ -1029,7 +1029,7 @@ const plants = [
     "latinName": "Bacopa reflexa",
     "images": [
       {
-        "src": "Bacopa_reflexa.jpg",
+        "src": "Bacopa_reflexa.webp",
         "alt": "Bacopa reflexa 1",
         "creatorName": "",
         "originalSource": ""
@@ -1063,7 +1063,7 @@ const plants = [
     "latinName": "Barclaya longifolia",
     "images": [
       {
-        "src": "Barclaya_longifolia.jpg",
+        "src": "Barclaya_longifolia.webp",
         "alt": "Barclaya longifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -1097,7 +1097,7 @@ const plants = [
     "latinName": "Barclaya motleyi",
     "images": [
       {
-        "src": "Barclaya_motleyi.jpg",
+        "src": "Barclaya_motleyi.webp",
         "alt": "Barclaya motleyi 1",
         "creatorName": "",
         "originalSource": ""
@@ -1131,7 +1131,7 @@ const plants = [
     "latinName": "Blyxa alternifolia",
     "images": [
       {
-        "src": "Blyxa_alternifolia.jpg",
+        "src": "Blyxa_alternifolia.webp",
         "alt": "Blyxa alternifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -1165,7 +1165,7 @@ const plants = [
     "latinName": "Blyxa aubertii",
     "images": [
       {
-        "src": "Blyxa_aubertii.jpg",
+        "src": "Blyxa_aubertii.webp",
         "alt": "Blyxa aubertiii 1",
         "creatorName": "",
         "originalSource": ""
@@ -1199,7 +1199,7 @@ const plants = [
     "latinName": "Blyxa japonica",
     "images": [
       {
-        "src": "Blyxa_japonica.jpg",
+        "src": "Blyxa_japonica.webp",
         "alt": "Blyxa japonica 1",
         "creatorName": "",
         "originalSource": ""
@@ -1233,7 +1233,7 @@ const plants = [
     "latinName": "Blyxa novoguineensis",
     "images": [
       {
-        "src": "Blyxa_novoguineensis.jpg",
+        "src": "Blyxa_novoguineensis.webp",
         "alt": "Blyxa novoguineensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -1267,7 +1267,7 @@ const plants = [
     "latinName": "Bolbitis heteroclita",
     "images": [
       {
-        "src": "Bolbitis_heteroclita.jpg",
+        "src": "Bolbitis_heteroclita.webp",
         "alt": "Bolbitis heteroclita 1",
         "creatorName": "",
         "originalSource": ""
@@ -1301,7 +1301,7 @@ const plants = [
     "latinName": "Bolbitis heudelotii",
     "images": [
       {
-        "src": "Bolbitis_heudelotii.jpg",
+        "src": "Bolbitis_heudelotii.webp",
         "alt": "Bolbitis heudelotii 1",
         "creatorName": "",
         "originalSource": ""
@@ -1335,7 +1335,7 @@ const plants = [
     "latinName": "Cabomba aquatica",
     "images": [
       {
-        "src": "Cabomba_aquatica.jpg",
+        "src": "Cabomba_aquatica.webp",
         "alt": "Cabomba aquatica 1",
         "creatorName": "",
         "originalSource": ""
@@ -1369,7 +1369,7 @@ const plants = [
     "latinName": "Cabomba caroliniana",
     "images": [
       {
-        "src": "Cabomba_caroliniana.jpg",
+        "src": "Cabomba_caroliniana.webp",
         "alt": "Cabomba caroliniana 1",
         "creatorName": "",
         "originalSource": ""
@@ -1403,7 +1403,7 @@ const plants = [
     "latinName": "Cabomba furcata",
     "images": [
       {
-        "src": "Cabomba_furcata.jpg",
+        "src": "Cabomba_furcata.webp",
         "alt": "Cabomba furcata 1",
         "creatorName": "",
         "originalSource": ""
@@ -1437,7 +1437,7 @@ const plants = [
     "latinName": "Callitriche palustris",
     "images": [
       {
-        "src": "Callitriche_palustris.jpg",
+        "src": "Callitriche_palustris.webp",
         "alt": "Callitriche palustris 1",
         "creatorName": "",
         "originalSource": ""
@@ -1471,7 +1471,7 @@ const plants = [
     "latinName": "Cardamina lyrata",
     "images": [
       {
-        "src": "Cardamina_lyrata.jpg",
+        "src": "Cardamina_lyrata.webp",
         "alt": "Cardamina lyrata 1",
         "creatorName": "",
         "originalSource": ""
@@ -1505,7 +1505,7 @@ const plants = [
     "latinName": "Ceratophyllum demersum",
     "images": [
       {
-        "src": "Ceratophyllum_demersum.jpg",
+        "src": "Ceratophyllum_demersum.webp",
         "alt": "Ceratophyllum demersum 1",
         "creatorName": "",
         "originalSource": ""
@@ -1539,7 +1539,7 @@ const plants = [
     "latinName": "Ceratophyllum submersum",
     "images": [
       {
-        "src": "Ceratophyllum_submersum.jpg",
+        "src": "Ceratophyllum_submersum.webp",
         "alt": "Ceratophyllum submersum 1",
         "creatorName": "",
         "originalSource": ""
@@ -1573,7 +1573,7 @@ const plants = [
     "latinName": "Ceratopteris cornuta",
     "images": [
       {
-        "src": "Ceratopteris_cornuta.jpg",
+        "src": "Ceratopteris_cornuta.webp",
         "alt": "Ceratopteris cornuta 1",
         "creatorName": "",
         "originalSource": ""
@@ -1607,7 +1607,7 @@ const plants = [
     "latinName": "Ceratopteris pteridoides",
     "images": [
       {
-        "src": "Ceratopteris_pteridoides.jpg",
+        "src": "Ceratopteris_pteridoides.webp",
         "alt": "Ceratopteris pteridoides 1",
         "creatorName": "",
         "originalSource": ""
@@ -1641,7 +1641,7 @@ const plants = [
     "latinName": "Ceratopteris thalictroides",
     "images": [
       {
-        "src": "Ceratopteris_thalictroides.jpg",
+        "src": "Ceratopteris_thalictroides.webp",
         "alt": "Ceratopteris thalictroides 1",
         "creatorName": "",
         "originalSource": ""
@@ -1675,7 +1675,7 @@ const plants = [
     "latinName": "Crassula helmsii",
     "images": [
       {
-        "src": "Crassula_helmsii.jpg",
+        "src": "Crassula_helmsii.webp",
         "alt": "Crassula helmsii 1",
         "creatorName": "",
         "originalSource": ""
@@ -1709,7 +1709,7 @@ const plants = [
     "latinName": "Crinum calamistratum",
     "images": [
       {
-        "src": "Crinum_calamistratum.jpg",
+        "src": "Crinum_calamistratum.webp",
         "alt": "Crinum calamistratum 1",
         "creatorName": "",
         "originalSource": ""
@@ -1851,7 +1851,7 @@ const plants = [
     "latinName": "Didiplis diandra",
     "images": [
       {
-        "src": "Didiplis_diandra.jpg",
+        "src": "Didiplis_diandra.webp",
         "alt": "Didiplis diandra 1",
         "creatorName": "",
         "originalSource": ""
@@ -1912,7 +1912,7 @@ const plants = [
     "latinName": "Egeria densa",
     "images": [
       {
-        "src": "Egeria_densa.jpg",
+        "src": "Egeria_densa.webp",
         "alt": "Egeria densa 1",
         "creatorName": "",
         "originalSource": ""
@@ -1946,7 +1946,7 @@ const plants = [
     "latinName": "Egeria najas",
     "images": [
       {
-        "src": "Egeria_najas.jpg",
+        "src": "Egeria_najas.webp",
         "alt": "Egeria najas 1",
         "creatorName": "",
         "originalSource": ""
@@ -1980,7 +1980,7 @@ const plants = [
     "latinName": "Eichhornia azurea",
     "images": [
       {
-        "src": "Eichhornia_azurea.jpg",
+        "src": "Eichhornia_azurea.webp",
         "alt": "Eichhornia azurea 1",
         "creatorName": "",
         "originalSource": ""
@@ -2048,7 +2048,7 @@ const plants = [
     "latinName": "Eichhornia diversifolia",
     "images": [
       {
-        "src": "Eichhornia_diversifolia.jpg",
+        "src": "Eichhornia_diversifolia.webp",
         "alt": "Eichhornia diversifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -2082,7 +2082,7 @@ const plants = [
     "latinName": "Eichhornia natans",
     "images": [
       {
-        "src": "Eichhornia_natans.jpg",
+        "src": "Eichhornia_natans.webp",
         "alt": "Eichhornia natans 1",
         "creatorName": "",
         "originalSource": ""
@@ -2116,7 +2116,7 @@ const plants = [
     "latinName": "Eichhornia sp.",
     "images": [
       {
-        "src": "Eichhornia_sp.jpg",
+        "src": "Eichhornia_sp.webp",
         "alt": "Eichhornia sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -2184,7 +2184,7 @@ const plants = [
     "latinName": "Eleocharis minima",
     "images": [
       {
-        "src": "Eleocharis_minima.jpg",
+        "src": "Eleocharis_minima.webp",
         "alt": "Eleocharis minima 1",
         "creatorName": "",
         "originalSource": ""
@@ -2218,7 +2218,7 @@ const plants = [
     "latinName": "Eleocharis vivipara",
     "images": [
       {
-        "src": "Eleocharis_vivipara.jpg",
+        "src": "Eleocharis_vivipara.webp",
         "alt": "Eleocharis vivipara 1",
         "creatorName": "",
         "originalSource": ""
@@ -2252,7 +2252,7 @@ const plants = [
     "latinName": "Elodea canadensis",
     "images": [
       {
-        "src": "Elodea_canadensis.jpg",
+        "src": "Elodea_canadensis.webp",
         "alt": "Elodea canadensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -2286,7 +2286,7 @@ const plants = [
     "latinName": "Elodea nuttallii",
     "images": [
       {
-        "src": "Elodea_nuttallii.jpg",
+        "src": "Elodea_nuttallii.webp",
         "alt": "Elodea nuttallii 1",
         "creatorName": "",
         "originalSource": ""
@@ -2320,7 +2320,7 @@ const plants = [
     "latinName": "Eriocaulon cinereum",
     "images": [
       {
-        "src": "Eriocaulon_cinereum.jpg",
+        "src": "Eriocaulon_cinereum.webp",
         "alt": "Eriocaulon cinereum 1",
         "creatorName": "",
         "originalSource": ""
@@ -2354,7 +2354,7 @@ const plants = [
     "latinName": "",
     "images": [
       {
-        "src": "Eriocaulon_robustius.jpg",
+        "src": "Eriocaulon_robustius.webp",
         "alt": "Eriocaulon robustius 1",
         "creatorName": "",
         "originalSource": ""
@@ -2388,7 +2388,7 @@ const plants = [
     "latinName": "Eusteralis stellata",
     "images": [
       {
-        "src": "Eusteralis_stellata.jpg",
+        "src": "Eusteralis_stellata.webp",
         "alt": "Eusteralis stellata 1",
         "creatorName": "",
         "originalSource": ""
@@ -2422,7 +2422,7 @@ const plants = [
     "latinName": "Fissidens grandifrons",
     "images": [
       {
-        "src": "Fissidens_grandifrons.jpg",
+        "src": "Fissidens_grandifrons.webp",
         "alt": "Fissidens grandifrons 1",
         "creatorName": "",
         "originalSource": ""
@@ -2456,7 +2456,7 @@ const plants = [
     "latinName": "Fissidens nobilis",
     "images": [
       {
-        "src": "Fissidens_nobilis.jpg",
+        "src": "Fissidens_nobilis.webp",
         "alt": "Fissidens nobilis 1",
         "creatorName": "",
         "originalSource": ""
@@ -2517,7 +2517,7 @@ const plants = [
     "latinName": "Gymnocoronis spilanthoides",
     "images": [
       {
-        "src": "Gymnocoronis_spilanthoides.jpg",
+        "src": "Gymnocoronis_spilanthoides.webp",
         "alt": "Gymnocoronis spilanthoides 1",
         "creatorName": "",
         "originalSource": ""
@@ -2551,7 +2551,7 @@ const plants = [
     "latinName": "Hemianthus callitrichoides",
     "images": [
       {
-        "src": "Hemianthus_callitrichoides.jpg",
+        "src": "Hemianthus_callitrichoides.webp",
         "alt": "Hemianthus callitrichoides 1",
         "creatorName": "",
         "originalSource": ""
@@ -2585,7 +2585,7 @@ const plants = [
     "latinName": "Hemianthus micranthemoides",
     "images": [
       {
-        "src": "Hemianthus_micranthemoides.jpg",
+        "src": "Hemianthus_micranthemoides.webp",
         "alt": "Hemianthus micranthemoides 1",
         "creatorName": "",
         "originalSource": ""
@@ -2619,7 +2619,7 @@ const plants = [
     "latinName": "Heteranthera reniformis",
     "images": [
       {
-        "src": "Heteranthera_reniformis.jpg",
+        "src": "Heteranthera_reniformis.webp",
         "alt": "Heteranthera reniformis 1",
         "creatorName": "",
         "originalSource": ""
@@ -2653,7 +2653,7 @@ const plants = [
     "latinName": "Heteranthera zosterifolia",
     "images": [
       {
-        "src": "Heteranthera_zosterifolia.jpg",
+        "src": "Heteranthera_zosterifolia.webp",
         "alt": "Heteranthera zosterifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -2687,7 +2687,7 @@ const plants = [
     "latinName": "Hottonia palustris",
     "images": [
       {
-        "src": "Hottonia_palustris.jpg",
+        "src": "Hottonia_palustris.webp",
         "alt": "Hottonia palustris 1",
         "creatorName": "",
         "originalSource": ""
@@ -2755,7 +2755,7 @@ const plants = [
     "latinName": "Hydrocotyle leucocephala",
     "images": [
       {
-        "src": "Hydrocotyle_leucocephala.jpg",
+        "src": "Hydrocotyle_leucocephala.webp",
         "alt": "Hydrocotyle leucocephala 1",
         "creatorName": "",
         "originalSource": ""
@@ -2789,7 +2789,7 @@ const plants = [
     "latinName": "Hydrocotyle sibthorpioides",
     "images": [
       {
-        "src": "Hydrocotyle_sibthorpioides.jpg",
+        "src": "Hydrocotyle_sibthorpioides.webp",
         "alt": "Hydrocotyle sibthorpioides 1",
         "creatorName": "",
         "originalSource": ""
@@ -2823,7 +2823,7 @@ const plants = [
     "latinName": "Hydrocotyle verticillata",
     "images": [
       {
-        "src": "Hydrocotyle_verticillata.jpg",
+        "src": "Hydrocotyle_verticillata.webp",
         "alt": "Hydrocotyle verticillata 1",
         "creatorName": "",
         "originalSource": ""
@@ -2857,7 +2857,7 @@ const plants = [
     "latinName": "Hydrocotyle vulgaris",
     "images": [
       {
-        "src": "Hydrocotyle_vulgaris.jpg",
+        "src": "Hydrocotyle_vulgaris.webp",
         "alt": "Hydrocotyle vulgaris 1",
         "creatorName": "",
         "originalSource": ""
@@ -3107,7 +3107,7 @@ const plants = [
     "latinName": "Lagarosiphon cordofanus",
     "images": [
       {
-        "src": "Lagarosiphon_cordofanus.jpg",
+        "src": "Lagarosiphon_cordofanus.webp",
         "alt": "Lagarosiphon cordofanus 1",
         "creatorName": "",
         "originalSource": ""
@@ -3141,7 +3141,7 @@ const plants = [
     "latinName": "Lagarosiphon madagascariensis",
     "images": [
       {
-        "src": "Lagarosiphon_madagascariensis.jpg",
+        "src": "Lagarosiphon_madagascariensis.webp",
         "alt": "Lagarosiphon madagascariensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -3175,7 +3175,7 @@ const plants = [
     "latinName": "Lagarosiphon major",
     "images": [
       {
-        "src": "Lagarosiphon_major.jpg",
+        "src": "Lagarosiphon_major.webp",
         "alt": "Lagarosiphon major 1",
         "creatorName": "",
         "originalSource": ""
@@ -3263,7 +3263,7 @@ const plants = [
     "latinName": "Limnobium laevigatum",
     "images": [
       {
-        "src": "Limnobium_laevigatum.jpg",
+        "src": "Limnobium_laevigatum.webp",
         "alt": "Limnobium laevigatum 1",
         "creatorName": "",
         "originalSource": ""
@@ -3297,7 +3297,7 @@ const plants = [
     "latinName": "Limnophila aquatica",
     "images": [
       {
-        "src": "Limnophila_aquatica.jpg",
+        "src": "Limnophila_aquatica.webp",
         "alt": "Limnophila aquatica 1",
         "creatorName": "",
         "originalSource": ""
@@ -3358,7 +3358,7 @@ const plants = [
     "latinName": "Limnophila indica",
     "images": [
       {
-        "src": "Limnophila_indica.jpg",
+        "src": "Limnophila_indica.webp",
         "alt": "Limnophila indica 1",
         "creatorName": "",
         "originalSource": ""
@@ -3392,7 +3392,7 @@ const plants = [
     "latinName": "Lobelia cardinalis",
     "images": [
       {
-        "src": "Lobelia_cardinalis.jpg",
+        "src": "Lobelia_cardinalis.webp",
         "alt": "Lobelia cardinalis 1",
         "creatorName": "",
         "originalSource": ""
@@ -3426,7 +3426,7 @@ const plants = [
     "latinName": "Ludwigia arcuata",
     "images": [
       {
-        "src": "Ludwigia_arcuata.jpg",
+        "src": "Ludwigia_arcuata.webp",
         "alt": "Ludwigia arcuata 1",
         "creatorName": "",
         "originalSource": ""
@@ -3514,7 +3514,7 @@ const plants = [
     "latinName": "Ludwigia glandulosa",
     "images": [
       {
-        "src": "Ludwigia_glandulosa.jpg",
+        "src": "Ludwigia_glandulosa.webp",
         "alt": "Ludwigia glandulosa 1",
         "creatorName": "",
         "originalSource": ""
@@ -3575,7 +3575,7 @@ const plants = [
     "latinName": "Ludwigia ovalis",
     "images": [
       {
-        "src": "Ludwigia_ovalis.jpg",
+        "src": "Ludwigia_ovalis.webp",
         "alt": "Ludwigia ovalis 1",
         "creatorName": "",
         "originalSource": ""
@@ -3609,7 +3609,7 @@ const plants = [
     "latinName": "Ludwigia palustris",
     "images": [
       {
-        "src": "Ludwigia_palustris.jpg",
+        "src": "Ludwigia_palustris.webp",
         "alt": "Ludwigia palustris 1",
         "creatorName": "",
         "originalSource": ""
@@ -3643,7 +3643,7 @@ const plants = [
     "latinName": "Ludwigia repens",
     "images": [
       {
-        "src": "Ludwigia_repens.jpg",
+        "src": "Ludwigia_repens.webp",
         "alt": "Ludwigia repens 1",
         "creatorName": "",
         "originalSource": ""
@@ -3677,7 +3677,7 @@ const plants = [
     "latinName": "Ludwigia repens x arcuata",
     "images": [
       {
-        "src": "Ludwigia_repens_x_arcuata.jpg",
+        "src": "Ludwigia_repens_x_arcuata.webp",
         "alt": "Ludwigia repens x arcuata 1",
         "creatorName": "",
         "originalSource": ""
@@ -3765,7 +3765,7 @@ const plants = [
     "latinName": "Mayaca fluviatilis",
     "images": [
       {
-        "src": "Mayaca_fluviatilis.jpg",
+        "src": "Mayaca_fluviatilis.webp",
         "alt": "Mayaca fluviatilis 1",
         "creatorName": "",
         "originalSource": ""
@@ -3799,7 +3799,7 @@ const plants = [
     "latinName": "Mayaca sellowiana",
     "images": [
       {
-        "src": "Mayaca_sellowiana.jpg",
+        "src": "Mayaca_sellowiana.webp",
         "alt": "Mayaca sellowiana 1",
         "creatorName": "",
         "originalSource": ""
@@ -3833,7 +3833,7 @@ const plants = [
     "latinName": "Mayaca sp.",
     "images": [
       {
-        "src": "Mayaca_sp..jpg",
+        "src": "Mayaca_sp..webp",
         "alt": "Mayaca sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -3867,7 +3867,7 @@ const plants = [
     "latinName": "Mayaca sp.",
     "images": [
       {
-        "src": "Mayaca_sp.1.jpg",
+        "src": "Mayaca_sp.1.webp",
         "alt": "Mayaca sp.1 1",
         "creatorName": "",
         "originalSource": ""
@@ -3955,7 +3955,7 @@ const plants = [
     "latinName": "Myriophyllum aquaticum",
     "images": [
       {
-        "src": "Myriophyllum_aquaticum.jpg",
+        "src": "Myriophyllum_aquaticum.webp",
         "alt": "Myriophyllum aquaticum 1",
         "creatorName": "",
         "originalSource": ""
@@ -3989,7 +3989,7 @@ const plants = [
     "latinName": "Myriophyllum hippuroides",
     "images": [
       {
-        "src": "Myriophyllum_hippuroides.jpg",
+        "src": "Myriophyllum_hippuroides.webp",
         "alt": "Myriophyllum hippuroides 1",
         "creatorName": "",
         "originalSource": ""
@@ -4023,7 +4023,7 @@ const plants = [
     "latinName": "Myriophyllum mattogrossense",
     "images": [
       {
-        "src": "Myriophyllum_mattogrossense.jpg",
+        "src": "Myriophyllum_mattogrossense.webp",
         "alt": "Myriophyllum mattogrossense 1",
         "creatorName": "",
         "originalSource": ""
@@ -4057,7 +4057,7 @@ const plants = [
     "latinName": "Myriophyllum pinnatum",
     "images": [
       {
-        "src": "Myriophyllum_pinnatum.jpg",
+        "src": "Myriophyllum_pinnatum.webp",
         "alt": "Myriophyllum pinnatum 1",
         "creatorName": "",
         "originalSource": ""
@@ -4091,7 +4091,7 @@ const plants = [
     "latinName": "Myriophyllum simulans",
     "images": [
       {
-        "src": "Myriophyllum_simulans.jpg",
+        "src": "Myriophyllum_simulans.webp",
         "alt": "Myriophyllum simulans 1",
         "creatorName": "",
         "originalSource": ""
@@ -4125,7 +4125,7 @@ const plants = [
     "latinName": "Myriophyllum spicatum",
     "images": [
       {
-        "src": "Myriophyllum_spicatum.jpg",
+        "src": "Myriophyllum_spicatum.webp",
         "alt": "Myriophyllum spicatum 1",
         "creatorName": "",
         "originalSource": ""
@@ -4159,7 +4159,7 @@ const plants = [
     "latinName": "Myriophyllum tuberculatum",
     "images": [
       {
-        "src": "Myriophyllum_tuberculatum.jpg",
+        "src": "Myriophyllum_tuberculatum.webp",
         "alt": "Myriophyllum tuberculatum 1",
         "creatorName": "",
         "originalSource": ""
@@ -4193,7 +4193,7 @@ const plants = [
     "latinName": "Myriophyllum ussuriense",
     "images": [
       {
-        "src": "Myriophyllum_ussuriense.jpg",
+        "src": "Myriophyllum_ussuriense.webp",
         "alt": "Myriophyllum ussuriense 1",
         "creatorName": "",
         "originalSource": ""
@@ -4227,7 +4227,7 @@ const plants = [
     "latinName": "Najas conferta",
     "images": [
       {
-        "src": "Najas_conferta.jpg",
+        "src": "Najas_conferta.webp",
         "alt": "Najas conferta 1",
         "creatorName": "",
         "originalSource": ""
@@ -4261,7 +4261,7 @@ const plants = [
     "latinName": "Najas guadalupensis",
     "images": [
       {
-        "src": "Najas_guadalupensis.jpg",
+        "src": "Najas_guadalupensis.webp",
         "alt": "Najas guadalupensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -4295,7 +4295,7 @@ const plants = [
     "latinName": "Najas indica",
     "images": [
       {
-        "src": "Najas_indica.jpg",
+        "src": "Najas_indica.webp",
         "alt": "Najas indica 1",
         "creatorName": "",
         "originalSource": ""
@@ -4329,7 +4329,7 @@ const plants = [
     "latinName": "Najas sp. \"Broad Leaf\"",
     "images": [
       {
-        "src": "Najas_sp._Broad_Leaf.jpg",
+        "src": "Najas_sp._Broad_Leaf.webp",
         "alt": "Najas sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -4363,7 +4363,7 @@ const plants = [
     "latinName": "Nesaea crassicaulis",
     "images": [
       {
-        "src": "Nesaea_crassicaulis.jpg",
+        "src": "Nesaea_crassicaulis.webp",
         "alt": "Nesaea crassicaulis 1",
         "creatorName": "",
         "originalSource": ""
@@ -4397,7 +4397,7 @@ const plants = [
     "latinName": "Nesaea pedicellata",
     "images": [
       {
-        "src": "Nesaea_pedicellata.jpg",
+        "src": "Nesaea_pedicellata.webp",
         "alt": "Nesaea pedicellata 1",
         "creatorName": "",
         "originalSource": ""
@@ -4431,7 +4431,7 @@ const plants = [
     "latinName": "Nesaea triflora",
     "images": [
       {
-        "src": "Nesaea_triflora.jpg",
+        "src": "Nesaea_triflora.webp",
         "alt": "Nesaea triflora 1",
         "creatorName": "",
         "originalSource": ""
@@ -4735,7 +4735,7 @@ const plants = [
     "latinName": "Potamogeton gayi",
     "images": [
       {
-        "src": "Potamogeton_gayi.jpg",
+        "src": "Potamogeton_gayi.webp",
         "alt": "Potamogeton gayi 1",
         "creatorName": "",
         "originalSource": ""
@@ -4769,7 +4769,7 @@ const plants = [
     "latinName": "Potamogeton wrightii",
     "images": [
       {
-        "src": "Potamogeton_wrightii.jpg",
+        "src": "Potamogeton_wrightii.webp",
         "alt": "Potamogeton wrightii 1",
         "creatorName": "",
         "originalSource": ""
@@ -4830,7 +4830,7 @@ const plants = [
     "latinName": "Rorippa aquaticum",
     "images": [
       {
-        "src": "Rorippa_aquaticum.jpg",
+        "src": "Rorippa_aquaticum.webp",
         "alt": "Rorippa aquaticum 1",
         "creatorName": "",
         "originalSource": ""
@@ -4864,7 +4864,7 @@ const plants = [
     "latinName": "Rotala macrandra",
     "images": [
       {
-        "src": "Rotala_macrandra.jpg",
+        "src": "Rotala_macrandra.webp",
         "alt": "Rotala macrandra 1",
         "creatorName": "",
         "originalSource": ""
@@ -4898,7 +4898,7 @@ const plants = [
     "latinName": "Rotala rotundifolia",
     "images": [
       {
-        "src": "Rotala_rotundifolia.jpg",
+        "src": "Rotala_rotundifolia.webp",
         "alt": "Rotala rotundifolia 1",
         "creatorName": "",
         "originalSource": ""
@@ -4932,7 +4932,7 @@ const plants = [
     "latinName": "Rotala sp. \"Nanjenshan\"",
     "images": [
       {
-        "src": "Rotala_sp._Nanjenshan.jpg",
+        "src": "Rotala_sp._Nanjenshan.webp",
         "alt": "Rotala sp. \"Nanjenshan\" 1",
         "creatorName": "",
         "originalSource": ""
@@ -4966,7 +4966,7 @@ const plants = [
     "latinName": "Rotala wallichii",
     "images": [
       {
-        "src": "Rotala_wallichii.jpg",
+        "src": "Rotala_wallichii.webp",
         "alt": "Rotala wallichii 1",
         "creatorName": "",
         "originalSource": ""
@@ -5054,7 +5054,7 @@ const plants = [
     "latinName": "Saururus cernuus",
     "images": [
       {
-        "src": "Saururus_cernuus.jpg",
+        "src": "Saururus_cernuus.webp",
         "alt": "Saururus cernuus 1",
         "creatorName": "",
         "originalSource": ""
@@ -5088,7 +5088,7 @@ const plants = [
     "latinName": "Sium suave",
     "images": [
       {
-        "src": "Sium_suave.jpg",
+        "src": "Sium_suave.webp",
         "alt": "Sium suave 1",
         "creatorName": "",
         "originalSource": ""
@@ -5122,7 +5122,7 @@ const plants = [
     "latinName": "Shinnersia rivularis",
     "images": [
       {
-        "src": "Shinnersia_rivularis.jpg",
+        "src": "Shinnersia_rivularis.webp",
         "alt": "Shinnersia rivularis 1",
         "creatorName": "",
         "originalSource": ""
@@ -5156,7 +5156,7 @@ const plants = [
     "latinName": "Spiranthes cernua",
     "images": [
       {
-        "src": "Spiranthes_cernua.jpg",
+        "src": "Spiranthes_cernua.webp",
         "alt": "Spiranthes cernua 1",
         "creatorName": "",
         "originalSource": ""
@@ -5190,7 +5190,7 @@ const plants = [
     "latinName": "Tonina fluviatilis",
     "images": [
       {
-        "src": "Tonina_fluviatilis.jpg",
+        "src": "Tonina_fluviatilis.webp",
         "alt": "Tonina fluviatilis 1",
         "creatorName": "",
         "originalSource": ""
@@ -5224,7 +5224,7 @@ const plants = [
     "latinName": "Tonina sp.",
     "images": [
       {
-        "src": "Tonina_sp..jpg",
+        "src": "Tonina_sp..webp",
         "alt": "Tonina sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -5258,7 +5258,7 @@ const plants = [
     "latinName": "Utricularia aurea",
     "images": [
       {
-        "src": "Utricularia_aurea.jpg",
+        "src": "Utricularia_aurea.webp",
         "alt": "Utricularia aurea 1",
         "creatorName": "",
         "originalSource": ""
@@ -5319,7 +5319,7 @@ const plants = [
     "latinName": "Vallisneria americana",
     "images": [
       {
-        "src": "Vallisneria_americana_var._biwaensis.jpg",
+        "src": "Vallisneria_americana_var._biwaensis.webp",
         "alt": "Vallisneria americana var. biwaensis 1",
         "creatorName": "",
         "originalSource": ""
@@ -5407,7 +5407,7 @@ const plants = [
     "latinName": "Vesicularia dubyana",
     "images": [
       {
-        "src": "Vesicularia_dubyana.jpg",
+        "src": "Vesicularia_dubyana.webp",
         "alt": "Vesicularia dubyana 1",
         "creatorName": "",
         "originalSource": ""

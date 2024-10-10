@@ -10,7 +10,7 @@ const businessCards = [
     email: "first@gmail.com",
     web: "http://www.first.com",
     image: {
-      src: "001.jpg",
+      src: "001.webp",
       alt: "business card image",
     },
     address: {
@@ -35,7 +35,7 @@ const businessCards = [
     email: "second@gmail.com",
     web: "http://www.second.com",
     image: {
-      src: "002.jpg",
+      src: "002.webp",
       alt: "business card image",
     },
     address: {
@@ -81,7 +81,7 @@ const businessCards = [
     email: "fourth@gmail.com",
     web: "http://www.fourth.com",
     image: {
-      src: "004.jpg",
+      src: "004.webp",
       alt: "business card image",
     },
     address: {
