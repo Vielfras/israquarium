@@ -15,6 +15,7 @@ const chalk = require('chalk');
 
 // 1st Party
 const connectDB = require('./config/db');
+
 const { users } = require('./data/user_data');
 const { fish } = require('./data/fish_data');
 const { plants } = require('./scripts/plantData'); // Updated path to your generated plantData.js

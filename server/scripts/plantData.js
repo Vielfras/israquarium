@@ -3833,7 +3833,7 @@ const plants = [
     "latinName": "Mayaca sp.",
     "images": [
       {
-        "src": "Mayaca_sp..webp",
+        "src": "Mayaca_sp.webp",
         "alt": "Mayaca sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -4329,7 +4329,7 @@ const plants = [
     "latinName": "Najas sp. \"Broad Leaf\"",
     "images": [
       {
-        "src": "Najas_sp._Broad_Leaf.webp",
+        "src": "Najas_sp_broad_leaf.webp",
         "alt": "Najas sp. 1",
         "creatorName": "",
         "originalSource": ""
@@ -4932,7 +4932,7 @@ const plants = [
     "latinName": "Rotala sp. \"Nanjenshan\"",
     "images": [
       {
-        "src": "Rotala_sp._Nanjenshan.webp",
+        "src": "Rotala_sp_Nanjenshan.webp",
         "alt": "Rotala sp. \"Nanjenshan\" 1",
         "creatorName": "",
         "originalSource": ""
