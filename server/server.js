@@ -38,12 +38,15 @@ const corsOptions = {
 };
 
 // --------------=====================  MIDDLEWARE  =====================--------------
-// app.use(cors());
-app.use(cors(corsOptions));
-app.use(express.json());
 
 app.use(morgan('combined', { stream: accessLogStream }));
-if (SERVER_MODE !== 'prod') {
+app.use(express.json());
+
+if (SERVER_MODE === 'prod') {
+  app.use(cors(corsOptions));
+}
+else if (SERVER_MODE === 'dev') {
+  app.use(cors());
   setupDevelopmentLogging(app);
 }
 
