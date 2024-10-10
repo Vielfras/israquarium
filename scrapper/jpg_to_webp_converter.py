@@ -3,7 +3,7 @@
 import os
 from PIL import Image
 
-
+DELETE_ORIGINAL_IMAGE = True
 QUALITY = 70
 
 
@@ -21,6 +21,8 @@ if __name__ == '__main__':
                     try:
                         with Image.open(jpg_path) as img:
                             img.save(webp_path, 'webp', quality=QUALITY)
+                            if DELETE_ORIGINAL_IMAGE:
+                                os.remove(jpg_path)
                         print(f'Converted {jpg_path} to {webp_path}')
                     except Exception as e:
                         print(f'Failed to convert {jpg_path}: {e}')
