@@ -13,7 +13,7 @@ const users = [
     email: "user@gmail.com",
     password: bcrypt.hashSync('User123!', 10),
     image: {
-      src: "http://127.0.0.1:3000/images/profiles/user.svg",
+      src: "images/profiles/user.svg",
       alt: "User Profile",
     },
     address: {
@@ -38,7 +38,7 @@ const users = [
     email: "biz@gmail.com",
     password: bcrypt.hashSync('Biz123!', 8),
     image: {
-      src: "http://127.0.0.1:3000/images/profiles/business.svg",
+      src: "images/profiles/business.svg",
       alt: "Business Profile",
     },
     address: {
@@ -63,7 +63,7 @@ const users = [
     email: "admin@gmail.com",
     password: bcrypt.hashSync('Admin123!', 8),
     image: {
-      src: "http://127.0.0.1:3000/images/profiles/admin.svg",
+      src: "images/profiles/admin.svg",
       alt: "Admin Profile",
     },
     address: {

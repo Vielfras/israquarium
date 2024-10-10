@@ -9,7 +9,7 @@ const fishIndex = [
         english: "Loricariidae",
         russian: "Лорика́риевые",
         image: {
-            src: 'Loricariidae.jpg',
+            src: 'Loricariidae.webp',
             alt: 'Loricariidae',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -22,7 +22,7 @@ const fishIndex = [
         english: "Corydoras",
         russian: "Коридорасы",
         image: {
-            src: 'Corydoras.jpg',
+            src: 'Corydoras.webp',
             alt: 'Corydoras',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -35,7 +35,7 @@ const fishIndex = [
         english: "Apistogramma",
         russian: "Апистограмма",
         image: {
-            src: 'Apistogramma.jpg',
+            src: 'Apistogramma.webp',
             alt: 'Apistogramma',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -48,7 +48,7 @@ const fishIndex = [
         english: "Barbus",
         russian: "Барбусы",
         image: {
-            src: 'Barbus.jpg',
+            src: 'Barbus.webp',
             alt: 'Barbus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -61,7 +61,7 @@ const fishIndex = [
         english: "Rainbowfish",
         russian: "Радужные рыбы",
         image: {
-            src: 'Rainbowfish.jpg',
+            src: 'Rainbowfish.webp',
             alt: 'Rainbowfish',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -74,7 +74,7 @@ const fishIndex = [
         english: "Nannostomus",
         russian: "Нанностомус",
         image: {
-            src: 'Nannostomus.jpg',
+            src: 'Nannostomus.webp',
             alt: 'Nannostomus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -87,7 +87,7 @@ const fishIndex = [
         english: "Botia",
         russian: "Боции",
         image: {
-            src: 'Botia.jpg',
+            src: 'Botia.webp',
             alt: 'Botia',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -99,7 +99,7 @@ const fishIndex = [
         hebrew: "דגי קרב",
         english: "Betta",
         russian: "Бетта",   image: {
-            src: 'Betta.jpg',
+            src: 'Betta.webp',
             alt: 'Betta',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -112,7 +112,7 @@ const fishIndex = [
         english: "Gasteropelecus",
         russian: "Гастропелекус",
         image: {
-            src: 'Gasteropelecus.jpg',
+            src: 'Gasteropelecus.webp',
             alt: 'Gasteropelecus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -125,7 +125,7 @@ const fishIndex = [
         english: "Lamprologus",
         russian: "Лампрологусы",
         image: {
-            src: 'Lamprologus.jpg',
+            src: 'Lamprologus.webp',
             alt: 'Lamprologus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -138,7 +138,7 @@ const fishIndex = [
         english: "Aulonocara",
         russian: "Аулонокара",
         image: {
-            src: 'Aulonocara.jpg',
+            src: 'Aulonocara.webp',
             alt: 'Aulonocara',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -150,7 +150,7 @@ const fishIndex = [
         hebrew: "ג'ולידוכרומיס",
         english: "Julidochromis",
         russian: "Жюлидохромис",   image: {
-            src: 'Julidochromis.jpg',
+            src: 'Julidochromis.webp',
             alt: 'Julidochromis',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -163,7 +163,7 @@ const fishIndex = [
         english: "Otocinclus",
         russian: "Отоцинклюс",
         image: {
-            src: 'Otocinclus.jpg',
+            src: 'Otocinclus.webp',
             alt: 'Otocinclus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -176,7 +176,7 @@ const fishIndex = [
         english: "Tropheus",
         russian: "Трофеус",
         image: {
-            src: 'Tropheus.jpg',
+            src: 'Tropheus.webp',
             alt: 'Tropheus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',
@@ -189,7 +189,7 @@ const fishIndex = [
         english: "Dicrossus",
         russian: "Дикроссус",
         image: {
-            src: 'Dicrossus.jpg',
+            src: 'Dicrossus.webp',
             alt: 'Dicrossus',
             creatorName: 'John Doe',
             originalSource: 'http://example.com/image1',

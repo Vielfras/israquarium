@@ -8,7 +8,10 @@ QUALITY = 70
 
 
 folders = [
+    '../server/assets/business_cards',
     '../server/assets/fish_photo',
+    '../server/assets/fish_index_photo',
+    '../server/assets/plant_photo',
 ]
 
 if __name__ == '__main__':
