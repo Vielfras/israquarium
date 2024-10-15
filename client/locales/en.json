@@ -340,13 +340,13 @@
     "welcomeTitle": "Welcome to Israquarium",
     "welcomeDescription": "Your go-to platform for everything related to freshwater fish and aquatic plants. Whether you're just starting or a seasoned aquarist, we have the resources to help you create a thriving aquatic environment.",
     "highlightsTitle": "Why Choose Us?",
-    "loadingFish": "Please be patient as the server is spinning up. Our apologies, this will be fixed soon.",
     "highlights": {
       "item1": "Comprehensive species profiles with detailed care guides.",
       "item2": "Expert advice on maintaining a healthy aquarium.",
       "item3": "Tips for setting up your own virtual aquarium."
     },
     "ctaButton": "Learn More About Us",
+    "loadingFish": "Please be patient while server is spinning up (~50s). Our apologies, this will be fixed soon.",
     "randomFishTitle": "Have You Met:"
   },
   "AboutPage": {

@@ -7,6 +7,7 @@ import { doGetRandomFish } from '../../services/FishServices';
 import { IFish } from '../../interfaces/IFish'; 
 import FishCard from '../../components/Fish/FishCard/FishCard';
 import { DirectionProvider } from '../../context/ReadingDirectionContext';
+import Spinner from '../../components/Misc/Spinner/Spinner';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -69,7 +70,9 @@ export default function HomePage() {
               {t('HomePage.randomFishTitle')}
             </h2>
 
-            {loading && <p className="text-center text-lg text-gray-600 dark:text-gray-300">{t('HomePage.loadingFish')}</p>}
+            {/* {loading && <p className="text-center text-lg text-gray-600 dark:text-gray-300">{t('HomePage.loadingFish')}</p>} */}
+            {loading && <Spinner message={t('HomePage.loadingFish')} />}
+
             {error && <p className="text-center text-lg text-red-500">{error}</p>}
 
             {randomFish && <FishCard fishData={randomFish} />}
