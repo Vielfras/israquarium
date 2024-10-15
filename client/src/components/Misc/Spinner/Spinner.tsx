@@ -12,7 +12,7 @@ export default function Spinner({ message }: ISpinnerProps) {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 100 8V4z" />
             </svg>
-            <p>{message}</p>
+            <p className="text-center text-lg text-gray-600 dark:text-gray-300">{message}</p>
         </div>
     );
 }
