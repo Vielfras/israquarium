@@ -19,8 +19,12 @@
 3. Create a `logs` folder.
 4. Create an .env file with the following fields:
 ```bash
-IP="<desired_ipv4>"
+#IP must be a valid IP number:
+# IP="127.0.0.1"
+IP ="<desired_ipv4>"
+
 #Port must be a number in range 1025 - 65535
+# PORT = 3000 
 PORT = <desired_port> 
 
 LOG_FILE_PATH = "your_file_path"
