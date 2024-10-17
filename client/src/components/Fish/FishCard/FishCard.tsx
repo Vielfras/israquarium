@@ -92,7 +92,7 @@ export default function FishCard({ fishData }: IFishCard) {
   const formatValue = (value: number | null, suffix: string = '') => {
     return value !== null ? `${value}${suffix}` : t('FishCard.noData');
   };
-  
+
   const details = [
     { label: t('FishCard.subclass'), value: langData.subclass },
     { label: t('FishCard.order'), value: langData.order },
@@ -122,7 +122,7 @@ export default function FishCard({ fishData }: IFishCard) {
   ];
 
   return (
-    <div className="relative max-w-4xl mx-auto bg-blue-100 p-6 rounded-lg shadow-lg">
+    <div className="relative max-w-4xl mx-auto bg-blue-100 p-2 sm:p-5 md:p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 

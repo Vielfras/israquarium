@@ -113,7 +113,7 @@ export default function PlantCard({ plantData }: IPlantCard) {
   ];
 
   return (
-    <div className="relative max-w-4xl mx-auto bg-green-50 p-6 rounded-lg shadow-lg">
+    <div className="relative max-w-4xl mx-auto bg-green-50 p-3 sm:p-5 lg:p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 
