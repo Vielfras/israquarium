@@ -36,10 +36,10 @@ export interface IFish {
   fishSize: string;
   images: IFishImage[];
   tribe: string;
-  maxTemp: number;
-  minTemp: number;
-  ph: number;
-  dGH: number;
+  maxTemp: number | null;
+  minTemp: number | null; 
+  ph: number | null;      
+  dGH: number | null;     
   languages: {
     en: ILanguage;
     he: ILanguage;

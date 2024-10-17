@@ -16,6 +16,9 @@ interface IFishCard {
   fishData: IFish;
 }
 
+
+
+
 export default function FishCard({ fishData }: IFishCard) {
   const { t, i18n } = useTranslation();
   const langData = fishData.languages[i18n.language as keyof typeof fishData.languages];
@@ -25,13 +28,13 @@ export default function FishCard({ fishData }: IFishCard) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showReportingModal, setShowReportingModal] = useState(false);
-
+  
   useEffect(() => {
     if (auth?.userDetails && fishData.likes.includes(auth?.userDetails._id)) {
       setIsFavorited(true);  
     }
   }, [auth, fishData.likes]);
-
+  
   const handleEdit = () => {
     navigate(`/edit-fish/${fishData._id}`);
   };
@@ -52,31 +55,31 @@ export default function FishCard({ fishData }: IFishCard) {
 
     setShowDeleteModal(false);
   };
-
+  
   const cancelDelete = () => {
     setShowDeleteModal(false);
   };
-
+  
   const handleReport = () => {
     setShowReportingModal(true);
   };
 
   const handleReportConfirm = async (reason: string, message: string) => {
     const { error } = await doSubmitFishReport(fishData._id, reason, message);
-
+    
     if (error) {
       alert(t('FishCard.reportFailure'));
     } else {
       alert(t('FishCard.reportSuccess'));
     }
-
+    
     setShowReportingModal(false);
   };
-
+  
   const handleReportCancel = () => {
     setShowReportingModal(false);
   };
-
+  
   const handleFavoriteToggle = async () => {
     const { error } = await doToggleFishLike(fishData._id);
     if (error) {
@@ -86,6 +89,10 @@ export default function FishCard({ fishData }: IFishCard) {
     }
   };
 
+  const formatValue = (value: number | null, suffix: string = '') => {
+    return value !== null ? `${value}${suffix}` : t('FishCard.noData');
+  };
+  
   const details = [
     { label: t('FishCard.subclass'), value: langData.subclass },
     { label: t('FishCard.order'), value: langData.order },
@@ -99,10 +106,10 @@ export default function FishCard({ fishData }: IFishCard) {
     { label: t('FishCard.distribution'), value: langData.distribution },
     { label: t('FishCard.fishSize'), value: fishData.fishSize },
     { label: t('FishCard.tankVolume'), value: fishData.tankVolume },
-    { label: t('FishCard.maxTemp'), value: `${fishData.maxTemp}°C` },
-    { label: t('FishCard.minTemp'), value: `${fishData.minTemp}°C` },
-    { label: t('FishCard.ph'), value: fishData.ph.toString() },
-    { label: t('FishCard.dGH'), value: fishData.dGH.toString() },
+    { label: t('FishCard.maxTemp'), value: formatValue(fishData.maxTemp, '°C') },
+    { label: t('FishCard.minTemp'), value: formatValue(fishData.minTemp, '°C') },
+    { label: t('FishCard.ph'), value: formatValue(fishData.ph) },
+    { label: t('FishCard.dGH'), value: formatValue(fishData.dGH) },
     { label: t('FishCard.additionalRequirements'), value: langData.additionalRequirements },
     { label: t('FishCard.aquariumSetup'), value: langData.aquariumSetup },
     { label: t('FishCard.intraspeciesCompatibility'), value: langData.intraspeciesCompatibility },

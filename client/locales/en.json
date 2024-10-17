@@ -34,6 +34,7 @@
     "hideIndexes": "Hide Indexes"
   },
   "FishCard": {
+    "noData" : "---",
     "subclass": "Subclass",
     "order": "Order",
     "family": "Family",
