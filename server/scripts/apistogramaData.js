@@ -137,7 +137,7 @@ const apistograma = [
     "latinName": "Apistogramma resticulosa Kullander, 1980",
     "images": [
       {
-        "src": "A-resticulosa-male.webp",
+        "src": "Apistogramma_resticulosa_male.webp",
         "alt": "Apistogramma resticulosa 1",
         "creatorName": "",
         "originalSource": "http://www.israquarium.co.il/FishPhoto/A-resticulosa-male.jpg"
