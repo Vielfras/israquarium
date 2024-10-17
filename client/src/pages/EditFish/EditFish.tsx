@@ -167,17 +167,17 @@ export default function EditFish() {
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <FormField controlId="maxTemp" type="number"
                                 label={t('EditFish.maxTempLabel')} placeholder={t('EditFish.maxTempPlaceholder')}
-                                value={formData.maxTemp}
+                                value={formData.maxTemp ?? ''}
                                 onChange={handleInputChange}
                             />
                             <FormField controlId="minTemp" type="number"
                                 label={t('EditFish.minTempLabel')} placeholder={t('EditFish.minTempPlaceholder')}
-                                value={formData.minTemp}
+                                value={formData.minTemp ?? ''}
                                 onChange={handleInputChange}
                             />
                             <FormField controlId="ph" type="number"
                                 label={t('EditFish.phLabel')} placeholder={t('EditFish.phPlaceholder')}
-                                value={formData.ph}
+                                value={formData.ph ?? ''}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -185,7 +185,7 @@ export default function EditFish() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <FormField controlId="dGH" type="number"
                                 label={t('EditFish.dGHLabel')} placeholder={t('EditFish.dGHPlaceholder')}
-                                value={formData.dGH}
+                                value={formData.dGH ?? ''}
                                 onChange={handleInputChange}
                             />
                             <FormField controlId="tankVolume" type="text"
