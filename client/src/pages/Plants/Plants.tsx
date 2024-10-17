@@ -28,8 +28,7 @@ export default function Plants() {
         setLoading(true);
         setError(null);
 
-        // TODO - Remove the languege, as no longer needed for the API
-        const result = await doGetPlantById(plantIdFromUrl, 'en');
+        const result = await doGetPlantById(plantIdFromUrl);
         if (result.error) {
           setError(result.error);
         } else if (result.result) {
@@ -42,7 +41,7 @@ export default function Plants() {
 
       fetchPlantById();
     }
-  }, [plantIdFromUrl]);
+  }, [plantIdFromUrl, t]);
 
   useEffect(() => {
     if (!selectedLetter || plantIdFromUrl) return;
@@ -66,7 +65,7 @@ export default function Plants() {
     };
 
     fetchPlantData();
-  }, [selectedLetter, plantIdFromUrl]);
+  }, [selectedLetter, plantIdFromUrl, t]);
 
   const handleLetterClick = (letter: string) => {
     setSelectedLetter(letter);
@@ -82,7 +81,7 @@ export default function Plants() {
     <div className="w-full flex flex-col items-center">
       <AlphabetRow selectedLetter={selectedLetter} onLetterClick={handleLetterClick} />
 
-      {loading && <Spinner message="Loading plants..." />}
+      {loading && <Spinner message={t('PlantsPage.loadingPlants')} />}
       <DirectionProvider>
         {error && <div className="text-red-500">{error}</div>}
       </DirectionProvider>
@@ -93,29 +92,32 @@ export default function Plants() {
         </div>
       )}
 
-      {/* Plant List and Full Plant Card */}
+      {/* Plant List */}
       {!loading && !error && !selectedPlant && selectedLetter && (
         <div className="w-full mt-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {plantData.length > 0 ? (
-              plantData.map((plant) => (
-                <PlantMiniCard key={plant._id} plant={plant}
-                  onClick={() => handlePlantClick(plant)}
-                />
-              ))
-            ) : (
-              <p>{`${t('PlantsPage.letterEmpty')} '${selectedLetter}'.`}</p>
-            )}
-          </div>
+          {plantData.length > 0 ? (
+            <div className="columns-2 sm:columns-3 lg:columns-5 gap-4">
+              {plantData.map((plant) => (
+                <div key={plant._id} className="mb-3 break-inside-avoid">
+                  <PlantMiniCard
+                    plant={plant}
+                    onClick={() => handlePlantClick(plant)}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>{`${t('PlantsPage.letterEmpty')} '${selectedLetter}'.`}</p>
+          )}
         </div>
       )}
 
       <DirectionProvider>
-        {!selectedLetter && !loading && !selectedPlant &&
-          <h1 className='mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400'>
+        {!selectedLetter && !loading && !selectedPlant && (
+          <h1 className="mt-6 text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400">
             {`${t('PlantsPage.selectLetter')}`}
           </h1>
-        }
+        )}
       </DirectionProvider>
     </div>
   );
