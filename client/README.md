@@ -155,7 +155,8 @@
 - [X] Pressing outside of dropdown menus should close the dropdown menu.
 - [X] Add a toast for many actions.
 - [ ] Better looking fetch error instead of just "Failed to fetch" in red.
-- [] Make 404 not found text and button float independantly of each other
+- [ ] Make 404 not found text and button float independantly of each other
+- [ ] Add ability to move left/right between fish when a fish card is selected.
 
 --- 
 

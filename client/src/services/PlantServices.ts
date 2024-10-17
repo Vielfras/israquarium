@@ -22,10 +22,10 @@ export const doGetRandomPlant = async (): Promise<{ error: string | null; result
 };
 
 // ---------------------------------------------------------------------------------------------------------
-export const doGetPlantById = async (plantId: string, lang: string): Promise<{ error: string | null; result: IPlant | null }> => {
+export const doGetPlantById = async (plantId: string): Promise<{ error: string | null; result: IPlant | null }> => {
   try {
     // Use GET method and pass `lang` as a query parameter
-    const response = await fetch(`${apiBase}/api/plant/${plantId}?lang=${lang}`, {
+    const response = await fetch(`${apiBase}/api/plant/${plantId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
