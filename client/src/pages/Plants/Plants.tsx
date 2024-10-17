@@ -96,7 +96,7 @@ export default function Plants() {
       {!loading && !error && !selectedPlant && selectedLetter && (
         <div className="w-full mt-4">
           {plantData.length > 0 ? (
-            <div className="columns-2 sm:columns-3 lg:columns-5 gap-4">
+            <div className="columns-2 sm:columns-3 xl:columns-5 2xl:columns-6 gap-4">
               {plantData.map((plant) => (
                 <div key={plant._id} className="mb-3 break-inside-avoid">
                   <PlantMiniCard
