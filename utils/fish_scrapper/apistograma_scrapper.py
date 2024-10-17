@@ -4,14 +4,17 @@ from bs4 import BeautifulSoup
 import json
 import time
 
-
+# Directory containing fish HTML files
 fish_directory = '../../assets/israquarium.co.il/apistograma.israquarium.co.il/FishIndex/'
 
+# Output files
 output_file = './apistograma_fish_data.json'
+output_file_no_duplicates = './apistograma_fish_data_no_duplicates.json'
 
 # Base URL
 base_url = 'http://www.apistogramma.israquarium.co.il/FishIndex/'
 
+# Get the list of fish names
 fish_names = []
 for name in os.listdir(fish_directory):
     full_path = os.path.join(fish_directory, name)
@@ -23,7 +26,8 @@ for name in os.listdir(fish_directory):
         else:
             fish_names.append(name)
 
-# print(fish_names)
+# Ensure fish_names contains unique entries
+fish_names = list(set(fish_names))
 
 print(f"Found {len(fish_names)} fish names.")
 
@@ -180,7 +184,23 @@ for fish_name in fish_names:
     except Exception as err:
         print(f"An error occurred for {fish_name}: {err}")
 
-# Write all fish data to a single JSON file
+# Write all fish data to a single JSON file (with potential duplicates)
 with open(output_file, 'w', encoding='utf-8') as f:
     json.dump(all_fish_data, f, ensure_ascii=False, indent=2)
 print(f"All fish data saved to {output_file}")
+
+# # Remove duplicates based on the 'name' field
+unique_fish_data = []
+seen_names = set()
+for fish in all_fish_data:
+    name = fish['name']
+    if name not in seen_names:
+        unique_fish_data.append(fish)
+        seen_names.add(name)
+    else:
+        print(f"Duplicate fish found: {name}")
+
+# Write the unique data to a new JSON file
+with open(output_file_no_duplicates, 'w', encoding='utf-8') as f:
+    json.dump(unique_fish_data, f, ensure_ascii=False, indent=2)
+print(f"Duplicates removed, new file created: {output_file_no_duplicates}")
