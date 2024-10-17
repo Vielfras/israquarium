@@ -67,8 +67,7 @@ const getFishById = async (req, res) => {
     //     projection[`languages.${language}`] = 0;
     //   }
     // });
-    console.log("Fish id");
-    
+
     const fish = await Fish.findById(id);
     if (fish) {
       return res.status(200).json({ success: true, data: fish });
