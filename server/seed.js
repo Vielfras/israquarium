@@ -17,9 +17,12 @@ const chalk = require('chalk');
 const connectDB = require('./config/db');
 
 const { users } = require('./data/user_data');
-const { fish } = require('./data/fish_data');
-const { plants } = require('./scripts/plantData'); // Updated path to your generated plantData.js
+
 const { fishIndex } = require('./data/fish_index_data');
+const { fish } = require('./data/fish_data');
+const { apistograma } = require('./scripts/apistogramaData');
+
+const { plants } = require('./scripts/plantData'); 
 const { businessCards } = require('./data/business_card_data');
 
 const User = require('./models/User');
@@ -33,6 +36,9 @@ const Benchmark = require('./utils/benchmarking');
 const seedFish = async () => {
   const insertedFish = await Fish.insertMany(fish);
   console.log(chalk.blue(`\t- Inserted ${insertedFish.length} fish.`));
+
+  const insertedApistograma = await Fish.insertMany(apistograma);
+  console.log(chalk.blue(`\t- Inserted ${insertedApistograma.length} apistogramas.`));
 };
 
 const seedFishIndex = async () => {
