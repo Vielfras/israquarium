@@ -23,7 +23,7 @@ export default function EditPlant() {
     const fetchPlantData = async () => {
       if (plantId) {
         // TODO - Remove the languege, GetPlantID Should work without a languege.
-        const { error, result } = await doGetPlantById(plantId, 'en');
+        const { error, result } = await doGetPlantById(plantId);
         if (error) {
           setError(error);
         } else if (result) {
