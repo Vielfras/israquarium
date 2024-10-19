@@ -37,12 +37,17 @@ const app = express();
 //   credentials: true, 
 // };
 
-const allowedOrigins = ['new.israquarium.co.il', 'https://new.israquarium.co.il', 'https://www.new.israquarium.co.il'];
+const allowedOrigins = ['https://new.israquarium.co.il', 'https://www.israquarium.co.il'];
 const corsOptions = {
   origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
+    console.log('Incoming Origin:', origin);
+    if (!origin) {
+      // Allow requests without origin (e.g., mobile apps, curl)
+      callback(null, true);
+    } else if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.error('Blocked by CORS:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -58,12 +63,6 @@ app.use(express.json());
 
 if (SERVER_MODE === 'prod') {
   app.use(cors(corsOptions));
-  app.options('*', cors(corsOptions));
-  app.use((req, res, next) => {
-    res.header('Vary', 'Origin');
-    next();
-  });
-  
 }
 else if (SERVER_MODE === 'dev') {
   app.use(cors());
