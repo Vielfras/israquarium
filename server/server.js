@@ -37,7 +37,7 @@ const app = express();
 //   credentials: true, 
 // };
 
-const allowedOrigins = ['https://new.israquarium.co.il', 'https://www.israquarium.co.il'];
+const allowedOrigins = ['https://new.israquarium.co.il', 'https://www.new.israquarium.co.il'];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log('Incoming Origin:', origin);
