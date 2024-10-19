@@ -30,11 +30,25 @@ const accessLogStream = logToFile(path.join(__dirname, LOG_FILE_PATH));
 
 const app = express();
 
+// const corsOptions = {
+//   origin: 'https://new.israquarium.co.il',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'x-auth-token'], 
+//   credentials: true, 
+// };
+
+const allowedOrigins = ['https://new.israquarium.co.il', 'https://www.new.israquarium.co.il'];
 const corsOptions = {
-  origin: 'https://new.israquarium.co.il',
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'x-auth-token'], 
-  credentials: true, 
+  allowedHeaders: ['Content-Type', 'x-auth-token', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+  credentials: true,
 };
 
 // --------------=====================  MIDDLEWARE  =====================--------------
