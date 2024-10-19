@@ -383,8 +383,8 @@ const plants = [
     "latinName": "Anubias gigantea",
     "images": [
       {
-      "src": "Anubias gigantea.webp",
-      "alt": "Unavailabe",
+      "src": "Anubias_gigantea.webp",
+      "alt": "Anubias Gigantea",
       "creatorName": "",
       "originalSource": ""
     }
