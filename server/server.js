@@ -37,7 +37,7 @@ const app = express();
 //   credentials: true, 
 // };
 
-const allowedOrigins = ['https://new.israquarium.co.il', 'https://www.new.israquarium.co.il'];
+const allowedOrigins = ['new.israquarium.co.il', 'https://new.israquarium.co.il', 'https://www.new.israquarium.co.il'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin)) {
@@ -58,6 +58,12 @@ app.use(express.json());
 
 if (SERVER_MODE === 'prod') {
   app.use(cors(corsOptions));
+  app.options('*', cors(corsOptions));
+  app.use((req, res, next) => {
+    res.header('Vary', 'Origin');
+    next();
+  });
+  
 }
 else if (SERVER_MODE === 'dev') {
   app.use(cors());
