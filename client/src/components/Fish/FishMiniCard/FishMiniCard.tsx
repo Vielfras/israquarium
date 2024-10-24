@@ -17,7 +17,7 @@ export default function FishMiniCard({ fish, onClick }: FishMiniCardProps) {
       onClick={onClick}
     >
       <h3 className="text-xl font-extrabold text-green-900 mb-2">
-        {fish.name}
+        {`${fish.genus} ${fish.species}`}
       </h3>
       {hasImages ? (
         <img

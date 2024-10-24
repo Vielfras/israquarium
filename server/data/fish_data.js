@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const fish = [
   {
     _id: new mongoose.Types.ObjectId('60d5ec49f1b2f9a7d1234561'),
-    name: 'Acanthicus adonis',
+    genus: 'Acanthicus',
+    species: 'adonis',
     images: [
       { 
         src: 'Acanthicus_adonis.webp', 

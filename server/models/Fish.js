@@ -22,7 +22,8 @@ const languageSchema = new mongoose.Schema({
 });
 
 const fishSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
+  genus: { type: String, required: true },
+  species: { type: String, required: true },
   latinName: { type: String },
   images: [imageSchema],
   tribe: { type: String },
@@ -40,9 +41,16 @@ const fishSchema = new mongoose.Schema({
     ru: languageSchema,
   },
   likes: [mongoose.SchemaTypes.ObjectId],
-  fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }]
+  fishIndices: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FishIndex', required: true }],
 }, {
   timestamps: true,
+});
+
+
+fishSchema.index({ genus: 1, species: 1 }, { unique: true });
+
+fishSchema.virtual('name').get(function() {
+  return `${this.genus} ${this.species}`;
 });
 
 const Fish = mongoose.model('Fish', fishSchema);

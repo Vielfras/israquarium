@@ -1,14 +1,12 @@
-//  fishSchemas.js
+// fishSchemas.js
 
 const Joi = require('joi');
 const { imageSchema } = require('./commonSchemas');
-
 
 const validationOptions = {
   stripUnknown: true,
   abortEarly: false,
 };
-
 
 const languageSchema = Joi.object({
   subclass: Joi.string().allow('').optional(),
@@ -28,10 +26,9 @@ const languageSchema = Joi.object({
   additionalInformation: Joi.string().allow('').optional(),
 });
 
-
-
 const fishSchema = Joi.object({
-  name: Joi.string().required(),
+  genus: Joi.string().required(),
+  species: Joi.string().required(),
   latinName: Joi.string().required(),
   images: Joi.array().items(imageSchema).optional(),
   tribe: Joi.string().allow('').optional(),
@@ -52,7 +49,8 @@ const fishSchema = Joi.object({
 }).options(validationOptions);
 
 const updateFishSchema = Joi.object({
-  name: Joi.string().optional(),
+  genus: Joi.string().optional(),
+  species: Joi.string().optional(),
   latinName: Joi.string().optional(),
   images: Joi.array().items(imageSchema).optional(),
   tribe: Joi.string().allow('').optional(),
@@ -71,7 +69,7 @@ const updateFishSchema = Joi.object({
   }),
   fishIndices: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).optional(),
 })
-.options(validationOptions).min(1).messages({ 'object.min': "The request's body must include at least one valid key", 
+.options(validationOptions).min(1).messages({ 'object.min': "The request's body must include at least one valid key",
 });
 
 module.exports = {

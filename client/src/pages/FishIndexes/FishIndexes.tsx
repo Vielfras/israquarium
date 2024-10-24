@@ -181,9 +181,9 @@ export default function FishIndexes() {
           setSelectedIndex(fishIndex);
         }
 
-        const fishName = result.name;
+        const fishSpecies = result.species;
 
-        const firstLetter = fishName.charAt(0).toUpperCase();
+        const firstLetter = fishSpecies.charAt(0).toUpperCase();
 
         setSelectedLetter(firstLetter);
 

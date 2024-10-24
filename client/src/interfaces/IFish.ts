@@ -28,7 +28,8 @@ export interface ILanguage {
 
 export interface IFish {
   _id: string;
-  name: string;
+  genus: string;
+  species: string;
   latinName: string;
   firstDescription: string;
   sources: string;

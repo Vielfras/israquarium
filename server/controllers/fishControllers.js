@@ -20,7 +20,10 @@ const getFishByIndexAndLetter = async (req, res) => {
 
     const fish = await Fish.find({
       fishIndices: index,
-      name: { $regex: `^${letter}`, $options: 'i' }  // Case-insensitive match
+      $or: [
+        { species: { $regex: `^${letter}`, $options: 'i' } },
+        { genus: { $regex: `^${letter}`, $options: 'i' } },
+      ],
     });
 
     if (fish.length === 0) {
@@ -32,7 +35,6 @@ const getFishByIndexAndLetter = async (req, res) => {
     return res.status(500).json({ success: false, message: err.message });
   }
 };
-
 const getRandomFish = async (req, res) => {
   try {
     const count = await Fish.countDocuments();
@@ -152,6 +154,14 @@ const createFish = async (req, res) => {
 
     return res.status(201).json({ success: true, data: newFish });
   } catch (err) {
+    if (err.code === 11000) {
+      // Duplicate key error
+      return res.status(400).json({
+        success: false,
+        message: 'A fish with this genus and species already exists.',
+      });
+    }
+    
     return res.status(500).json({ success: false, message: err.message });
   }
 };

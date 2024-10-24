@@ -127,7 +127,7 @@ export default function FishCard({ fishData }: IFishCard) {
         <FavoriteIcon isFavorited={isFavorited} onToggle={handleFavoriteToggle} />
 
         <h1 className="text-3xl font-bold text-center text-blue-900 mx-auto">
-          {fishData.name}
+          {`${fishData.genus} ${fishData.species}`}
         </h1>
 
         <KebabMenu onEdit={handleEdit} onDelete={handleDelete} onReport={handleReport} />
