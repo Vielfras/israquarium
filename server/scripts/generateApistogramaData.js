@@ -11,6 +11,7 @@ const fishDataPath = path.join(__dirname, '../../utils/fish_scrapper/apistograma
 const rawData = fs.readFileSync(fishDataPath, 'utf-8');
 const fishData = JSON.parse(rawData);
 
+
 // Helper functions
 const parseTemperature = (minTemp, maxTemp) => {
   const parseValue = (value) => {
@@ -48,7 +49,7 @@ const parseDGH = (dghValue) => {
     return { minDGH, maxDGH };
   }
   const dgh = parseFloat(dghRange[0]);
-  return { dgh };
+  return { dGH: dgh };
 };
 
 const cleanDimension = (value) => {
@@ -61,6 +62,11 @@ const standardizeVolume = (value) => {
 
 // Function to transform and validate each fish object
 const transformFishData = (fish) => {
+  // Split the name into genus and species
+  const nameParts = fish.name ? fish.name.trim().split(/\s+/) : [];
+  const genus = nameParts[0] || '';
+  const species = nameParts.slice(1).join(' ') || '';
+
   // Transform images
   const images = fish.images.map((img, index) => {
     // Remove base URL if present
@@ -77,8 +83,7 @@ const transformFishData = (fish) => {
     // Replace spaces with underscores
     imgSrc = imgSrc.replace(/\s+/g, '_');
 
-    // Get the filename
-    const filename = path.basename(imgSrc);
+    const filename = path.basename(imgSrc).replace(/\.(jpg|jpeg)$/i, '.webp');
 
     return {
       src: filename,
@@ -102,9 +107,10 @@ const transformFishData = (fish) => {
   // Generate a valid fishIndex ObjectId
   const fishIndexId = '668acc05985732c151744bf6';
 
-  // Transform the fish object to match the schema
+  // Transform the fish object to match the new schema
   const transformedFish = {
-    name: fish.name || '',
+    genus,
+    species,
     latinName: fish.latinName || '',
     images,
     tribe: fish.tribe || '',
@@ -126,6 +132,7 @@ const transformFishData = (fish) => {
 // Process all fish data
 const transformedFishList = [];
 const errors = [];
+const fishSet = new Set(); // Set to track unique genus-species combinations
 
 fishData.forEach((fish) => {
   const transformedFish = transformFishData(fish);
@@ -137,23 +144,36 @@ fishData.forEach((fish) => {
     console.error(`Validation error for fish ${fish.name}:`, error.details);
     errors.push({ fish: fish.name, errors: error.details });
   } else {
-    transformedFishList.push(value);
+    // Create a unique key based on genus and species
+    const genus = value.genus || '';
+    const species = value.species || '';
+    const key = `${genus.toLowerCase().trim()} ${species.toLowerCase().trim()}`;
+
+    if (fishSet.has(key)) {
+      // Duplicate found
+      console.warn(`Duplicate fish found and skipped: ${genus} ${species}`);
+    } else {
+      // No duplicate, add to set and list
+      fishSet.add(key);
+      transformedFishList.push(value);
+    }
   }
 });
 
 // Write the transformed data to fishData.js
 if (errors.length > 0) {
-  console.error('Errors occurred during validation. Aborting write to fishData.js.');
+  console.error('Errors occurred during validation. Aborting write to apistogramaData.js.');
+  // Optionally, write the errors to a log file or handle them as needed
 } else {
   const outputPath = path.join(__dirname, 'apistogramaData.js');
   const outputData = `
-// apistogramaData.js
+  // apistogramaData.js
 
-const mongoose = require('mongoose');
+  const mongoose = require('mongoose');
 
-const apistograma = ${JSON.stringify(transformedFishList, null, 2)};
+  const apistograma = ${JSON.stringify(transformedFishList, null, 2)};
 
-module.exports = { apistograma };
+  module.exports = { apistograma };
   `;
 
   fs.writeFileSync(outputPath, outputData, 'utf-8');

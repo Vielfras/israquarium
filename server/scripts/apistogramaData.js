@@ -1,11 +1,12 @@
 
-// apistogramaData.js
+  // apistogramaData.js
 
-const mongoose = require('mongoose');
+  const mongoose = require('mongoose');
 
-const apistograma = [
+  const apistograma = [
   {
-    "name": "Apistogramma sp. \"Sao Gabriel\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Sao Gabriel\"",
     "latinName": "Apistogramma sp. \"Sao Gabriel\"",
     "images": [],
     "tribe": "",
@@ -43,7 +44,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma linkei",
+    "genus": "Apistogramma",
+    "species": "linkei",
     "latinName": "Apistogramma linkei Koslowski, 1985",
     "images": [
       {
@@ -88,7 +90,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma erythrura",
+    "genus": "Apistogramma",
+    "species": "erythrura",
     "latinName": "Apistogramma erythrura Staeck, W. & Schindler, I., 2008",
     "images": [
       {
@@ -133,7 +136,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma resticulosa",
+    "genus": "Apistogramma",
+    "species": "resticulosa",
     "latinName": "Apistogramma resticulosa Kullander, 1980",
     "images": [
       {
@@ -184,7 +188,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Paru\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Paru\"",
     "latinName": "Apistogramma sp. \"Paru\"",
     "images": [],
     "tribe": "",
@@ -222,7 +227,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Chao\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Chao\"",
     "latinName": "Apistogramma sp. \"Chao\"",
     "images": [],
     "tribe": "",
@@ -260,7 +266,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Rio Xipamanu\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Rio Xipamanu\"",
     "latinName": "Apistogramma sp. \"Rio Xipamanu\"",
     "images": [],
     "tribe": "",
@@ -298,7 +305,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma iniridae",
+    "genus": "Apistogramma",
+    "species": "iniridae",
     "latinName": "Apistogramma iniridae Kullander, 1979",
     "images": [
       {
@@ -373,7 +381,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Pebas\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Pebas\"",
     "latinName": "Apistogramma sp. \"Pebas\"",
     "images": [
       {
@@ -436,7 +445,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Harlequin\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Harlequin\"",
     "latinName": "Apistogramma sp. \"Harlequin/Harlekin\"",
     "images": [],
     "tribe": "",
@@ -474,7 +484,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma steindachneri",
+    "genus": "Apistogramma",
+    "species": "steindachneri",
     "latinName": "Apistogramma steindachneri (Regan, 1908)",
     "images": [
       {
@@ -555,7 +566,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma minima",
+    "genus": "Apistogramma",
+    "species": "minima",
     "latinName": "Apistogramma minima Mesa, Carlos & Lasso 2011",
     "images": [
       {
@@ -600,7 +612,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma pleurotaenia",
+    "genus": "Apistogramma",
+    "species": "pleurotaenia",
     "latinName": "Apistogramma pleurotaenia (Regan, 1909)",
     "images": [
       {
@@ -645,7 +658,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Balzfleck\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Balzfleck\"",
     "latinName": "Apistogramma sp. \"Courting-spot/Balzfleck\"",
     "images": [],
     "tribe": "",
@@ -683,7 +697,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma angayuara",
+    "genus": "Apistogramma",
+    "species": "angayuara",
     "latinName": "Apistogramma angayuara\nKullander & Ferreira, 2005",
     "images": [],
     "tribe": "",
@@ -721,7 +736,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma piauiensis",
+    "genus": "Apistogramma",
+    "species": "piauiensis",
     "latinName": "Apistogramma piauiensis Kullander, 1980",
     "images": [
       {
@@ -778,7 +794,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Caqueta\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Caqueta\"",
     "latinName": "Apistogramma sp. \"Caqueta\"",
     "images": [],
     "tribe": "",
@@ -816,7 +833,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Abacaxis\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Abacaxis\"",
     "latinName": "Apistogramma sp. \"Abacaxis\"",
     "images": [
       {
@@ -867,7 +885,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma atahualpa",
+    "genus": "Apistogramma",
+    "species": "atahualpa",
     "latinName": "Apistogramma atahualpa Römer, 1997",
     "images": [
       {
@@ -948,7 +967,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Nanay\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Nanay\"",
     "latinName": "Apistogramma sp. \"Nanay\"",
     "images": [
       {
@@ -993,7 +1013,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma nororientalis",
+    "genus": "Apistogramma",
+    "species": "nororientalis",
     "latinName": "Apistogramma nororientalis Mesa, Carlos & Lasso 2011",
     "images": [
       {
@@ -1038,7 +1059,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma panduro",
+    "genus": "Apistogramma",
+    "species": "panduro",
     "latinName": "Apistogramma panduro Römer, 1997",
     "images": [
       {
@@ -1113,7 +1135,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Macapa\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Macapa\"",
     "latinName": "Apistogramma sp. \"Macapa\"",
     "images": [],
     "tribe": "",
@@ -1151,7 +1174,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Schwarzkehl/Black-throat\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Schwarzkehl/Black-throat\"",
     "latinName": "Apistogramma sp. \"Schwarzkehl/Black-throat\"",
     "images": [
       {
@@ -1202,7 +1226,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma rubrolineata",
+    "genus": "Apistogramma",
+    "species": "rubrolineata",
     "latinName": "Apistogramma rubrolineata Hein, Zarske & Zapata 2002",
     "images": [
       {
@@ -1259,7 +1284,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma huascar",
+    "genus": "Apistogramma",
+    "species": "huascar",
     "latinName": "Apistogramma huascar\nRömer, Römer, Pretor & Hahn, 2006",
     "images": [
       {
@@ -1316,7 +1342,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma allpahuayo",
+    "genus": "Apistogramma",
+    "species": "allpahuayo",
     "latinName": "Apistogramma allpahuayo\nRömer et\nal\n., 2012",
     "images": [
       {
@@ -1379,7 +1406,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Segelflossen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Segelflossen\"",
     "latinName": "Apistogramma sp. \"Sailfin/Segelflossen\"",
     "images": [],
     "tribe": "",
@@ -1417,7 +1445,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma tucurui",
+    "genus": "Apistogramma",
+    "species": "tucurui",
     "latinName": "Apistogramma tucurui Staeck, 2003",
     "images": [
       {
@@ -1468,7 +1497,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma paucisquamis",
+    "genus": "Apistogramma",
+    "species": "paucisquamis",
     "latinName": "Apistogramma paucisquamis Kullander & Staeck, 1988",
     "images": [
       {
@@ -1531,7 +1561,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Tahuayo\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Tahuayo\"",
     "latinName": "Apistogramma sp. \"Tahuayo\"",
     "images": [],
     "tribe": "",
@@ -1569,7 +1600,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Itaparana\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Itaparana\"",
     "latinName": "Apistogramma sp. \"Itaparana\"",
     "images": [],
     "tribe": "",
@@ -1607,7 +1639,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma regani",
+    "genus": "Apistogramma",
+    "species": "regani",
     "latinName": "Apistogramma regani Kullander, 1980",
     "images": [
       {
@@ -1664,7 +1697,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma luelingi",
+    "genus": "Apistogramma",
+    "species": "luelingi",
     "latinName": "Apistogramma luelingi Kullander, 1976",
     "images": [
       {
@@ -1727,7 +1761,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma personata",
+    "genus": "Apistogramma",
+    "species": "personata",
     "latinName": "Apistogramma personata Kullander, 1980",
     "images": [
       {
@@ -1772,7 +1807,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Vielfleck\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Vielfleck\"",
     "latinName": "Apistogramma sp. \"Multi-spot/Vielfleck\"",
     "images": [],
     "tribe": "",
@@ -1810,7 +1846,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma pertensis",
+    "genus": "Apistogramma",
+    "species": "pertensis",
     "latinName": "Apistogramma pertensis (Haseman, 1911)",
     "images": [
       {
@@ -1861,7 +1898,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Gelbwangen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Gelbwangen\"",
     "latinName": "Apistogramma sp. \"Yellow-cheeks/Gelbwangen\"",
     "images": [
       {
@@ -1912,7 +1950,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Jabuti\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Jabuti\"",
     "latinName": "Apistogramma sp. \"Jabuti\"",
     "images": [],
     "tribe": "",
@@ -1950,7 +1989,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma staecki",
+    "genus": "Apistogramma",
+    "species": "staecki",
     "latinName": "Apistogramma staecki Koslowski, 1985",
     "images": [
       {
@@ -2013,7 +2053,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Tiquie\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Tiquie\"",
     "latinName": "Apistogramma sp. \"Tiquie\"",
     "images": [],
     "tribe": "",
@@ -2051,7 +2092,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma meinkeni",
+    "genus": "Apistogramma",
+    "species": "meinkeni",
     "latinName": "Apistogramma meinkeni Kullander, 1980",
     "images": [
       {
@@ -2102,7 +2144,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Rio Candeias\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Rio Candeias\"",
     "latinName": "Apistogramma sp. \"Rio Candeias\"",
     "images": [],
     "tribe": "",
@@ -2140,7 +2183,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Schwarzkinn\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Schwarzkinn\"",
     "latinName": "Apistogramma sp. \"Black-chin/Schwarzkinn\"",
     "images": [],
     "tribe": "",
@@ -2178,7 +2222,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma gephyra",
+    "genus": "Apistogramma",
+    "species": "gephyra",
     "latinName": "Apistogramma gephyra Kullander, 1980",
     "images": [
       {
@@ -2241,7 +2286,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma piaroa",
+    "genus": "Apistogramma",
+    "species": "piaroa",
     "latinName": "Apistogramma piaroa Mesa & Lasso, 2011",
     "images": [
       {
@@ -2292,7 +2338,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Putzer\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Putzer\"",
     "latinName": "Apistogramma sp. \"Cleaner/Putzer\"",
     "images": [
       {
@@ -2337,7 +2384,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Oregon\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Oregon\"",
     "latinName": "Apistogramma sp. \"Oregon\"",
     "images": [],
     "tribe": "",
@@ -2375,7 +2423,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma hoignei",
+    "genus": "Apistogramma",
+    "species": "hoignei",
     "latinName": "Apistogramma hoignei Meinken, 1965",
     "images": [
       {
@@ -2444,7 +2493,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma velifera",
+    "genus": "Apistogramma",
+    "species": "velifera",
     "latinName": "Apistogramma velifera Staeck, 2003",
     "images": [
       {
@@ -2501,7 +2551,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Mosaic\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Mosaic\"",
     "latinName": "Apistogramma sp. \"Mosaic\"",
     "images": [],
     "tribe": "",
@@ -2539,7 +2590,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma taeniata",
+    "genus": "Apistogramma",
+    "species": "taeniata",
     "latinName": "Apistogramma taeniata (Günther, 1862)",
     "images": [
       {
@@ -2590,7 +2642,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma salpinction",
+    "genus": "Apistogramma",
+    "species": "salpinction",
     "latinName": "Apistogramma salpinction Kullander & Ferreira, 2005",
     "images": [],
     "tribe": "",
@@ -2628,7 +2681,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma brevis",
+    "genus": "Apistogramma",
+    "species": "brevis",
     "latinName": "Apistogramma brevis\nKullander, 1980",
     "images": [
       {
@@ -2685,7 +2739,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Peixoto\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Peixoto\"",
     "latinName": "Apistogramma sp. \"Peixoto\"",
     "images": [
       {
@@ -2730,7 +2785,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma cacatuoides",
+    "genus": "Apistogramma",
+    "species": "cacatuoides",
     "latinName": "Apistogramma cacatuoides\nHoedeman, 1951",
     "images": [
       {
@@ -2805,7 +2861,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Tefe\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Tefe\"",
     "latinName": "Apistogramma sp. \"Tefe\"",
     "images": [
       {
@@ -2856,7 +2913,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma agassizii",
+    "genus": "Apistogramma",
+    "species": "agassizii",
     "latinName": "Apistogramma agassizii\n(Steindachner, 1875)",
     "images": [
       {
@@ -2949,7 +3007,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma gibbiceps",
+    "genus": "Apistogramma",
+    "species": "gibbiceps",
     "latinName": "Apistogramma gibbiceps Meinken, 1969",
     "images": [
       {
@@ -3012,7 +3071,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Vitoria do Xingu\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Vitoria do Xingu\"",
     "latinName": "Apistogramma sp. \"Vitoria do Xingu\"",
     "images": [],
     "tribe": "",
@@ -3050,7 +3110,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Winkelfleck\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Winkelfleck\"",
     "latinName": "Apistogramma sp. \"Angle-patch/Winkelfleck\"",
     "images": [
       {
@@ -3107,7 +3168,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Araguaia\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Araguaia\"",
     "latinName": "Apistogramma sp. \"Araguaia\"",
     "images": [],
     "tribe": "",
@@ -3145,7 +3207,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma borellii",
+    "genus": "Apistogramma",
+    "species": "borellii",
     "latinName": "Apistogramma borellii\n(Regan, 1906)",
     "images": [
       {
@@ -3220,7 +3283,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Orangeflossen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Orangeflossen\"",
     "latinName": "Apistogramma sp. \"Orange-fins/Orangeflossen\"",
     "images": [],
     "tribe": "",
@@ -3258,7 +3322,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Mitu\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Mitu\"",
     "latinName": "Apistogramma sp. \"Mitu\"",
     "images": [],
     "tribe": "",
@@ -3296,7 +3361,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma pulchra",
+    "genus": "Apistogramma",
+    "species": "pulchra",
     "latinName": "Apistogramma pulchra Kullander, 1980",
     "images": [
       {
@@ -3371,7 +3437,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma baenschi",
+    "genus": "Apistogramma",
+    "species": "baenschi",
     "latinName": "Apistogramma baenschi\nDr. Uwe Römer, Dr. Ingo Hahn, Erika Römer, David P. Soares und M. Wöhler, 2004",
     "images": [
       {
@@ -3464,7 +3531,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Miua\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Miua\"",
     "latinName": "Apistogramma sp. \"Miua\"",
     "images": [
       {
@@ -3509,7 +3577,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Blutkehl\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Blutkehl\"",
     "latinName": "Apistogramma sp. \"Cutthroat/Blutkehl\"",
     "images": [
       {
@@ -3554,7 +3623,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma viejita",
+    "genus": "Apistogramma",
+    "species": "viejita",
     "latinName": "Apistogramma viejita Kullander, 1979",
     "images": [
       {
@@ -3617,7 +3687,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma cruzi",
+    "genus": "Apistogramma",
+    "species": "cruzi",
     "latinName": "Apistogramma cruzi Kullander, 1986",
     "images": [
       {
@@ -3680,7 +3751,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma bitaeniata",
+    "genus": "Apistogramma",
+    "species": "bitaeniata",
     "latinName": "Apistogramma bitaeniata\nPellegrin, 1936",
     "images": [
       {
@@ -3773,7 +3845,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma barlowi",
+    "genus": "Apistogramma",
+    "species": "barlowi",
     "latinName": "Apistogramma barlowi\nU. Römer & I. Hahn, 2008",
     "images": [
       {
@@ -3830,7 +3903,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Nadelstreifen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Nadelstreifen\"",
     "latinName": "Apistogramma sp. \"Needle-stripes/Nadelstreifen\"",
     "images": [],
     "tribe": "",
@@ -3868,7 +3942,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Schwarzbrust\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Schwarzbrust\"",
     "latinName": "Apistogramma sp. \"Black-breast/Schwarzbrust\"",
     "images": [
       {
@@ -3925,7 +4000,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma acrensis",
+    "genus": "Apistogramma",
+    "species": "acrensis",
     "latinName": "Apistogramma acrensis\nStaeck, 2003",
     "images": [
       {
@@ -3976,7 +4052,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma hongsloi",
+    "genus": "Apistogramma",
+    "species": "hongsloi",
     "latinName": "Apistogramma hongsloi Kullander, 1979",
     "images": [
       {
@@ -4045,7 +4122,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma rupununi",
+    "genus": "Apistogramma",
+    "species": "rupununi",
     "latinName": "Apistogramma rupununi Fowler, 1914",
     "images": [
       {
@@ -4096,7 +4174,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma eremnopyge",
+    "genus": "Apistogramma",
+    "species": "eremnopyge",
     "latinName": "Apistogramma eremnopyge J.S.Ready & S.O.Kullander, 2004",
     "images": [
       {
@@ -4141,7 +4220,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma guttata",
+    "genus": "Apistogramma",
+    "species": "guttata",
     "latinName": "Apistogramma guttata Antonio C., Kullander & Lasso A., 1989",
     "images": [
       {
@@ -4210,7 +4290,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Amapa\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Amapa\"",
     "latinName": "Apistogramma sp. \"Amapa\"",
     "images": [],
     "tribe": "",
@@ -4248,7 +4329,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Icana\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Icana\"",
     "latinName": "Apistogramma sp. \"Icana\"",
     "images": [],
     "tribe": "",
@@ -4286,7 +4368,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Rio Caura\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Rio Caura\"",
     "latinName": "Apistogramma sp. \"Rio Caura\"",
     "images": [],
     "tribe": "",
@@ -4324,7 +4407,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Miua Red Tail\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Miua Red Tail\"",
     "latinName": "Apistogramma sp. \"Miua Red Tail\"",
     "images": [
       {
@@ -4369,7 +4453,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma alacrina",
+    "genus": "Apistogramma",
+    "species": "alacrina",
     "latinName": "Apistogramma alacrina\nKullander, 2004",
     "images": [
       {
@@ -4456,7 +4541,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma Steel Blue",
+    "genus": "Apistogramma",
+    "species": "Steel Blue",
     "latinName": "Apistogramma sp. “Steel Blue”",
     "images": [
       {
@@ -4531,7 +4617,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Blauspiegel\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Blauspiegel\"",
     "latinName": "Apistogramma sp. \"Blue-spangle/Blauspiegel\"",
     "images": [],
     "tribe": "",
@@ -4569,7 +4656,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma gossei",
+    "genus": "Apistogramma",
+    "species": "gossei",
     "latinName": "Apistogramma gossei Kullander, 1982",
     "images": [
       {
@@ -4620,7 +4708,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma inornata",
+    "genus": "Apistogramma",
+    "species": "inornata",
     "latinName": "Apistogramma inornata Staeck, 2003",
     "images": [],
     "tribe": "",
@@ -4658,7 +4747,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Rotporen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Rotporen\"",
     "latinName": "Apistogramma sp. \"Red-pores/Rotporen\"",
     "images": [],
     "tribe": "",
@@ -4696,7 +4786,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma urteagai",
+    "genus": "Apistogramma",
+    "species": "urteagai",
     "latinName": "Apistogramma urteagai Kullander, 1986",
     "images": [
       {
@@ -4741,7 +4832,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Papagei\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Papagei\"",
     "latinName": "Apistogramma sp. \"Parrot/Papagei\"",
     "images": [
       {
@@ -4792,7 +4884,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. Kelleri",
+    "genus": "Apistogramma",
+    "species": "sp. Kelleri",
     "latinName": "Apistogramma sp. \"Kelleri\"",
     "images": [
       {
@@ -4855,7 +4948,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma diplotaenia",
+    "genus": "Apistogramma",
+    "species": "diplotaenia",
     "latinName": "Apistogramma diplotaenia Kullander, 1987",
     "images": [
       {
@@ -4906,7 +5000,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma payaminonis",
+    "genus": "Apistogramma",
+    "species": "payaminonis",
     "latinName": "Apistogramma payaminonis Kullander, 1986",
     "images": [],
     "tribe": "",
@@ -4944,7 +5039,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma cinilabra",
+    "genus": "Apistogramma",
+    "species": "cinilabra",
     "latinName": "Apistogramma cinilabra\nRömer, Duponchelle, Diaz, Davilla, Sirvas, Catchay & Renno, 2011",
     "images": [
       {
@@ -5001,7 +5097,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Jaru\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Jaru\"",
     "latinName": "Apistogramma sp. \"Jaru\"",
     "images": [],
     "tribe": "",
@@ -5039,7 +5136,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Samauma\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Samauma\"",
     "latinName": "Apistogramma sp. \"Samauma\"",
     "images": [],
     "tribe": "",
@@ -5077,7 +5175,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma macmasteri",
+    "genus": "Apistogramma",
+    "species": "macmasteri",
     "latinName": "Apistogramma macmasteri Kullander, 1979",
     "images": [
       {
@@ -5158,7 +5257,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Xingu\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Xingu\"",
     "latinName": "Apistogramma sp. \"Xingu\"",
     "images": [
       {
@@ -5203,7 +5303,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Putumayo\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Putumayo\"",
     "latinName": "Apistogramma sp. \"Putumayo\"",
     "images": [
       {
@@ -5248,7 +5349,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Lyratail\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Lyratail\"",
     "latinName": "Apistogramma sp. \"Lyratail/Leierschwanz\"",
     "images": [],
     "tribe": "",
@@ -5286,7 +5388,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma nijsseni",
+    "genus": "Apistogramma",
+    "species": "nijsseni",
     "latinName": "Apistogramma nijsseni Kullander, 1979",
     "images": [
       {
@@ -5367,7 +5470,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Doppelfleck\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Doppelfleck\"",
     "latinName": "Apistogramma sp. \"Double-patch/Doppelfleck\"",
     "images": [],
     "tribe": "",
@@ -5405,7 +5509,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Zwilling\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Zwilling\"",
     "latinName": "Apistogramma sp. \"Twin/Zwilling\"",
     "images": [],
     "tribe": "",
@@ -5443,7 +5548,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma norberti",
+    "genus": "Apistogramma",
+    "species": "norberti",
     "latinName": "Apistogramma norberti Staeck, 1991",
     "images": [
       {
@@ -5506,7 +5612,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma hippolytae",
+    "genus": "Apistogramma",
+    "species": "hippolytae",
     "latinName": "Apistogramma hippolytae Kullander, 1982",
     "images": [
       {
@@ -5563,7 +5670,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma amoenum",
+    "genus": "Apistogramma",
+    "species": "amoenum",
     "latinName": "Apistogramma amoenum\nCope, 1872",
     "images": [],
     "tribe": "",
@@ -5601,7 +5709,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma uaupesi",
+    "genus": "Apistogramma",
+    "species": "uaupesi",
     "latinName": "Apistogramma uaupesi Kullander, 1980",
     "images": [
       {
@@ -5670,7 +5779,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Parati\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Parati\"",
     "latinName": "Apistogramma sp. \"Parati\"",
     "images": [
       {
@@ -5715,7 +5825,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Orangestreifen\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Orangestreifen\"",
     "latinName": "Apistogramma sp. \"Orange-stripes/Orangestreifen\"",
     "images": [],
     "tribe": "",
@@ -5753,7 +5864,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma elizabethae",
+    "genus": "Apistogramma",
+    "species": "elizabethae",
     "latinName": "Apistogramma elizabethae Kullander, 1980",
     "images": [
       {
@@ -5828,7 +5940,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Zigzag\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Zigzag\"",
     "latinName": "Apistogramma sp. \"Zigzag\"",
     "images": [],
     "tribe": "",
@@ -5866,7 +5979,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma eunotus",
+    "genus": "Apistogramma",
+    "species": "eunotus",
     "latinName": "Apistogramma eunotus Kullander, 1981",
     "images": [
       {
@@ -5953,7 +6067,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Barcelos\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Barcelos\"",
     "latinName": "Apistogramma sp. \"Barcelos\"",
     "images": [],
     "tribe": "",
@@ -5991,7 +6106,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma pantalone",
+    "genus": "Apistogramma",
+    "species": "pantalone",
     "latinName": "Apistogramma pantalone\nRömer, Römer, Soares & Hahn, 2006",
     "images": [
       {
@@ -6060,7 +6176,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma moae",
+    "genus": "Apistogramma",
+    "species": "moae",
     "latinName": "Apistogramma moae Kullander, 1980",
     "images": [
       {
@@ -6111,7 +6228,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma ortmanni",
+    "genus": "Apistogramma",
+    "species": "ortmanni",
     "latinName": "Apistogramma ortmanni (Eigenmann, 1912)",
     "images": [
       {
@@ -6162,7 +6280,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma martini",
+    "genus": "Apistogramma",
+    "species": "martini",
     "latinName": "Apistogramma martini\nRömer, Hahn, Römer, Soares & Wöhler, 2003",
     "images": [
       {
@@ -6213,7 +6332,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma juruensis",
+    "genus": "Apistogramma",
+    "species": "juruensis",
     "latinName": "Apistogramma juruensis Kullander 1986",
     "images": [
       {
@@ -6264,7 +6384,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma inconspicua",
+    "genus": "Apistogramma",
+    "species": "inconspicua",
     "latinName": "Apistogramma inconspicua Kullander, 1983",
     "images": [
       {
@@ -6309,7 +6430,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Wangenflecken\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Wangenflecken\"",
     "latinName": "Apistogramma sp. \"Cheek-spots/Wangenflecken\"",
     "images": [],
     "tribe": "",
@@ -6347,7 +6469,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma similis",
+    "genus": "Apistogramma",
+    "species": "similis",
     "latinName": "Apistogramma similis Staeck, 2003",
     "images": [],
     "tribe": "",
@@ -6385,7 +6508,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma caetei",
+    "genus": "Apistogramma",
+    "species": "caetei",
     "latinName": "Apistogramma caetei Kullander, 1980",
     "images": [
       {
@@ -6436,7 +6560,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma trifasciata",
+    "genus": "Apistogramma",
+    "species": "trifasciata",
     "latinName": "Apistogramma trifasciata (Eigenmann & Kennedy, 1903)",
     "images": [
       {
@@ -6547,7 +6672,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma maciliensis",
+    "genus": "Apistogramma",
+    "species": "maciliensis",
     "latinName": "Apistogramma maciliensis (Haseman, 1911)",
     "images": [
       {
@@ -6598,7 +6724,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma paulmuelleri",
+    "genus": "Apistogramma",
+    "species": "paulmuelleri",
     "latinName": "Apistogramma paulmuelleri",
     "images": [
       {
@@ -6661,7 +6788,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma commbrae",
+    "genus": "Apistogramma",
+    "species": "commbrae",
     "latinName": "Apistogramma commbrae (Regan, 1906)",
     "images": [
       {
@@ -6736,7 +6864,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma rositae",
+    "genus": "Apistogramma",
+    "species": "rositae",
     "latinName": "Apistogramma rositae\nRömer, Römer & Hahn, 2006",
     "images": [
       {
@@ -6823,7 +6952,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma arua",
+    "genus": "Apistogramma",
+    "species": "arua",
     "latinName": "Apistogramma arua\nRömer & Warzel, 1998",
     "images": [
       {
@@ -6874,7 +7004,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma geisleri",
+    "genus": "Apistogramma",
+    "species": "geisleri",
     "latinName": "Apistogramma geisleri Meinken, 1971",
     "images": [
       {
@@ -6925,89 +7056,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Corydoras agassizii",
-    "latinName": "Corydoras agassizii Steindachner, 1876",
-    "images": [
-      {
-        "src": "Corydoras_agassizii.webp",
-        "alt": "Corydoras agassizii 1",
-        "creatorName": "Y. Oksman",
-        "originalSource": "../../../FishPhoto/Corydoras_agassizii.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii1.webp",
-        "alt": "Corydoras agassizii 2",
-        "creatorName": "Y. Oksman",
-        "originalSource": "../../../FishPhoto/Corydoras_agassizii1.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii.webp",
-        "alt": "Corydoras agassizii 3",
-        "creatorName": "",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii1.webp",
-        "alt": "Corydoras agassizii 4",
-        "creatorName": "",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii1.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii2.webp",
-        "alt": "Corydoras agassizii 5",
-        "creatorName": "JJPhoto",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii2.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii3.webp",
-        "alt": "Corydoras agassizii 6",
-        "creatorName": "JJPhoto",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii3.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii4.webp",
-        "alt": "Corydoras agassizii 7",
-        "creatorName": "JJPhoto",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii4.jpg"
-      },
-      {
-        "src": "Corydoras_agassizii5.webp",
-        "alt": "Corydoras agassizii 8",
-        "creatorName": "JJPhoto",
-        "originalSource": "../../../FishPhoto/Corydoras agassizii5.jpg"
-      }
-    ],
-    "tribe": "",
-    "firstDescription": "Steindachner, F.\nIchthyologische Beiträge (V). [Subtitles i-v.]. Sitzungsber.\nAkad. Wiss. Wien v. 74 (1. Abth.): 49-240, Pls. 1-15. ,  1876",
-    "sources": "FishBase\nCatalog of Fishes\n\"\nIdentifying Corydoradinae Catfish\n\". \r\t   Ian A. M. Fuller & Hans-Georg Evers",
-    "tankVolume": "from 50 cm.",
-    "fishSize": "",
-    "maxTemp": 20,
-    "minTemp": null,
-    "ph": 5.5,
-    "dGH": 2,
-    "languages": {
-      "en": {},
-      "he": {},
-      "ru": {
-        "subclass": "Лучеперые (Actinopterygii)",
-        "order": "Сомообразные (Siluriformes)",
-        "family": "Каллихтовые сомы (Callichthyidae)",
-        "subfamily": "Панцирные сомы (Corydoradinae)",
-        "etymology": "Corydoras\n(греч.) :\nkory\n: шлем, панцирь\ndoras\n: кожа\nagassizii\n: в честь швейцарского зоолога Jean Louis Agassiz (1807-1873)",
-        "distribution": "Южная Америка: система  реки Амазонка на границе Бразилии и Перу.",
-        "aquariumSetup": "Грунт: песок 2-3 мм. диаметром без острых граней.\nРастения: предпочитает густую растительность, среди которой он может прятаться.\nНеобходимы участки со свободным доступом к песку.\nКоряги. Любит прятаться под ними.\nНеобходим также свободный доступ к поверхности воды. Коридорасы периодически \r\t   поднимаются к поверхности воды для заглатывания воздуха.",
-        "intraspeciesCompatibility": "Стайная рыба.\nЧувствует себя лучше и увереней в стае.\nЖелательно содержать не менее 4-5 особей.",
-        "interspeciesCompatibility": "Совместим с большинством рыб.\nНежелательно содержать с очень крупными рыбами.",
-        "additionalInformation": "Не терпит высокую концентрацию соли или меди в воде.\nУ молодых особей точки относительно мелкие и в этом возрасте их можно\r\t   спутать с\nC. ambiacus\n, который имеет большее темное пятно \r\t   в основании спинного плавника и более вытянутую голову. С возрастом\r\t   точки у\nC. agassizii\nтемнеют и укрупняются.\nДругие похожие виды:\nC. delphax\n,\nC. ephippifer\nи\nC. leucomelas\n.\nМолодой\nC. delphax\nтакже имеет крупные точки, но\r\t   с возрастом они становятся мелкими.\nC. delphax\nимеет более\r\t   темный общий фон и более\r\t   мелкие точки на теле.\nC. ephippifer\nимеет другой основной фон тела,\r\t   а также пятно на спине только у основания спинного плавника и хвостовой\r\t   плавник прозрачный, без точек.\nC. leucomelas\nимеет более округлую\r\t   голову, более выраженную черную полосу через глаз. Также, черное пятно\r\t   на спине у основания спинного плавника меньше, зато больше пятно\r\t   на самом спинном плавнике. Точки у взрослых особей обычно намного мельче,\r\t   чем\nC. agassizii\n."
-      }
-    },
-    "fishIndices": [
-      "668acc05985732c151744bf6"
-    ]
-  },
-  {
-    "name": "Apistogramma sp. \"Schwanzzipfel\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Schwanzzipfel\"",
     "latinName": "Apistogramma sp. \"Tail-point/Schwanzzipfel\"",
     "images": [],
     "tribe": "",
@@ -7045,7 +7095,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Breitbinden\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Breitbinden\"",
     "latinName": "Apistogramma sp. \"Broad-banded/Breitbinden\"",
     "images": [
       {
@@ -7090,7 +7141,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Weibsaum\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Weibsaum\"",
     "latinName": "Apistogramma sp. \"White-seam/Weißsaum\"",
     "images": [],
     "tribe": "",
@@ -7128,7 +7180,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Erdfresser\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Erdfresser\"",
     "latinName": "Apistogramma sp. \"Earth-eater/Erdfresser\"",
     "images": [],
     "tribe": "",
@@ -7166,7 +7219,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma sp. \"Cruzeiro\"",
+    "genus": "Apistogramma",
+    "species": "sp. \"Cruzeiro\"",
     "latinName": "Apistogramma sp. \"Cruzeiro\"",
     "images": [],
     "tribe": "",
@@ -7204,7 +7258,8 @@ const apistograma = [
     ]
   },
   {
-    "name": "Apistogramma mendezi",
+    "genus": "Apistogramma",
+    "species": "mendezi",
     "latinName": "Apistogramma mendezi Römer, 1994",
     "images": [
       {
@@ -7268,5 +7323,5 @@ const apistograma = [
   }
 ];
 
-module.exports = { apistograma };
+  module.exports = { apistograma };
   
