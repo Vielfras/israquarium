@@ -20,10 +20,7 @@ const getFishByIndexAndLetter = async (req, res) => {
 
     const fish = await Fish.find({
       fishIndices: index,
-      $or: [
-        { species: { $regex: `^${letter}`, $options: 'i' } },
-        { genus: { $regex: `^${letter}`, $options: 'i' } },
-      ],
+      species: { $regex: `^${letter}`, $options: 'i' },
     });
 
     if (fish.length === 0) {
@@ -35,6 +32,8 @@ const getFishByIndexAndLetter = async (req, res) => {
     return res.status(500).json({ success: false, message: err.message });
   }
 };
+
+
 const getRandomFish = async (req, res) => {
   try {
     const count = await Fish.countDocuments();
