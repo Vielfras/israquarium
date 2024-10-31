@@ -146,8 +146,10 @@
   },
   "EditFish": {
     "title": "Редактировать Рыбу",
-    "nameLabel": "Название",
-    "namePlaceholder": "Введите название рыбы",
+    "genusLabel": "Род",
+    "genusPlaceholder": "Введите род рыбы",
+    "speciesLabel": "Вид",
+    "speciesPlaceholder": "Введите вид рыбы",
     "latinNameLabel": "Латинское название",
     "latinNamePlaceholder": "Введите латинское название",
     "subclassLabel": "Подкласс",

@@ -149,8 +149,10 @@
   },
   "EditFish": {
     "title": "Edit Fish",
-    "nameLabel": "Name",
-    "namePlaceholder": "Enter fish name",
+    "genusLabel": "Genus",
+    "genusPlaceholder": "Enter fish genus",
+    "speciesLabel": "Species",
+    "speciesPlaceholder": "Enter fish species",
     "latinNameLabel": "Latin Name",
     "latinNamePlaceholder": "Enter Latin name",
     "subclassLabel": "Subclass",

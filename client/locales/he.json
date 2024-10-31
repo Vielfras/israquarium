@@ -146,8 +146,10 @@
   },
   "EditFish": {
     "title": "עריכת דג",
-    "nameLabel": "שם",
-    "namePlaceholder": "הכנס את שם הדג",
+    "genusLabel": "זן",
+    "genusPlaceholder": "הכנס את זן הדג",
+    "speciessLabel": "סוג",
+    "speciessPlaceholder": "הכנס את סוג הדג",
     "latinNameLabel": "שם מדעי",
     "latinNamePlaceholder": "הכנס שם מדעי",
     "subclassLabel": "סוג משנה",

@@ -149,9 +149,15 @@ export default function EditFish() {
                     <DirectionProvider>
                         {/* General Information */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <FormField controlId="name" type="text"
-                                label={t('EditFish.nameLabel')} placeholder={t('EditFish.namePlaceholder')}
-                                value={formData.name}
+                            <FormField controlId="genus" type="text"
+                                label={t('EditFish.genusLabel')} placeholder={t('EditFish.genusPlaceholder')}
+                                value={formData.genus}
+                                onChange={handleInputChange}
+                                required
+                            />
+                            <FormField controlId="species" type="text"
+                                label={t('EditFish.speciesLabel')} placeholder={t('EditFish.speciesPlaceholder')}
+                                value={formData.species}
                                 onChange={handleInputChange}
                                 required
                             />

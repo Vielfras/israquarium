@@ -14,7 +14,8 @@ type LanguageCode = 'en' | 'he' | 'ru';
 
 export default function CreateFish() {
   const { t, i18n } = useTranslation();
-  const [name, setName] = useState<string>('');
+  const [genus, setGenus] = useState<string>('');
+  const [species, setSpecies] = useState<string>('');
   const [latinName, setLatinName] = useState<string>('');
   const [firstDescription, setFirstDescription] = useState<string>('');
   const [sources, setSources] = useState<string>('');
@@ -142,7 +143,7 @@ export default function CreateFish() {
     e.preventDefault();
     setIsBusy(true);
 
-    if (!name || !selectedFishIndex) {
+    if (!genus || !species || !selectedFishIndex) {
       toasts?.addToast('CreateFish.⚠️', t('CreateFish.errorTitle'), t('CreateFish.errorMessage'), 'danger');
       setIsBusy(false);
       return;
@@ -150,7 +151,8 @@ export default function CreateFish() {
 
     const fishData: IFish = {
       _id: '',
-      name,
+      genus,
+      species,
       latinName,
       firstDescription,
       sources,
@@ -226,13 +228,21 @@ export default function CreateFish() {
 
             {/* General Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <FormField controlId="formGridFishName" type="text"
-                label={t('CreateFish.fishNameLabel')} placeholder={t('CreateFish.fishNamePlaceholder')}
-                value={name}
+              <FormField controlId="formGridFishGenus" type="text"
+                label={t('CreateFish.fishGenusLabel')} placeholder={t('CreateFish.fishGenusPlaceholder')}
+                value={genus}
                 regex={nameRegex}
-                onChange={(e) => setName(e.target.value)}
-                isValid={nameRegex.test(name)}
-                validationMessage={t('CreateFish.validation.fishName')}
+                onChange={(e) => setGenus(e.target.value)}
+                isValid={nameRegex.test(genus)}
+                validationMessage={t('CreateFish.validation.fishGenus')}
+              />
+              <FormField controlId="formGridFishSpecies" type="text"
+                label={t('CreateFish.fishSpeciesLabel')} placeholder={t('CreateFish.fishSpeciesPlaceholder')}
+                value={species}
+                regex={nameRegex}
+                onChange={(e) => setSpecies(e.target.value)}
+                isValid={nameRegex.test(species)}
+                validationMessage={t('CreateFish.validation.fishSpecies')}
               />
               <FormField controlId="formGridLatinName" type="text"
                 label={t('CreateFish.latinNameLabel')} placeholder={t('CreateFish.latinNamePlaceholder')}
