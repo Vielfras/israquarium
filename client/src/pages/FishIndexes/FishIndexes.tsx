@@ -324,7 +324,6 @@ export default function FishIndexes() {
       )}
 
       <DirectionProvider>
-        {/* Error Message for Fish Data */}
         {errorFishData && <div className="text-red-500">{errorFishData}</div>}
 
         {/* Fish Card or Mini Fish Cards */}
@@ -338,13 +337,13 @@ export default function FishIndexes() {
             </>
           ) : (
             // Display the grid of FishMiniCards
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-              {fishData.map((fish) => (
-                <div key={fish._id}>
-                  <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
-                </div>
-              ))}
-            </div>
+            <div className="columns-2 sm:columns-3 xl:columns-5 2xl:columns-6 gap-4">
+            {fishData.map((fish) => (
+              <div key={fish._id} className="mb-3 break-inside-avoid">
+                <FishMiniCard fish={fish} onClick={() => handleFishCardClick(fish._id)} />
+              </div>
+            ))}
+          </div>
           )
         )}
 

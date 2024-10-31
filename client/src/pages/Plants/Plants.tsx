@@ -99,10 +99,7 @@ export default function Plants() {
             <div className="columns-2 sm:columns-3 xl:columns-5 2xl:columns-6 gap-4">
               {plantData.map((plant) => (
                 <div key={plant._id} className="mb-3 break-inside-avoid">
-                  <PlantMiniCard
-                    plant={plant}
-                    onClick={() => handlePlantClick(plant)}
-                  />
+                  <PlantMiniCard plant={plant} onClick={() => handlePlantClick(plant)} />
                 </div>
               ))}
             </div>
